@@ -48,8 +48,8 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
   bool get _isSmall => _screenWidth < 360;
   bool get _isMedium => _screenWidth >= 360 && _screenWidth < 600;
 
-  EdgeInsets get _padAll => EdgeInsets.all(_isSmall ? 12 : _isMedium ? 16 : 24);
-  EdgeInsets get _padOuter => EdgeInsets.all(_isSmall ? 12 : _isMedium ? 16 : 16);
+  EdgeInsets get _padAll => EdgeInsets.all(_isSmall ? 8 : _isMedium ? 12 : 16);
+  EdgeInsets get _padOuter => EdgeInsets.all(_isSmall ? 8 : _isMedium ? 10 : 12);
   double get _titleFs => _isSmall ? 20 : _isMedium ? 22 : 24;
   double get _sectionTitleFs => _isSmall ? 20 : _isMedium ? 22 : 22; // Başlıkları büyüt
   double get _labelFs => _isSmall ? 14 : _isMedium ? 16 : 16;
@@ -104,7 +104,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               _buildSectionTitle('Takım İsimleri', Icons.groups),
-              const SizedBox(height: 10),
+              const SizedBox(height: 6),
               FractionallySizedBox(
                 widthFactor: 0.9,
                 child: _buildInputCard(
@@ -114,7 +114,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
                   color: const Color(0xFF6A1B9A),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 6),
               FractionallySizedBox(
                 widthFactor: 0.9,
                 child: _buildInputCard(
@@ -134,10 +134,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _buildSectionTitle('Oyun Ayarları', Icons.tune),
-        const SizedBox(height: 12),
-
-        const SizedBox.shrink(),
-        const SizedBox(height: 0),
+        const SizedBox(height: 8),
 
         _buildDiscreteSliderCard(
           title: 'Süre',
@@ -147,82 +144,16 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
           color: const Color(0xFF6A1B9A),
           onChanged: (v) => setState(() => _oyunSuresi = v),
         ),
-        const SizedBox(height: 12),
 
-        // Pas hakkı + Sınırsız Pas anahtarı
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.grey[50],
-            borderRadius: BorderRadius.circular(_isSmall ? 14 : 16),
-            border: Border.all(color: const Color(0xFFFF7043).withValues(alpha: 0.15)),
-            boxShadow: [
-              BoxShadow(
-                color: const Color(0xFFFF7043).withValues(alpha: 0.08),
-                blurRadius: _isSmall ? 6 : 8,
-                offset: Offset(0, _isSmall ? 3 : 4),
-              ),
-            ],
-          ),
-          child: Padding(
-            padding: EdgeInsets.all(_isSmall ? 12 : 14),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          'Pas Hakkı',
-                          style: GoogleFonts.poppins(
-                            fontSize: _labelFs,
-                            fontWeight: FontWeight.w600,
-                            color: const Color(0xFFFF7043),
-                          ),
-                        ),
-                        SizedBox(width: _isSmall ? 6 : 8),
-                        Text('(${_unlimitedPass ? 'Sınırsız' : '$_pasHakki Adet'})', style: GoogleFonts.poppins(fontSize: _isSmall ? 12 : 14, color: Colors.grey[600])),
-                      ],
-                    ),
-                    if (_plan == PlanType.premium)
-                      Row(
-                        children: [
-                          Text(
-                          'Sınırsız', 
-                          style: GoogleFonts.poppins(
-                            fontSize: _isSmall ? 12 : 14, 
-                            color: _plan == PlanType.premium ? Colors.grey[700] : Colors.grey[400]
-                          )
-                        ),
-                                                  Switch(
-                          value: _unlimitedPass,
-                          onChanged: _plan == PlanType.premium ? (v) async {
-                            setState(() => _unlimitedPass = v);
-                            await PlanManager.setUnlimitedPass(v);
-                          } : null,
-                          activeColor: _plan == PlanType.premium ? const Color(0xFFFF7043) : Colors.grey,
-                        ),
-                        ],
-                      ),
-                  ],
-                ),
-                SizedBox(height: _isSmall ? 4 : 6),
-                Slider(
-                  value: _pasSecenekleri.indexOf(_pasHakki).clamp(0, _pasSecenekleri.length - 1).toDouble(),
-                  min: 0,
-                  max: (_pasSecenekleri.length - 1).toDouble(),
-                  divisions: _pasSecenekleri.length - 1,
-                  activeColor: const Color(0xFFFF7043),
-                  inactiveColor: const Color(0xFFFF7043).withValues(alpha: 0.2),
-                  label: _unlimitedPass ? 'Sınırsız' : '$_pasHakki Adet',
-                  onChanged: _unlimitedPass ? null : (d) => setState(() => _pasHakki = _pasSecenekleri[d.round()]),
-                ),
-              ],
-            ),
-          ),
+        _buildDiscreteSliderCard(
+          title: 'Pas Hakkı',
+          subtitle: _unlimitedPass ? 'Sınırsız' : 'Adet',
+          items: _pasSecenekleri,
+          value: _pasHakki,
+          color: const Color(0xFFFF7043),
+          onChanged: (v) => setState(() => _pasHakki = v),
+          showUnlimitedSwitch: true,
         ),
-        const SizedBox(height: 12),
 
         _buildDiscreteSliderCard(
           title: 'Bitiş Puanı',
@@ -255,7 +186,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
             children: [
               // Üst Bar
               Container(
-                padding: _padAll,
+                padding: EdgeInsets.all(_isSmall ? 12 : _isMedium ? 14 : 16),
                 child: Row(
                   children: [
                     IconButton(
@@ -371,7 +302,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
         ),
       ),
       bottomNavigationBar: Container(
-        padding: _padAll,
+        padding: EdgeInsets.all(_isSmall ? 12 : _isMedium ? 14 : 16),
         decoration: const BoxDecoration(color: Colors.white, boxShadow: [
           BoxShadow(color: Colors.black12, blurRadius: 20, offset: Offset(0, -5)),
         ]),
@@ -524,7 +455,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
           ),
           floatingLabelAlignment: FloatingLabelAlignment.center,
           border: InputBorder.none,
-          contentPadding: EdgeInsets.symmetric(vertical: _isSmall ? 12 : 14), // padding azalt
+          contentPadding: EdgeInsets.symmetric(vertical: _isSmall ? 8 : 10), // daha da azalt
           labelStyle: GoogleFonts.poppins(
             fontSize: 14, // 14px
             fontWeight: FontWeight.w500, // medium
@@ -542,6 +473,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
     required int value,
     required Color color,
     required ValueChanged<int> onChanged,
+    bool showUnlimitedSwitch = false,
   }) {
     final int currentIndex = items.indexOf(value);
     final double currentValue = currentIndex.toDouble();
@@ -566,35 +498,60 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                title,
-                style: GoogleFonts.poppins(
-                  fontSize: _labelFs,
-                  fontWeight: FontWeight.w600,
-                  color: color,
-                ),
+              Row(
+                children: [
+                  Text(
+                    title,
+                    style: GoogleFonts.poppins(
+                      fontSize: _labelFs,
+                      fontWeight: FontWeight.w600,
+                      color: color,
+                    ),
+                  ),
+                  SizedBox(width: _isSmall ? 6 : 8),
+                  Text(
+                    '($subtitle)',
+                    style: GoogleFonts.poppins(
+                      fontSize: _isSmall ? 12 : 14,
+                      color: Colors.grey[600],
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(width: _isSmall ? 6 : 8),
-              Text(
-                '($subtitle)',
-                style: GoogleFonts.poppins(
-                  fontSize: _isSmall ? 12 : 14,
-                  color: Colors.grey[600],
+              if (showUnlimitedSwitch && _plan == PlanType.premium)
+                Row(
+                  children: [
+                    Text(
+                      'Sınırsız',
+                      style: GoogleFonts.poppins(
+                        fontSize: _isSmall ? 12 : 14,
+                        color: _plan == PlanType.premium ? Colors.grey[700] : Colors.grey[400]
+                      )
+                    ),
+                    Switch(
+                      value: _unlimitedPass,
+                      onChanged: _plan == PlanType.premium ? (v) async {
+                        setState(() => _unlimitedPass = v);
+                        await PlanManager.setUnlimitedPass(v);
+                      } : null,
+                      activeColor: _plan == PlanType.premium ? color : Colors.grey,
+                    ),
+                  ],
                 ),
-              ),
             ],
           ),
-          SizedBox(height: _isSmall ? 12 : 16),
+          SizedBox(height: _isSmall ? 8 : 12),
           Container(
-            height: 60,
+            height: 50,
             child: Slider(
               value: currentValue,
               min: 0,
               max: (items.length - 1).toDouble(),
               divisions: items.length - 1,
-              label: '${items[currentIndex]} $subtitle',
-              onChanged: (newValue) {
+              label: showUnlimitedSwitch && _unlimitedPass ? 'Sınırsız' : '${items[currentIndex]} $subtitle',
+              onChanged: showUnlimitedSwitch && _unlimitedPass ? null : (newValue) {
                 final int newIndex = newValue.round();
                 onChanged(items[newIndex]);
               },
@@ -602,7 +559,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
               inactiveColor: color.withValues(alpha: 0.3),
             ),
           ),
-          SizedBox(height: _isSmall ? 8 : 12),
+          SizedBox(height: _isSmall ? 4 : 8),
         ],
       ),
     );

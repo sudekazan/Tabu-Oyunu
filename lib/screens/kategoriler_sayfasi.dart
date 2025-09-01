@@ -30,15 +30,27 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
   }
 
   Future<void> _loadBannerAd() async {
-    _bannerAd = await ReklamServisi.createBannerAd();
-    if (_bannerAd != null) {
-      _bannerAd!.load().then((_) {
-        if (mounted) {
-          setState(() {
-            _bannerAdLoaded = true;
-          });
-        }
-      });
+    // Only load ads for non-premium users
+    if (_plan != PlanType.premium) {
+      _bannerAd = await ReklamServisi.createBannerAd();
+      if (_bannerAd != null) {
+        _bannerAd!.load().then((_) {
+          if (mounted) {
+            setState(() {
+              _bannerAdLoaded = true;
+            });
+          }
+        });
+      }
+    } else {
+      // Ensure banner is hidden for premium users
+      if (mounted) {
+        setState(() {
+          _bannerAdLoaded = false;
+          _bannerAd?.dispose();
+          _bannerAd = null;
+        });
+      }
     }
   }
 
@@ -54,75 +66,85 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
     final freeSel = await PlanCategories.getSelectedFreeCategory();
     if (mounted) {
       setState(() {
+        final wasPremium = _plan == PlanType.premium;
         _plan = plan;
         _seciliPremiumKategoriler = secili;
         _seciliFreeKategori = freeSel;
         _premiumTum = plan == PlanType.premium && secili.isEmpty;
       });
+      
+      // Eğer premium durumu değiştiyse banner durumunu güncelle
+      if (_plan != plan) {
+        _loadBannerAd();
+      }
     }
   }
 
   Future<void> _togglePremiumKategori(PremiumKategori k) async {
     setState(() {
       _premiumTum = false;
-      _seciliFreeKategori = null; // tek seçim: free seçimleri temizle
       _seciliPremiumKategoriler.clear();
       _seciliPremiumKategoriler.add(k);
+      // Premium kullanıcılar için free kategorileri temizleme zorunluluğunu kaldırıyoruz
+      if (_plan != PlanType.premium) {
+        _seciliFreeKategori = null; // Free kullanıcılar için tek seçim kuralını koru
+      }
     });
     await PlanCategories.setSelectedPremiumCategories(_seciliPremiumKategoriler);
     await PlanCategories.setUseFreeSelection(false);
   }
 
-  void _showPremiumAlert() {
-    showDialog<void>(
-      context: context,
-      builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: Text('Premium Gerekli', style: GoogleFonts.poppins(fontWeight: FontWeight.w700)),
-        content: Text(
-          'Bu kategori Premium kullanıcılar içindir. Premium’a geçerek erişebilirsiniz.',
-          style: GoogleFonts.poppins(),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context), 
-            child: const Text('İptal')
-          ),
-          ElevatedButton(
-            onPressed: () async {
-              Navigator.pop(context);
-              
-              // Premium satın alma ekranına yönlendir
-              final bool? purchased = await Navigator.of(context).push<bool>(
-                MaterialPageRoute<bool>(
-                  builder: (context) => const PremiumSatinAlmaEkrani(),
-                ),
-              );
-              
-              if (purchased == true) {
-                // Premium satın alındı, planı güncelle
-                setState(() => _plan = PlanType.premium);
-                await PlanManager.setPlan(PlanType.premium);
-              }
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF6A1B9A),
-              foregroundColor: Colors.white,
-            ),
-            child: Text('Premium\'a Geç', style: GoogleFonts.poppins()),
-          ),
-        ],
-      ),
-    );
+  Future<void> _toggleFreeKategori(FreeKategori k) async {
+    setState(() {
+      _seciliFreeKategori = k;
+      // Eğer kullanıcı premium değilse, premium seçimleri temizle
+      if (_plan != PlanType.premium) {
+        _seciliPremiumKategoriler.clear();
+      }
+      _premiumTum = false;
+    });
+    await PlanCategories.setSelectedFreeCategory(k);
+    await PlanCategories.setUseFreeSelection(true);
   }
 
-  bool get _devamAktif {
-    if (_plan == PlanType.free) {
-      return _seciliFreeKategori != null;
-    } else {
-      return _premiumTum || _seciliPremiumKategoriler.isNotEmpty;
+  Future<void> _navigateToPremiumPage() async {
+    // Aşağıdan kayarak gelen animasyon ile premium satın alma ekranına yönlendir
+    final bool? purchased = await Navigator.of(context).push<bool>(
+      PageRouteBuilder<bool>(
+        pageBuilder: (context, animation, secondaryAnimation) => const PremiumSatinAlmaEkrani(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(0.0, 1.0); // Aşağıdan başla
+          const end = Offset.zero;
+          const curve = Curves.easeOut;
+
+          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+          var offsetAnimation = animation.drive(tween);
+
+          return SlideTransition(
+            position: offsetAnimation,
+            child: child,
+          );
+        },
+      ),
+    );
+
+    if (purchased == true) {
+      // Premium satın alındı, planı güncelle
+      setState(() => _plan = PlanType.premium);
+      await PlanManager.setPlan(PlanType.premium);
     }
   }
+
+  bool get _secimYapildiMi {
+    if (_plan == PlanType.premium) {
+      // Premium kullanıcılar için hem free hem premium seçimlerini kontrol et
+      return _premiumTum || _seciliPremiumKategoriler.isNotEmpty || _seciliFreeKategori != null;
+    } else {
+      return _seciliFreeKategori != null;
+    }
+  }
+
+  bool get _devamAktif => _secimYapildiMi;
 
   @override
   Widget build(BuildContext context) {
@@ -150,8 +172,8 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
         child: SafeArea(
           child: Column(
             children: [
-              // Banner reklam
-              if (_bannerAdLoaded && _bannerAd != null)
+              // Banner reklam - sadece premium olmayan kullanıcılar için
+              if (_plan != PlanType.premium && _bannerAdLoaded && _bannerAd != null)
                 Container(
                   width: _bannerAd!.size.width.toDouble(),
                   height: _bannerAd!.size.height.toDouble(),
@@ -203,7 +225,7 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                     ],
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(isSmall ? 12 : 16),
+                    padding: EdgeInsets.symmetric(horizontal: isSmall ? 12 : 16, vertical: 8),
                     child: SingleChildScrollView(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -216,23 +238,26 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                               setState(() {
                                 _seciliFreeKategori = FreeKategori.freeHavuz;
                                 _premiumTum = false;
-                                _seciliPremiumKategoriler.clear();
+                                // Premium kullanıcılar için premium seçimleri temizleme zorunluluğunu kaldır
+                                if (_plan != PlanType.premium) {
+                                  _seciliPremiumKategoriler.clear();
+                                }
                               });
                               await PlanCategories.setSelectedFreeCategory(FreeKategori.freeHavuz);
                               await PlanCategories.setUseFreeSelection(true);
                               await PlanCategories.setSelectedPremiumCategories(_seciliPremiumKategoriler);
                             },
                             child: Container(
-                            margin: const EdgeInsets.only(bottom: 10),
+                            margin: const EdgeInsets.only(bottom: 6),
                             decoration: BoxDecoration(
                               color: _seciliFreeKategori == FreeKategori.freeHavuz ? const Color(0xFF6A1B9A).withOpacity(0.06) : Colors.white,
                               borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
                               border: Border.all(color: _seciliFreeKategori == FreeKategori.freeHavuz ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withOpacity(0.12), width: 1.5),
                             ),
                             child: ListTile(
-                              leading: const Icon(Icons.inventory_2, color: Color(0xFF6A1B9A)),
-                              title: Text('Free Havuz (300 kelime)', style: GoogleFonts.poppins(fontSize: labelFs)),
-                              subtitle: Text('Ücretsiz planda kullanılabilir', style: GoogleFonts.poppins(fontSize: isSmall ? 11 : 12, color: Colors.grey[700])),
+                              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                              leading: Icon(freeKategoriIconlari[FreeKategori.freeHavuz]!, color: const Color(0xFF6A1B9A)),
+                              title: Text('Free Havuz (349 kelime)', style: GoogleFonts.poppins(fontSize: labelFs)),
                             ),
                           ),
                           ),
@@ -243,81 +268,94 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                               setState(() {
                                 _seciliFreeKategori = FreeKategori.cocuklar;
                                 _premiumTum = false;
-                                _seciliPremiumKategoriler.clear();
+                                // Premium kullanıcılar için premium seçimleri temizleme zorunluluğunu kaldır
+                                if (_plan != PlanType.premium) {
+                                  _seciliPremiumKategoriler.clear();
+                                }
                               });
                               await PlanCategories.setSelectedFreeCategory(FreeKategori.cocuklar);
                               await PlanCategories.setUseFreeSelection(true);
                               await PlanCategories.setSelectedPremiumCategories(_seciliPremiumKategoriler);
                             },
                             child: Container(
-                            margin: const EdgeInsets.only(bottom: 10),
+                            margin: const EdgeInsets.only(bottom: 6),
                             decoration: BoxDecoration(
                               color: _seciliFreeKategori == FreeKategori.cocuklar ? const Color(0xFF6A1B9A).withOpacity(0.06) : Colors.white,
                               borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
                               border: Border.all(color: _seciliFreeKategori == FreeKategori.cocuklar ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withOpacity(0.12), width: 1.5),
                             ),
                             child: ListTile(
-                              leading: const Icon(Icons.child_care, color: Color(0xFF6A1B9A)),
+                              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                              leading: Icon(freeKategoriIconlari[FreeKategori.cocuklar]!, color: const Color(0xFF6A1B9A)),
                               title: Text('Çocuklar (Free 100+)', style: GoogleFonts.poppins(fontSize: labelFs)),
-                              subtitle: Text('Free için basitleştirilmiş havuz', style: GoogleFonts.poppins(fontSize: isSmall ? 11 : 12, color: Colors.grey[700])),
                             ),
                           ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(bottom: 10),
-                            decoration: BoxDecoration(
-                              color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? const Color(0xFF6A1B9A).withOpacity(0.06) : Colors.white,
-                              borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                              border: Border.all(color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withOpacity(0.12), width: 1.5),
-                            ),
-                            child: ListTile(
-                              leading: _plan == PlanType.free
-                                  ? const Icon(Icons.lock, color: Colors.grey)
-                                  : const Icon(Icons.child_friendly, color: Color(0xFF6A1B9A)),
-                              title: Text('Çocuklar (Premium 300+)', style: GoogleFonts.poppins(fontSize: labelFs)),
-                              subtitle: Text('Premium için daha geniş havuz', style: GoogleFonts.poppins(fontSize: isSmall ? 11 : 12, color: Colors.grey[700])),
-                              onTap: _plan == PlanType.free
-                                  ? _showPremiumAlert
-                                  : () async {
-                                      setState(() {
-                                        _seciliFreeKategori = null;
-                                        _premiumTum = false;
-                                        _seciliPremiumKategoriler.clear();
-                                        _seciliPremiumKategoriler.add(PremiumKategori.cocuklar);
-                                      });
-                                      await PlanCategories.setSelectedPremiumCategories(_seciliPremiumKategoriler);
-                                      await PlanCategories.setUseFreeSelection(false);
-                                    },
-                              trailing: null,
-                            ),
                           ),
 
                           // Özel: Premium tüm kelimeler (karışık) — Free kartlardan sonra gelsin
                           Container(
-                            margin: const EdgeInsets.only(bottom: 10),
+                            margin: const EdgeInsets.only(bottom: 6),
                             decoration: BoxDecoration(
                               color: _premiumTum ? const Color(0xFF6A1B9A).withOpacity(0.06) : Colors.white,
                               borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
                               border: Border.all(color: _premiumTum ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withOpacity(0.12), width: 1.5),
                             ),
                             child: ListTile(
+                              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                               leading: _plan == PlanType.free
                                   ? const Icon(Icons.lock, color: Colors.grey)
                                   : const Icon(Icons.all_inclusive, color: Color(0xFF6A1B9A)),
-                              title: Text('Premium havuz (2000+)', style: GoogleFonts.poppins(fontSize: labelFs)),
-                              subtitle: Text('Tüm premium kategorilerinden karışık', style: GoogleFonts.poppins(fontSize: isSmall ? 11 : 12, color: Colors.grey[700])),
+                              title: Text('Premium Havuz (4000+)', style: GoogleFonts.poppins(fontSize: labelFs)),
                               trailing: null,
                               onTap: _plan == PlanType.free
-                                  ? _showPremiumAlert
+                                  ? _navigateToPremiumPage
                                   : () async {
                                       setState(() {
                                         _seciliFreeKategori = null;
-                                        _premiumTum = true;
-                                        _seciliPremiumKategoriler.clear();
+                                        _premiumTum = !_premiumTum;
+                                        if (_premiumTum) {
+                                          _seciliPremiumKategoriler.clear();
+                                        }
                                       });
                                       await PlanCategories.setSelectedPremiumCategories(_seciliPremiumKategoriler);
                                       await PlanCategories.setUseFreeSelection(false);
                                     },
+                            ),
+                          ),
+
+                          // Çocuklar (Premium 300+) - Premium havuzun altına taşındı
+                          Container(
+                            margin: const EdgeInsets.only(bottom: 6),
+                            decoration: BoxDecoration(
+                              color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? const Color(0xFF6A1B9A).withOpacity(0.06) : Colors.white,
+                              borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
+                              border: Border.all(color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withOpacity(0.12), width: 1.5),
+                            ),
+                            child: ListTile(
+                              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                              leading: _plan == PlanType.free
+                                  ? const Icon(Icons.lock, color: Colors.grey)
+                                  : Icon(premiumKategoriIconlari[PremiumKategori.cocuklar]!, color: const Color(0xFF6A1B9A)),
+                              title: Text('Çocuklar (Premium 550+)', style: GoogleFonts.poppins(fontSize: labelFs)),
+                              onTap: _plan == PlanType.free
+                                  ? _navigateToPremiumPage
+                                  : () async {
+                                      setState(() {
+                                        // Premium kullanıcılar için free seçimlerini temizleme zorunluluğunu kaldır
+                                        if (_plan != PlanType.premium) {
+                                          _seciliFreeKategori = null;
+                                        }
+                                        _premiumTum = false;
+                                        if (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) {
+                                          _seciliPremiumKategoriler.remove(PremiumKategori.cocuklar);
+                                        } else {
+                                          _seciliPremiumKategoriler.add(PremiumKategori.cocuklar);
+                                        }
+                                      });
+                                      await PlanCategories.setSelectedPremiumCategories(_seciliPremiumKategoriler);
+                                      await PlanCategories.setUseFreeSelection(false);
+                                    },
+                              trailing: null,
                             ),
                           ),
 
@@ -326,17 +364,20 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                             final bool kilitli = _plan == PlanType.free; // Premium kategoriler kilitli
                             final bool secili = _seciliPremiumKategoriler.contains(k);
                             return Container(
-                              margin: const EdgeInsets.only(bottom: 10),
+                              margin: const EdgeInsets.only(bottom: 6),
                               decoration: BoxDecoration(
                                 color: secili ? const Color(0xFF6A1B9A).withOpacity(0.06) : Colors.white,
                                 borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
                                 border: Border.all(color: secili ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withOpacity(0.12), width: 1.5),
                               ),
                               child: ListTile(
-                                leading: kilitli ? const Icon(Icons.lock, color: Colors.grey) : const Icon(Icons.checklist, color: Color(0xFF6A1B9A)),
+                              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                leading: kilitli
+                                    ? const Icon(Icons.lock, color: Colors.grey)
+                                    : Icon(premiumKategoriIconlari[k]!, color: const Color(0xFF6A1B9A)),
                                 title: Text(premiumKategoriAdlari[k]!, style: GoogleFonts.poppins(fontSize: labelFs)),
                                 trailing: null,
-                                onTap: kilitli ? _showPremiumAlert : () => _togglePremiumKategori(k),
+                                onTap: kilitli ? _navigateToPremiumPage : () => _togglePremiumKategori(k),
                               ),
                             );
                           }).toList(),

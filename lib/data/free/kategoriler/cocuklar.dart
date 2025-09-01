@@ -1,6 +1,6 @@
 import '../../kelimeler.dart';
 
-// Free Çocuklar: Çocuklara uygun basit ve pozitif kelime haznesi (örnek 100'e kadar genişletilebilir)
+// Free Çocuklar: Çocuklara uygun basit ve pozitif kelime haznesi
 const List<KelimeKarti> freeCocuklar = [
   KelimeKarti(kelime: 'Kedi', yasakliKelimeler: ['Miyav', 'Tüy', 'Hayvan', 'Evcil', 'Patiler']),
   KelimeKarti(kelime: 'Köpek', yasakliKelimeler: ['Hav', 'Tasma', 'Hayvan', 'Evcil', 'Sadık']),

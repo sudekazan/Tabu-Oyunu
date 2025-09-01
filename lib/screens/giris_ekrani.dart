@@ -27,6 +27,20 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
   }
 
   Future<void> _loadBannerAd() async {
+    // Plan durumunu kontrol et
+    final plan = await PlanManager.getPlan();
+
+    // Premium kullanıcıysa reklam yükleme
+    if (plan == PlanType.premium) {
+      if (mounted) {
+        setState(() {
+          _bannerAdLoaded = false;
+          _bannerAd = null;
+        });
+      }
+      return;
+    }
+
     _bannerAd = await ReklamServisi.createBannerAd();
     if (_bannerAd != null) {
       _bannerAd!.load().then((_) {
@@ -37,7 +51,7 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
         }
       });
     } else {
-      // Premium kullanıcı için reklam yok
+      // Reklam oluşturulamadıysa
       if (mounted) {
         setState(() {
           _bannerAdLoaded = false;
@@ -53,6 +67,8 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
         setState(() {
           _currentPlan = plan;
         });
+        // Plan durumu yüklendikten sonra reklam durumunu güncelle
+        _loadBannerAd();
       }
     } catch (e) {
       if (mounted) {
@@ -61,31 +77,19 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
     }
   }
 
-  Future<void> _changePlan(PlanType newPlan) async {
+    Future<void> _changePlan(PlanType newPlan) async {
     try {
       await PlanManager.setPlan(newPlan);
       if (mounted) {
         setState(() {
           _currentPlan = newPlan;
         });
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(newPlan == PlanType.premium 
-              ? '🎉 Premium plan aktifleştirildi!' 
-              : '📱 Free plan aktifleştirildi!'),
-            backgroundColor: const Color(0xFF6A1B9A),
-          ),
-        );
+
+        // Plan değiştiğinde reklam durumunu güncelle
+        _loadBannerAd();
       }
     } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Plan değiştirme hatası!'),
-            backgroundColor: Colors.red,
-          ),
-        );
-      }
+      // Plan değiştirme hatası - sessizce devam et
     }
   }
 
@@ -135,10 +139,11 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         // Logo ve Başlık
-                        const Icon(
-                          Icons.games,
-                          size: 80,
-                          color: Colors.white,
+                        Image.asset(
+                          'assets/icon.png',
+                          width: 100,
+                          height: 100,
+                          fit: BoxFit.contain,
                         ),
                         const SizedBox(height: 16),
                         Text(

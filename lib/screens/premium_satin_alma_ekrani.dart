@@ -122,26 +122,58 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
     }
   }
 
-  // Premium'u aktifleştir
+  // Test modu uyarısı göster
+  Future<void> _showTestModeWarning() async {
+    if (mounted) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text('⚠️ Test Modu'),
+          content: const Text(
+            'Şu anda test modundasınız. Gerçek satın alma için:\n\n'
+            '1. Google Play Console\'da uygulama yayınlayın\n'
+            '2. In-App Purchase ürününü oluşturun\n'
+            '3. Yayınlandıktan sonra gerçek satın alma aktif olur\n\n'
+            'Şimdilik test için premiumu aktifleştirelim mi?'
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('İPTAL'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                _activatePremiumForTesting();
+              },
+              child: const Text('TEST ET'),
+            ),
+          ],
+        ),
+      );
+    }
+  }
+
+  // Premium'u aktifleştir (sadece test için)
   Future<void> _activatePremiumForTesting() async {
     setState(() => _isPurchasing = true);
-    
+
     try {
       // Gerçek satın alma deneyimi için kısa bekleme
       await Future.delayed(const Duration(seconds: 2));
-      
+
       await PlanManager.setPlan(PlanType.premium);
       await PlanManager.setUnlimitedPass(true);
-      
+
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('🎉 Premium başarıyla satın alındı!'),
+            content: Text('🎉 Premium başarıyla aktifleştirildi (Test)!'),
             backgroundColor: Colors.green,
             duration: Duration(seconds: 2),
           ),
         );
-        
+
         // Kısa bir gecikme sonrası geri dön
         await Future.delayed(const Duration(milliseconds: 500));
         Navigator.of(context).pop(true);
@@ -406,7 +438,7 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: _isPurchasing ? null : () => hasRealProduct ? _purchasePremium(product!) : _activatePremiumForTesting(),
+              onPressed: _isPurchasing ? null : () => hasRealProduct ? _purchasePremium(product!) : _showTestModeWarning(),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
                 foregroundColor: const Color(0xFF6A1B9A),

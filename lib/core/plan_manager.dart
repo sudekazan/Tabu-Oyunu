@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../data/premium/kategoriler/index.dart';
 
@@ -6,6 +7,12 @@ enum PlanType { free, premium }
 
 /// Free kategori türleri
 enum FreeKategori { freeHavuz, cocuklar }
+
+/// Free kategori icon'ları
+const Map<FreeKategori, IconData> freeKategoriIconlari = {
+  FreeKategori.freeHavuz: Icons.inventory_2,
+  FreeKategori.cocuklar: Icons.child_care,
+};
 
 /// Plan yönetimi sınıfı
 class PlanManager {
@@ -60,6 +67,24 @@ class PlanCategories {
         case 'cocuklar':
           pk = PremiumKategori.cocuklar;
           break;
+        case 'bilim_teknoloji':
+          pk = PremiumKategori.bilim_teknoloji;
+          break;
+        case 'tarih_kultur':
+          pk = PremiumKategori.tarih_kultur;
+          break;
+        case 'spor':
+          pk = PremiumKategori.spor;
+          break;
+        case 'film_diziler':
+          pk = PremiumKategori.film_diziler;
+          break;
+        case 'yemek_mutfak':
+          pk = PremiumKategori.yemek_mutfak;
+          break;
+        case 'ulkeler_kultur':
+          pk = PremiumKategori.ulkeler_kultur;
+          break;
       }
       if (pk != null) result.add(pk);
     }
@@ -75,6 +100,18 @@ class PlanCategories {
           return 'markalar';
         case PremiumKategori.cocuklar:
           return 'cocuklar';
+        case PremiumKategori.bilim_teknoloji:
+          return 'bilim_teknoloji';
+        case PremiumKategori.tarih_kultur:
+          return 'tarih_kultur';
+        case PremiumKategori.spor:
+          return 'spor';
+        case PremiumKategori.film_diziler:
+          return 'film_diziler';
+        case PremiumKategori.yemek_mutfak:
+          return 'yemek_mutfak';
+        case PremiumKategori.ulkeler_kultur:
+          return 'ulkeler_kultur';
       }
     }).toList();
     await prefs.setStringList(_premiumCategoriesKey, keys);

@@ -135,18 +135,20 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                   
                   // Üst Bar
                   Container(
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     child: Row(
                       children: [
                         IconButton(
                           onPressed: () => Navigator.pop(context),
-                          icon: const Icon(Icons.arrow_back, color: Colors.white, size: 24),
+                          icon: const Icon(Icons.arrow_back, color: Colors.white, size: 22),
+                          padding: EdgeInsets.zero,
+                          constraints: const BoxConstraints(),
                         ),
-                        const SizedBox(width: 16),
+                        const SizedBox(width: 12),
                         Text(
                           'Oyun Sonucu',
                           style: GoogleFonts.poppins(
-                            fontSize: 24,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
@@ -161,8 +163,8 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                         // Kazanan Kutlaması (esnek küçük alan)
                         Flexible(
                           child: Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-                            padding: EdgeInsets.all(_isCompact ? 12 : 16),
+                            margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                            padding: EdgeInsets.all(_isCompact ? 8 : 12),
                             decoration: BoxDecoration(
                               color: Colors.white.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(24),
@@ -177,18 +179,18 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                   children: [
                                     Icon(
                                       beraberlik ? Icons.handshake : Icons.emoji_events,
-                                      size: _isCompact ? 54 : 64,
+                                      size: _isCompact ? 48 : 56,
                                       color: Colors.yellow[400],
                                     ),
-                                    SizedBox(height: _isCompact ? 6 : 8),
+                                    SizedBox(height: _isCompact ? 4 : 6),
                                     Text(
                                       beraberlik ? 'BERABERLİK!' : 'TEBRİKLER!',
                                       textAlign: TextAlign.center,
                                       style: GoogleFonts.poppins(
-                                        fontSize: _isCompact ? 20 : 24,
+                                        fontSize: _isCompact ? 18 : 22,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,
-                                        letterSpacing: 1.3,
+                                        letterSpacing: 1.1,
                                       ),
                                     ),
                                     SizedBox(height: _isCompact ? 4 : 6),
@@ -196,8 +198,9 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                       beraberlik ? 'Harika bir oyun oldu!' : '$kazananTakim kazandı!',
                                       textAlign: TextAlign.center,
                                       style: GoogleFonts.poppins(
-                                        fontSize: _isCompact ? 13 : 15,
+                                        fontSize: _isCompact ? 12 : 14,
                                         color: Colors.white.withValues(alpha: 0.9),
+                                        height: 1.2,
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),

@@ -79,17 +79,23 @@ flutter: Banner reklam yüklenemedi: LoadAdError(code: 1, domain: com.google.adm
 
 ## Kullanım
 
-### Debug Modunda Test Reklamları
-Şu anda `_isDebugMode = true` olarak ayarlandı. Bu sayede:
-- Test reklamları gösteriliyor
-- Gerçek reklamlar yüklenmiyor
-- Konsol hataları azalıyor
+### ✅ PRODUCTION MODU AKTİF
+Uygulama şu anda production modunda çalışıyor:
+- Gerçek AdMob reklamları gösteriliyor
+- Test modları kapatılmış
+- Yayın için hazır durumda
 
-### Production'a Geçiş
-Production'a geçmek için:
-1. `lib/core/reklam_servisi.dart` dosyasında `_isDebugMode = false` yapın
-2. Gerçek AdMob ID'leri kullanılacak
-3. Test cihazı listesini temizleyin
+### Yayın Bilgileri
+- **Publisher ID**: `ca-app-pub-2127302088980655`
+- **Banner**: `ca-app-pub-2127302088980655/9402912295`
+- **Interstitial**: `ca-app-pub-2127302088980655/6385581301`
+- **Rewarded**: `ca-app-pub-2127302088980655/9298970512`
+
+### Debug Moduna Geçiş (Geliştirme için)
+Debug moduna geçmek için:
+1. `lib/core/reklam_servisi.dart` dosyasında `_isDebugMode = true` yapın
+2. Test cihazları ekleyin
+3. Test reklamları kullanılacak
 
 ## Test Etme
 

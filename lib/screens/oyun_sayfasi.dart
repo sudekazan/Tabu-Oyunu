@@ -124,7 +124,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
         final Set<PremiumKategori> selected = await PlanCategories.getSelectedPremiumCategories();
         liste = selected.isNotEmpty
             ? karisikPremiumKategorilerinden(selected)
-            : karisikPremiumKelimeler();
+            : karisikPremiumHavuz(); // Premium havuz için sadece premium kelimeler
       }
     } else {
       final FreeKategori freeCat = await PlanCategories.getSelectedFreeCategory();
@@ -595,9 +595,9 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                   ),
                 ),
                 Text('Tur Bitti', style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w700, color: const Color(0xFF6A1B9A))),
-                const SizedBox(height: 6),
+                const SizedBox(height: 3),
                 Text('$oynayanTakim turu tamamladı. Mevcut skorlar:', style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[700])),
-                const SizedBox(height: 8),
+                const SizedBox(height: 4),
                 Row(
                   children: [
                     Expanded(child: _buildSkorKarti(widget.takim1Adi, _takim1Skor, _takim1ToplamSkor, _aktifTakimIndex == 0)),
@@ -605,7 +605,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                     Expanded(child: _buildSkorKarti(widget.takim2Adi, _takim2Skor, _takim2ToplamSkor, _aktifTakimIndex == 1)),
                   ],
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 6),
                 if (_turDogruKelimeler.isNotEmpty) ...[
                   Text('Doğru Bilinenler', style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.green[700])),
                   const SizedBox(height: 6),
@@ -614,7 +614,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                     runSpacing: 8,
                     children: _turDogruKelimeler.map((k) => Chip(label: Text(k, style: GoogleFonts.poppins()), backgroundColor: Colors.green.shade50)).toList(),
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 6),
                 ],
                 if (_turPasKelimeler.isNotEmpty) ...[
                   Text('Pas Geçilenler', style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.orange[800])),
@@ -624,9 +624,9 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                     runSpacing: 8,
                     children: _turPasKelimeler.map((k) => Chip(label: Text(k, style: GoogleFonts.poppins()), backgroundColor: Colors.orange.shade50)).toList(),
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 6),
                 ],
-                const SizedBox(height: 4),
+                const SizedBox(height: 2),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton.icon(
@@ -704,14 +704,120 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
       // Oyun devam ediyorsa onay iste
       final bool? confirm = await showDialog<bool>(
         context: context,
-        builder: (context) => AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-          title: const Text('Oyundan çıkılsın mı?'),
-          content: const Text('Oyun devam ediyor. Çıkarsanız mevcut tur sonlanacak.'),
-          actions: [
-            TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Vazgeç')),
-            ElevatedButton(onPressed: () => Navigator.pop(context, true), child: const Text('Çık')),
-          ],
+        barrierDismissible: false,
+        builder: (context) => Dialog(
+          backgroundColor: Colors.transparent,
+          child: Container(
+            padding: const EdgeInsets.all(24),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(0xFF6A1B9A),
+                  Color(0xFFFF7043),
+                ],
+              ),
+              borderRadius: BorderRadius.circular(24),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  blurRadius: 20,
+                  offset: const Offset(0, 10),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // İkon
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.2),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.exit_to_app,
+                    color: Colors.white,
+                    size: 32,
+                  ),
+                ),
+                const SizedBox(height: 16),
+
+                // Başlık
+                Text(
+                  'Oyundan çıkılsın mı?',
+                  style: GoogleFonts.poppins(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 12),
+
+                // İçerik
+                Text(
+                  'Oyun devam ediyor. Çıkarsanız mevcut tur sonlanacak.',
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: Colors.white.withOpacity(0.9),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 24),
+
+                // Butonlar
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextButton(
+                        onPressed: () => Navigator.pop(context, false),
+                        style: TextButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            side: const BorderSide(color: Colors.white, width: 1.5),
+                          ),
+                        ),
+                        child: Text(
+                          'Vazgeç',
+                          style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () => Navigator.pop(context, true),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          foregroundColor: const Color(0xFF6A1B9A),
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          elevation: 4,
+                        ),
+                        child: Text(
+                          'Çık',
+                          style: GoogleFonts.poppins(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ),
       );
       if (confirm == true) {
