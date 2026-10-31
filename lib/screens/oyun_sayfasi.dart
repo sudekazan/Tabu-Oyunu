@@ -340,7 +340,10 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
         _takim2ToplamSkor++; // Doğru cevap toplam skora anlık yansısın
       }
       
-      if (_takim1Skor >= widget.bitisPuani || _takim2Skor >= widget.bitisPuani) {
+      // Bitiş puanı, takımın o anki tur skoruna değil, oyun boyunca
+      // biriken toplam skoruna göre kontrol edilmeli; aksi halde oyun
+      // ancak bir takım tek bir turda bitiş puanına ulaşırsa sona eriyordu.
+      if (_takim1ToplamSkor >= widget.bitisPuani || _takim2ToplamSkor >= widget.bitisPuani) {
         _oyunuBitir();
         return;
       }
