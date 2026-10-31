@@ -546,7 +546,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
             ],
           ),
           SizedBox(height: _isSmall ? 8 : 12),
-          Container(
+          SizedBox(
             height: 50,
             child: Slider(
               value: currentValue,

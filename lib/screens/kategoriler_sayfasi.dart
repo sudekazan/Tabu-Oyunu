@@ -163,7 +163,7 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
             children: [
               // Banner reklam - sadece premium olmayan kullanıcılar için
               if (_plan != PlanType.premium && _bannerAdLoaded && _bannerAd != null)
-                Container(
+                SizedBox(
                   width: _bannerAd!.size.width.toDouble(),
                   height: _bannerAd!.size.height.toDouble(),
                   child: AdWidget(ad: _bannerAd!),
@@ -369,7 +369,7 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                                 onTap: kilitli ? _navigateToPremiumPage : () => _togglePremiumKategori(k),
                               ),
                             );
-                          }).toList(),
+                          }),
 
                           const SizedBox(height: 80),
                         ],

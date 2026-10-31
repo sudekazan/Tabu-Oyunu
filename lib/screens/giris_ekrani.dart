@@ -124,7 +124,7 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
             children: [
               // Banner reklam
               if (_bannerAdLoaded && _bannerAd != null)
-                Container(
+                SizedBox(
                   width: _bannerAd!.size.width.toDouble(),
                   height: _bannerAd!.size.height.toDouble(),
                   child: AdWidget(ad: _bannerAd!),

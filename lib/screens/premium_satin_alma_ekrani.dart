@@ -14,13 +14,11 @@ class PremiumSatinAlmaEkrani extends StatefulWidget {
 class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
   bool _isLoading = false;
   bool _isPurchasing = false;
-  PlanType _plan = PlanType.free; // Test için plan değişkeni
 
   @override
   void initState() {
     super.initState();
     _initializePremiumService();
-    _loadPlanStatus(); // Plan durumunu yükle
   }
 
   Future<void> _initializePremiumService() async {
@@ -43,13 +41,6 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
       if (mounted) {
         setState(() => _isLoading = false);
       }
-    }
-  }
-
-  Future<void> _loadPlanStatus() async {
-    final plan = await PlanManager.getPlan();
-    if (mounted) {
-      setState(() => _plan = plan);
     }
   }
 
@@ -173,9 +164,12 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
             duration: Duration(seconds: 2),
           ),
         );
+      }
 
-        // Kısa bir gecikme sonrası geri dön
-        await Future.delayed(const Duration(milliseconds: 500));
+      // Kısa bir gecikme sonrası geri dön (bu arada widget unmount olmuş
+      // olabileceği için context'i kullanmadan önce mounted'ı tekrar kontrol ediyoruz)
+      await Future.delayed(const Duration(milliseconds: 500));
+      if (mounted) {
         Navigator.of(context).pop(true);
       }
     } catch (e) {
@@ -417,119 +411,14 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
           const SizedBox(height: 16),
           
           Text(
-            '₺40,00',
+            price,
             style: GoogleFonts.poppins(
               fontSize: 24,
               fontWeight: FontWeight.w800,
               color: Colors.white,
             ),
           ),
-          
-          Text(
-            'Tek seferlik ödeme',
-            style: GoogleFonts.poppins(
-              fontSize: 12,
-              color: Colors.white.withValues(alpha: 0.7),
-            ),
-          ),
-          
-          const SizedBox(height: 20),
-          
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: _isPurchasing ? null : () => hasRealProduct ? _purchasePremium(product!) : _showTestModeWarning(),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: const Color(0xFF6A1B9A),
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                elevation: 8,
-              ),
-              child: _isPurchasing
-                  ? const SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 2,
-                        valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF6A1B9A)),
-                      ),
-                    )
-                  : Text(
-                      'Satın Al',
-                      style: GoogleFonts.poppins(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
-  // Test için satın alma seçeneği
-  Widget _buildTestPurchaseOption() {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.white, width: 2),
-        borderRadius: BorderRadius.circular(16),
-        color: Colors.white.withValues(alpha: 0.15),
-      ),
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-            decoration: BoxDecoration(
-              color: const Color(0xFF6A1B9A),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Text(
-              'ÖNERİLEN',
-              style: GoogleFonts.poppins(
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          
-          const SizedBox(height: 12),
-          
-          Text(
-            'Ömür Boyu Premium',
-            style: GoogleFonts.poppins(
-              fontSize: 18,
-              fontWeight: FontWeight.w700,
-              color: Colors.white,
-            ),
-          ),
-          
-          const SizedBox(height: 8),
-          
-          Text(
-            'Tek seferlik ödeme, süresiz erişim',
-            style: GoogleFonts.poppins(
-              fontSize: 14,
-              color: Colors.white.withValues(alpha: 0.7),
-            ),
-          ),
-          
-          const SizedBox(height: 16),
-          
-          Text(
-            '₺40,00',
-            style: GoogleFonts.poppins(
-              fontSize: 24,
-              fontWeight: FontWeight.w800,
-              color: Colors.white,
-            ),
-          ),
-          
           Text(
             'Tek seferlik ödeme',
             style: GoogleFonts.poppins(
@@ -537,13 +426,13 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
               color: Colors.white.withValues(alpha: 0.7),
             ),
           ),
-          
+
           const SizedBox(height: 20),
-          
+
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: _isPurchasing ? null : () => _activatePremiumForTesting(),
+              onPressed: _isPurchasing ? null : () => hasRealProduct ? _purchasePremium(product) : _showTestModeWarning(),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
                 foregroundColor: const Color(0xFF6A1B9A),

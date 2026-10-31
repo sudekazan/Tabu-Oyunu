@@ -83,8 +83,8 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
 
   @override
   Widget build(BuildContext context) {
-    final Size _screenSize = MediaQuery.of(context).size;
-    final bool _isCompact = _screenSize.height < 720;
+    final Size screenSize = MediaQuery.of(context).size;
+    final bool isCompact = screenSize.height < 720;
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -127,7 +127,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                 children: [
                   // Banner reklam
                   if (_bannerAdLoaded && _bannerAd != null)
-                    Container(
+                    SizedBox(
                       width: _bannerAd!.size.width.toDouble(),
                       height: _bannerAd!.size.height.toDouble(),
                       child: AdWidget(ad: _bannerAd!),
@@ -164,7 +164,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                         Flexible(
                           child: Container(
                             margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                            padding: EdgeInsets.all(_isCompact ? 8 : 12),
+                            padding: EdgeInsets.all(isCompact ? 8 : 12),
                             decoration: BoxDecoration(
                               color: Colors.white.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(24),
@@ -179,26 +179,26 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                   children: [
                                     Icon(
                                       beraberlik ? Icons.handshake : Icons.emoji_events,
-                                      size: _isCompact ? 48 : 56,
+                                      size: isCompact ? 48 : 56,
                                       color: Colors.yellow[400],
                                     ),
-                                    SizedBox(height: _isCompact ? 4 : 6),
+                                    SizedBox(height: isCompact ? 4 : 6),
                                     Text(
                                       beraberlik ? 'BERABERLİK!' : 'TEBRİKLER!',
                                       textAlign: TextAlign.center,
                                       style: GoogleFonts.poppins(
-                                        fontSize: _isCompact ? 18 : 22,
+                                        fontSize: isCompact ? 18 : 22,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,
                                         letterSpacing: 1.1,
                                       ),
                                     ),
-                                    SizedBox(height: _isCompact ? 4 : 6),
+                                    SizedBox(height: isCompact ? 4 : 6),
                                     Text(
                                       beraberlik ? 'Harika bir oyun oldu!' : '$kazananTakim kazandı!',
                                       textAlign: TextAlign.center,
                                       style: GoogleFonts.poppins(
-                                        fontSize: _isCompact ? 12 : 14,
+                                        fontSize: isCompact ? 12 : 14,
                                         color: Colors.white.withValues(alpha: 0.9),
                                         height: 1.2,
                                         fontWeight: FontWeight.w500,
@@ -230,7 +230,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                             child: Column(
                               children: [
                                 Container(
-                                  padding: EdgeInsets.all(_isCompact ? 12 : 14),
+                                  padding: EdgeInsets.all(isCompact ? 12 : 14),
                                   decoration: BoxDecoration(
                                     color: const Color(0xFF6A1B9A).withValues(alpha: 0.08),
                                     borderRadius: const BorderRadius.only(
@@ -241,12 +241,12 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(Icons.leaderboard, color: const Color(0xFF6A1B9A), size: _isCompact ? 18 : 20),
-                                      SizedBox(width: _isCompact ? 6 : 8),
+                                      Icon(Icons.leaderboard, color: const Color(0xFF6A1B9A), size: isCompact ? 18 : 20),
+                                      SizedBox(width: isCompact ? 6 : 8),
                                       Text(
                                         'Final Skorları',
                                         style: GoogleFonts.poppins(
-                                          fontSize: _isCompact ? 18 : 19,
+                                          fontSize: isCompact ? 18 : 19,
                                           fontWeight: FontWeight.bold,
                                           color: const Color(0xFF6A1B9A),
                                         ),
@@ -256,7 +256,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                 ),
                                 Expanded(
                                    child: Padding(
-                                    padding: EdgeInsets.all(_isCompact ? 10 : 12),
+                                    padding: EdgeInsets.all(isCompact ? 10 : 12),
                                      child: Column(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                        children: [
@@ -265,19 +265,19 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                            widget.takim1Skor,
                                            widget.takim1Skor > widget.takim2Skor,
                                            const Color(0xFF6A1B9A),
-                                           compact: _isCompact,
+                                           compact: isCompact,
                                          ),
-                                        SizedBox(height: _isCompact ? 6 : 8),
+                                        SizedBox(height: isCompact ? 6 : 8),
                                         _buildSkorKarti(
                                            widget.takim2Adi,
                                            widget.takim2Skor,
                                            widget.takim2Skor > widget.takim1Skor,
                                            const Color(0xFFFF7043),
-                                           compact: _isCompact,
+                                           compact: isCompact,
                                          ),
-                                        SizedBox(height: _isCompact ? 6 : 8),
+                                        SizedBox(height: isCompact ? 6 : 8),
                                         Container(
-                                          padding: EdgeInsets.symmetric(horizontal: _isCompact ? 10 : 12, vertical: _isCompact ? 8 : 10),
+                                          padding: EdgeInsets.symmetric(horizontal: isCompact ? 10 : 12, vertical: isCompact ? 8 : 10),
                                            decoration: BoxDecoration(
                                              color: Colors.grey[100],
                                              borderRadius: BorderRadius.circular(16),
@@ -286,12 +286,12 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                            child: Row(
                                              mainAxisAlignment: MainAxisAlignment.center,
                                              children: [
-                                              Icon(Icons.star, color: Colors.amber[600], size: _isCompact ? 16 : 18),
-                                              SizedBox(width: _isCompact ? 6 : 8),
+                                              Icon(Icons.star, color: Colors.amber[600], size: isCompact ? 16 : 18),
+                                              SizedBox(width: isCompact ? 6 : 8),
                                                Text(
                                                  'Toplam Puan: ${widget.takim1Skor + widget.takim2Skor}',
                                                  style: GoogleFonts.poppins(
-                                                  fontSize: _isCompact ? 13 : 14,
+                                                  fontSize: isCompact ? 13 : 14,
                                                    fontWeight: FontWeight.w600,
                                                    color: Colors.grey[700],
                                                  ),
@@ -313,7 +313,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                   
                   // Alt Butonlar
                   Container(
-                    padding: EdgeInsets.all(_isCompact ? 18 : 24),
+                    padding: EdgeInsets.all(isCompact ? 18 : 24),
                     child: Row(
                       children: [
                         // Yeniden Oyna
@@ -342,7 +342,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                               foregroundColor: const Color(0xFF6A1B9A),
                               elevation: 8,
                               shadowColor: Colors.black26,
-                              padding: EdgeInsets.symmetric(vertical: _isCompact ? 12 : 16),
+                              padding: EdgeInsets.symmetric(vertical: isCompact ? 12 : 16),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -352,7 +352,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                 Text(
                                   'YENİDEN OYNA',
                                   style: GoogleFonts.poppins(
-                                    fontSize: _isCompact ? 15 : 16,
+                                    fontSize: isCompact ? 15 : 16,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -389,7 +389,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                               foregroundColor: Colors.white,
                               elevation: 8,
                               shadowColor: Colors.red[400]!.withValues(alpha: 0.4),
-                              padding: EdgeInsets.symmetric(vertical: _isCompact ? 12 : 16),
+                              padding: EdgeInsets.symmetric(vertical: isCompact ? 12 : 16),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -399,7 +399,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                 Text(
                                   'ÇIKIŞ',
                                   style: GoogleFonts.poppins(
-                                    fontSize: _isCompact ? 15 : 16,
+                                    fontSize: isCompact ? 15 : 16,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
