@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../core/app_theme.dart';
 import '../core/app_routes.dart';
+import '../core/game_engine.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'sonuc_sayfasi.dart';
@@ -38,49 +39,52 @@ class OyunSayfasi extends StatefulWidget {
 class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin {
   Timer? _timer;
   late int _kalanSure;
-  late int _aktifTakimIndex;
-  late int _takim1Skor;
-  late int _takim2Skor;
-  late int _takim1ToplamSkor;
-  late int _takim2ToplamSkor;
-  late int _kalanPasHakki;
   late bool _oyunAktif;
-  final List<String> _turDogruKelimeler = [];
-  final List<String> _turPasKelimeler = [];
-  final Set<int> _kullanilanIndeksler = {};
+
+  // Skor, kelime döngüsü ve pas hakkı mantığı artık GameEngine'de; bu sınıf
+  // sadece UI, zamanlayıcı, animasyon ve reklam/dialog orkestrasyonundan
+  // sorumlu. Aşağıdaki getter'lar build() ve diğer UI kodu hiç değişmeden
+  // çalışabilsin diye engine'e yönlendirme yapıyor.
+  late GameEngine _engine;
+  List<KelimeKarti> get _kartlar => _engine.kartlar;
+  int get _mevcutKelimeIndex => _engine.mevcutKelimeIndex;
+  int get _aktifTakimIndex => _engine.aktifTakimIndex;
+  int get _takim1Skor => _engine.takim1Skor;
+  int get _takim2Skor => _engine.takim2Skor;
+  int get _takim1ToplamSkor => _engine.takim1ToplamSkor;
+  int get _takim2ToplamSkor => _engine.takim2ToplamSkor;
+  int get _kalanPasHakki => _engine.kalanPasHakki;
+  List<String> get _turDogruKelimeler => _engine.turDogruKelimeler;
+  List<String> get _turPasKelimeler => _engine.turPasKelimeler;
+  Set<int> get _kullanilanIndeksler => _engine.kullanilanIndeksler;
+
   static const String _prefsUsedIndicesKey = 'kullanilan_indeksler';
   // Kelime listesi plan/kategoriye göre değiştiği için "kullanılmış kelime"
   // takibi de aynı kategoriye özel bir anahtar altında saklanmalı; aksi halde
   // kategori değiştirildiğinde eski index'ler yeni listeye yanlış eşleniyordu.
   String _kelimeKategoriKey = 'free_havuz';
   String get _usedIndicesPrefsKey => '$_prefsUsedIndicesKey:$_kelimeKategoriKey';
-  
+
   late AnimationController _pulseController;
   late AnimationController _shakeController;
-  
-  // Kelime havuzu (plan tipine göre Free/Premium)
-  List<KelimeKarti> _kartlar = const [];
-  
-  int _mevcutKelimeIndex = 0;
 
   @override
   void initState() {
     super.initState();
+    // Free kullanıcılar için sınırsız pas hakkı verilmesin
+    final int baslangicPasHakki = (widget.pasHakki >= 999999 && !_isPremiumUser) ? 3 : widget.pasHakki;
+    _engine = GameEngine(
+      takim1Adi: widget.takim1Adi,
+      takim2Adi: widget.takim2Adi,
+      oyunSuresi: widget.oyunSuresi,
+      bitisPuani: widget.bitisPuani,
+      baslangicPasHakki: baslangicPasHakki,
+    );
+
     // Kelimeleri plan tipine göre yükle
     _yukleKelimeler();
-    
+
     _kalanSure = widget.oyunSuresi;
-    _aktifTakimIndex = 0;
-    _takim1Skor = 0;
-    _takim2Skor = 0;
-    _takim1ToplamSkor = 0;
-    _takim2ToplamSkor = 0;
-          // Free kullanıcılar için sınırsız pas hakkı verilmesin
-      if (widget.pasHakki >= 999999 && !_isPremiumUser) {
-        _kalanPasHakki = 3; // Varsayılan pas hakkı
-      } else {
-        _kalanPasHakki = widget.pasHakki;
-      }
     _oyunAktif = false;
 
     // Yeni oyun başladığında pas hakkı reklamını sıfırla
@@ -155,8 +159,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
     await _yukleKullanilanIndeksler();
     if (mounted) {
       setState(() {
-        _kartlar = liste;
-        _mevcutKelimeIndex = 0;
+        _engine.kartlariDegistir(liste);
       });
     }
   }
@@ -173,9 +176,9 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
     }
     if (!mounted) return;
     setState(() {
-      _kullanilanIndeksler.clear();
-      _kullanilanIndeksler.addAll(loaded);
-      _mevcutKelimeIndex = 0;
+      _engine.kullanilanIndeksler.clear();
+      _engine.kullanilanIndeksler.addAll(loaded);
+      _engine.mevcutKelimeIndex = 0;
     });
   }
 
@@ -211,16 +214,14 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
   Future<void> _checkPlan() async {
     final PlanType plan = await PlanManager.getPlan();
     if (mounted) {
-              setState(() {
-          _isPremiumUser = plan == PlanType.premium;
-          
-          // Free kullanıcılar için sınırsız pas hakkı verilmesin
-          if (widget.pasHakki >= 999999 && plan == PlanType.free) {
-            _kalanPasHakki = 3; // Varsayılan pas hakkı
-          }
-          
-          // Plan değiştiğinde sadece premium kontrolü yap
-        });
+      setState(() {
+        _isPremiumUser = plan == PlanType.premium;
+
+        // Free kullanıcılar için sınırsız pas hakkı verilmesin
+        if (widget.pasHakki >= 999999 && plan == PlanType.free) {
+          _engine.kalanPasHakki = 3; // Varsayılan pas hakkı
+        }
+      });
     }
   }
   
@@ -254,9 +255,9 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
       _oyunAktif = true;
       _turDogruKelimeler.clear();
       _turPasKelimeler.clear();
+      // İlk kelimeyi kullanılmış olarak işaretle
+      _engine.ilkKelimeyiIsaretle();
     });
-    // İlk kelimeyi kullanılmış olarak işaretle
-    _kullanilanIndeksler.add(_mevcutKelimeIndex);
     _kaydetKullanilanIndeksler();
     _baslatTimer();
   }
@@ -322,27 +323,19 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
   }
 
   void _dogruCevap() {
+    // GameEngine.dogruCevapVer, bitiş puanının turun kendi skoruna değil
+    // oyun boyunca biriken toplam skora göre kontrol edilmesini sağlıyor;
+    // aksi halde oyun ancak bir takım tek bir turda bitiş puanına ulaşırsa
+    // sona ererdi.
+    bool oyunBitti = false;
     setState(() {
-      _turDogruKelimeler.add(_kartlar[_mevcutKelimeIndex].kelime);
-      if (_aktifTakimIndex == 0) {
-        _takim1Skor++;
-        _takim1ToplamSkor++; // Doğru cevap toplam skora anlık yansısın
-      } else {
-        _takim2Skor++;
-        _takim2ToplamSkor++; // Doğru cevap toplam skora anlık yansısın
-      }
-      
-      // Bitiş puanı, takımın o anki tur skoruna değil, oyun boyunca
-      // biriken toplam skoruna göre kontrol edilmeli; aksi halde oyun
-      // ancak bir takım tek bir turda bitiş puanına ulaşırsa sona eriyordu.
-      if (_takim1ToplamSkor >= widget.bitisPuani || _takim2ToplamSkor >= widget.bitisPuani) {
-        _oyunuBitir();
-        return;
-      }
-      
-      _sonrakiKelime();
+      oyunBitti = _engine.dogruCevapVer();
     });
-    
+    if (oyunBitti) {
+      _oyunuBitir();
+      return;
+    }
+    _kaydetKullanilanIndeksler();
     _pulseController.forward().then((_) => _pulseController.reset());
   }
 
@@ -362,19 +355,18 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
     // Premium kullanıcılar için sınırsız pas
     if (_isPremiumUser && _isUnlimitedPass) {
       setState(() {
-        _turPasKelimeler.add(_kartlar[_mevcutKelimeIndex].kelime);
-        _sonrakiKelime();
+        _engine.sinirsizPasKullan();
       });
+      _kaydetKullanilanIndeksler();
       return;
     }
 
-    if (_kalanPasHakki > 0) {
+    if (_engine.pasHakkiVarMi) {
       // Normal pas hakkı kullan
       setState(() {
-        _kalanPasHakki--;
-        _turPasKelimeler.add(_kartlar[_mevcutKelimeIndex].kelime);
-        _sonrakiKelime();
+        _engine.pasKullan();
       });
+      _kaydetKullanilanIndeksler();
       return;
     }
 
@@ -395,11 +387,10 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
     if (reklamIzlemekIstiyor != true || !mounted) return;
 
     setState(() {
-      _kalanPasHakki = 1; // 1 ekstra pas hakkı ver
       _reklamIzlenmeyiBekliyor = true; // Reklam izleme durumunu işaretle
-      _turPasKelimeler.add(_kartlar[_mevcutKelimeIndex].kelime);
-      _sonrakiKelime();
+      _engine.ekstraPasHakkiVer(); // 1 ekstra pas hakkı ver
     });
+    _kaydetKullanilanIndeksler();
   }
 
   // Pas hakkı bittiğinde ekstra pas için reklam izlemeyi onaylatan diyalog.
@@ -496,40 +487,10 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
 
   void _tabu() {
     setState(() {
-      if (_aktifTakimIndex == 0) {
-        _takim1Skor -= 1;
-        _takim1ToplamSkor -= 1; // Ceza toplam skora da yansısın
-      } else {
-        _takim2Skor -= 1;
-        _takim2ToplamSkor -= 1; // Ceza toplam skora da yansısın
-      }
-      _sonrakiKelime();
-    });
-    _shakeController.forward().then((_) => _shakeController.reset());
-  }
-
-  void _sonrakiKelime() async {
-    int nextIndex = _mevcutKelimeIndex;
-    bool found = false;
-    for (int i = 0; i < _kartlar.length; i++) {
-      nextIndex = (nextIndex + 1) % _kartlar.length;
-      if (!_kullanilanIndeksler.contains(nextIndex)) {
-        found = true;
-        break;
-      }
-    }
-    if (!found) {
-      // Tüm kelimeler en az bir kez kullanıldı; seti temizleyip sıradakine geç
-      _kullanilanIndeksler.clear();
-      await _kaydetKullanilanIndeksler();
-      nextIndex = (_mevcutKelimeIndex + 1) % _kartlar.length;
-    }
-    setState(() {
-      _mevcutKelimeIndex = nextIndex;
-      _kullanilanIndeksler.add(_mevcutKelimeIndex);
-      // Süre ve pas hakkı tur boyunca korunur; burada sıfırlama yapmayız.
+      _engine.tabuCezasiUygula();
     });
     _kaydetKullanilanIndeksler();
+    _shakeController.forward().then((_) => _shakeController.reset());
   }
 
   void _gosterTurSonuSheet() {
@@ -626,32 +587,22 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
   }
 
   void _sirayiDigerTakimaBaslat() {
-    // Biten turun skorunu ilgili takıma ekle ve skoru sıfırla
     setState(() {
-      // Toplam skor tur içinde anlık güncellendiği için sadece tur skorunu sıfırla
-      if (_aktifTakimIndex == 0) {
-        _takim1Skor = 0;
-      } else {
-        _takim2Skor = 0;
-      }
+      // Toplam skor tur içinde anlık güncellendiği için biten turun sadece
+      // tur skorunu sıfırla (aktif takım henüz değişmeden, yani biten takım
+      // için).
+      _engine.turSkorunuSifirla();
 
-      // Sırayı diğer takıma ver
-      _aktifTakimIndex = (_aktifTakimIndex + 1) % 2;
-
-      // Yeni turun ayarlarını sıfırla
+      // Yeni turun ayarlarını sıfırla; sırayı diğer takıma ver.
       _kalanSure = widget.oyunSuresi;
       // Free kullanıcılar için sınırsız pas hakkı verilmesin
-      if (widget.pasHakki >= 999999 && !_isPremiumUser) {
-        _kalanPasHakki = 3; // Varsayılan pas hakkı
-      } else {
-        _kalanPasHakki = widget.pasHakki;
-      }
-      _turDogruKelimeler.clear();
-      _turPasKelimeler.clear();
+      final int yeniPasHakki = (widget.pasHakki >= 999999 && !_isPremiumUser) ? 3 : widget.pasHakki;
+      _engine.yeniTurAyarlariniUygula(pasHakki: yeniPasHakki, sirayiDegistir: true);
 
       // Sonraki kelimeyle başla
-      _sonrakiKelime();
+      _engine.sonrakiKelime();
     });
+    _kaydetKullanilanIndeksler();
 
     // Yeni turu başlat
     _oyunuBaslat();
