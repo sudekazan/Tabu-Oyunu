@@ -1,0 +1,14 @@
+{
+  "@@locale": "tr",
+  "appTitle": "Tabu Oyunu",
+  "@appTitle": {
+    "description": "Giriş ekranındaki uygulama başlığı"
+  },
+  "planPremiumActive": "PREMIUM AKTİF",
+  "planFree": "ÜCRETSİZ PLAN",
+  "startGame": "OYUNA BAŞLA",
+  "goPremium": "PREMIUM'A GEÇ",
+  "testMode": "Test Modu",
+  "planFreeOption": "Free",
+  "planPremiumOption": "Premium"
+}

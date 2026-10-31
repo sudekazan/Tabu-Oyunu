@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../core/reklam_servisi.dart';
 import '../core/plan_manager.dart';
+import '../l10n/app_localizations.dart';
 
 class GirisEkraniSayfasi extends StatefulWidget {
   const GirisEkraniSayfasi({super.key});
@@ -105,6 +106,7 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -138,7 +140,7 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                         ),
                         const SizedBox(height: 16),
                         Text(
-                          'TABU OYUNU',
+                          l10n.appTitle.toUpperCase(),
                           style: GoogleFonts.poppins(
                             fontSize: 32,
                             fontWeight: FontWeight.bold,
@@ -163,9 +165,9 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                             ),
                           ),
                           child: Text(
-                            _currentPlan == PlanType.premium 
-                                ? 'PREMIUM AKTİF' 
-                                : 'ÜCRETSİZ PLAN',
+                            _currentPlan == PlanType.premium
+                                ? l10n.planPremiumActive
+                                : l10n.planFree,
                             style: GoogleFonts.poppins(
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
@@ -193,7 +195,7 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                               elevation: 8,
                             ),
                             child: Text(
-                              'OYUNA BAŞLA',
+                              l10n.startGame,
                               style: GoogleFonts.poppins(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
@@ -237,7 +239,7 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                                     const Icon(Icons.workspace_premium, size: 24),
                                     const SizedBox(width: 8),
                                     Text(
-                                      'PREMIUM\'A GEÇ',
+                                      l10n.goPremium,
                                       style: GoogleFonts.poppins(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
@@ -262,7 +264,7 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Test Modu',
+                                l10n.testMode,
                                 style: GoogleFonts.poppins(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
@@ -274,7 +276,7 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                                 children: [
                                   Expanded(
                                     child: ChoiceChip(
-                                      label: const Text('Free'),
+                                      label: Text(l10n.planFreeOption),
                                       selected: _currentPlan == PlanType.free,
                                       onSelected: (s) async {
                                         if (!s) return;
@@ -291,7 +293,7 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                                   const SizedBox(width: 12),
                                   Expanded(
                                     child: ChoiceChip(
-                                      label: const Text('Premium'),
+                                      label: Text(l10n.planPremiumOption),
                                       selected: _currentPlan == PlanType.premium,
                                       onSelected: (s) async {
                                         if (!s) return;

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'l10n/app_localizations.dart';
 import 'screens/giris_ekrani.dart';
 import 'screens/kategoriler_sayfasi.dart';
 import 'screens/ayarlar_screens.dart';
@@ -36,6 +38,16 @@ class TabuUygulamasi extends StatelessWidget {
         fontFamily: GoogleFonts.poppins().fontFamily,
         useMaterial3: true,
       ),
+      // Şu an sadece Türkçe destekleniyor, ama metinler artık sabit string
+      // olarak dosyalara serpilmek yerine lib/l10n/app_tr.arb'den geliyor;
+      // yeni bir dil eklemek tek bir .arb dosyası + çeviri kadar iş.
+      localizationsDelegates: const [
+        ...AppLocalizations.localizationsDelegates,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
       home: const GirisEkraniSayfasi(),
       // Argüman almayan ekranlar için isimli route tablosu. Hangi
       // ekranların doğrudan erişilebilir olduğu burada tek bakışta görülüyor.

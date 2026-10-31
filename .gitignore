@@ -27,6 +27,10 @@ migrate_working_dir/
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
+# `flutter gen-l10n` lib/l10n.yaml'daki arb-dir'e üretiyor; bu dosyalar
+# her build'de .arb kaynaklarından otomatik yeniden üretiliyor.
+lib/l10n/app_localizations.dart
+lib/l10n/app_localizations_*.dart
 .flutter-plugins
 .flutter-plugins-dependencies
 .pub-cache/
