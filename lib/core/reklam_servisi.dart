@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'plan_manager.dart';
@@ -138,5 +140,78 @@ class ReklamServisi {
   static Future<void> pasHakkiReklamSifirla() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(_pasHakkiKullanildiKey, false);
+  }
+
+  // Tam sayfa reklamı gösterir (varsa) ve bitince/gösterilemezse verilen
+  // devam fonksiyonunu çalıştırır. Premium kullanıcılarda ve reklam
+  // yüklenemediğinde doğrudan devam edilir. Oyun sonu ve ayarlar ekranındaki
+  // tekrar eden "reklamı göster, sonra devam et" bloklarını tek yerde toplar.
+  static Future<void> tamSayfaReklamGosterVeDevamEt(
+    Future<void> Function() devamEt,
+  ) async {
+    final plan = await PlanManager.getPlan();
+    if (plan == PlanType.premium) {
+      await devamEt();
+      return;
+    }
+
+    final InterstitialAd? ad = await createTamSayfaReklam();
+    if (ad == null) {
+      await devamEt();
+      return;
+    }
+
+    final Completer<void> tamamlandi = Completer<void>();
+    ad.fullScreenContentCallback = FullScreenContentCallback(
+      onAdDismissedFullScreenContent: (a) {
+        a.dispose();
+        if (!tamamlandi.isCompleted) tamamlandi.complete();
+      },
+      onAdFailedToShowFullScreenContent: (a, error) {
+        a.dispose();
+        if (!tamamlandi.isCompleted) tamamlandi.complete();
+      },
+    );
+    await ad.show();
+    await tamamlandi.future;
+    await devamEt();
+  }
+
+  // Pas hakkı için ödüllü reklam gösterir. Reklam sonuna kadar izlenip ödül
+  // kazanılırsa true, aksi halde (premium kullanıcı, reklam zaten bu turda
+  // kullanılmış, reklam yüklenemedi, kullanıcı erken kapattı) false döner.
+  static Future<bool> pasIcinOdulluReklamGoster() async {
+    final plan = await PlanManager.getPlan();
+    if (plan == PlanType.premium) return false;
+
+    final bool kullanildi = await pasHakkiReklamKullanildiMi();
+    if (kullanildi) return false;
+
+    final RewardedAd? rewardedAd = await createOdulluReklam();
+    if (rewardedAd == null) return false;
+
+    bool odulKazanildi = false;
+    final Completer<void> tamamlandi = Completer<void>();
+
+    rewardedAd.fullScreenContentCallback = FullScreenContentCallback(
+      onAdDismissedFullScreenContent: (ad) {
+        ad.dispose();
+        if (!tamamlandi.isCompleted) tamamlandi.complete();
+      },
+      onAdFailedToShowFullScreenContent: (ad, error) {
+        ad.dispose();
+        if (!tamamlandi.isCompleted) tamamlandi.complete();
+      },
+    );
+
+    await rewardedAd.show(
+      onUserEarnedReward: (ad, reward) {
+        odulKazanildi = true;
+        pasHakkiReklamKullanildi();
+      },
+    );
+
+    await tamamlandi.future;
+    return odulKazanildi;
   }
 }

@@ -12,7 +12,7 @@ void main() {
   testWidgets('Uygulama başlık ve butonu gösterir', (tester) async {
     await tester.pumpWidget(const TabuUygulamasi());
 
-    expect(find.text('Tabu'), findsWidgets);
-    expect(find.text('Oyuna Başla'), findsOneWidget);
+    expect(find.text('TABU OYUNU'), findsOneWidget);
+    expect(find.text('OYUNA BAŞLA'), findsOneWidget);
   });
 }

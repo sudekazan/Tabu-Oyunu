@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'oyun_sayfasi.dart';
-import '../core/plan.dart';
+import '../core/plan_manager.dart';
 import '../core/reklam_servisi.dart';
 
 class AyarlarEkrani extends StatefulWidget {
@@ -350,25 +349,9 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
 
   // Tam sayfa reklam göster ve oyunu başlat
   Future<void> _showTamSayfaReklamVeOyunuBaslat() async {
-    final interstitialAd = await ReklamServisi.createTamSayfaReklam();
-    
-    if (interstitialAd != null) {
-      interstitialAd.fullScreenContentCallback = FullScreenContentCallback(
-        onAdDismissedFullScreenContent: (ad) {
-          ad.dispose();
-          _oyunuBaslat();
-        },
-        onAdFailedToShowFullScreenContent: (ad, error) {
-          ad.dispose();
-          _oyunuBaslat();
-        },
-      );
-      
-      await interstitialAd.show();
-    } else {
-      // Premium kullanıcı veya reklam yüklenemezse direkt oyunu başlat
+    await ReklamServisi.tamSayfaReklamGosterVeDevamEt(() async {
       _oyunuBaslat();
-    }
+    });
   }
   
   // Oyunu başlat
@@ -520,7 +503,10 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
                   ),
                 ],
               ),
-              if (showUnlimitedSwitch && _plan == PlanType.premium)
+              // Free kullanıcılar bu satırı artık görür (kilitli halde); önceden
+              // satır tamamen gizleniyordu ve kullanıcı premium'da böyle bir
+              // özellik olduğunu hiç fark edemiyordu.
+              if (showUnlimitedSwitch)
                 Row(
                   children: [
                     Text(
@@ -530,14 +516,31 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
                         color: _plan == PlanType.premium ? Colors.grey[700] : Colors.grey[400]
                       )
                     ),
-                    Switch(
-                      value: _unlimitedPass,
-                      onChanged: _plan == PlanType.premium ? (v) async {
-                        setState(() => _unlimitedPass = v);
-                        await PlanManager.setUnlimitedPass(v);
-                      } : null,
-                      activeColor: _plan == PlanType.premium ? color : Colors.grey,
-                    ),
+                    if (_plan == PlanType.premium)
+                      Switch(
+                        value: _unlimitedPass,
+                        onChanged: (v) async {
+                          setState(() => _unlimitedPass = v);
+                          await PlanManager.setUnlimitedPass(v);
+                        },
+                        activeColor: color,
+                      )
+                    else
+                      GestureDetector(
+                        onTap: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Sınırsız pas sadece premium kullanıcılar için!'),
+                              backgroundColor: Colors.orange,
+                              duration: Duration(seconds: 3),
+                            ),
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          child: Icon(Icons.lock, size: _isSmall ? 18 : 20, color: Colors.grey[400]),
+                        ),
+                      ),
                   ],
                 ),
             ],
@@ -565,141 +568,6 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
     );
   }
 
-  // Kullanılmayan fonksiyon kaldırıldı
-  /*Widget _buildPickerCard<T>({
-    required String title,
-    required String subtitle,
-    required List<T> items,
-    required T currentValue,
-    required ValueChanged<int> onSelectedItemChanged,
-  }) {
-    final int initialIndex = items.indexOf(currentValue);
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(_isSmall ? 14 : 16),
-        border: Border.all(color: const Color(0xFF6A1B9A).withValues(alpha: 0.18)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: _isSmall ? 10 : 14,
-            spreadRadius: 1,
-            offset: Offset(0, _isSmall ? 4 : 6),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(_isSmall ? 12 : 16, 12, _isSmall ? 12 : 16, 6),
-            child: Row(
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.poppins(
-                    fontSize: _labelFs,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xFF6A1B9A),
-                  ),
-                ),
-                SizedBox(width: _isSmall ? 6 : 8),
-                Text(
-                  '($subtitle)',
-                  style: GoogleFonts.poppins(
-                    fontSize: _isSmall ? 12 : 14,
-                    color: Colors.grey[600],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: _isSmall ? 132 : 152,
-            child: CupertinoPicker(
-              scrollController: FixedExtentScrollController(initialItem: initialIndex),
-              itemExtent: _isSmall ? 40 : 44,
-              magnification: 1.05,
-              useMagnifier: true,
-              onSelectedItemChanged: onSelectedItemChanged,
-              children: items
-                  .map((e) => Center(
-                        child: Text(
-                          '$e $subtitle',
-                          style: GoogleFonts.poppins(fontSize: _labelFs),
-                        ),
-                      ))
-                  .toList(),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDiscreteSliderCard({
-    required String title,
-    required String subtitle,
-    required List<int> items,
-    required int value,
-    required Color color,
-    required ValueChanged<int> onChanged,
-  }) {
-    final int index = items.indexOf(value).clamp(0, items.length - 1);
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.grey[50],
-        borderRadius: BorderRadius.circular(_isSmall ? 14 : 16),
-        border: Border.all(color: color.withValues(alpha: 0.15)),
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: 0.08),
-            blurRadius: _isSmall ? 6 : 8,
-            offset: Offset(0, _isSmall ? 3 : 4),
-          ),
-        ],
-      ),
-      child: Padding(
-        padding: EdgeInsets.all(_isSmall ? 12 : 14),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.poppins(
-                    fontSize: _labelFs,
-                    fontWeight: FontWeight.w600,
-                    color: color,
-                  ),
-                ),
-                SizedBox(width: _isSmall ? 6 : 8),
-                Text(
-                  '(${items[index]} $subtitle)',
-                  style: GoogleFonts.poppins(
-                    fontSize: _isSmall ? 12 : 14,
-                    color: Colors.grey[600],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: _isSmall ? 4 : 6),
-            Slider(
-              value: index.toDouble(),
-              min: 0,
-              max: (items.length - 1).toDouble(),
-              divisions: items.length - 1,
-              activeColor: color,
-              inactiveColor: color.withValues(alpha: 0.2),
-              label: '${items[index]} $subtitle',
-              onChanged: (d) => onChanged(items[d.round()]),
-            ),
-          ],
-        ),
-      ),
-    );
-  }*/
 }
 
 

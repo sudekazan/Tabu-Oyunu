@@ -313,8 +313,8 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                                         if (!s) return;
                                         await _changePlan(PlanType.premium);
                                       },
-                                      backgroundColor: Colors.white.withOpacity(0.1),
-                                      selectedColor: Colors.purple.withOpacity(0.3),
+                                      backgroundColor: Colors.white.withValues(alpha: 0.1),
+                                      selectedColor: Colors.purple.withValues(alpha: 0.3),
                                       labelStyle: GoogleFonts.poppins(
                                         color: _currentPlan == PlanType.premium ? Colors.purple : Colors.white,
                                         fontWeight: _currentPlan == PlanType.premium ? FontWeight.w600 : FontWeight.normal,

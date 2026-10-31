@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'sonuc_sayfasi.dart';
 import 'dart:async';
 import 'ayarlar_screens.dart';
 import '../data/kelimeler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../core/plan.dart';
+import '../core/plan_manager.dart';
 import '../core/reklam_servisi.dart';
 import '../data/free/free_kelimeler.dart';
 import '../data/premium/premium_kelimeler.dart';
@@ -48,6 +47,11 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
   final List<String> _turPasKelimeler = [];
   final Set<int> _kullanilanIndeksler = {};
   static const String _prefsUsedIndicesKey = 'kullanilan_indeksler';
+  // Kelime listesi plan/kategoriye göre değiştiği için "kullanılmış kelime"
+  // takibi de aynı kategoriye özel bir anahtar altında saklanmalı; aksi halde
+  // kategori değiştirildiğinde eski index'ler yeni listeye yanlış eşleniyordu.
+  String _kelimeKategoriKey = 'free_havuz';
+  String get _usedIndicesPrefsKey => '$_prefsUsedIndicesKey:$_kelimeKategoriKey';
   
   late AnimationController _pulseController;
   late AnimationController _shakeController;
@@ -76,8 +80,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
         _kalanPasHakki = widget.pasHakki;
       }
     _oyunAktif = false;
-    _yukleKullanilanIndeksler();
-    
+
     // Yeni oyun başladığında pas hakkı reklamını sıfırla
     ReklamServisi.pasHakkiReklamSifirla();
     
@@ -111,29 +114,43 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
   Future<void> _yukleKelimeler() async {
     final PlanType plan = await PlanManager.getPlan();
     List<KelimeKarti> liste;
+    String kategoriKey;
     if (plan == PlanType.premium) {
       final bool useFree = await PlanCategories.getUseFreeSelection();
       if (useFree) {
         final FreeKategori freeCat = await PlanCategories.getSelectedFreeCategory();
         if (freeCat == FreeKategori.cocuklar) {
           liste = karisikFreeCocuklar();
+          kategoriKey = 'free_cocuklar';
         } else {
           liste = karisikFreeKelimeler();
+          kategoriKey = 'free_havuz';
         }
       } else {
         final Set<PremiumKategori> selected = await PlanCategories.getSelectedPremiumCategories();
-        liste = selected.isNotEmpty
-            ? karisikPremiumKategorilerinden(selected)
-            : karisikPremiumHavuz(); // Premium havuz için sadece premium kelimeler
+        if (selected.isNotEmpty) {
+          liste = karisikPremiumKategorilerinden(selected);
+          final List<String> adlar = selected.map((k) => k.toString()).toList()..sort();
+          kategoriKey = 'premium_${adlar.join('_')}';
+        } else {
+          liste = karisikPremiumHavuz(); // Premium havuz için sadece premium kelimeler
+          kategoriKey = 'premium_havuz';
+        }
       }
     } else {
       final FreeKategori freeCat = await PlanCategories.getSelectedFreeCategory();
       if (freeCat == FreeKategori.cocuklar) {
         liste = karisikFreeCocuklar();
+        kategoriKey = 'free_cocuklar';
       } else {
         liste = karisikFreeKelimeler();
+        kategoriKey = 'free_havuz';
       }
     }
+    _kelimeKategoriKey = kategoriKey;
+    // Kullanılmış kelime indeksleri kategoriye özel olduğu için kelime listesiyle
+    // birlikte yüklenmeli; aksi halde farklı kategorilerin indeksleri karışır.
+    await _yukleKullanilanIndeksler();
     if (mounted) {
       setState(() {
         _kartlar = liste;
@@ -144,7 +161,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
 
   Future<void> _yukleKullanilanIndeksler() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final List<String>? stored = prefs.getStringList(_prefsUsedIndicesKey);
+    final List<String>? stored = prefs.getStringList(_usedIndicesPrefsKey);
     final Set<int> loaded = {};
     if (stored != null) {
       for (final String s in stored) {
@@ -152,6 +169,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
         if (val != null) loaded.add(val);
       }
     }
+    if (!mounted) return;
     setState(() {
       _kullanilanIndeksler.clear();
       _kullanilanIndeksler.addAll(loaded);
@@ -162,7 +180,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
   Future<void> _kaydetKullanilanIndeksler() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setStringList(
-      _prefsUsedIndicesKey,
+      _usedIndicesPrefsKey,
       _kullanilanIndeksler.map((e) => e.toString()).toList(),
     );
   }
@@ -173,18 +191,12 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
   double get _screenHeight => _screenSize.height;
   bool get _isSmallScreen => _screenWidth < 360;
   bool get _isMediumScreen => _screenWidth >= 360 && _screenWidth < 600;
-  bool get _isLargeScreen => _screenWidth >= 600;
-  
+
   // Responsive padding ve margin değerleri
   EdgeInsets get _responsivePadding => EdgeInsets.symmetric(
     horizontal: _isSmallScreen ? 12.0 : _isMediumScreen ? 16.0 : 20.0,
     vertical: _isSmallScreen ? 8.0 : _isMediumScreen ? 12.0 : 16.0,
   );
-  
-  // Responsive font boyutları
-  double get _titleFontSize => _isSmallScreen ? 16.0 : _isMediumScreen ? 18.0 : 20.0;
-  double get _subtitleFontSize => _isSmallScreen ? 14.0 : _isMediumScreen ? 16.0 : 18.0;
-  double get _bodyFontSize => _isSmallScreen ? 12.0 : _isMediumScreen ? 14.0 : 16.0;
   bool get _isUnlimitedPass => widget.pasHakki >= 999999;
   
   // Plan kontrolü için ayrı bir değişken
@@ -287,29 +299,11 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
       _oyunAktif = false;
     });
     // Toplam skorlar tur içinde anlık güncellendiği için burada ekleme yapılmıyor
-    
-    // Free kullanıcılar için oyun bitiminde interstitial reklam göster
-    final plan = await PlanManager.getPlan();
-    if (plan == PlanType.free) {
-      final interstitialAd = await ReklamServisi.createTamSayfaReklam();
-      if (interstitialAd != null) {
-        interstitialAd.fullScreenContentCallback = FullScreenContentCallback(
-          onAdDismissedFullScreenContent: (ad) {
-            ad.dispose();
-            _navigateToResult();
-          },
-          onAdFailedToShowFullScreenContent: (ad, error) {
-            ad.dispose();
-            _navigateToResult();
-          },
-        );
-        await interstitialAd.show();
-      } else {
-        _navigateToResult();
-      }
-    } else {
+
+    // Free kullanıcılar için oyun bitiminde interstitial reklam göster, sonra sonuç ekranına geç
+    await ReklamServisi.tamSayfaReklamGosterVeDevamEt(() async {
       _navigateToResult();
-    }
+    });
   }
 
   void _navigateToResult() {
@@ -335,31 +329,6 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
     );
   }
 
-  // Yeni oyun için skorları sıfırla ve kelimeleri yeniden karıştır
-  void _yeniOyunBaslat() {
-    setState(() {
-      // Kelimeleri plan tipine göre yeniden yükle
-      
-      _takim1Skor = 0;
-      _takim2Skor = 0;
-      // Toplam skorları sıfırlama; önceki turların puanları korunsun
-      _aktifTakimIndex = 0;
-      _kalanSure = widget.oyunSuresi;
-      // Free kullanıcılar için sınırsız pas hakkı verilmesin
-      if (widget.pasHakki >= 999999 && !_isPremiumUser) {
-        _kalanPasHakki = 3; // Varsayılan pas hakkı
-      } else {
-        _kalanPasHakki = widget.pasHakki;
-      }
-      _oyunAktif = false;
-      _turDogruKelimeler.clear();
-      _turPasKelimeler.clear();
-      // Yeni oyunda da daha önce gelen kelimeleri koru
-      _mevcutKelimeIndex = 0;
-    });
-    _yukleKelimeler();
-  }
-
   void _dogruCevap() {
     setState(() {
       _turDogruKelimeler.add(_kartlar[_mevcutKelimeIndex].kelime);
@@ -382,7 +351,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
     _pulseController.forward().then((_) => _pulseController.reset());
   }
 
-  void _pas() {
+  void _pas() async {
     // Free kullanıcılar için sınırsız pas kontrolü
     if (_isUnlimitedPass && !_isPremiumUser) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -394,7 +363,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
       );
       return;
     }
-    
+
     // Premium kullanıcılar için sınırsız pas
     if (_isPremiumUser && _isUnlimitedPass) {
       setState(() {
@@ -403,7 +372,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
       });
       return;
     }
-    
+
     if (_kalanPasHakki > 0) {
       // Normal pas hakkı kullan
       setState(() {
@@ -411,92 +380,119 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
         _turPasKelimeler.add(_kartlar[_mevcutKelimeIndex].kelime);
         _sonrakiKelime();
       });
-    } else {
-      // Premium kullanıcılar için ödüllü reklam yok
-      if (_isPremiumUser) {
-        return;
-      }
-      
-      // Pas hakkı bitti, reklam izleme durumunu kontrol et
-      if (_reklamIzlenmeyiBekliyor) {
-        // Zaten reklam izleme bekleniyor, hiçbir şey yapma
-        return;
-      }
-      
-      // İlk kez ekstra pas hakkı isteniyor
-      setState(() {
-        _kalanPasHakki = 1; // 1 ekstra pas hakkı ver
-        _reklamIzlenmeyiBekliyor = true; // Reklam izleme durumunu işaretle
-        _turPasKelimeler.add(_kartlar[_mevcutKelimeIndex].kelime);
-        _sonrakiKelime();
-      });
+      return;
     }
+
+    // Premium kullanıcılar için ödüllü reklam yok
+    if (_isPremiumUser) {
+      return;
+    }
+
+    // Pas hakkı bitti, reklam izleme durumunu kontrol et
+    if (_reklamIzlenmeyiBekliyor) {
+      // Zaten reklam izleme bekleniyor, hiçbir şey yapma
+      return;
+    }
+
+    // İlk kez ekstra pas hakkı isteniyor: butona basınca sürpriz bir şekilde
+    // reklam moduna geçmek yerine önce kullanıcıya ne olacağını açıklayalım.
+    final bool? reklamIzlemekIstiyor = await _showEkstraPasOnayi();
+    if (reklamIzlemekIstiyor != true || !mounted) return;
+
+    setState(() {
+      _kalanPasHakki = 1; // 1 ekstra pas hakkı ver
+      _reklamIzlenmeyiBekliyor = true; // Reklam izleme durumunu işaretle
+      _turPasKelimeler.add(_kartlar[_mevcutKelimeIndex].kelime);
+      _sonrakiKelime();
+    });
+  }
+
+  // Pas hakkı bittiğinde ekstra pas için reklam izlemeyi onaylatan diyalog.
+  // Reklamın kendisi turun sonunda gösterilir; burada sadece kullanıcıyı
+  // önceden bilgilendiriyoruz ("PAS +1" butonuna basınca aniden reklam
+  // moduna geçilmesi kafa karıştırıcıydı).
+  Future<bool?> _showEkstraPasOnayi() {
+    return showDialog<bool>(
+      context: context,
+      builder: (context) => Dialog(
+        backgroundColor: Colors.transparent,
+        child: Container(
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Color(0xFF6A1B9A), Color(0xFFFF7043)],
+            ),
+            borderRadius: BorderRadius.circular(24),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.2),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.play_circle, color: Colors.white, size: 32),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                'Pas hakkın bitti',
+                style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 12),
+              Text(
+                'Bu tur sonunda kısa bir reklam izleyerek 1 ekstra pas hakkı kazanabilirsin.',
+                style: GoogleFonts.poppins(fontSize: 15, color: Colors.white.withValues(alpha: 0.9)),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 24),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextButton(
+                      onPressed: () => Navigator.pop(context, false),
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          side: const BorderSide(color: Colors.white, width: 1.5),
+                        ),
+                      ),
+                      child: Text('Vazgeç', style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.w600)),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () => Navigator.pop(context, true),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: const Color(0xFF6A1B9A),
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      ),
+                      child: Text('Reklamı İzle', style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
   
   // Ödüllü reklam göster
   Future<void> _showOdulluReklam() async {
-    // Premium kullanıcılar için ödüllü reklam yok
-    if (_isPremiumUser) {
-      setState(() {
-        _reklamIzlenmeyiBekliyor = false;
-      });
-      return;
-    }
-    
-    // Daha önce reklam izlenip izlenmediğini kontrol et
-    final reklamKullanildi = await ReklamServisi.pasHakkiReklamKullanildiMi();
-    
-    if (reklamKullanildi) {
-      // Reklam zaten kullanılmış, reklam izleme durumunu sıfırla
-      setState(() {
-        _reklamIzlenmeyiBekliyor = false;
-      });
-      return;
-    }
-    
-    // Ödüllü reklam yükle
-    final rewardedAd = await ReklamServisi.createOdulluReklam();
-    
-    if (rewardedAd != null) {
-      rewardedAd.fullScreenContentCallback = FullScreenContentCallback(
-        onAdDismissedFullScreenContent: (ad) {
-          ad.dispose();
-        },
-        onAdFailedToShowFullScreenContent: (ad, error) {
-          ad.dispose();
-          // Reklam gösterilemezse reklam izleme durumunu sıfırla
-          setState(() {
-            _reklamIzlenmeyiBekliyor = false;
-          });
-        },
-      );
-      
-      // Reklam callback'lerini ayarla
-      rewardedAd.fullScreenContentCallback = FullScreenContentCallback(
-        onAdDismissedFullScreenContent: (ad) {
-          ad.dispose();
-        },
-        onAdFailedToShowFullScreenContent: (ad, error) {
-          ad.dispose();
-        },
-      );
-      
-      // Ödül callback'ini ayarla - güncel SDK'da onUserEarnedReward parametresi kullanılıyor
-      await rewardedAd.show(
-        onUserEarnedReward: (ad, reward) {
-          setState(() {
-            _reklamIzlenmeyiBekliyor = false; // Reklam izleme durumunu sıfırla
-            // Ekstra pas hakkı zaten verilmiş, burada tekrar verilmez
-          });
-          
-          // Reklam kullanıldı olarak işaretle
-          ReklamServisi.pasHakkiReklamKullanildi();
-          
-          ad.dispose();
-        },
-      );
-    } else {
-      // Reklam yüklenemezse reklam izleme durumunu sıfırla
+    // Ekstra pas hakkı zaten _pas() içinde verilmişti; burada sadece reklamı
+    // gösterip "reklam izleme bekleniyor" bayrağını kapatıyoruz.
+    await ReklamServisi.pasIcinOdulluReklamGoster();
+    if (mounted) {
       setState(() {
         _reklamIzlenmeyiBekliyor = false;
       });
@@ -541,26 +537,8 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
     _kaydetKullanilanIndeksler();
   }
 
-  void _takimDegistir() {
-    setState(() {
-      _aktifTakimIndex = (_aktifTakimIndex + 1) % 2;
-      _kalanSure = widget.oyunSuresi;
-      // Free kullanıcılar için sınırsız pas hakkı verilmesin
-      if (widget.pasHakki >= 999999 && !_isPremiumUser) {
-        _kalanPasHakki = 3; // Varsayılan pas hakkı
-      } else {
-        _kalanPasHakki = widget.pasHakki;
-      }
-      _turDogruKelimeler.clear();
-      _turPasKelimeler.clear();
-      // Takım değiştiğinde kelimeyi de değiştir
-      _sonrakiKelime();
-    });
-  }
-
   void _gosterTurSonuSheet() {
     final String oynayanTakim = _aktifTakimIndex == 0 ? widget.takim1Adi : widget.takim2Adi;
-    final String digerTakim = _aktifTakimIndex == 0 ? widget.takim2Adi : widget.takim1Adi;
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -721,7 +699,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
               borderRadius: BorderRadius.circular(24),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
+                  color: Colors.black.withValues(alpha: 0.3),
                   blurRadius: 20,
                   offset: const Offset(0, 10),
                 ),
@@ -734,7 +712,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white.withValues(alpha: 0.2),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
@@ -762,7 +740,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                   'Oyun devam ediyor. Çıkarsanız mevcut tur sonlanacak.',
                   style: GoogleFonts.poppins(
                     fontSize: 16,
-                    color: Colors.white.withOpacity(0.9),
+                    color: Colors.white.withValues(alpha: 0.9),
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -845,8 +823,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
 
     final aktifTakimAdi = _aktifTakimIndex == 0 ? widget.takim1Adi : widget.takim2Adi;
     final aktifTakimSkor = _aktifTakimIndex == 0 ? _takim1Skor : _takim2Skor;
-    final aktifTakimToplamSkor = _aktifTakimIndex == 0 ? _takim1ToplamSkor : _takim2ToplamSkor;
-    
+
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, result) async {
@@ -935,9 +912,9 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                           vertical: _isSmallScreen ? 6 : _isMediumScreen ? 8 : 10
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.2),
+                          color: Colors.white.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(_isSmallScreen ? 16 : 20),
-                          border: Border.all(color: Colors.white.withOpacity(0.3)),
+                          border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
                         ),
                         child: Row(
                           children: [
@@ -987,7 +964,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                             borderRadius: BorderRadius.circular(_isSmallScreen ? 20 : _isMediumScreen ? 24 : 28),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.15),
+                                color: Colors.black.withValues(alpha: 0.15),
                                 blurRadius: _isSmallScreen ? 20 : _isMediumScreen ? 24 : 28,
                                 offset: Offset(0, _isSmallScreen ? 8 : _isMediumScreen ? 10 : 12),
                               ),
@@ -1001,18 +978,31 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                               Padding(
                                 padding: EdgeInsets.only(top: _isSmallScreen ? 2 : _isMediumScreen ? 3 : 4),
                                 child: Center(
-                                  child: FittedBox(
-                                    fit: BoxFit.scaleDown,
-                                    child: Text(
-                                      _kartlar[_mevcutKelimeIndex].kelime,
-                                      key: ValueKey(_mevcutKelimeIndex),
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.poppins(
-                                        fontSize: _getKelimeFontSize(_kartlar[_mevcutKelimeIndex].kelime),
-                                        fontWeight: FontWeight.bold,
-                                        color: const Color(0xFF6A1B9A),
-                                      ),
-                                    ),
+                                  child: LayoutBuilder(
+                                    builder: (context, constraints) {
+                                      // Uzun kelimeler (örn. "Beyin Omurilik Sıvısı") tek satıra
+                                      // sıkıştırılınca FittedBox fontu aşırı küçültüyordu. Metni
+                                      // önce mevcut genişlikte 2 satıra sarmasına izin veriyoruz,
+                                      // FittedBox da ortaya çıkan bloğu gerektiği kadar ölçekliyor.
+                                      return FittedBox(
+                                        fit: BoxFit.scaleDown,
+                                        child: SizedBox(
+                                          width: constraints.maxWidth,
+                                          child: Text(
+                                            _kartlar[_mevcutKelimeIndex].kelime,
+                                            key: ValueKey(_mevcutKelimeIndex),
+                                            textAlign: TextAlign.center,
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: GoogleFonts.poppins(
+                                              fontSize: _getKelimeFontSize(_kartlar[_mevcutKelimeIndex].kelime),
+                                              fontWeight: FontWeight.bold,
+                                              color: const Color(0xFF6A1B9A),
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
                                   ),
                                 ),
                               ),
@@ -1039,7 +1029,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                                               ),
                                               boxShadow: [
                                                 BoxShadow(
-                                                  color: Colors.red.shade700.withOpacity(0.2),
+                                                  color: Colors.red.shade700.withValues(alpha: 0.2),
                                                   blurRadius: 6,
                                                   offset: const Offset(0, 3),
                                                 ),
@@ -1097,7 +1087,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                             colors: (_kalanPasHakki > 0 && !_reklamIzlenmeyiBekliyor)
                               ? [const Color(0xFFFFA726), const Color(0xFFF57C00)]
                               : _reklamIzlenmeyiBekliyor 
-                                ? [Colors.grey.withOpacity(0.5), Colors.grey.withOpacity(0.3)]
+                                ? [Colors.grey.withValues(alpha: 0.5), Colors.grey.withValues(alpha: 0.3)]
                                 : [const Color(0xFF4CAF50), const Color(0xFF2E7D32)],
                             onPressed: (_oyunAktif && !_reklamIzlenmeyiBekliyor) ? _pas : null,
                           ),
@@ -1146,7 +1136,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
         vertical: _isSmallScreen ? 5 : _isMediumScreen ? 6 : 8
       ),
       decoration: BoxDecoration(
-        color: aktif ? Colors.white.withOpacity(0.3) : Colors.white.withOpacity(0.1),
+        color: aktif ? Colors.white.withValues(alpha: 0.3) : Colors.white.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(_isSmallScreen ? 18 : _isMediumScreen ? 20 : 22),
         border: aktif ? Border.all(color: Colors.white, width: _isSmallScreen ? 1.5 : 2) : null,
       ),
@@ -1175,7 +1165,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
             style: GoogleFonts.poppins(
               fontSize: _isSmallScreen ? 8 : _isMediumScreen ? 9 : 10,
               fontWeight: FontWeight.w500,
-              color: Colors.white.withOpacity(0.8),
+              color: Colors.white.withValues(alpha: 0.8),
             ),
           ),
         ],
@@ -1190,9 +1180,9 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
         vertical: _isSmallScreen ? 10 : _isMediumScreen ? 11 : 12
       ),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.white.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(_isSmallScreen ? 18 : _isMediumScreen ? 20 : 22),
-        border: Border.all(color: Colors.white.withOpacity(0.3)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [
@@ -1222,9 +1212,9 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
         vertical: _isSmallScreen ? 3 : _isMediumScreen ? 3.5 : 4
       ),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.18),
+        color: Colors.white.withValues(alpha: 0.18),
         borderRadius: BorderRadius.circular(_isSmallScreen ? 12 : _isMediumScreen ? 13 : 14),
-        border: Border.all(color: Colors.white.withOpacity(0.25)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.25)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -1262,7 +1252,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
           borderRadius: BorderRadius.circular(_isSmallScreen ? 14 : _isMediumScreen ? 15 : 16),
           boxShadow: [
             BoxShadow(
-              color: colors.last.withOpacity(0.35),
+              color: colors.last.withValues(alpha: 0.35),
               blurRadius: _isSmallScreen ? 14 : _isMediumScreen ? 15 : 16,
               offset: Offset(0, _isSmallScreen ? 6 : _isMediumScreen ? 7 : 8),
             ),

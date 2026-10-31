@@ -65,16 +65,19 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
     final secili = await PlanCategories.getSelectedPremiumCategories();
     final freeSel = await PlanCategories.getSelectedFreeCategory();
     if (mounted) {
+      final bool wasPremium = _plan == PlanType.premium;
       setState(() {
-        final wasPremium = _plan == PlanType.premium;
         _plan = plan;
         _seciliPremiumKategoriler = secili;
         _seciliFreeKategori = freeSel;
         _premiumTum = plan == PlanType.premium && secili.isEmpty;
       });
-      
+
       // Eğer premium durumu değiştiyse banner durumunu güncelle
-      if (_plan != plan) {
+      // (not: setState içinde _plan zaten güncellendiği için karşılaştırma
+      // güncellemeden önce alınan wasPremium ile yapılmalı, yoksa bu koşul
+      // hiçbir zaman tetiklenmezdi).
+      if (wasPremium != (plan == PlanType.premium)) {
         _loadBannerAd();
       }
     }
@@ -92,19 +95,6 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
     });
     await PlanCategories.setSelectedPremiumCategories(_seciliPremiumKategoriler);
     await PlanCategories.setUseFreeSelection(false);
-  }
-
-  Future<void> _toggleFreeKategori(FreeKategori k) async {
-    setState(() {
-      _seciliFreeKategori = k;
-      // Eğer kullanıcı premium değilse, premium seçimleri temizle
-      if (_plan != PlanType.premium) {
-        _seciliPremiumKategoriler.clear();
-      }
-      _premiumTum = false;
-    });
-    await PlanCategories.setSelectedFreeCategory(k);
-    await PlanCategories.setUseFreeSelection(true);
   }
 
   Future<void> _navigateToPremiumPage() async {
@@ -154,7 +144,6 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
 
     final EdgeInsets padAll = EdgeInsets.all(isSmall ? 12 : isMedium ? 16 : 24);
     final double titleFs = isSmall ? 20 : isMedium ? 22 : 24;
-    final double sectionTitleFs = isSmall ? 20 : isMedium ? 22 : 22;
     final double labelFs = isSmall ? 14 : isMedium ? 16 : 16;
 
     return Scaffold(
@@ -218,7 +207,7 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                     borderRadius: BorderRadius.circular(isSmall ? 18 : 24),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
+                        color: Colors.black.withValues(alpha: 0.1),
                         blurRadius: isSmall ? 14 : 20,
                         offset: Offset(0, isSmall ? 6 : 10),
                       ),
@@ -250,9 +239,9 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                             child: Container(
                             margin: const EdgeInsets.only(bottom: 6),
                             decoration: BoxDecoration(
-                              color: _seciliFreeKategori == FreeKategori.freeHavuz ? const Color(0xFF6A1B9A).withOpacity(0.06) : Colors.white,
+                              color: _seciliFreeKategori == FreeKategori.freeHavuz ? const Color(0xFF6A1B9A).withValues(alpha: 0.06) : Colors.white,
                               borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                              border: Border.all(color: _seciliFreeKategori == FreeKategori.freeHavuz ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withOpacity(0.12), width: 1.5),
+                              border: Border.all(color: _seciliFreeKategori == FreeKategori.freeHavuz ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withValues(alpha: 0.12), width: 1.5),
                             ),
                             child: ListTile(
                               contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -280,9 +269,9 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                             child: Container(
                             margin: const EdgeInsets.only(bottom: 6),
                             decoration: BoxDecoration(
-                              color: _seciliFreeKategori == FreeKategori.cocuklar ? const Color(0xFF6A1B9A).withOpacity(0.06) : Colors.white,
+                              color: _seciliFreeKategori == FreeKategori.cocuklar ? const Color(0xFF6A1B9A).withValues(alpha: 0.06) : Colors.white,
                               borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                              border: Border.all(color: _seciliFreeKategori == FreeKategori.cocuklar ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withOpacity(0.12), width: 1.5),
+                              border: Border.all(color: _seciliFreeKategori == FreeKategori.cocuklar ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withValues(alpha: 0.12), width: 1.5),
                             ),
                             child: ListTile(
                               contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -296,9 +285,9 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                           Container(
                             margin: const EdgeInsets.only(bottom: 6),
                             decoration: BoxDecoration(
-                              color: _premiumTum ? const Color(0xFF6A1B9A).withOpacity(0.06) : Colors.white,
+                              color: _premiumTum ? const Color(0xFF6A1B9A).withValues(alpha: 0.06) : Colors.white,
                               borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                              border: Border.all(color: _premiumTum ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withOpacity(0.12), width: 1.5),
+                              border: Border.all(color: _premiumTum ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withValues(alpha: 0.12), width: 1.5),
                             ),
                             child: ListTile(
                               contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -327,9 +316,9 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                           Container(
                             margin: const EdgeInsets.only(bottom: 6),
                             decoration: BoxDecoration(
-                              color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? const Color(0xFF6A1B9A).withOpacity(0.06) : Colors.white,
+                              color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? const Color(0xFF6A1B9A).withValues(alpha: 0.06) : Colors.white,
                               borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                              border: Border.all(color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withOpacity(0.12), width: 1.5),
+                              border: Border.all(color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withValues(alpha: 0.12), width: 1.5),
                             ),
                             child: ListTile(
                               contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -366,9 +355,9 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                             return Container(
                               margin: const EdgeInsets.only(bottom: 6),
                               decoration: BoxDecoration(
-                                color: secili ? const Color(0xFF6A1B9A).withOpacity(0.06) : Colors.white,
+                                color: secili ? const Color(0xFF6A1B9A).withValues(alpha: 0.06) : Colors.white,
                                 borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                                border: Border.all(color: secili ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withOpacity(0.12), width: 1.5),
+                                border: Border.all(color: secili ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withValues(alpha: 0.12), width: 1.5),
                               ),
                               child: ListTile(
                               contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -400,21 +389,36 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
         ]),
         child: SizedBox(
           height: isSmall ? 52 : 60,
-          child: ElevatedButton(
-            onPressed: _devamAktif
-                ? () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const AyarlarEkrani()),
-                    );
-                  }
-                : null,
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF6A1B9A),
-              foregroundColor: Colors.white,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(isSmall ? 12 : 14)),
+          child: Opacity(
+            // Buton gerçekten disable edilirse (onPressed: null) kullanıcı
+            // neden tıklayamadığını anlayamıyordu; bunun yerine görsel olarak
+            // soluklaştırıp tıklanabilir bırakıyoruz ki açıklayıcı bir uyarı
+            // verebilelim.
+            opacity: _devamAktif ? 1 : 0.5,
+            child: ElevatedButton(
+              onPressed: () {
+                if (!_devamAktif) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Devam etmek için önce bir kategori seçmelisin.'),
+                      backgroundColor: Colors.orange,
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                  return;
+                }
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AyarlarEkrani()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF6A1B9A),
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(isSmall ? 12 : 14)),
+              ),
+              child: Text('DEVAM', style: GoogleFonts.poppins(fontWeight: FontWeight.w700)),
             ),
-            child: Text('DEVAM', style: GoogleFonts.poppins(fontWeight: FontWeight.w700)),
           ),
         ),
       ),
