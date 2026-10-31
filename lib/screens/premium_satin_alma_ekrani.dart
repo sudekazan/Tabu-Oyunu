@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../core/app_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 import '../core/premium_satin_alma_servisi.dart';
@@ -189,16 +190,7 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xFF6A1B9A),
-              Color(0xFFFF7043),
-            ],
-          ),
-        ),
+        decoration: AppTheme.backgroundDecoration,
         child: Column(
           children: [
             AppBar(
@@ -374,7 +366,7 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
-                color: const Color(0xFF6A1B9A),
+                color: AppColors.primary,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
@@ -435,7 +427,7 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
               onPressed: _isPurchasing ? null : () => hasRealProduct ? _purchasePremium(product) : _showTestModeWarning(),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
-                foregroundColor: const Color(0xFF6A1B9A),
+                foregroundColor: AppColors.primary,
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -448,7 +440,7 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
                       width: 20,
                       child: CircularProgressIndicator(
                         strokeWidth: 2,
-                        valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF6A1B9A)),
+                        valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
                       ),
                     )
                   : Text(

@@ -2,144 +2,145 @@ import 'dart:async';
 import 'package:in_app_purchase/in_app_purchase.dart';
 import 'plan_manager.dart';
 
-class PremiumSatinAlmaServisi {
+/// [PremiumSatinAlmaServisi]'nin uyması gereken arayüz. Testlerde gerçek
+/// mağaza SDK'sını yüklemeden sahte bir implementasyon enjekte edebilmek
+/// için var.
+abstract class PremiumSatinAlmaServisiBase {
+  ProductDetails? get premiumLifetime;
+  bool get isAvailable;
+
+  Future<void> initialize();
+  Future<bool> purchasePremium(ProductDetails product);
+  Future<void> restorePurchases();
+  Future<bool> checkPremiumStatus();
+  void dispose();
+}
+
+/// Gerçek `in_app_purchase` tabanlı implementasyon.
+class InAppPurchasePremiumServisi implements PremiumSatinAlmaServisiBase {
   static const String _premiumProductId = 'tabu_premium_lifetime';
-  
-  static final InAppPurchase _inAppPurchase = InAppPurchase.instance;
-  static StreamSubscription<List<PurchaseDetails>>? _subscription;
-  
-  static bool _isAvailable = false;
-  static List<ProductDetails> _products = [];
-  
-  // Premium ürün bilgileri
-  static ProductDetails? get premiumLifetime {
+
+  final InAppPurchase _inAppPurchase = InAppPurchase.instance;
+  StreamSubscription<List<PurchaseDetails>>? _subscription;
+
+  bool _isAvailable = false;
+  List<ProductDetails> _products = [];
+
+  @override
+  ProductDetails? get premiumLifetime {
     try {
       return _products.firstWhere((product) => product.id == _premiumProductId);
     } catch (e) {
       return null;
     }
   }
-  
 
-  
-  static bool get isAvailable => _isAvailable;
-  
-  // Servisi başlat
-  static Future<void> initialize() async {
+  @override
+  bool get isAvailable => _isAvailable;
+
+  @override
+  Future<void> initialize() async {
     try {
       _isAvailable = await _inAppPurchase.isAvailable();
-      
+
       if (_isAvailable) {
-        // Ürünleri yükle
         await _loadProducts();
-        
-        // Satın alma dinleyicisini başlat
+
         _subscription = _inAppPurchase.purchaseStream.listen(
           _onPurchaseUpdate,
           onDone: () => _subscription?.cancel(),
-          onError: (error) {}, // Satın alma hatası
+          onError: (error) {},
         );
       }
     } catch (e) {
       // Premium servis başlatma hatası
     }
   }
-  
-  // Ürünleri yükle
-  static Future<void> _loadProducts() async {
+
+  Future<void> _loadProducts() async {
     try {
-      final Set<String> productIds = {
-        _premiumProductId,
-      };
-      
+      final Set<String> productIds = {_premiumProductId};
       final ProductDetailsResponse response = await _inAppPurchase.queryProductDetails(productIds);
-      
-      if (response.notFoundIDs.isNotEmpty) {
-        // Bulunamayan ürünler
-      }
-      
       _products = response.productDetails;
-      // Yüklenen ürünler
     } catch (e) {
       // Ürün yükleme hatası
     }
   }
-  
-  // Satın alma işlemi
-  static Future<bool> purchasePremium(ProductDetails product) async {
+
+  @override
+  Future<bool> purchasePremium(ProductDetails product) async {
     try {
-      if (!_isAvailable) {
-        // In-App Purchase servisi kullanılamıyor
-        return false;
-      }
-      
+      if (!_isAvailable) return false;
+
       final PurchaseParam purchaseParam = PurchaseParam(productDetails: product);
-      
-      final bool result = await _inAppPurchase.buyNonConsumable(purchaseParam: purchaseParam);
-      
-      return result;
+      return await _inAppPurchase.buyNonConsumable(purchaseParam: purchaseParam);
     } catch (e) {
-      // Satın alma hatası
       return false;
     }
   }
-  
-  // Satın alma güncellemelerini dinle
-  static void _onPurchaseUpdate(List<PurchaseDetails> purchaseDetailsList) {
+
+  void _onPurchaseUpdate(List<PurchaseDetails> purchaseDetailsList) {
     for (final PurchaseDetails purchaseDetails in purchaseDetailsList) {
-      if (purchaseDetails.status == PurchaseStatus.pending) {
-        // Beklemede
-        // Satın alma bekleniyor
-      } else if (purchaseDetails.status == PurchaseStatus.purchased ||
-                 purchaseDetails.status == PurchaseStatus.restored) {
-        // Başarılı satın alma
+      if (purchaseDetails.status == PurchaseStatus.purchased ||
+          purchaseDetails.status == PurchaseStatus.restored) {
         _handleSuccessfulPurchase(purchaseDetails);
-      } else if (purchaseDetails.status == PurchaseStatus.error) {
-        // Hata
-        // Satın alma hatası
       }
-      
+
       if (purchaseDetails.pendingCompletePurchase) {
         _inAppPurchase.completePurchase(purchaseDetails);
       }
     }
   }
-  
-  // Başarılı satın alma işlemi
-  static void _handleSuccessfulPurchase(PurchaseDetails purchaseDetails) async {
-    // Premium satın alındı
-    
-    // Premium planı aktifleştir
+
+  void _handleSuccessfulPurchase(PurchaseDetails purchaseDetails) async {
     await PlanManager.setPlan(PlanType.premium);
-    
-    // Sınırsız pas hakkını aktifleştir
     await PlanManager.setUnlimitedPass(true);
   }
-  
-  // Satın almaları geri yükle (App Store için)
-  static Future<void> restorePurchases() async {
+
+  @override
+  Future<void> restorePurchases() async {
     try {
       await _inAppPurchase.restorePurchases();
     } catch (e) {
       // Geri yükleme hatası
     }
   }
-  
-  // Servisi kapat
-  static void dispose() {
+
+  @override
+  void dispose() {
     _subscription?.cancel();
   }
-  
-  // Premium durumunu kontrol et
-  static Future<bool> checkPremiumStatus() async {
+
+  @override
+  Future<bool> checkPremiumStatus() async {
     try {
       // Şimdilik sadece mevcut plan durumunu kontrol et
       // Gerçek uygulamada bu kısım Google Play/App Store API'leri ile entegre edilecek
       final PlanType currentPlan = await PlanManager.getPlan();
       return currentPlan == PlanType.premium;
     } catch (e) {
-      // Premium durum kontrolü hatası
       return false;
     }
   }
+}
+
+/// Premium satın alma işlemleri için statik kolaylık cephesi (facade).
+///
+/// Çağrı noktaları önceden olduğu gibi `PremiumSatinAlmaServisi.initialize()`
+/// gibi statik metotları kullanmaya devam eder. Testlerde gerçek mağaza
+/// SDK'sını yüklemeden `PremiumSatinAlmaServisi.instance = SahteServis();`
+/// ile tüm davranış değiştirilebilir.
+class PremiumSatinAlmaServisi {
+  PremiumSatinAlmaServisi._();
+
+  static PremiumSatinAlmaServisiBase instance = InAppPurchasePremiumServisi();
+
+  static ProductDetails? get premiumLifetime => instance.premiumLifetime;
+  static bool get isAvailable => instance.isAvailable;
+
+  static Future<void> initialize() => instance.initialize();
+  static Future<bool> purchasePremium(ProductDetails product) => instance.purchasePremium(product);
+  static Future<void> restorePurchases() => instance.restorePurchases();
+  static Future<bool> checkPremiumStatus() => instance.checkPremiumStatus();
+  static void dispose() => instance.dispose();
 }

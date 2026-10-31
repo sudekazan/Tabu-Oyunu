@@ -4,7 +4,22 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'plan_manager.dart';
 
-class ReklamServisi {
+/// [ReklamServisi]'nin uyması gereken arayüz. Testlerde gerçek AdMob SDK'sını
+/// hiç yüklemeden sahte bir implementasyon enjekte edebilmek için var.
+abstract class ReklamServisiBase {
+  Future<void> initialize();
+  Future<BannerAd?> createBannerAd();
+  Future<InterstitialAd?> createTamSayfaReklam();
+  Future<RewardedAd?> createOdulluReklam();
+  Future<bool> pasHakkiReklamKullanildiMi();
+  Future<void> pasHakkiReklamKullanildi();
+  Future<void> pasHakkiReklamSifirla();
+  Future<void> tamSayfaReklamGosterVeDevamEt(Future<void> Function() devamEt);
+  Future<bool> pasIcinOdulluReklamGoster();
+}
+
+/// Gerçek AdMob tabanlı reklam servisi implementasyonu.
+class AdMobReklamServisi implements ReklamServisiBase {
   // ===== PRODUCTION MODU AKTİF =====
   // Test reklam ID'leri (yalnızca geliştirme aşamasında kullanılır)
   static const String _testBannerReklamId = 'ca-app-pub-3940256099942544/6300978111';
@@ -15,20 +30,20 @@ class ReklamServisi {
   static const String _bannerReklamId = 'ca-app-pub-2127302088980655/9402912295'; // Tabu Banner
   static const String _tamSayfaReklamId = 'ca-app-pub-2127302088980655/6385581301'; // Tabu Interstitial
   static const String _odulluReklamId = 'ca-app-pub-2127302088980655/9298970512'; // Tabu Rewarded
-  
+
   // PRODUCTION MODU AKTİF - Gerçek reklamlar kullanılacak
   static bool get _isDebugMode => false;
-  
-  static String get bannerReklamId => _isDebugMode ? _testBannerReklamId : _bannerReklamId;
-  static String get tamSayfaReklamId => _isDebugMode ? _testTamSayfaReklamId : _tamSayfaReklamId;
-  static String get odulluReklamId => _isDebugMode ? _testOdulluReklamId : _odulluReklamId;
-  
+
+  String get bannerReklamId => _isDebugMode ? _testBannerReklamId : _bannerReklamId;
+  String get tamSayfaReklamId => _isDebugMode ? _testTamSayfaReklamId : _tamSayfaReklamId;
+  String get odulluReklamId => _isDebugMode ? _testOdulluReklamId : _odulluReklamId;
+
   static const String _pasHakkiKullanildiKey = 'pas_hakki_reklam_kullanildi';
-  
-  static bool _initialized = false;
-  
-  // AdMob'u başlat (PRODUCTION MODU)
-  static Future<void> initialize() async {
+
+  bool _initialized = false;
+
+  @override
+  Future<void> initialize() async {
     if (_initialized) return;
 
     // PRODUCTION: Gerçek reklamlar için test cihazları listesi boş
@@ -39,10 +54,9 @@ class ReklamServisi {
     );
     _initialized = true;
   }
-  
-  // Banner reklam oluştur (PRODUCTION: ca-app-pub-2127302088980655/9402912295)
-  static Future<BannerAd?> createBannerAd() async {
-    // Premium kullanıcılar için reklam gösterme
+
+  @override
+  Future<BannerAd?> createBannerAd() async {
     final plan = await PlanManager.getPlan();
     if (plan == PlanType.premium) {
       return null; // Premium kullanıcılar için reklam yok
@@ -53,20 +67,15 @@ class ReklamServisi {
       size: AdSize.banner,
       request: const AdRequest(),
       listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          // Banner reklam başarıyla yüklendi (PRODUCTION)
-        },
         onAdFailedToLoad: (ad, error) {
-          // Banner reklam yüklenemedi (PRODUCTION)
           ad.dispose();
         },
       ),
     );
   }
-  
-  // Tam sayfa reklam oluştur (PRODUCTION: ca-app-pub-2127302088980655/6385581301)
-  static Future<InterstitialAd?> createTamSayfaReklam() async {
-    // Premium kullanıcılar için reklam gösterme
+
+  @override
+  Future<InterstitialAd?> createTamSayfaReklam() async {
     final plan = await PlanManager.getPlan();
     if (plan == PlanType.premium) {
       return null; // Premium kullanıcılar için reklam yok
@@ -80,23 +89,18 @@ class ReklamServisi {
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (ad) {
             interstitialAd = ad;
-            // Tam sayfa reklam başarıyla yüklendi (PRODUCTION)
           },
-          onAdFailedToLoad: (error) {
-            // Tam sayfa reklam yüklenemedi (PRODUCTION)
-          },
+          onAdFailedToLoad: (error) {},
         ),
       );
       return interstitialAd;
     } catch (e) {
-      // Tam sayfa reklam oluşturulamadı (PRODUCTION)
       return null;
     }
   }
-  
-  // Ödüllü reklam oluştur (PRODUCTION: ca-app-pub-2127302088980655/9298970512)
-  static Future<RewardedAd?> createOdulluReklam() async {
-    // Premium kullanıcılar için reklam gösterme
+
+  @override
+  Future<RewardedAd?> createOdulluReklam() async {
     final plan = await PlanManager.getPlan();
     if (plan == PlanType.premium) {
       return null; // Premium kullanıcılar için reklam yok
@@ -110,45 +114,36 @@ class ReklamServisi {
         rewardedAdLoadCallback: RewardedAdLoadCallback(
           onAdLoaded: (ad) {
             rewardedAd = ad;
-            // Ödüllü reklam başarıyla yüklendi (PRODUCTION)
           },
-          onAdFailedToLoad: (error) {
-            // Ödüllü reklam yüklenemedi (PRODUCTION)
-          },
+          onAdFailedToLoad: (error) {},
         ),
       );
       return rewardedAd;
     } catch (e) {
-      // Ödüllü reklam oluşturulamadı (PRODUCTION)
       return null;
     }
   }
-  
-  // Pas hakkı reklamı kullanıldı mı kontrol et
-  static Future<bool> pasHakkiReklamKullanildiMi() async {
+
+  @override
+  Future<bool> pasHakkiReklamKullanildiMi() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(_pasHakkiKullanildiKey) ?? false;
   }
-  
-  // Pas hakkı reklamı kullanıldı olarak işaretle
-  static Future<void> pasHakkiReklamKullanildi() async {
+
+  @override
+  Future<void> pasHakkiReklamKullanildi() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(_pasHakkiKullanildiKey, true);
   }
-  
-  // Pas hakkı reklamı sıfırla (yeni oyun için)
-  static Future<void> pasHakkiReklamSifirla() async {
+
+  @override
+  Future<void> pasHakkiReklamSifirla() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(_pasHakkiKullanildiKey, false);
   }
 
-  // Tam sayfa reklamı gösterir (varsa) ve bitince/gösterilemezse verilen
-  // devam fonksiyonunu çalıştırır. Premium kullanıcılarda ve reklam
-  // yüklenemediğinde doğrudan devam edilir. Oyun sonu ve ayarlar ekranındaki
-  // tekrar eden "reklamı göster, sonra devam et" bloklarını tek yerde toplar.
-  static Future<void> tamSayfaReklamGosterVeDevamEt(
-    Future<void> Function() devamEt,
-  ) async {
+  @override
+  Future<void> tamSayfaReklamGosterVeDevamEt(Future<void> Function() devamEt) async {
     final plan = await PlanManager.getPlan();
     if (plan == PlanType.premium) {
       await devamEt();
@@ -177,10 +172,8 @@ class ReklamServisi {
     await devamEt();
   }
 
-  // Pas hakkı için ödüllü reklam gösterir. Reklam sonuna kadar izlenip ödül
-  // kazanılırsa true, aksi halde (premium kullanıcı, reklam zaten bu turda
-  // kullanılmış, reklam yüklenemedi, kullanıcı erken kapattı) false döner.
-  static Future<bool> pasIcinOdulluReklamGoster() async {
+  @override
+  Future<bool> pasIcinOdulluReklamGoster() async {
     final plan = await PlanManager.getPlan();
     if (plan == PlanType.premium) return false;
 
@@ -214,4 +207,29 @@ class ReklamServisi {
     await tamamlandi.future;
     return odulKazanildi;
   }
+}
+
+/// Reklam işlemleri için statik kolaylık cephesi (facade).
+///
+/// Çağrı noktaları önceden olduğu gibi `ReklamServisi.createBannerAd()` gibi
+/// statik metotları kullanmaya devam eder. Testlerde gerçek AdMob SDK'sını
+/// yüklemeden `ReklamServisi.instance = SahteReklamServisi();` ile tüm
+/// davranış değiştirilebilir.
+class ReklamServisi {
+  ReklamServisi._();
+
+  static ReklamServisiBase instance = AdMobReklamServisi();
+
+  static Future<void> initialize() => instance.initialize();
+  static Future<BannerAd?> createBannerAd() => instance.createBannerAd();
+  static Future<InterstitialAd?> createTamSayfaReklam() => instance.createTamSayfaReklam();
+  static Future<RewardedAd?> createOdulluReklam() => instance.createOdulluReklam();
+  static Future<bool> pasHakkiReklamKullanildiMi() => instance.pasHakkiReklamKullanildiMi();
+  static Future<void> pasHakkiReklamKullanildi() => instance.pasHakkiReklamKullanildi();
+  static Future<void> pasHakkiReklamSifirla() => instance.pasHakkiReklamSifirla();
+
+  static Future<void> tamSayfaReklamGosterVeDevamEt(Future<void> Function() devamEt) =>
+      instance.tamSayfaReklamGosterVeDevamEt(devamEt);
+
+  static Future<bool> pasIcinOdulluReklamGoster() => instance.pasIcinOdulluReklamGoster();
 }

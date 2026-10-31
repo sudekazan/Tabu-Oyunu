@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import '../core/app_theme.dart';
+import '../core/app_routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'kategoriler_sayfasi.dart';
-import 'premium_satin_alma_ekrani.dart';
 import '../core/reklam_servisi.dart';
 import '../core/plan_manager.dart';
 
@@ -109,16 +109,7 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xFF6A1B9A),
-              Color(0xFFFF7043),
-            ],
-          ),
-        ),
+        decoration: AppTheme.backgroundDecoration,
         child: SafeArea(
           child: Column(
             children: [
@@ -191,16 +182,11 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                           height: 56,
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const KategorilerSayfasi(),
-                                ),
-                              );
+                              Navigator.pushNamed(context, AppRoutes.kategoriler);
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.white,
-                              foregroundColor: const Color(0xFF6A1B9A),
+                              foregroundColor: AppColors.primary,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(16),
                               ),
@@ -227,11 +213,9 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                               height: 56,
                               child: ElevatedButton(
                                 onPressed: () async {
-                                  final bool? result = await Navigator.push<bool>(
+                                  final bool? result = await Navigator.pushNamed<bool>(
                                     context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const PremiumSatinAlmaEkrani(),
-                                    ),
+                                    AppRoutes.premium,
                                   );
                                   
                                   // Premium satın alındıysa plan durumunu güncelle

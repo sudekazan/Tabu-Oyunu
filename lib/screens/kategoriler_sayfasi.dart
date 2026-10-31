@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import '../core/app_theme.dart';
+import '../core/app_routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../core/plan_manager.dart';
 import '../data/premium/kategoriler/index.dart';
-import 'ayarlar_screens.dart';
 import 'premium_satin_alma_ekrani.dart';
 import '../core/reklam_servisi.dart';
 
@@ -100,22 +101,7 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
   Future<void> _navigateToPremiumPage() async {
     // Aşağıdan kayarak gelen animasyon ile premium satın alma ekranına yönlendir
     final bool? purchased = await Navigator.of(context).push<bool>(
-      PageRouteBuilder<bool>(
-        pageBuilder: (context, animation, secondaryAnimation) => const PremiumSatinAlmaEkrani(),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.0, 1.0); // Aşağıdan başla
-          const end = Offset.zero;
-          const curve = Curves.easeOut;
-
-          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-          var offsetAnimation = animation.drive(tween);
-
-          return SlideTransition(
-            position: offsetAnimation,
-            child: child,
-          );
-        },
-      ),
+      AppRoutes.slide<bool>(const PremiumSatinAlmaEkrani(), begin: AppRoutes.fromBottom),
     );
 
     if (purchased == true) {
@@ -148,16 +134,7 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
 
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xFF6A1B9A),
-              Color(0xFFFF7043),
-            ],
-          ),
-        ),
+        decoration: AppTheme.backgroundDecoration,
         child: SafeArea(
           child: Column(
             children: [
@@ -239,13 +216,13 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                             child: Container(
                             margin: const EdgeInsets.only(bottom: 6),
                             decoration: BoxDecoration(
-                              color: _seciliFreeKategori == FreeKategori.freeHavuz ? const Color(0xFF6A1B9A).withValues(alpha: 0.06) : Colors.white,
+                              color: _seciliFreeKategori == FreeKategori.freeHavuz ? AppColors.primary.withValues(alpha: 0.06) : Colors.white,
                               borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                              border: Border.all(color: _seciliFreeKategori == FreeKategori.freeHavuz ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withValues(alpha: 0.12), width: 1.5),
+                              border: Border.all(color: _seciliFreeKategori == FreeKategori.freeHavuz ? AppColors.primary : AppColors.primary.withValues(alpha: 0.12), width: 1.5),
                             ),
                             child: ListTile(
                               contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                              leading: Icon(freeKategoriIconlari[FreeKategori.freeHavuz]!, color: const Color(0xFF6A1B9A)),
+                              leading: Icon(freeKategoriIconlari[FreeKategori.freeHavuz]!, color: AppColors.primary),
                               title: Text('Free Havuz (300+ kelime)', style: GoogleFonts.poppins(fontSize: labelFs)),
                             ),
                           ),
@@ -269,13 +246,13 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                             child: Container(
                             margin: const EdgeInsets.only(bottom: 6),
                             decoration: BoxDecoration(
-                              color: _seciliFreeKategori == FreeKategori.cocuklar ? const Color(0xFF6A1B9A).withValues(alpha: 0.06) : Colors.white,
+                              color: _seciliFreeKategori == FreeKategori.cocuklar ? AppColors.primary.withValues(alpha: 0.06) : Colors.white,
                               borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                              border: Border.all(color: _seciliFreeKategori == FreeKategori.cocuklar ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withValues(alpha: 0.12), width: 1.5),
+                              border: Border.all(color: _seciliFreeKategori == FreeKategori.cocuklar ? AppColors.primary : AppColors.primary.withValues(alpha: 0.12), width: 1.5),
                             ),
                             child: ListTile(
                               contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                              leading: Icon(freeKategoriIconlari[FreeKategori.cocuklar]!, color: const Color(0xFF6A1B9A)),
+                              leading: Icon(freeKategoriIconlari[FreeKategori.cocuklar]!, color: AppColors.primary),
                               title: Text('Çocuklar (Free 200+)', style: GoogleFonts.poppins(fontSize: labelFs)),
                             ),
                           ),
@@ -285,15 +262,15 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                           Container(
                             margin: const EdgeInsets.only(bottom: 6),
                             decoration: BoxDecoration(
-                              color: _premiumTum ? const Color(0xFF6A1B9A).withValues(alpha: 0.06) : Colors.white,
+                              color: _premiumTum ? AppColors.primary.withValues(alpha: 0.06) : Colors.white,
                               borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                              border: Border.all(color: _premiumTum ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withValues(alpha: 0.12), width: 1.5),
+                              border: Border.all(color: _premiumTum ? AppColors.primary : AppColors.primary.withValues(alpha: 0.12), width: 1.5),
                             ),
                             child: ListTile(
                               contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                               leading: _plan == PlanType.free
                                   ? const Icon(Icons.lock, color: Colors.grey)
-                                  : const Icon(Icons.all_inclusive, color: Color(0xFF6A1B9A)),
+                                  : const Icon(Icons.all_inclusive, color: AppColors.primary),
                               title: Text('Premium Havuz (3400+)', style: GoogleFonts.poppins(fontSize: labelFs)),
                               trailing: null,
                               onTap: _plan == PlanType.free
@@ -316,15 +293,15 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                           Container(
                             margin: const EdgeInsets.only(bottom: 6),
                             decoration: BoxDecoration(
-                              color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? const Color(0xFF6A1B9A).withValues(alpha: 0.06) : Colors.white,
+                              color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? AppColors.primary.withValues(alpha: 0.06) : Colors.white,
                               borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                              border: Border.all(color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withValues(alpha: 0.12), width: 1.5),
+                              border: Border.all(color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? AppColors.primary : AppColors.primary.withValues(alpha: 0.12), width: 1.5),
                             ),
                             child: ListTile(
                               contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                               leading: _plan == PlanType.free
                                   ? const Icon(Icons.lock, color: Colors.grey)
-                                  : Icon(premiumKategoriIconlari[PremiumKategori.cocuklar]!, color: const Color(0xFF6A1B9A)),
+                                  : Icon(premiumKategoriIconlari[PremiumKategori.cocuklar]!, color: AppColors.primary),
                               title: Text('Çocuklar (Premium 300+)', style: GoogleFonts.poppins(fontSize: labelFs)),
                               onTap: _plan == PlanType.free
                                   ? _navigateToPremiumPage
@@ -355,15 +332,15 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                             return Container(
                               margin: const EdgeInsets.only(bottom: 6),
                               decoration: BoxDecoration(
-                                color: secili ? const Color(0xFF6A1B9A).withValues(alpha: 0.06) : Colors.white,
+                                color: secili ? AppColors.primary.withValues(alpha: 0.06) : Colors.white,
                                 borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                                border: Border.all(color: secili ? const Color(0xFF6A1B9A) : const Color(0xFF6A1B9A).withValues(alpha: 0.12), width: 1.5),
+                                border: Border.all(color: secili ? AppColors.primary : AppColors.primary.withValues(alpha: 0.12), width: 1.5),
                               ),
                               child: ListTile(
                               contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                                 leading: kilitli
                                     ? const Icon(Icons.lock, color: Colors.grey)
-                                    : Icon(premiumKategoriIconlari[k]!, color: const Color(0xFF6A1B9A)),
+                                    : Icon(premiumKategoriIconlari[k]!, color: AppColors.primary),
                                 title: Text(premiumKategoriAdlari[k]!, style: GoogleFonts.poppins(fontSize: labelFs)),
                                 trailing: null,
                                 onTap: kilitli ? _navigateToPremiumPage : () => _togglePremiumKategori(k),
@@ -407,13 +384,10 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                   );
                   return;
                 }
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AyarlarEkrani()),
-                );
+                Navigator.pushNamed(context, AppRoutes.ayarlar);
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF6A1B9A),
+                backgroundColor: AppColors.primary,
                 foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(isSmall ? 12 : 14)),
               ),

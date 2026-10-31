@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../core/app_theme.dart';
+import '../core/app_routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'oyun_sayfasi.dart';
 import '../core/plan_manager.dart';
@@ -110,7 +112,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
                   controller: _takim1Controller,
                   label: '1. Takım',
                   icon: Icons.emoji_events,
-                  color: const Color(0xFF6A1B9A),
+                  color: AppColors.primary,
                 ),
               ),
               const SizedBox(height: 6),
@@ -120,7 +122,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
                   controller: _takim2Controller,
                   label: '2. Takım',
                   icon: Icons.emoji_events,
-                  color: const Color(0xFFFF7043),
+                  color: AppColors.secondary,
                 ),
               ),
             ],
@@ -140,7 +142,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
           subtitle: 'Saniye',
           items: _sureSecenekleri,
           value: _oyunSuresi,
-          color: const Color(0xFF6A1B9A),
+          color: AppColors.primary,
           onChanged: (v) => setState(() => _oyunSuresi = v),
         ),
 
@@ -149,7 +151,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
           subtitle: _unlimitedPass ? 'Sınırsız' : 'Adet',
           items: _pasSecenekleri,
           value: _pasHakki,
-          color: const Color(0xFFFF7043),
+          color: AppColors.secondary,
           onChanged: (v) => setState(() => _pasHakki = v),
           showUnlimitedSwitch: true,
         ),
@@ -159,7 +161,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
           subtitle: 'Puan',
           items: _puanSecenekleri,
           value: _bitisPuani,
-          color: const Color(0xFF6A1B9A),
+          color: AppColors.primary,
           onChanged: (v) => setState(() => _bitisPuani = v),
         ),
       ],
@@ -170,16 +172,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xFF6A1B9A),
-              Color(0xFFFF7043),
-            ],
-          ),
-        ),
+        decoration: AppTheme.backgroundDecoration,
         child: SafeArea(
           child: Column(
             children: [
@@ -248,8 +241,8 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
                                   shape: BoxShape.circle,
                                   gradient: RadialGradient(
                                     colors: [
-                                      const Color(0xFF6A1B9A).withValues(alpha: 0.18),
-                                      const Color(0xFF6A1B9A).withValues(alpha: 0.0),
+                                      AppColors.primary.withValues(alpha: 0.18),
+                                      AppColors.primary.withValues(alpha: 0.0),
                                     ],
                                   ),
                                 ),
@@ -265,8 +258,8 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
                                   shape: BoxShape.circle,
                                   gradient: RadialGradient(
                                     colors: [
-                                      const Color(0xFFFF7043).withValues(alpha: 0.18),
-                                      const Color(0xFFFF7043).withValues(alpha: 0.0),
+                                      AppColors.secondary.withValues(alpha: 0.18),
+                                      AppColors.secondary.withValues(alpha: 0.0),
                                     ],
                                   ),
                                 ),
@@ -319,10 +312,10 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
               _showTamSayfaReklamVeOyunuBaslat();
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF6A1B9A),
+              backgroundColor: AppColors.primary,
               foregroundColor: Colors.white,
               elevation: 14,
-              shadowColor: const Color(0xFF6A1B9A).withValues(alpha: 0.5),
+              shadowColor: AppColors.primary.withValues(alpha: 0.5),
               minimumSize: Size.fromHeight(_isSmall ? 56 : 64), // buton yüksekliği biraz arttı
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(_isSmall ? 12 : 14)),
             ),
@@ -357,24 +350,14 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
   // Oyunu başlat
   void _oyunuBaslat() {
     Navigator.of(context).pushReplacement(
-      PageRouteBuilder(
-        pageBuilder: (context, animation, secondaryAnimation) =>
-            OyunSayfasi(
+      AppRoutes.slide(
+        OyunSayfasi(
           takim1Adi: _takim1Controller.text,
           takim2Adi: _takim2Controller.text,
           oyunSuresi: _oyunSuresi,
           pasHakki: (_unlimitedPass && _plan == PlanType.premium) ? 999999 : _pasHakki,
           bitisPuani: _bitisPuani,
         ),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          return SlideTransition(
-            position: Tween<Offset>(
-              begin: const Offset(1.0, 0.0),
-              end: Offset.zero,
-            ).animate(animation),
-            child: child,
-          );
-        },
       ),
     );
   }
@@ -382,14 +365,14 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
   Widget _buildSectionTitle(String title, IconData icon) {
     return Row(
       children: [
-        Icon(icon, color: const Color(0xFF6A1B9A), size: _isSmall ? 22 : 26),
+        Icon(icon, color: AppColors.primary, size: _isSmall ? 22 : 26),
         SizedBox(width: _isSmall ? 8 : 12),
         Text(
           title,
           style: GoogleFonts.poppins(
             fontSize: _sectionTitleFs, // 20px ve üstü
             fontWeight: FontWeight.bold, // bold
-            color: const Color(0xFF6A1B9A),
+            color: AppColors.primary,
           ),
         ),
       ],

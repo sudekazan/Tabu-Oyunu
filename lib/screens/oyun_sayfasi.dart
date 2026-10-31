@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../core/app_theme.dart';
+import '../core/app_routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'sonuc_sayfasi.dart';
@@ -308,23 +310,13 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
 
   void _navigateToResult() {
     Navigator.of(context).pushReplacement(
-      PageRouteBuilder(
-        pageBuilder: (context, animation, secondaryAnimation) =>
-            SonucSayfasi(
+      AppRoutes.slide(
+        SonucSayfasi(
           takim1Adi: widget.takim1Adi,
           takim2Adi: widget.takim2Adi,
           takim1Skor: _takim1ToplamSkor,
           takim2Skor: _takim2ToplamSkor,
         ),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          return SlideTransition(
-            position: Tween<Offset>(
-              begin: const Offset(1.0, 0.0),
-              end: Offset.zero,
-            ).animate(animation),
-            child: child,
-          );
-        },
       ),
     );
   }
@@ -425,7 +417,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
             gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Color(0xFF6A1B9A), Color(0xFFFF7043)],
+              colors: [AppColors.primary, AppColors.secondary],
             ),
             borderRadius: BorderRadius.circular(24),
           ),
@@ -474,7 +466,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                       onPressed: () => Navigator.pop(context, true),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
-                        foregroundColor: const Color(0xFF6A1B9A),
+                        foregroundColor: AppColors.primary,
                         padding: const EdgeInsets.symmetric(vertical: 12),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       ),
@@ -575,7 +567,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                     ),
                   ),
                 ),
-                Text('Tur Bitti', style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w700, color: const Color(0xFF6A1B9A))),
+                Text('Tur Bitti', style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.primary)),
                 const SizedBox(height: 3),
                 Text('$oynayanTakim turu tamamladı. Mevcut skorlar:', style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[700])),
                 const SizedBox(height: 4),
@@ -616,7 +608,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                       _sirayiDigerTakimaBaslat();
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF6A1B9A),
+                      backgroundColor: AppColors.primary,
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
@@ -671,15 +663,9 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
       // Oyun başlamadıysa: varsa geri git; yoksa ayarlara yönlendir
       if (!_oyunAktif) {
         if (Navigator.of(context).canPop()) return true;
-        Navigator.of(context).pushReplacement(PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) => const AyarlarEkrani(),
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            return SlideTransition(
-              position: Tween<Offset>(begin: const Offset(-1, 0), end: Offset.zero).animate(animation),
-              child: child,
-            );
-          },
-        ));
+        Navigator.of(context).pushReplacement(
+          AppRoutes.slide(const AyarlarEkrani(), begin: AppRoutes.fromLeft),
+        );
         return false;
       }
       // Oyun devam ediyorsa onay iste
@@ -695,8 +681,8 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  Color(0xFF6A1B9A),
-                  Color(0xFFFF7043),
+                  AppColors.primary,
+                  AppColors.secondary,
                 ],
               ),
               borderRadius: BorderRadius.circular(24),
@@ -778,7 +764,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                         onPressed: () => Navigator.pop(context, true),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.white,
-                          foregroundColor: const Color(0xFF6A1B9A),
+                          foregroundColor: AppColors.primary,
                           padding: const EdgeInsets.symmetric(vertical: 12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -804,15 +790,9 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
       if (confirm == true) {
         _timer?.cancel();
         if (Navigator.of(context).canPop()) return true;
-        Navigator.of(context).pushReplacement(PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) => const AyarlarEkrani(),
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            return SlideTransition(
-              position: Tween<Offset>(begin: const Offset(-1, 0), end: Offset.zero).animate(animation),
-              child: child,
-            );
-          },
-        ));
+        Navigator.of(context).pushReplacement(
+          AppRoutes.slide(const AyarlarEkrani(), begin: AppRoutes.fromLeft),
+        );
       }
       return false;
     }
@@ -839,16 +819,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
       },
       child: Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xFF6A1B9A),
-              Color(0xFFFF7043),
-            ],
-          ),
-        ),
+        decoration: AppTheme.backgroundDecoration,
         child: SafeArea(
           child: Column(
             children: [
@@ -1000,7 +971,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                                             style: GoogleFonts.poppins(
                                               fontSize: _getKelimeFontSize(_kartlar[_mevcutKelimeIndex].kelime),
                                               fontWeight: FontWeight.bold,
-                                              color: const Color(0xFF6A1B9A),
+                                              color: AppColors.primary,
                                             ),
                                           ),
                                         ),
@@ -1076,7 +1047,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                       child: _buildGradientActionButton(
                         text: 'TABU',
                         icon: Icons.block,
-                        colors: [const Color(0xFF6A1B9A), const Color(0xFF8E24AA)],
+                        colors: [AppColors.primary, const Color(0xFF8E24AA)],
                         onPressed: _oyunAktif ? _tabu : null,
                       ),
                     ),
@@ -1117,7 +1088,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
       floatingActionButton: _oyunAktif ? null : FloatingActionButton.extended(
         onPressed: _oyunuBaslat,
         backgroundColor: Colors.white,
-        foregroundColor: const Color(0xFF6A1B9A),
+        foregroundColor: AppColors.primary,
         icon: Icon(Icons.play_arrow, 
           size: _isSmallScreen ? 20 : _isMediumScreen ? 22 : 24
         ),

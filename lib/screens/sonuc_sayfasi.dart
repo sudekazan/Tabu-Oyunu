@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../core/app_theme.dart';
+import '../core/app_routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:confetti/confetti.dart';
@@ -87,16 +89,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
     final bool isCompact = screenSize.height < 720;
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xFF6A1B9A),
-              Color(0xFFFF7043),
-            ],
-          ),
-        ),
+        decoration: AppTheme.backgroundDecoration,
         child: Stack(
           children: [
             // Confetti efekti
@@ -232,7 +225,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                 Container(
                                   padding: EdgeInsets.all(isCompact ? 12 : 14),
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFF6A1B9A).withValues(alpha: 0.08),
+                                    color: AppColors.primary.withValues(alpha: 0.08),
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(24),
                                       topRight: Radius.circular(24),
@@ -241,14 +234,14 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(Icons.leaderboard, color: const Color(0xFF6A1B9A), size: isCompact ? 18 : 20),
+                                      Icon(Icons.leaderboard, color: AppColors.primary, size: isCompact ? 18 : 20),
                                       SizedBox(width: isCompact ? 6 : 8),
                                       Text(
                                         'Final Skorları',
                                         style: GoogleFonts.poppins(
                                           fontSize: isCompact ? 18 : 19,
                                           fontWeight: FontWeight.bold,
-                                          color: const Color(0xFF6A1B9A),
+                                          color: AppColors.primary,
                                         ),
                                       ),
                                     ],
@@ -264,7 +257,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                            widget.takim1Adi,
                                            widget.takim1Skor,
                                            widget.takim1Skor > widget.takim2Skor,
-                                           const Color(0xFF6A1B9A),
+                                           AppColors.primary,
                                            compact: isCompact,
                                          ),
                                         SizedBox(height: isCompact ? 6 : 8),
@@ -272,7 +265,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                            widget.takim2Adi,
                                            widget.takim2Skor,
                                            widget.takim2Skor > widget.takim1Skor,
-                                           const Color(0xFFFF7043),
+                                           AppColors.secondary,
                                            compact: isCompact,
                                          ),
                                         SizedBox(height: isCompact ? 6 : 8),
@@ -321,25 +314,13 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).pushAndRemoveUntil(
-                                PageRouteBuilder(
-                                  pageBuilder: (context, animation, secondaryAnimation) =>
-                                      const AyarlarEkrani(),
-                                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                                    return SlideTransition(
-                                      position: Tween<Offset>(
-                                        begin: const Offset(0.0, 1.0),
-                                        end: Offset.zero,
-                                      ).animate(animation),
-                                      child: child,
-                                    );
-                                  },
-                                ),
+                                AppRoutes.slide(const AyarlarEkrani(), begin: AppRoutes.fromBottom),
                                 (route) => false,
                               );
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.white,
-                              foregroundColor: const Color(0xFF6A1B9A),
+                              foregroundColor: AppColors.primary,
                               elevation: 8,
                               shadowColor: Colors.black26,
                               padding: EdgeInsets.symmetric(vertical: isCompact ? 12 : 16),
@@ -368,19 +349,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).pushAndRemoveUntil(
-                                PageRouteBuilder(
-                                  pageBuilder: (context, animation, secondaryAnimation) =>
-                                      const GirisEkraniSayfasi(),
-                                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                                    return SlideTransition(
-                                      position: Tween<Offset>(
-                                        begin: const Offset(0.0, 1.0),
-                                        end: Offset.zero,
-                                      ).animate(animation),
-                                      child: child,
-                                    );
-                                  },
-                                ),
+                                AppRoutes.slide(const GirisEkraniSayfasi(), begin: AppRoutes.fromBottom),
                                 (route) => false,
                               );
                             },
