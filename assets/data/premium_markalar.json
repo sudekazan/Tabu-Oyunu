@@ -1,0 +1,1822 @@
+[
+ {
+  "kelime": "Apple",
+  "yasakliKelimeler": [
+   "iPhone",
+   "Mac",
+   "Cupertino",
+   "Tim",
+   "Cook"
+  ]
+ },
+ {
+  "kelime": "Google",
+  "yasakliKelimeler": [
+   "Arama",
+   "Android",
+   "YouTube",
+   "Alphabet",
+   "Harita"
+  ]
+ },
+ {
+  "kelime": "Microsoft",
+  "yasakliKelimeler": [
+   "Windows",
+   "Office",
+   "Bill",
+   "Gates",
+   "Azure"
+  ]
+ },
+ {
+  "kelime": "Amazon",
+  "yasakliKelimeler": [
+   "E-ticaret",
+   "AWS",
+   "Prime",
+   "Bezos",
+   "Kargo"
+  ]
+ },
+ {
+  "kelime": "Samsung",
+  "yasakliKelimeler": [
+   "Galaxy",
+   "Kore",
+   "TV",
+   "Elektronik",
+   "Android"
+  ]
+ },
+ {
+  "kelime": "Sony",
+  "yasakliKelimeler": [
+   "PlayStation",
+   "Bravia",
+   "Walkman",
+   "Japon",
+   "Elektronik"
+  ]
+ },
+ {
+  "kelime": "Huawei",
+  "yasakliKelimeler": [
+   "Mate",
+   "P",
+   "5G",
+   "Çin",
+   "Telekom"
+  ]
+ },
+ {
+  "kelime": "Xiaomi",
+  "yasakliKelimeler": [
+   "Redmi",
+   "Mi",
+   "POCO",
+   "Çin",
+   "Telefon"
+  ]
+ },
+ {
+  "kelime": "Intel",
+  "yasakliKelimeler": [
+   "CPU",
+   "Core",
+   "i7",
+   "Çip",
+   "x86"
+  ]
+ },
+ {
+  "kelime": "AMD",
+  "yasakliKelimeler": [
+   "Ryzen",
+   "GPU",
+   "Radeon",
+   "Çip",
+   "Zen"
+  ]
+ },
+ {
+  "kelime": "NVIDIA",
+  "yasakliKelimeler": [
+   "GeForce",
+   "CUDA",
+   "RTX",
+   "GPU",
+   "Yeşil"
+  ]
+ },
+ {
+  "kelime": "Tesla",
+  "yasakliKelimeler": [
+   "Elektrikli",
+   "Araç",
+   "Musk",
+   "Otopilot",
+   "Gigafactory"
+  ]
+ },
+ {
+  "kelime": "BMW",
+  "yasakliKelimeler": [
+   "Alman",
+   "M",
+   "Sedan",
+   "X",
+   "Premium"
+  ]
+ },
+ {
+  "kelime": "Mercedes-Benz",
+  "yasakliKelimeler": [
+   "Daimler",
+   "AMG",
+   "Yıldız",
+   "Lüks",
+   "Alman"
+  ]
+ },
+ {
+  "kelime": "Audi",
+  "yasakliKelimeler": [
+   "Dört",
+   "Halka",
+   "Quattro",
+   "Alman",
+   "VW"
+  ]
+ },
+ {
+  "kelime": "Volkswagen",
+  "yasakliKelimeler": [
+   "Golf",
+   "Passat",
+   "Beetle",
+   "Alman",
+   "VW"
+  ]
+ },
+ {
+  "kelime": "Toyota",
+  "yasakliKelimeler": [
+   "Japon",
+   "Hybrid",
+   "Corolla",
+   "Camry",
+   "Araç"
+  ]
+ },
+ {
+  "kelime": "Nike",
+  "yasakliKelimeler": [
+   "Swoosh",
+   "Ayakkabı",
+   "Spor",
+   "Just",
+   "Do"
+  ]
+ },
+ {
+  "kelime": "Adidas",
+  "yasakliKelimeler": [
+   "Üç",
+   "Çizgi",
+   "Spor",
+   "Ayakkabı",
+   "Alman"
+  ]
+ },
+ {
+  "kelime": "Puma",
+  "yasakliKelimeler": [
+   "Spor",
+   "Kedi",
+   "Ayakkabı",
+   "Forma",
+   "Alman"
+  ]
+ },
+ {
+  "kelime": "Under Armour",
+  "yasakliKelimeler": [
+   "Spor",
+   "Giyim",
+   "Ayakkabı",
+   "Logo",
+   "ABD"
+  ]
+ },
+ {
+  "kelime": "Coca-Cola",
+  "yasakliKelimeler": [
+   "İçecek",
+   "Kola",
+   "Kırmızı",
+   "Gazlı",
+   "Marka"
+  ]
+ },
+ {
+  "kelime": "Pepsi",
+  "yasakliKelimeler": [
+   "İçecek",
+   "Kola",
+   "Mavi",
+   "Gazlı",
+   "Rakip"
+  ]
+ },
+ {
+  "kelime": "Nestlé",
+  "yasakliKelimeler": [
+   "Gıda",
+   "Çikolata",
+   "Kahve",
+   "İsviçre",
+   "Marka"
+  ]
+ },
+ {
+  "kelime": "Unilever",
+  "yasakliKelimeler": [
+   "Gıda",
+   "Kişisel",
+   "Temizlik",
+   "Marka",
+   "Dondurma"
+  ]
+ },
+ {
+  "kelime": "Procter & Gamble",
+  "yasakliKelimeler": [
+   "P&G",
+   "Temizlik",
+   "Kişisel",
+   "Marka",
+   "ABD"
+  ]
+ },
+ {
+  "kelime": "L’Oréal",
+  "yasakliKelimeler": [
+   "Kozmetik",
+   "Güzellik",
+   "Fransa",
+   "Saç",
+   "Cilt"
+  ]
+ },
+ {
+  "kelime": "Estee Lauder",
+  "yasakliKelimeler": [
+   "Kozmetik",
+   "Parfüm",
+   "ABD",
+   "Güzellik",
+   "Marka"
+  ]
+ },
+ {
+  "kelime": "Zara",
+  "yasakliKelimeler": [
+   "İspanya",
+   "Giyim",
+   "Inditex",
+   "Moda",
+   "Mağaza"
+  ]
+ },
+ {
+  "kelime": "H&M",
+  "yasakliKelimeler": [
+   "İsveç",
+   "Giyim",
+   "Moda",
+   "Perakende",
+   "Mağaza"
+  ]
+ },
+ {
+  "kelime": "IKEA",
+  "yasakliKelimeler": [
+   "Mobilya",
+   "İsveç",
+   "Kendin",
+   "Kur",
+   "Mağaza"
+  ]
+ },
+ {
+  "kelime": "McDonald’s",
+  "yasakliKelimeler": [
+   "Fast",
+   "Food",
+   "Hamburger",
+   "Altın",
+   "Kemer"
+  ]
+ },
+ {
+  "kelime": "Netflix",
+  "yasakliKelimeler": [
+   "Dizi",
+   "Film",
+   "Yayın",
+   "Kırmızı",
+   "Platform"
+  ]
+ },
+ {
+  "kelime": "Disney",
+  "yasakliKelimeler": [
+   "Mickey",
+   "Pixar",
+   "Marvel",
+   "Park",
+   "Animasyon"
+  ]
+ },
+ {
+  "kelime": "Spotify",
+  "yasakliKelimeler": [
+   "Müzik",
+   "Yeşil",
+   "Çalma",
+   "Liste",
+   "Streaming"
+  ]
+ },
+ {
+  "kelime": "TikTok",
+  "yasakliKelimeler": [
+   "Video",
+   "Kısa",
+   "Çin",
+   "ByteDance",
+   "Trend"
+  ]
+ },
+ {
+  "kelime": "Twitter",
+  "yasakliKelimeler": [
+   "X",
+   "Tweet",
+   "Sosyal",
+   "Medya",
+   "Mavi"
+  ]
+ },
+ {
+  "kelime": "Facebook",
+  "yasakliKelimeler": [
+   "Meta",
+   "Sosyal",
+   "Mavi",
+   "Arkadaş",
+   "Uygulama"
+  ]
+ },
+ {
+  "kelime": "Instagram",
+  "yasakliKelimeler": [
+   "Fotoğraf",
+   "Hikaye",
+   "Reels",
+   "Meta",
+   "Uygulama"
+  ]
+ },
+ {
+  "kelime": "Oracle",
+  "yasakliKelimeler": [
+   "Veritabanı",
+   "Java",
+   "Kurumsal",
+   "Larry",
+   "Ellison"
+  ]
+ },
+ {
+  "kelime": "Salesforce",
+  "yasakliKelimeler": [
+   "CRM",
+   "Bulut",
+   "Marc",
+   "Benioff",
+   "Kurumsal"
+  ]
+ },
+ {
+  "kelime": "SAP",
+  "yasakliKelimeler": [
+   "ERP",
+   "Almanya",
+   "Kurumsal",
+   "HANA",
+   "Yazılım"
+  ]
+ },
+ {
+  "kelime": "Dell",
+  "yasakliKelimeler": [
+   "Bilgisayar",
+   "Sunucu",
+   "EMC",
+   "Laptop",
+   "PC"
+  ]
+ },
+ {
+  "kelime": "HP",
+  "yasakliKelimeler": [
+   "Hewlett",
+   "Packard",
+   "Yazıcı",
+   "Bilgisayar",
+   "PC"
+  ]
+ },
+ {
+  "kelime": "Asus",
+  "yasakliKelimeler": [
+   "Anakart",
+   "ROG",
+   "Laptop",
+   "Tayvan",
+   "PC"
+  ]
+ },
+ {
+  "kelime": "Acer",
+  "yasakliKelimeler": [
+   "Laptop",
+   "Monitör",
+   "Tayvan",
+   "Bilgisayar",
+   "PC"
+  ]
+ },
+ {
+  "kelime": "Lenovo",
+  "yasakliKelimeler": [
+   "ThinkPad",
+   "Laptop",
+   "Çin",
+   "Bilgisayar",
+   "PC"
+  ]
+ },
+ {
+  "kelime": "LG",
+  "yasakliKelimeler": [
+   "TV",
+   "Kore",
+   "Elektronik",
+   "Beyaz",
+   "Eşya"
+  ]
+ },
+ {
+  "kelime": "Panasonic",
+  "yasakliKelimeler": [
+   "Japon",
+   "Elektronik",
+   "Pil",
+   "Lumix",
+   "TV"
+  ]
+ },
+ {
+  "kelime": "Philips",
+  "yasakliKelimeler": [
+   "Hollanda",
+   "Elektronik",
+   "Aydınlatma",
+   "TV",
+   "Sağlık"
+  ]
+ },
+ {
+  "kelime": "Bosch",
+  "yasakliKelimeler": [
+   "Alman",
+   "Beyaz",
+   "Eşya",
+   "Araç",
+   "Parça"
+  ]
+ },
+ {
+  "kelime": "Siemens",
+  "yasakliKelimeler": [
+   "Alman",
+   "Sanayi",
+   "Enerji",
+   "Sağlık",
+   "Teknoloji"
+  ]
+ },
+ {
+  "kelime": "General Electric",
+  "yasakliKelimeler": [
+   "ABD",
+   "Sanayi",
+   "Enerji",
+   "Sağlık",
+   "Motor"
+  ]
+ },
+ {
+  "kelime": "Ford",
+  "yasakliKelimeler": [
+   "ABD",
+   "Mustang",
+   "Kamyonet",
+   "Otomotiv",
+   "Model"
+  ]
+ },
+ {
+  "kelime": "Chevrolet",
+  "yasakliKelimeler": [
+   "ABD",
+   "Camaro",
+   "Otomotiv",
+   "GM",
+   "Araç"
+  ]
+ },
+ {
+  "kelime": "Ferrari",
+  "yasakliKelimeler": [
+   "İtalya",
+   "Süper",
+   "Araba",
+   "At",
+   "Kırmızı"
+  ]
+ },
+ {
+  "kelime": "Lamborghini",
+  "yasakliKelimeler": [
+   "İtalya",
+   "Süper",
+   "Araba",
+   "Boğa",
+   "Sarı"
+  ]
+ },
+ {
+  "kelime": "Porsche",
+  "yasakliKelimeler": [
+   "Alman",
+   "911",
+   "Spor",
+   "Araba",
+   "Stuttgart"
+  ]
+ },
+ {
+  "kelime": "Volvo",
+  "yasakliKelimeler": [
+   "İsveç",
+   "Güvenlik",
+   "Araç",
+   "SUV",
+   "Kamyon"
+  ]
+ },
+ {
+  "kelime": "Renault",
+  "yasakliKelimeler": [
+   "Fransa",
+   "Clio",
+   "Otomotiv",
+   "Araç",
+   "Marka"
+  ]
+ },
+ {
+  "kelime": "Peugeot",
+  "yasakliKelimeler": [
+   "Fransa",
+   "Aslan",
+   "Araç",
+   "Otomotiv",
+   "308"
+  ]
+ },
+ {
+  "kelime": "Citroën",
+  "yasakliKelimeler": [
+   "Fransa",
+   "Chevrons",
+   "Araç",
+   "Otomotiv",
+   "C3"
+  ]
+ },
+ {
+  "kelime": "Fiat",
+  "yasakliKelimeler": [
+   "İtalya",
+   "500",
+   "Araç",
+   "Otomotiv",
+   "Stellantis"
+  ]
+ },
+ {
+  "kelime": "Opel",
+  "yasakliKelimeler": [
+   "Alman",
+   "Astra",
+   "Araç",
+   "Otomotiv",
+   "Stellantis"
+  ]
+ },
+ {
+  "kelime": "Skoda",
+  "yasakliKelimeler": [
+   "Çek",
+   "VW",
+   "Araç",
+   "Octavia",
+   "Otomotiv"
+  ]
+ },
+ {
+  "kelime": "Hyundai",
+  "yasakliKelimeler": [
+   "Kore",
+   "i20",
+   "Araç",
+   "Otomotiv",
+   "Kia"
+  ]
+ },
+ {
+  "kelime": "Kia",
+  "yasakliKelimeler": [
+   "Kore",
+   "Sportage",
+   "Araç",
+   "Otomotiv",
+   "SUV"
+  ]
+ },
+ {
+  "kelime": "Rolls-Royce",
+  "yasakliKelimeler": [
+   "Lüks",
+   "İngiliz",
+   "Spirit",
+   "Phantom",
+   "Otomotiv"
+  ]
+ },
+ {
+  "kelime": "Bugatti",
+  "yasakliKelimeler": [
+   "Fransa",
+   "Hız",
+   "Süper",
+   "Araba",
+   "Mavi"
+  ]
+ },
+ {
+  "kelime": "Bentley",
+  "yasakliKelimeler": [
+   "Lüks",
+   "İngiliz",
+   "Araba",
+   "GT",
+   "W12"
+  ]
+ },
+ {
+  "kelime": "Heineken",
+  "yasakliKelimeler": [
+   "Bira",
+   "Hollanda",
+   "Yeşil",
+   "Şişe",
+   "Yıldız"
+  ]
+ },
+ {
+  "kelime": "Carlsberg",
+  "yasakliKelimeler": [
+   "Bira",
+   "Danimarka",
+   "Yeşil",
+   "Şişe",
+   "Marka"
+  ]
+ },
+ {
+  "kelime": "Red Bull",
+  "yasakliKelimeler": [
+   "Enerji",
+   "İçecek",
+   "Kanat",
+   "Sponsor",
+   "F1"
+  ]
+ },
+ {
+  "kelime": "Monster",
+  "yasakliKelimeler": [
+   "Enerji",
+   "İçecek",
+   "Yeşil",
+   "Logo",
+   "Kutusu"
+  ]
+ },
+ {
+  "kelime": "Danone",
+  "yasakliKelimeler": [
+   "Yoğurt",
+   "Fransa",
+   "Gıda",
+   "Süt",
+   "Marka"
+  ]
+ },
+ {
+  "kelime": "Ferrero",
+  "yasakliKelimeler": [
+   "Çikolata",
+   "Nutella",
+   "İtalya",
+   "Şekerleme",
+   "Marka"
+  ]
+ },
+ {
+  "kelime": "Kellogg’s",
+  "yasakliKelimeler": [
+   "Mısır",
+   "Gevreği",
+   "Kahvaltı",
+   "Gıda",
+   "ABD"
+  ]
+ },
+ {
+  "kelime": "Mars",
+  "yasakliKelimeler": [
+   "Çikolata",
+   "Snickers",
+   "Gıda",
+   "ABD",
+   "Şekerleme"
+  ]
+ },
+ {
+  "kelime": "Colgate",
+  "yasakliKelimeler": [
+   "Diş",
+   "Macunu",
+   "Ağız",
+   "Bakım",
+   "Marka"
+  ]
+ },
+ {
+  "kelime": "Gillette",
+  "yasakliKelimeler": [
+   "Tıraş",
+   "Bıçağı",
+   "Erkek",
+   "Bakım",
+   "Marka"
+  ]
+ },
+ {
+  "kelime": "Dove",
+  "yasakliKelimeler": [
+   "Sabun",
+   "Krem",
+   "Kadın",
+   "Bakım",
+   "Marka"
+  ]
+ },
+ {
+  "kelime": "Nivea",
+  "yasakliKelimeler": [
+   "Krem",
+   "Mavi",
+   "Cilt",
+   "Bakım",
+   "Alman"
+  ]
+ },
+ {
+  "kelime": "Gucci",
+  "yasakliKelimeler": [
+   "İtalya",
+   "Lüks",
+   "Moda",
+   "Çanta",
+   "Logo"
+  ]
+ },
+ {
+  "kelime": "Louis Vuitton",
+  "yasakliKelimeler": [
+   "LV",
+   "Lüks",
+   "Çanta",
+   "Fransa",
+   "Moda"
+  ]
+ },
+ {
+  "kelime": "Prada",
+  "yasakliKelimeler": [
+   "İtalya",
+   "Lüks",
+   "Moda",
+   "Çanta",
+   "Ayakkabı"
+  ]
+ },
+ {
+  "kelime": "Chanel",
+  "yasakliKelimeler": [
+   "Parfüm",
+   "No.5",
+   "Fransa",
+   "Moda",
+   "Lüks"
+  ]
+ },
+ {
+  "kelime": "Hermès",
+  "yasakliKelimeler": [
+   "Çanta",
+   "Birkin",
+   "Lüks",
+   "Fransa",
+   "Moda"
+  ]
+ },
+ {
+  "kelime": "Rolex",
+  "yasakliKelimeler": [
+   "Saat",
+   "İsviçre",
+   "Lüks",
+   "Submariner",
+   "Oyster"
+  ]
+ },
+ {
+  "kelime": "Omega",
+  "yasakliKelimeler": [
+   "Saat",
+   "İsviçre",
+   "Speedmaster",
+   "Ay",
+   "Kronograf"
+  ]
+ },
+ {
+  "kelime": "Hublot",
+  "yasakliKelimeler": [
+   "Saat",
+   "Lüks",
+   "İsviçre",
+   "Big",
+   "Bang"
+  ]
+ },
+ {
+  "kelime": "IWC",
+  "yasakliKelimeler": [
+   "Saat",
+   "İsviçre",
+   "Pilot",
+   "Lüks",
+   "Kronograf"
+  ]
+ },
+ {
+  "kelime": "Cartier",
+  "yasakliKelimeler": [
+   "Takı",
+   "Saat",
+   "Lüks",
+   "Fransa",
+   "Panthère"
+  ]
+ },
+ {
+  "kelime": "Adobe",
+  "yasakliKelimeler": [
+   "Photoshop",
+   "PDF",
+   "Creative",
+   "Bulut",
+   "Premiere"
+  ]
+ },
+ {
+  "kelime": "IBM",
+  "yasakliKelimeler": [
+   "Mainframe",
+   "Bulut",
+   "Watson",
+   "Mavi",
+   "Kurumsal"
+  ]
+ },
+ {
+  "kelime": "Cisco",
+  "yasakliKelimeler": [
+   "Ağ",
+   "Router",
+   "Switch",
+   "ABD",
+   "İnternet"
+  ]
+ },
+ {
+  "kelime": "PayPal",
+  "yasakliKelimeler": [
+   "Ödeme",
+   "Online",
+   "Para",
+   "eBay",
+   "Transfer"
+  ]
+ },
+ {
+  "kelime": "Stripe",
+  "yasakliKelimeler": [
+   "Ödeme",
+   "API",
+   "Fintech",
+   "Platform",
+   "Kart"
+  ]
+ },
+ {
+  "kelime": "Square",
+  "yasakliKelimeler": [
+   "Ödeme",
+   "POS",
+   "Fintech",
+   "Kart",
+   "Kasa"
+  ]
+ },
+ {
+  "kelime": "Visa",
+  "yasakliKelimeler": [
+   "Kart",
+   "Ödeme",
+   "Banka",
+   "Kredi",
+   "Finans"
+  ]
+ },
+ {
+  "kelime": "Mastercard",
+  "yasakliKelimeler": [
+   "Kart",
+   "Ödeme",
+   "Kırmızı",
+   "Sarı",
+   "Finans"
+  ]
+ },
+ {
+  "kelime": "American Express",
+  "yasakliKelimeler": [
+   "Amex",
+   "Kart",
+   "Ödeme",
+   "Prestij",
+   "Finans"
+  ]
+ },
+ {
+  "kelime": "JPMorgan",
+  "yasakliKelimeler": [
+   "Banka",
+   "ABD",
+   "Chase",
+   "Finans",
+   "Yatırım"
+  ]
+ },
+ {
+  "kelime": "Goldman Sachs",
+  "yasakliKelimeler": [
+   "Yatırım",
+   "Banka",
+   "ABD",
+   "Finans",
+   "Wall"
+  ]
+ },
+ {
+  "kelime": "HSBC",
+  "yasakliKelimeler": [
+   "Banka",
+   "İngiltere",
+   "Asya",
+   "Finans",
+   "Global"
+  ]
+ },
+ {
+  "kelime": "Barclays",
+  "yasakliKelimeler": [
+   "Banka",
+   "İngiltere",
+   "Finans",
+   "Londra",
+   "Kart"
+  ]
+ },
+ {
+  "kelime": "ING",
+  "yasakliKelimeler": [
+   "Banka",
+   "Turuncu",
+   "Hollanda",
+   "Finans",
+   "Mobil"
+  ]
+ },
+ {
+  "kelime": "Revolut",
+  "yasakliKelimeler": [
+   "Fintech",
+   "Kart",
+   "Uygulama",
+   "Döviz",
+   "Banking"
+  ]
+ },
+ {
+  "kelime": "Sony Music",
+  "yasakliKelimeler": [
+   "Müzik",
+   "Plak",
+   "Etiketi",
+   "Sanatçı",
+   "Japon"
+  ]
+ },
+ {
+  "kelime": "Universal",
+  "yasakliKelimeler": [
+   "Müzik",
+   "Plak",
+   "Film",
+   "Stüdyo",
+   "ABD"
+  ]
+ },
+ {
+  "kelime": "Warner Bros",
+  "yasakliKelimeler": [
+   "Film",
+   "Stüdyo",
+   "Looney",
+   "DC",
+   "ABD"
+  ]
+ },
+ {
+  "kelime": "EA",
+  "yasakliKelimeler": [
+   "Oyun",
+   "FIFA",
+   "Electronic",
+   "Arts",
+   "ABD"
+  ]
+ },
+ {
+  "kelime": "Ubisoft",
+  "yasakliKelimeler": [
+   "Oyun",
+   "Assassin’s",
+   "Creed",
+   "Fransa",
+   "Stüdyo"
+  ]
+ },
+ {
+  "kelime": "Activision",
+  "yasakliKelimeler": [
+   "Oyun",
+   "Call",
+   "Duty",
+   "ABD",
+   "Blizzard"
+  ]
+ },
+ {
+  "kelime": "Epic Games",
+  "yasakliKelimeler": [
+   "Oyun",
+   "Fortnite",
+   "Unreal",
+   "Mağaza",
+   "Stüdyo"
+  ]
+ },
+ {
+  "kelime": "Valve",
+  "yasakliKelimeler": [
+   "Steam",
+   "Half-Life",
+   "Mağaza",
+   "Oyun",
+   "Stüdyo"
+  ]
+ },
+ {
+  "kelime": "Türk Hava Yolları",
+  "yasakliKelimeler": [
+   "THY",
+   "Uçak",
+   "Havayolu",
+   "İstanbul",
+   "Anadolujet"
+  ]
+ },
+ {
+  "kelime": "Trendyol",
+  "yasakliKelimeler": [
+   "Alışveriş",
+   "E-ticaret",
+   "Kargo",
+   "Site",
+   "Sepet"
+  ]
+ },
+ {
+  "kelime": "Hepsiburada",
+  "yasakliKelimeler": [
+   "Alışveriş",
+   "E-ticaret",
+   "Kargo",
+   "Site",
+   "Turuncu"
+  ]
+ },
+ {
+  "kelime": "n11",
+  "yasakliKelimeler": [
+   "Alışveriş",
+   "E-ticaret",
+   "Kırmızı",
+   "Kargo",
+   "Sepet"
+  ]
+ },
+ {
+  "kelime": "Sahibinden",
+  "yasakliKelimeler": [
+   "İlan",
+   "Sarı",
+   "Araba",
+   "Ev",
+   "Site"
+  ]
+ },
+ {
+  "kelime": "Getir",
+  "yasakliKelimeler": [
+   "Hızlı",
+   "Market",
+   "Mor",
+   "Kurye",
+   "Uygulama"
+  ]
+ },
+ {
+  "kelime": "Yemeksepeti",
+  "yasakliKelimeler": [
+   "Sipariş",
+   "Kurye",
+   "Restoran",
+   "Uygulama",
+   "Banabi"
+  ]
+ },
+ {
+  "kelime": "Migros Hemen",
+  "yasakliKelimeler": [
+   "Market",
+   "Anında",
+   "Teslim",
+   "Turuncu",
+   "Uygulama"
+  ]
+ },
+ {
+  "kelime": "A101 Kapıda",
+  "yasakliKelimeler": [
+   "Market",
+   "Teslimat",
+   "Uygulama",
+   "Mavi",
+   "Alışveriş"
+  ]
+ },
+ {
+  "kelime": "Migros",
+  "yasakliKelimeler": [
+   "Market",
+   "Turuncu",
+   "Mağaza",
+   "Sanal",
+   "İndirim"
+  ]
+ },
+ {
+  "kelime": "BİM",
+  "yasakliKelimeler": [
+   "Market",
+   "Uygun",
+   "İndirim",
+   "Mağaza",
+   "Kırmızı"
+  ]
+ },
+ {
+  "kelime": "A101",
+  "yasakliKelimeler": [
+   "Market",
+   "Uygun",
+   "Mavi",
+   "Mağaza",
+   "Aldın"
+  ]
+ },
+ {
+  "kelime": "LC Waikiki",
+  "yasakliKelimeler": [
+   "Giyim",
+   "Mağaza",
+   "Uygun",
+   "Moda",
+   "Çocuk"
+  ]
+ },
+ {
+  "kelime": "Koton",
+  "yasakliKelimeler": [
+   "Giyim",
+   "Mağaza",
+   "Moda",
+   "Kadın",
+   "Erkek"
+  ]
+ },
+ {
+  "kelime": "DeFacto",
+  "yasakliKelimeler": [
+   "Giyim",
+   "Mağaza",
+   "Moda",
+   "Uygun",
+   "Erkek"
+  ]
+ },
+ {
+  "kelime": "Vakko",
+  "yasakliKelimeler": [
+   "Lüks",
+   "Giyim",
+   "Mağaza",
+   "Eşarp",
+   "Moda"
+  ]
+ },
+ {
+  "kelime": "Boyner",
+  "yasakliKelimeler": [
+   "Mağaza",
+   "AVM",
+   "Giyim",
+   "Ayakkabı",
+   "Moda"
+  ]
+ },
+ {
+  "kelime": "FLO",
+  "yasakliKelimeler": [
+   "Ayakkabı",
+   "Mağaza",
+   "Spor",
+   "Giyim",
+   "Uygun"
+  ]
+ },
+ {
+  "kelime": "Vatan Bilgisayar",
+  "yasakliKelimeler": [
+   "Teknoloji",
+   "Mağaza",
+   "Bilgisayar",
+   "Elektronik",
+   "Kırmızı"
+  ]
+ },
+ {
+  "kelime": "Teknosa",
+  "yasakliKelimeler": [
+   "Teknoloji",
+   "Mağaza",
+   "Elektronik",
+   "Turuncu",
+   "AVM"
+  ]
+ },
+ {
+  "kelime": "Arçelik",
+  "yasakliKelimeler": [
+   "Beyaz",
+   "Eşya",
+   "Koç",
+   "Elektronik",
+   "Mağaza"
+  ]
+ },
+ {
+  "kelime": "Beko",
+  "yasakliKelimeler": [
+   "Beyaz",
+   "Eşya",
+   "Arçelik",
+   "Elektronik",
+   "Mağaza"
+  ]
+ },
+ {
+  "kelime": "Vestel",
+  "yasakliKelimeler": [
+   "Manisa",
+   "Elektronik",
+   "TV",
+   "Beyaz",
+   "Eşya"
+  ]
+ },
+ {
+  "kelime": "Grundig",
+  "yasakliKelimeler": [
+   "Elektronik",
+   "TV",
+   "Arçelik",
+   "Almanya",
+   "Ses"
+  ]
+ },
+ {
+  "kelime": "Dyson",
+  "yasakliKelimeler": [
+   "Süpürge",
+   "V11",
+   "Hava",
+   "Temizlik",
+   "Elektronik"
+  ]
+ },
+ {
+  "kelime": "Miele",
+  "yasakliKelimeler": [
+   "Beyaz",
+   "Eşya",
+   "Alman",
+   "Premium",
+   "Ev"
+  ]
+ },
+ {
+  "kelime": "Opet",
+  "yasakliKelimeler": [
+   "Akaryakıt",
+   "İstasyon",
+   "Benzin",
+   "Mavi",
+   "Tuvalet"
+  ]
+ },
+ {
+  "kelime": "Petrol Ofisi",
+  "yasakliKelimeler": [
+   "Akaryakıt",
+   "İstasyon",
+   "Kırmızı",
+   "Benzin",
+   "PO"
+  ]
+ },
+ {
+  "kelime": "Aygaz",
+  "yasakliKelimeler": [
+   "Tüp",
+   "LPG",
+   "Gaz",
+   "Koç",
+   "Mavi"
+  ]
+ },
+ {
+  "kelime": "Shell",
+  "yasakliKelimeler": [
+   "Akaryakıt",
+   "İstasyon",
+   "Sarı",
+   "Kırmızı",
+   "Deniz"
+  ]
+ },
+ {
+  "kelime": "BP",
+  "yasakliKelimeler": [
+   "Akaryakıt",
+   "Yeşil",
+   "İstasyon",
+   "Benzin",
+   "İngiltere"
+  ]
+ },
+ {
+  "kelime": "Türk Telekom",
+  "yasakliKelimeler": [
+   "İnternet",
+   "Telefon",
+   "Sabit",
+   "Fiber",
+   "Mavi"
+  ]
+ },
+ {
+  "kelime": "Turkcell",
+  "yasakliKelimeler": [
+   "Sarışın",
+   "Hat",
+   "İnternet",
+   "Sarı",
+   "Operatör"
+  ]
+ },
+ {
+  "kelime": "Vodafone",
+  "yasakliKelimeler": [
+   "Kırmızı",
+   "Hat",
+   "İnternet",
+   "Operatör",
+   "Faturalı"
+  ]
+ },
+ {
+  "kelime": "Garanti BBVA",
+  "yasakliKelimeler": [
+   "Banka",
+   "Yeşil",
+   "Kredi",
+   "Kart",
+   "Şube"
+  ]
+ },
+ {
+  "kelime": "İş Bankası",
+  "yasakliKelimeler": [
+   "Banka",
+   "Mavi",
+   "Atatürk",
+   "Kart",
+   "Şube"
+  ]
+ },
+ {
+  "kelime": "Akbank",
+  "yasakliKelimeler": [
+   "Banka",
+   "Kırmızı",
+   "Kart",
+   "Kredi",
+   "Şube"
+  ]
+ },
+ {
+  "kelime": "Ziraat Bankası",
+  "yasakliKelimeler": [
+   "Banka",
+   "Devlet",
+   "Kırmızı",
+   "Kredi",
+   "Şube"
+  ]
+ },
+ {
+  "kelime": "Halkbank",
+  "yasakliKelimeler": [
+   "Banka",
+   "Devlet",
+   "Mavi",
+   "Kredi",
+   "Esnaf"
+  ]
+ },
+ {
+  "kelime": "VakıfBank",
+  "yasakliKelimeler": [
+   "Banka",
+   "Sarı",
+   "Kredi",
+   "Kart",
+   "Şube"
+  ]
+ },
+ {
+  "kelime": "Papara",
+  "yasakliKelimeler": [
+   "Ödeme",
+   "Kart",
+   "Uygulama",
+   "Bakiye",
+   "Siyah"
+  ]
+ },
+ {
+  "kelime": "PTT Kargo",
+  "yasakliKelimeler": [
+   "Sarı",
+   "Posta",
+   "Gönderi",
+   "Şube",
+   "Dağıtım"
+  ]
+ },
+ {
+  "kelime": "Yurtiçi Kargo",
+  "yasakliKelimeler": [
+   "Turuncu",
+   "Gönderi",
+   "Şube",
+   "Dağıtım",
+   "Koli"
+  ]
+ },
+ {
+  "kelime": "Aras Kargo",
+  "yasakliKelimeler": [
+   "Kırmızı",
+   "Gönderi",
+   "Şube",
+   "Dağıtım",
+   "Koli"
+  ]
+ },
+ {
+  "kelime": "MNG Kargo",
+  "yasakliKelimeler": [
+   "Mavi",
+   "Gönderi",
+   "Şube",
+   "Dağıtım",
+   "Koli"
+  ]
+ },
+ {
+  "kelime": "Sürat Kargo",
+  "yasakliKelimeler": [
+   "Kırmızı",
+   "Gönderi",
+   "Şube",
+   "Dağıtım",
+   "Koli"
+  ]
+ },
+ {
+  "kelime": "Ülker",
+  "yasakliKelimeler": [
+   "Çikolata",
+   "Bisküvi",
+   "Gıda",
+   "Kırmızı",
+   "Şekerleme"
+  ]
+ },
+ {
+  "kelime": "Eti",
+  "yasakliKelimeler": [
+   "Bisküvi",
+   "Gıda",
+   "Çikolata",
+   "Eskişehir",
+   "At"
+  ]
+ },
+ {
+  "kelime": "Pınar",
+  "yasakliKelimeler": [
+   "Süt",
+   "Gıda",
+   "Et",
+   "İzmir",
+   "Su"
+  ]
+ },
+ {
+  "kelime": "Sütaş",
+  "yasakliKelimeler": [
+   "Süt",
+   "Yoğurt",
+   "Gıda",
+   "Peynir",
+   "Marka"
+  ]
+ },
+ {
+  "kelime": "Torku",
+  "yasakliKelimeler": [
+   "Şeker",
+   "Gıda",
+   "Konya",
+   "Bisküvi",
+   "Çikolata"
+  ]
+ },
+ {
+  "kelime": "Doğanay",
+  "yasakliKelimeler": [
+   "Şalgam",
+   "İçecek",
+   "Gıda",
+   "Mor",
+   "Acı"
+  ]
+ },
+ {
+  "kelime": "Kahve Dünyası",
+  "yasakliKelimeler": [
+   "Kahve",
+   "Mağaza",
+   "Tatlı",
+   "Çikolata",
+   "İstanbul"
+  ]
+ },
+ {
+  "kelime": "Mado",
+  "yasakliKelimeler": [
+   "Dondurma",
+   "Kahramanmaraş",
+   "Tatlı",
+   "Cafe",
+   "Şube"
+  ]
+ },
+ {
+  "kelime": "Simit Sarayı",
+  "yasakliKelimeler": [
+   "Simit",
+   "Poğaça",
+   "Cafe",
+   "Mağaza",
+   "Kırmızı"
+  ]
+ },
+ {
+  "kelime": "D&R",
+  "yasakliKelimeler": [
+   "Kitap",
+   "Müzik",
+   "Mağaza",
+   "AVM",
+   "Hobi"
+  ]
+ },
+ {
+  "kelime": "İstikbal",
+  "yasakliKelimeler": [
+   "Mobilya",
+   "Kayseri",
+   "Mağaza",
+   "Koltuk",
+   "Yatak"
+  ]
+ },
+ {
+  "kelime": "Bellona",
+  "yasakliKelimeler": [
+   "Mobilya",
+   "Kayseri",
+   "Mağaza",
+   "Koltuk",
+   "Masa"
+  ]
+ },
+ {
+  "kelime": "Doğtaş",
+  "yasakliKelimeler": [
+   "Mobilya",
+   "Mağaza",
+   "Koltuk",
+   "Mutfak",
+   "Yatak"
+  ]
+ },
+ {
+  "kelime": "Koçtaş",
+  "yasakliKelimeler": [
+   "Yapı",
+   "Bahçe",
+   "Mağaza",
+   "Turuncu",
+   "Hırdavat"
+  ]
+ },
+ {
+  "kelime": "Faber-Castell",
+  "yasakliKelimeler": [
+   "Kalem",
+   "Silgi",
+   "Kırmızı",
+   "Yeşil",
+   "Kutu"
+  ]
+ },
+ {
+  "kelime": "Staedtler",
+  "yasakliKelimeler": [
+   "Kalem",
+   "Mavi",
+   "Uç",
+   "Silgi",
+   "HB"
+  ]
+ },
+ {
+  "kelime": "Stabilo",
+  "yasakliKelimeler": [
+   "Markör",
+   "Vurgulayıcı",
+   "Renkli",
+   "Neon",
+   "Kalem"
+  ]
+ },
+ {
+  "kelime": "Pelikan",
+  "yasakliKelimeler": [
+   "Mürekkep",
+   "Dolma",
+   "Kalem",
+   "Okul",
+   "Set"
+  ]
+ },
+ {
+  "kelime": "Rotring",
+  "yasakliKelimeler": [
+   "Teknik",
+   "Çizim",
+   "Uç",
+   "Mekanik",
+   "Kalem"
+  ]
+ },
+ {
+  "kelime": "Moleskine",
+  "yasakliKelimeler": [
+   "Defter",
+   "Ajanda",
+   "Kapak",
+   "Siyah",
+   "Kareli"
+  ]
+ },
+ {
+  "kelime": "ÇiçekSepeti",
+  "yasakliKelimeler": [
+   "Hediye",
+   "Çiçek",
+   "Teslimat",
+   "Site",
+   "Sepet"
+  ]
+ }
+]

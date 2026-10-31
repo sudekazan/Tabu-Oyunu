@@ -1,0 +1,2162 @@
+[
+ {
+  "kelime": "Kedi",
+  "yasakliKelimeler": [
+   "Miyav",
+   "Tüy",
+   "Hayvan",
+   "Evcil",
+   "Patiler"
+  ]
+ },
+ {
+  "kelime": "Köpek",
+  "yasakliKelimeler": [
+   "Hav",
+   "Tasma",
+   "Hayvan",
+   "Evcil",
+   "Sadık"
+  ]
+ },
+ {
+  "kelime": "Top",
+  "yasakliKelimeler": [
+   "Yuvarlak",
+   "Zıplar",
+   "Oyun",
+   "Ayak",
+   "El"
+  ]
+ },
+ {
+  "kelime": "Araba",
+  "yasakliKelimeler": [
+   "Tekerlek",
+   "Direksiyon",
+   "Sürmek",
+   "Korna",
+   "Yol"
+  ]
+ },
+ {
+  "kelime": "Bisiklet",
+  "yasakliKelimeler": [
+   "Pedal",
+   "İki",
+   "Tekerlek",
+   "Kask",
+   "Sürmek"
+  ]
+ },
+ {
+  "kelime": "Elma",
+  "yasakliKelimeler": [
+   "Kırmızı",
+   "Meyve",
+   "Ağaç",
+   "Çekirdek",
+   "Yeşil"
+  ]
+ },
+ {
+  "kelime": "Muz",
+  "yasakliKelimeler": [
+   "Sarı",
+   "Meyve",
+   "Kabuğu",
+   "Maymun",
+   "Eğri"
+  ]
+ },
+ {
+  "kelime": "Okul",
+  "yasakliKelimeler": [
+   "Öğretmen",
+   "Sınıf",
+   "Öğrenci",
+   "Ders",
+   "Tahta"
+  ]
+ },
+ {
+  "kelime": "Kalem",
+  "yasakliKelimeler": [
+   "Yazı",
+   "Silgi",
+   "Defter",
+   "Uç",
+   "Okul"
+  ]
+ },
+ {
+  "kelime": "Güneş",
+  "yasakliKelimeler": [
+   "Sıcak",
+   "Gök",
+   "Sarı",
+   "Gündüz",
+   "Işık"
+  ]
+ },
+ {
+  "kelime": "Bulut",
+  "yasakliKelimeler": [
+   "Gökyüzü",
+   "Beyaz",
+   "Yağmur",
+   "Gri",
+   "Pamuk"
+  ]
+ },
+ {
+  "kelime": "Balık",
+  "yasakliKelimeler": [
+   "Su",
+   "Yüzmek",
+   "Akvaryum",
+   "Solungaç",
+   "Deniz"
+  ]
+ },
+ {
+  "kelime": "Kuş",
+  "yasakliKelimeler": [
+   "Uçmak",
+   "Kanat",
+   "Gaga",
+   "Cik",
+   "Yuva"
+  ]
+ },
+ {
+  "kelime": "Çiçek",
+  "yasakliKelimeler": [
+   "Renkli",
+   "Kokmak",
+   "Yaprak",
+   "Saksı",
+   "Bahçe"
+  ]
+ },
+ {
+  "kelime": "Dondurma",
+  "yasakliKelimeler": [
+   "Soğuk",
+   "Yaz",
+   "Tatlı",
+   "Külah",
+   "Çikolata"
+  ]
+ },
+ {
+  "kelime": "Tren",
+  "yasakliKelimeler": [
+   "Ray",
+   "Vagon",
+   "İstasyon",
+   "Masinis",
+   "Hızlı"
+  ]
+ },
+ {
+  "kelime": "Uçak",
+  "yasakliKelimeler": [
+   "Kanat",
+   "Pilot",
+   "Havaalanı",
+   "Yolculuk",
+   "Gökyüzü"
+  ]
+ },
+ {
+  "kelime": "Ayı",
+  "yasakliKelimeler": [
+   "Oyuncak",
+   "Peluş",
+   "Kocaman",
+   "Orman",
+   "Sevimli"
+  ]
+ },
+ {
+  "kelime": "Oyun",
+  "yasakliKelimeler": [
+   "Eğlence",
+   "Arkadaş",
+   "Oynamak",
+   "Oyuncak",
+   "Top"
+  ]
+ },
+ {
+  "kelime": "Kırmızı",
+  "yasakliKelimeler": [
+   "Renk",
+   "Elma",
+   "Bayrak",
+   "Ateş",
+   "Gül"
+  ]
+ },
+ {
+  "kelime": "Mavi",
+  "yasakliKelimeler": [
+   "Renk",
+   "Deniz",
+   "Gökyüzü",
+   "Su",
+   "Serin"
+  ]
+ },
+ {
+  "kelime": "Yeşil",
+  "yasakliKelimeler": [
+   "Renk",
+   "Çimen",
+   "Ağaç",
+   "Doğa",
+   "Yaprak"
+  ]
+ },
+ {
+  "kelime": "Sarı",
+  "yasakliKelimeler": [
+   "Renk",
+   "Güneş",
+   "Limon",
+   "Arı",
+   "Parlak"
+  ]
+ },
+ {
+  "kelime": "Turuncu",
+  "yasakliKelimeler": [
+   "Renk",
+   "Portakal",
+   "Havuç",
+   "Sıcak",
+   "Canlı"
+  ]
+ },
+ {
+  "kelime": "Mor",
+  "yasakliKelimeler": [
+   "Renk",
+   "Lavanta",
+   "Üzüm",
+   "Gece",
+   "Taç"
+  ]
+ },
+ {
+  "kelime": "Pembe",
+  "yasakliKelimeler": [
+   "Renk",
+   "Çiçek",
+   "Tatlı",
+   "Yumuşak",
+   "Kalp"
+  ]
+ },
+ {
+  "kelime": "Beyaz",
+  "yasakliKelimeler": [
+   "Renk",
+   "Kar",
+   "Temiz",
+   "Pamuk",
+   "Saf"
+  ]
+ },
+ {
+  "kelime": "Siyah",
+  "yasakliKelimeler": [
+   "Renk",
+   "Gece",
+   "Karanlık",
+   "Gölge",
+   "Kedi"
+  ]
+ },
+ {
+  "kelime": "Armut",
+  "yasakliKelimeler": [
+   "Meyve",
+   "Yeşil",
+   "Yumuşak",
+   "Sap",
+   "Şekil"
+  ]
+ },
+ {
+  "kelime": "Portakal",
+  "yasakliKelimeler": [
+   "Meyve",
+   "Sıkma",
+   "Turuncu",
+   "Kabuğu",
+   "C"
+  ]
+ },
+ {
+  "kelime": "Üzüm",
+  "yasakliKelimeler": [
+   "Meyve",
+   "Salkım",
+   "Tane",
+   "Mor",
+   "Yeşil"
+  ]
+ },
+ {
+  "kelime": "Karpuz",
+  "yasakliKelimeler": [
+   "Meyve",
+   "Büyük",
+   "Yaz",
+   "Kırmızı",
+   "Çekirdek"
+  ]
+ },
+ {
+  "kelime": "Kiraz",
+  "yasakliKelimeler": [
+   "Meyve",
+   "Kırmızı",
+   "Sap",
+   "Yaz",
+   "Tatlı"
+  ]
+ },
+ {
+  "kelime": "Çorba",
+  "yasakliKelimeler": [
+   "Sıcak",
+   "Kaşık",
+   "Kase",
+   "Yemek",
+   "Sulu"
+  ]
+ },
+ {
+  "kelime": "Pilav",
+  "yasakliKelimeler": [
+   "Pirinç",
+   "Tane",
+   "Yemek",
+   "Beyaz",
+   "Tereyağı"
+  ]
+ },
+ {
+  "kelime": "Makarna",
+  "yasakliKelimeler": [
+   "İp",
+   "Sos",
+   "Peynir",
+   "Tencere",
+   "Yemek"
+  ]
+ },
+ {
+  "kelime": "Süt",
+  "yasakliKelimeler": [
+   "Beyaz",
+   "İçmek",
+   "İnek",
+   "Kalsiyum",
+   "Bardak"
+  ]
+ },
+ {
+  "kelime": "Ekmek",
+  "yasakliKelimeler": [
+   "Fırın",
+   "Dilim",
+   "Tost",
+   "Un",
+   "Hamur"
+  ]
+ },
+ {
+  "kelime": "Peynir",
+  "yasakliKelimeler": [
+   "Süt",
+   "Dilim",
+   "Kaşar",
+   "Beyaz",
+   "Kahvaltı"
+  ]
+ },
+ {
+  "kelime": "Yoğurt",
+  "yasakliKelimeler": [
+   "Kase",
+   "Süt",
+   "Kaşık",
+   "Beyaz",
+   "Ayran"
+  ]
+ },
+ {
+  "kelime": "At",
+  "yasakliKelimeler": [
+   "Koşmak",
+   "Yele",
+   "Binmek",
+   "Nalbant",
+   "Kuyruk"
+  ]
+ },
+ {
+  "kelime": "İnek",
+  "yasakliKelimeler": [
+   "Möö",
+   "Süt",
+   "Tarla",
+   "Çiftlik",
+   "Boynuz"
+  ]
+ },
+ {
+  "kelime": "Tavuk",
+  "yasakliKelimeler": [
+   "Civciv",
+   "Yumurta",
+   "Kanat",
+   "Gaga",
+   "Çiftlik"
+  ]
+ },
+ {
+  "kelime": "Horoz",
+  "yasakliKelimeler": [
+   "Sabah",
+   "Ötmek",
+   "Tavuk",
+   "Çiftlik",
+   "Kırmızı"
+  ]
+ },
+ {
+  "kelime": "Civciv",
+  "yasakliKelimeler": [
+   "Sarı",
+   "Küçük",
+   "Yumurta",
+   "Pofuduk",
+   "Gaga"
+  ]
+ },
+ {
+  "kelime": "Kuzu",
+  "yasakliKelimeler": [
+   "Meee",
+   "Yün",
+   "Beyaz",
+   "Anne",
+   "Çiftlik"
+  ]
+ },
+ {
+  "kelime": "Keçi",
+  "yasakliKelimeler": [
+   "Boynuz",
+   "Dağ",
+   "Yayla",
+   "Meee",
+   "Ot"
+  ]
+ },
+ {
+  "kelime": "Yunus",
+  "yasakliKelimeler": [
+   "Deniz",
+   "Akıllı",
+   "Zıplamak",
+   "Mavi",
+   "Hayvan"
+  ]
+ },
+ {
+  "kelime": "Martı",
+  "yasakliKelimeler": [
+   "Deniz",
+   "Şehir",
+   "Kanat",
+   "Ses",
+   "Ekmek"
+  ]
+ },
+ {
+  "kelime": "Serçe",
+  "yasakliKelimeler": [
+   "Küçük",
+   "Kuş",
+   "Cik",
+   "Kanat",
+   "Ağaç"
+  ]
+ },
+ {
+  "kelime": "Ağaç",
+  "yasakliKelimeler": [
+   "Orman",
+   "Gövde",
+   "Yaprak",
+   "Yeşil",
+   "Gölge"
+  ]
+ },
+ {
+  "kelime": "Çimen",
+  "yasakliKelimeler": [
+   "Yeşil",
+   "Park",
+   "Yumuşak",
+   "Yaprak",
+   "Bahçe"
+  ]
+ },
+ {
+  "kelime": "Yaprak",
+  "yasakliKelimeler": [
+   "Sonbahar",
+   "Ağaç",
+   "Düşmek",
+   "Renk",
+   "Yeşil"
+  ]
+ },
+ {
+  "kelime": "Deniz",
+  "yasakliKelimeler": [
+   "Mavi",
+   "Kum",
+   "Dalg",
+   "Yüzmek",
+   "Yaz"
+  ]
+ },
+ {
+  "kelime": "Dağ",
+  "yasakliKelimeler": [
+   "Yüksek",
+   "Kaya",
+   "Kış",
+   "Kar",
+   "Tırmanmak"
+  ]
+ },
+ {
+  "kelime": "Göl",
+  "yasakliKelimeler": [
+   "Su",
+   "Sessiz",
+   "Balık",
+   "Kenar",
+   "Mavi"
+  ]
+ },
+ {
+  "kelime": "Nehir",
+  "yasakliKelimeler": [
+   "Akan",
+   "Su",
+   "Köprü",
+   "Geniş",
+   "Mavi"
+  ]
+ },
+ {
+  "kelime": "Yağmur",
+  "yasakliKelimeler": [
+   "Şemsiye",
+   "Islak",
+   "Bulut",
+   "Damla",
+   "Gri"
+  ]
+ },
+ {
+  "kelime": "Kar",
+  "yasakliKelimeler": [
+   "Beyaz",
+   "Soğuk",
+   "Kış",
+   "Adam",
+   "Top"
+  ]
+ },
+ {
+  "kelime": "Rüzgar",
+  "yasakliKelimeler": [
+   "Esmek",
+   "Uçmak",
+   "Hafif",
+   "Yaprak",
+   "Serin"
+  ]
+ },
+ {
+  "kelime": "Gökkuşağı",
+  "yasakliKelimeler": [
+   "Renk",
+   "Yağmur",
+   "Güneş",
+   "Kavis",
+   "Gökyüzü"
+  ]
+ },
+ {
+  "kelime": "Otobüs",
+  "yasakliKelimeler": [
+   "Durak",
+   "Sarı",
+   "Şoför",
+   "Bilet",
+   "Yolcu"
+  ]
+ },
+ {
+  "kelime": "Taksi",
+  "yasakliKelimeler": [
+   "Sarı",
+   "Ücret",
+   "Şoför",
+   "Araç",
+   "Durak"
+  ]
+ },
+ {
+  "kelime": "Minibüs",
+  "yasakliKelimeler": [
+   "Küçük",
+   "Toplu",
+   "Taşıma",
+   "Durak",
+   "Şoför"
+  ]
+ },
+ {
+  "kelime": "Scooter",
+  "yasakliKelimeler": [
+   "Elektrik",
+   "Ayak",
+   "Kask",
+   "Kaymak",
+   "Sürmek"
+  ]
+ },
+ {
+  "kelime": "Kaykay",
+  "yasakliKelimeler": [
+   "Tahta",
+   "Tekerlek",
+   "Park",
+   "Trick",
+   "Kask"
+  ]
+ },
+ {
+  "kelime": "Kitap",
+  "yasakliKelimeler": [
+   "Okumak",
+   "Sayfa",
+   "Kütüphane",
+   "Harf",
+   "Bilgi"
+  ]
+ },
+ {
+  "kelime": "Defter",
+  "yasakliKelimeler": [
+   "Çizgi",
+   "Yazı",
+   "Okul",
+   "Sayfa",
+   "Kapak"
+  ]
+ },
+ {
+  "kelime": "Çanta",
+  "yasakliKelimeler": [
+   "Sırt",
+   "Okul",
+   "Fermuar",
+   "Dolg",
+   "Taşımak"
+  ]
+ },
+ {
+  "kelime": "Silgi",
+  "yasakliKelimeler": [
+   "Hata",
+   "Düzeltmek",
+   "Kalem",
+   "Yazı",
+   "Okul"
+  ]
+ },
+ {
+  "kelime": "Cetvel",
+  "yasakliKelimeler": [
+   "Ölçmek",
+   "Uzun",
+   "Kenar",
+   "Çizgi",
+   "Matematik"
+  ]
+ },
+ {
+  "kelime": "Makas",
+  "yasakliKelimeler": [
+   "Kesmek",
+   "Kağıt",
+   "El",
+   "Uç",
+   "Okul"
+  ]
+ },
+ {
+  "kelime": "Tahta",
+  "yasakliKelimeler": [
+   "Sınıf",
+   "Yazmak",
+   "Silgi",
+   "Tebeşir",
+   "Beyaz"
+  ]
+ },
+ {
+  "kelime": "Zil",
+  "yasakliKelimeler": [
+   "Ses",
+   "Ders",
+   "Teneffüs",
+   "Çalmak",
+   "Okul"
+  ]
+ },
+ {
+  "kelime": "Oda",
+  "yasakliKelimeler": [
+   "Yatak",
+   "Dolap",
+   "Kapı",
+   "Pencere",
+   "Lamba"
+  ]
+ },
+ {
+  "kelime": "Mutfak",
+  "yasakliKelimeler": [
+   "Tencere",
+   "Tabak",
+   "Yemek",
+   "Buzdolabı",
+   "Çatal"
+  ]
+ },
+ {
+  "kelime": "Banyo",
+  "yasakliKelimeler": [
+   "Duş",
+   "Sabun",
+   "Havlu",
+   "Ayna",
+   "Temiz"
+  ]
+ },
+ {
+  "kelime": "Salon",
+  "yasakliKelimeler": [
+   "Koltuk",
+   "Televizyon",
+   "Halı",
+   "Aile",
+   "Masa"
+  ]
+ },
+ {
+  "kelime": "Yatak",
+  "yasakliKelimeler": [
+   "Yastık",
+   "Uyku",
+   "Nevresim",
+   "Dinlenmek",
+   "Rüya"
+  ]
+ },
+ {
+  "kelime": "Lamba",
+  "yasakliKelimeler": [
+   "Işık",
+   "Aç",
+   "Kapat",
+   "Gece",
+   "Ampul"
+  ]
+ },
+ {
+  "kelime": "Sabah",
+  "yasakliKelimeler": [
+   "Gün",
+   "Erken",
+   "Güneş",
+   "Uyanmak",
+   "Kahvaltı"
+  ]
+ },
+ {
+  "kelime": "Akşam",
+  "yasakliKelimeler": [
+   "Gece",
+   "Yemek",
+   "Gün",
+   "Günbatımı",
+   "Uyku"
+  ]
+ },
+ {
+  "kelime": "Oyun Parkı",
+  "yasakliKelimeler": [
+   "Salıncak",
+   "Kaydırak",
+   "Çocuk",
+   "Park",
+   "Eğlence"
+  ]
+ },
+ {
+  "kelime": "Salıncak",
+  "yasakliKelimeler": [
+   "İleri",
+   "Geri",
+   "Zincir",
+   "Park",
+   "Oturmak"
+  ]
+ },
+ {
+  "kelime": "Kaydırak",
+  "yasakliKelimeler": [
+   "Yukarı",
+   "Aşağı",
+   "Park",
+   "Oyun",
+   "Merdiven"
+  ]
+ },
+ {
+  "kelime": "Bebek",
+  "yasakliKelimeler": [
+   "Ağlamak",
+   "Kundak",
+   "Sevimli",
+   "Kucak",
+   "Oyuncak"
+  ]
+ },
+ {
+  "kelime": "Lego",
+  "yasakliKelimeler": [
+   "Parça",
+   "Renkli",
+   "Yapmak",
+   "Küçük",
+   "Oyun"
+  ]
+ },
+ {
+  "kelime": "Balon",
+  "yasakliKelimeler": [
+   "Şişirmek",
+   "Uçmak",
+   "Renkli",
+   "Patlamak",
+   "Parti"
+  ]
+ },
+ {
+  "kelime": "Şapka",
+  "yasakliKelimeler": [
+   "Baş",
+   "Güneş",
+   "Takmak",
+   "Kıyafet",
+   "Siper"
+  ]
+ },
+ {
+  "kelime": "Eldiven",
+  "yasakliKelimeler": [
+   "El",
+   "Kış",
+   "Sıcak",
+   "Giymek",
+   "Yün"
+  ]
+ },
+ {
+  "kelime": "Mont",
+  "yasakliKelimeler": [
+   "Kış",
+   "Giyinmek",
+   "Sıcak",
+   "Fermuar",
+   "Ceket"
+  ]
+ },
+ {
+  "kelime": "Ayakkabı",
+  "yasakliKelimeler": [
+   "Bağcık",
+   "Giyinmek",
+   "Numara",
+   "Koşmak",
+   "Spor"
+  ]
+ },
+ {
+  "kelime": "Çorap",
+  "yasakliKelimeler": [
+   "Ayak",
+   "Pamuk",
+   "Giyinmek",
+   "Çizgi",
+   "Renk"
+  ]
+ },
+ {
+  "kelime": "Koşmak",
+  "yasakliKelimeler": [
+   "Hızlı",
+   "Ayak",
+   "Spor",
+   "Yarış",
+   "Oyun"
+  ]
+ },
+ {
+  "kelime": "Zıplamak",
+  "yasakliKelimeler": [
+   "Yukarı",
+   "Aşağı",
+   "Oyun",
+   "Trambolin",
+   "Sevinç"
+  ]
+ },
+ {
+  "kelime": "Çizmek",
+  "yasakliKelimeler": [
+   "Kalem",
+   "Kağıt",
+   "Resim",
+   "Renk",
+   "Boyamak"
+  ]
+ },
+ {
+  "kelime": "Boyamak",
+  "yasakliKelimeler": [
+   "Fırça",
+   "Renk",
+   "Resim",
+   "Defter",
+   "Su"
+  ]
+ },
+ {
+  "kelime": "Şarkı",
+  "yasakliKelimeler": [
+   "Söylemek",
+   "Müzik",
+   "Ses",
+   "Dans",
+   "Ritim"
+  ]
+ },
+ {
+  "kelime": "Dans",
+  "yasakliKelimeler": [
+   "Müzik",
+   "Hareket",
+   "Oyun",
+   "Sahne",
+   "Ritim"
+  ]
+ },
+ {
+  "kelime": "Tavşan",
+  "yasakliKelimeler": [
+   "Havuç",
+   "Kulak",
+   "Zıplamak",
+   "Sevimli",
+   "Beyaz"
+  ]
+ },
+ {
+  "kelime": "Kedi Yavrusu",
+  "yasakliKelimeler": [
+   "Küçük",
+   "Miyav",
+   "Oyun",
+   "Sevimli",
+   "Anne"
+  ]
+ },
+ {
+  "kelime": "Köpek Yavrusu",
+  "yasakliKelimeler": [
+   "Küçük",
+   "Hav",
+   "Oyun",
+   "Sadık",
+   "Anne"
+  ]
+ },
+ {
+  "kelime": "Kaplumbağa",
+  "yasakliKelimeler": [
+   "Yavaş",
+   "Kabuk",
+   "Yeşil",
+   "Su",
+   "Hayvan"
+  ]
+ },
+ {
+  "kelime": "Kırlangıç",
+  "yasakliKelimeler": [
+   "Kuş",
+   "Yuva",
+   "Uçmak",
+   "İlkbahar",
+   "Hızlı"
+  ]
+ },
+ {
+  "kelime": "Saat",
+  "yasakliKelimeler": [
+   "Kol",
+   "Duvar",
+   "Zaman",
+   "Akrep",
+   "Yelkovan"
+  ]
+ },
+ {
+  "kelime": "Telefon",
+  "yasakliKelimeler": [
+   "Ara",
+   "Mesaj",
+   "Ekran",
+   "Uygulama",
+   "Ses"
+  ]
+ },
+ {
+  "kelime": "Televizyon",
+  "yasakliKelimeler": [
+   "Kumanda",
+   "Ekran",
+   "Film",
+   "Dizi",
+   "Kanal"
+  ]
+ },
+ {
+  "kelime": "Bilgisayar",
+  "yasakliKelimeler": [
+   "Ekran",
+   "Klavye",
+   "Fare",
+   "Oyun",
+   "Yazı"
+  ]
+ },
+ {
+  "kelime": "Kamera",
+  "yasakliKelimeler": [
+   "Fotoğraf",
+   "Video",
+   "Çekmek",
+   "Lens",
+   "Anı"
+  ]
+ },
+ {
+  "kelime": "Fener",
+  "yasakliKelimeler": [
+   "Işık",
+   "Gece",
+   "El",
+   "Aydınlık",
+   "Pille"
+  ]
+ },
+ {
+  "kelime": "Masa",
+  "yasakliKelimeler": [
+   "Sandalye",
+   "Yemek",
+   "Ahşap",
+   "Dört",
+   "Ayak"
+  ]
+ },
+ {
+  "kelime": "Sandalye",
+  "yasakliKelimeler": [
+   "Oturmak",
+   "Masa",
+   "Ayak",
+   "Ahşap",
+   "Sınıf"
+  ]
+ },
+ {
+  "kelime": "Tabak",
+  "yasakliKelimeler": [
+   "Yemek",
+   "Porselen",
+   "Yuvarlak",
+   "Çatal",
+   "Bıçak"
+  ]
+ },
+ {
+  "kelime": "Bardak",
+  "yasakliKelimeler": [
+   "Su",
+   "Cam",
+   "İçmek",
+   "Masa",
+   "Soğuk"
+  ]
+ },
+ {
+  "kelime": "Çatal",
+  "yasakliKelimeler": [
+   "Tabak",
+   "Yemek",
+   "Metal",
+   "Bıçak",
+   "Kaşık"
+  ]
+ },
+ {
+  "kelime": "Kaşık",
+  "yasakliKelimeler": [
+   "Çorba",
+   "Tatlı",
+   "Yemek",
+   "Küçük",
+   "Metal"
+  ]
+ },
+ {
+  "kelime": "Bıçak",
+  "yasakliKelimeler": [
+   "Kesmek",
+   "Metal",
+   "Tehlike",
+   "Mutfak",
+   "Dikkat"
+  ]
+ },
+ {
+  "kelime": "Mutlu",
+  "yasakliKelimeler": [
+   "Gülmek",
+   "Sevinç",
+   "Yüz",
+   "Neşeli",
+   "Sevgi"
+  ]
+ },
+ {
+  "kelime": "Üzgün",
+  "yasakliKelimeler": [
+   "Ağlamak",
+   "Göz",
+   "Moral",
+   "Düşük",
+   "Hüzün"
+  ]
+ },
+ {
+  "kelime": "Şaşkın",
+  "yasakliKelimeler": [
+   "Aaa",
+   "Göz",
+   "Ağız",
+   "Beklenmedik",
+   "Hayret"
+  ]
+ },
+ {
+  "kelime": "Korkmak",
+  "yasakliKelimeler": [
+   "Gece",
+   "Canavar",
+   "Ses",
+   "Saklanmak",
+   "Titremek"
+  ]
+ },
+ {
+  "kelime": "Bir",
+  "yasakliKelimeler": [
+   "Sayı",
+   "İlk",
+   "Az",
+   "Tek",
+   "Başlangıç"
+  ]
+ },
+ {
+  "kelime": "İki",
+  "yasakliKelimeler": [
+   "Sayı",
+   "Çift",
+   "Yan",
+   "İkiz",
+   "Parça"
+  ]
+ },
+ {
+  "kelime": "Üç",
+  "yasakliKelimeler": [
+   "Sayı",
+   "Üçgen",
+   "Az",
+   "El",
+   "Parmak"
+  ]
+ },
+ {
+  "kelime": "Dört",
+  "yasakliKelimeler": [
+   "Sayı",
+   "Kare",
+   "Köşe",
+   "Ayak",
+   "Masa"
+  ]
+ },
+ {
+  "kelime": "Beş",
+  "yasakliKelimeler": [
+   "Sayı",
+   "El",
+   "Parmak",
+   "Yıldız",
+   "Not"
+  ]
+ },
+ {
+  "kelime": "Futbol",
+  "yasakliKelimeler": [
+   "Top",
+   "Gol",
+   "Saha",
+   "Ayak",
+   "Takım"
+  ]
+ },
+ {
+  "kelime": "Basketbol",
+  "yasakliKelimeler": [
+   "Top",
+   "Pota",
+   "El",
+   "Saha",
+   "Atış"
+  ]
+ },
+ {
+  "kelime": "Voleybol",
+  "yasakliKelimeler": [
+   "Top",
+   "File",
+   "Saha",
+   "El",
+   "Takım"
+  ]
+ },
+ {
+  "kelime": "Yüzme",
+  "yasakliKelimeler": [
+   "Su",
+   "Havuz",
+   "Kulaç",
+   "Yaz",
+   "Spor"
+  ]
+ },
+ {
+  "kelime": "Koşu",
+  "yasakliKelimeler": [
+   "Hız",
+   "Ayak",
+   "Parkur",
+   "Spor",
+   "Nefes"
+  ]
+ },
+ {
+  "kelime": "Korna",
+  "yasakliKelimeler": [
+   "Ses",
+   "Araba",
+   "Yol",
+   "Buton",
+   "Uyarmak"
+  ]
+ },
+ {
+  "kelime": "Fren",
+  "yasakliKelimeler": [
+   "Durmak",
+   "Araba",
+   "Ses",
+   "Güvenlik",
+   "Yavaş"
+  ]
+ },
+ {
+  "kelime": "Arkadaş",
+  "yasakliKelimeler": [
+   "Beraber",
+   "Oyun",
+   "Sevgi",
+   "Okul",
+   "Gülmek"
+  ]
+ },
+ {
+  "kelime": "Aile",
+  "yasakliKelimeler": [
+   "Anne",
+   "Baba",
+   "Kardeş",
+   "Ev",
+   "Sevgi"
+  ]
+ },
+ {
+  "kelime": "Bayram",
+  "yasakliKelimeler": [
+   "Şeker",
+   "Ziyaret",
+   "Sevgi",
+   "Tatlı",
+   "Kutlama"
+  ]
+ },
+ {
+  "kelime": "Hediye",
+  "yasakliKelimeler": [
+   "Paket",
+   "Kutlamak",
+   "Sürpriz",
+   "Doğum",
+   "Gün"
+  ]
+ },
+ {
+  "kelime": "Oyun Hamuru",
+  "yasakliKelimeler": [
+   "Yoğurmak",
+   "Renk",
+   "Şekil",
+   "El",
+   "Koku"
+  ]
+ },
+ {
+  "kelime": "Kitaplık",
+  "yasakliKelimeler": [
+   "Raf",
+   "Kitap",
+   "Sınıf",
+   "Kütüphane",
+   "Düzen"
+  ]
+ },
+ {
+  "kelime": "Pencere",
+  "yasakliKelimeler": [
+   "Cam",
+   "Açmak",
+   "Perde",
+   "Hava",
+   "Işık"
+  ]
+ },
+ {
+  "kelime": "Kapı",
+  "yasakliKelimeler": [
+   "Açmak",
+   "Kapatmak",
+   "Kol",
+   "Ev",
+   "Giriş"
+  ]
+ },
+ {
+  "kelime": "Bahçe",
+  "yasakliKelimeler": [
+   "Çiçek",
+   "Ağaç",
+   "Çimen",
+   "Ev",
+   "Fidan"
+  ]
+ },
+ {
+  "kelime": "Kum",
+  "yasakliKelimeler": [
+   "Plaj",
+   "Kale",
+   "Altın",
+   "Yaz",
+   "El"
+  ]
+ },
+ {
+  "kelime": "Kova",
+  "yasakliKelimeler": [
+   "Kum",
+   "Su",
+   "Taşımak",
+   "Plaj",
+   "Kürek"
+  ]
+ },
+ {
+  "kelime": "Kürek",
+  "yasakliKelimeler": [
+   "Kum",
+   "Kova",
+   "Kazmak",
+   "Plaj",
+   "Bahçe"
+  ]
+ },
+ {
+  "kelime": "Anne",
+  "yasakliKelimeler": [
+   "Aile",
+   "Sevgi",
+   "Ev",
+   "Baba",
+   "Kucak"
+  ]
+ },
+ {
+  "kelime": "Baba",
+  "yasakliKelimeler": [
+   "Aile",
+   "Ev",
+   "Anne",
+   "Güçlü",
+   "Koruma"
+  ]
+ },
+ {
+  "kelime": "Kardeş",
+  "yasakliKelimeler": [
+   "Aile",
+   "Küçük",
+   "Oyun",
+   "Ev",
+   "Birlikte"
+  ]
+ },
+ {
+  "kelime": "Dede",
+  "yasakliKelimeler": [
+   "Aile",
+   "Yaşlı",
+   "Hikaye",
+   "Sevgi",
+   "Torun"
+  ]
+ },
+ {
+  "kelime": "Teyze",
+  "yasakliKelimeler": [
+   "Aile",
+   "Akraba",
+   "Ziyaret",
+   "Sevgi",
+   "Anne Tarafı"
+  ]
+ },
+ {
+  "kelime": "Amca",
+  "yasakliKelimeler": [
+   "Aile",
+   "Akraba",
+   "Ziyaret",
+   "Baba Tarafı",
+   "Sevgi"
+  ]
+ },
+ {
+  "kelime": "Doğum Günü",
+  "yasakliKelimeler": [
+   "Pasta",
+   "Hediye",
+   "Mum",
+   "Kutlama",
+   "Yaş"
+  ]
+ },
+ {
+  "kelime": "Balon Uçurmak",
+  "yasakliKelimeler": [
+   "Gökyüzü",
+   "Renkli",
+   "Parti",
+   "Uçmak",
+   "İp"
+  ]
+ },
+ {
+  "kelime": "Pasta",
+  "yasakliKelimeler": [
+   "Mum",
+   "Doğum Günü",
+   "Tatlı",
+   "Dilim",
+   "Krema"
+  ]
+ },
+ {
+  "kelime": "Mum Üflemek",
+  "yasakliKelimeler": [
+   "Doğum Günü",
+   "Dilek",
+   "Ateş",
+   "Pasta",
+   "Üflemek"
+  ]
+ },
+ {
+  "kelime": "Oyuncak Ayı",
+  "yasakliKelimeler": [
+   "Peluş",
+   "Yumuşak",
+   "Sarılmak",
+   "Kahverengi",
+   "Yatak"
+  ]
+ },
+ {
+  "kelime": "Bebek Arabası",
+  "yasakliKelimeler": [
+   "Tekerlek",
+   "Bebek",
+   "İtmek",
+   "Park",
+   "Gezinti"
+  ]
+ },
+ {
+  "kelime": "Emzik",
+  "yasakliKelimeler": [
+   "Bebek",
+   "Ağız",
+   "Sakin",
+   "Plastik",
+   "Uyku"
+  ]
+ },
+ {
+  "kelime": "Biberon",
+  "yasakliKelimeler": [
+   "Bebek",
+   "Süt",
+   "İçmek",
+   "Plastik",
+   "Emzik"
+  ]
+ },
+ {
+  "kelime": "Tahterevalli",
+  "yasakliKelimeler": [
+   "Park",
+   "Yukarı",
+   "Aşağı",
+   "İki Kişi",
+   "Oyun"
+  ]
+ },
+ {
+  "kelime": "Oyuncak Araba",
+  "yasakliKelimeler": [
+   "Tekerlek",
+   "Küçük",
+   "Sürmek",
+   "Plastik",
+   "Oyun"
+  ]
+ },
+ {
+  "kelime": "Puzzle",
+  "yasakliKelimeler": [
+   "Parça",
+   "Birleştirmek",
+   "Resim",
+   "Oyun",
+   "Zeka"
+  ]
+ },
+ {
+  "kelime": "Boya Kalemi",
+  "yasakliKelimeler": [
+   "Renk",
+   "Çizmek",
+   "Kağıt",
+   "Kutusu",
+   "Sanat"
+  ]
+ },
+ {
+  "kelime": "Sulu Boya",
+  "yasakliKelimeler": [
+   "Renk",
+   "Fırça",
+   "Kağıt",
+   "Islak",
+   "Resim"
+  ]
+ },
+ {
+  "kelime": "Bulmaca",
+  "yasakliKelimeler": [
+   "Zeka",
+   "Bulmak",
+   "Oyun",
+   "Soru",
+   "Çözmek"
+  ]
+ },
+ {
+  "kelime": "Peluş Oyuncak",
+  "yasakliKelimeler": [
+   "Yumuşak",
+   "Sarılmak",
+   "Hayvan",
+   "Yatak",
+   "Sevimli"
+  ]
+ },
+ {
+  "kelime": "Robot Oyuncak",
+  "yasakliKelimeler": [
+   "Pil",
+   "Hareket",
+   "Metal",
+   "Oyun",
+   "Düğme"
+  ]
+ },
+ {
+  "kelime": "Bebek Bezi",
+  "yasakliKelimeler": [
+   "Bebek",
+   "Değiştirmek",
+   "Temiz",
+   "Beyaz",
+   "Bakım"
+  ]
+ },
+ {
+  "kelime": "Mama Sandalyesi",
+  "yasakliKelimeler": [
+   "Bebek",
+   "Yemek",
+   "Mutfak",
+   "Oturmak",
+   "Kayış"
+  ]
+ },
+ {
+  "kelime": "Kalem Kutusu",
+  "yasakliKelimeler": [
+   "Okul",
+   "Kalem",
+   "Silgi",
+   "Çanta",
+   "Renkli"
+  ]
+ },
+ {
+  "kelime": "Sırt Çantası",
+  "yasakliKelimeler": [
+   "Okul",
+   "Taşımak",
+   "Kitap",
+   "Omuz",
+   "Fermuar"
+  ]
+ },
+ {
+  "kelime": "Tahta Silgisi",
+  "yasakliKelimeler": [
+   "Sınıf",
+   "Tahta",
+   "Silmek",
+   "Öğretmen",
+   "Toz"
+  ]
+ },
+ {
+  "kelime": "Yemekhane",
+  "yasakliKelimeler": [
+   "Okul",
+   "Yemek",
+   "Tepsi",
+   "Masa",
+   "Kalabalık"
+  ]
+ },
+ {
+  "kelime": "Teneffüs",
+  "yasakliKelimeler": [
+   "Okul",
+   "Zil",
+   "Ders Arası",
+   "Oyun",
+   "Dışarı"
+  ]
+ },
+ {
+  "kelime": "Sınıf",
+  "yasakliKelimeler": [
+   "Okul",
+   "Öğretmen",
+   "Sıra",
+   "Tahta",
+   "Ders"
+  ]
+ },
+ {
+  "kelime": "Öğretmen",
+  "yasakliKelimeler": [
+   "Okul",
+   "Ders",
+   "Tahta",
+   "Sınıf",
+   "Öğretmek"
+  ]
+ },
+ {
+  "kelime": "Karne",
+  "yasakliKelimeler": [
+   "Okul",
+   "Not",
+   "Yıl Sonu",
+   "Başarı",
+   "Kağıt"
+  ]
+ },
+ {
+  "kelime": "Servis Arabası",
+  "yasakliKelimeler": [
+   "Okul",
+   "Taşımak",
+   "Sarı",
+   "Yolcu",
+   "Şoför"
+  ]
+ },
+ {
+  "kelime": "Palyaço",
+  "yasakliKelimeler": [
+   "Sirk",
+   "Komik",
+   "Kırmızı Burun",
+   "Gösteri",
+   "Renkli"
+  ]
+ },
+ {
+  "kelime": "Lunapark",
+  "yasakliKelimeler": [
+   "Oyuncak",
+   "Dönme Dolap",
+   "Eğlence",
+   "Bilet",
+   "Gezi"
+  ]
+ },
+ {
+  "kelime": "Dönme Dolap",
+  "yasakliKelimeler": [
+   "Lunapark",
+   "Yüksek",
+   "Dönmek",
+   "Eğlence",
+   "Kabin"
+  ]
+ },
+ {
+  "kelime": "Karusel",
+  "yasakliKelimeler": [
+   "Lunapark",
+   "Dönmek",
+   "At",
+   "Müzik",
+   "Eğlence"
+  ]
+ },
+ {
+  "kelime": "Hayvanat Bahçesi",
+  "yasakliKelimeler": [
+   "Hayvan",
+   "Kafes",
+   "Gezi",
+   "Aslan",
+   "Bilet"
+  ]
+ },
+ {
+  "kelime": "Akvaryum",
+  "yasakliKelimeler": [
+   "Balık",
+   "Su",
+   "Cam",
+   "Deniz",
+   "Gezi"
+  ]
+ },
+ {
+  "kelime": "Sirk",
+  "yasakliKelimeler": [
+   "Gösteri",
+   "Palyaço",
+   "Hayvan",
+   "Çadır",
+   "Akrobat"
+  ]
+ },
+ {
+  "kelime": "Deniz Kabuğu",
+  "yasakliKelimeler": [
+   "Plaj",
+   "Kum",
+   "Deniz",
+   "Toplamak",
+   "Ses"
+  ]
+ },
+ {
+  "kelime": "Deniz Yıldızı",
+  "yasakliKelimeler": [
+   "Deniz",
+   "Plaj",
+   "Beş Kol",
+   "Kayalık",
+   "Renkli"
+  ]
+ },
+ {
+  "kelime": "Kelebek Ağı",
+  "yasakliKelimeler": [
+   "Bahçe",
+   "Yakalamak",
+   "Böcek",
+   "Sap",
+   "Oyun"
+  ]
+ },
+ {
+  "kelime": "Sincap",
+  "yasakliKelimeler": [
+   "Ağaç",
+   "Kuyruk",
+   "Fındık",
+   "Küçük",
+   "Hızlı"
+  ]
+ },
+ {
+  "kelime": "Karınca",
+  "yasakliKelimeler": [
+   "Küçük",
+   "Koloni",
+   "Çalışkan",
+   "Yuva",
+   "Toprak"
+  ]
+ },
+ {
+  "kelime": "Uğur Böceği",
+  "yasakliKelimeler": [
+   "Kırmızı",
+   "Nokta",
+   "Böcek",
+   "Uçmak",
+   "Küçük"
+  ]
+ },
+ {
+  "kelime": "Örümcek",
+  "yasakliKelimeler": [
+   "Ağ",
+   "Sekiz Bacak",
+   "Böcek",
+   "Köşe",
+   "Yakalamak"
+  ]
+ },
+ {
+  "kelime": "Kurbağa",
+  "yasakliKelimeler": [
+   "Zıplamak",
+   "Yeşil",
+   "Nilüfer",
+   "Gölet",
+   "Vıraklamak"
+  ]
+ },
+ {
+  "kelime": "Yengeç",
+  "yasakliKelimeler": [
+   "Deniz",
+   "Kıskaç",
+   "Kum",
+   "Yan Yürür",
+   "Kabuklu"
+  ]
+ },
+ {
+  "kelime": "Papatya",
+  "yasakliKelimeler": [
+   "Çiçek",
+   "Beyaz",
+   "Sarı",
+   "Bahçe",
+   "Koparmak"
+  ]
+ },
+ {
+  "kelime": "Lale",
+  "yasakliKelimeler": [
+   "Çiçek",
+   "Renkli",
+   "Bahar",
+   "Bahçe",
+   "Soğan"
+  ]
+ },
+ {
+  "kelime": "Gelincik",
+  "yasakliKelimeler": [
+   "Çiçek",
+   "Kırmızı",
+   "Tarla",
+   "Yaban",
+   "İnce"
+  ]
+ },
+ {
+  "kelime": "Fıstık",
+  "yasakliKelimeler": [
+   "Kuruyemiş",
+   "Kabuklu",
+   "Yeşil",
+   "Atıştırmak",
+   "Antep"
+  ]
+ },
+ {
+  "kelime": "Pamuk Şeker",
+  "yasakliKelimeler": [
+   "Tatlı",
+   "Pembe",
+   "Lunapark",
+   "Yumuşak",
+   "Çubuk"
+  ]
+ },
+ {
+  "kelime": "Lolipop",
+  "yasakliKelimeler": [
+   "Şeker",
+   "Çubuk",
+   "Yalamak",
+   "Renkli",
+   "Tatlı"
+  ]
+ },
+ {
+  "kelime": "Jöle",
+  "yasakliKelimeler": [
+   "Tatlı",
+   "Titrek",
+   "Renkli",
+   "Kalıp",
+   "Yumuşak"
+  ]
+ },
+ {
+  "kelime": "Pul Biber",
+  "yasakliKelimeler": [
+   "Baharat",
+   "Kırmızı",
+   "Mutfak",
+   "Tatmak",
+   "Acı"
+  ]
+ },
+ {
+  "kelime": "Uçurtma",
+  "yasakliKelimeler": [
+   "Gökyüzü",
+   "İp",
+   "Rüzgar",
+   "Renkli",
+   "Uçmak"
+  ]
+ },
+ {
+  "kelime": "Sabun Köpüğü",
+  "yasakliKelimeler": [
+   "Baloncuk",
+   "Uçuşmak",
+   "Renkli",
+   "Oyun",
+   "Patlamak"
+  ]
+ },
+ {
+  "kelime": "Dama Taşı",
+  "yasakliKelimeler": [
+   "Oyun",
+   "Tahta",
+   "Siyah Beyaz",
+   "Masa",
+   "Sıra"
+  ]
+ },
+ {
+  "kelime": "Misket",
+  "yasakliKelimeler": [
+   "Cam",
+   "Yuvarlak",
+   "Oyun",
+   "Fırlatmak",
+   "Renkli"
+  ]
+ },
+ {
+  "kelime": "İp Atlama",
+  "yasakliKelimeler": [
+   "Oyun",
+   "Zıplamak",
+   "İp",
+   "Egzersiz",
+   "Park"
+  ]
+ },
+ {
+  "kelime": "Saklambaç",
+  "yasakliKelimeler": [
+   "Oyun",
+   "Gizlenmek",
+   "Bulmak",
+   "Park",
+   "Sayı Saymak"
+  ]
+ },
+ {
+  "kelime": "Yakalambaç",
+  "yasakliKelimeler": [
+   "Oyun",
+   "Koşmak",
+   "Kovalamak",
+   "Park",
+   "Dokunmak"
+  ]
+ },
+ {
+  "kelime": "El Sanatları",
+  "yasakliKelimeler": [
+   "Yapıştırmak",
+   "Kağıt",
+   "Makas",
+   "Okul",
+   "Boyamak"
+  ]
+ },
+ {
+  "kelime": "Kesme Makası",
+  "yasakliKelimeler": [
+   "Okul",
+   "Kağıt",
+   "El Sanatı",
+   "Kesmek",
+   "Keskin"
+  ]
+ },
+ {
+  "kelime": "Yapıştırıcı",
+  "yasakliKelimeler": [
+   "Okul",
+   "Kağıt",
+   "Yapışkan",
+   "El Sanatı",
+   "Tüp"
+  ]
+ },
+ {
+  "kelime": "Resim Defteri",
+  "yasakliKelimeler": [
+   "Kağıt",
+   "Çizmek",
+   "Boya",
+   "Okul",
+   "Sayfa"
+  ]
+ },
+ {
+  "kelime": "Boyama Kitabı",
+  "yasakliKelimeler": [
+   "Çizgi",
+   "Renk",
+   "Kalem",
+   "Sayfa",
+   "Çocuk"
+  ]
+ },
+ {
+  "kelime": "Hamur Oyunu",
+  "yasakliKelimeler": [
+   "Renkli",
+   "Yoğurmak",
+   "Şekil",
+   "Oyun",
+   "Yumuşak"
+  ]
+ },
+ {
+  "kelime": "Kalemtıraş",
+  "yasakliKelimeler": [
+   "Okul",
+   "Kalem",
+   "Keskin",
+   "Uç",
+   "Kutu"
+  ]
+ }
+]

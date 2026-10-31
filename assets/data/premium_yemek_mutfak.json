@@ -1,0 +1,1612 @@
+[
+ {
+  "kelime": "Kebap",
+  "yasakliKelimeler": [
+   "Et",
+   "Şiş",
+   "Mangal",
+   "Köfte",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Çorba",
+  "yasakliKelimeler": [
+   "Sıcak",
+   "Kaşık",
+   "Mercimek",
+   "Tarhana",
+   "Yemek"
+  ]
+ },
+ {
+  "kelime": "Burger",
+  "yasakliKelimeler": [
+   "Amerika",
+   "Köfte",
+   "Ekmek",
+   "Salata",
+   "Fast Food"
+  ]
+ },
+ {
+  "kelime": "Sushi",
+  "yasakliKelimeler": [
+   "Japonya",
+   "Balık",
+   "Pirinç",
+   "Yosun",
+   "Çubuk"
+  ]
+ },
+ {
+  "kelime": "Taco",
+  "yasakliKelimeler": [
+   "Meksika",
+   "Mısır",
+   "Et",
+   "Baharat",
+   "Limon"
+  ]
+ },
+ {
+  "kelime": "Paella",
+  "yasakliKelimeler": [
+   "İspanya",
+   "Deniz Ürünleri",
+   "Sarıçalı",
+   "Pirinç",
+   "Valencia"
+  ]
+ },
+ {
+  "kelime": "Curry",
+  "yasakliKelimeler": [
+   "Hindistan",
+   "Baharat",
+   "Sıcak",
+   "Tavuk",
+   "Kokulu"
+  ]
+ },
+ {
+  "kelime": "Falafel",
+  "yasakliKelimeler": [
+   "Ortadoğu",
+   "Nohut",
+   "Kızartma",
+   "Tahini",
+   "Pita"
+  ]
+ },
+ {
+  "kelime": "Kimchi",
+  "yasakliKelimeler": [
+   "Güney Kore",
+   "Lahana",
+   "Fermente",
+   "Acı",
+   "Pilav"
+  ]
+ },
+ {
+  "kelime": "Pad Thai",
+  "yasakliKelimeler": [
+   "Tayland",
+   "Makarna",
+   "Fıstık",
+   "Krevet",
+   "Sıcak"
+  ]
+ },
+ {
+  "kelime": "Komposto",
+  "yasakliKelimeler": [
+   "Meyve",
+   "Şeker",
+   "Su",
+   "Kavanoz",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Lokum",
+  "yasakliKelimeler": [
+   "Tatlı",
+   "Şeker",
+   "Fıstık",
+   "İstanbul",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Kadayıf",
+  "yasakliKelimeler": [
+   "Tatlı",
+   "Şerbet",
+   "Fıstık",
+   "Tel",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Zeytinyağı",
+  "yasakliKelimeler": [
+   "Sıvı",
+   "Altın",
+   "Salata",
+   "Türk",
+   "Ege"
+  ]
+ },
+ {
+  "kelime": "Bulgur",
+  "yasakliKelimeler": [
+   "Pirinç",
+   "Pilav",
+   "Kısır",
+   "Türk",
+   "Tahıl"
+  ]
+ },
+ {
+  "kelime": "Mercimek",
+  "yasakliKelimeler": [
+   "Kırmızı",
+   "Yeşil",
+   "Çorba",
+   "Pilav",
+   "Bitki"
+  ]
+ },
+ {
+  "kelime": "Nohut",
+  "yasakliKelimeler": [
+   "Yuvarlak",
+   "Pilav",
+   "Kuru",
+   "Falafel",
+   "Bitki"
+  ]
+ },
+ {
+  "kelime": "Kıyma",
+  "yasakliKelimeler": [
+   "Et",
+   "Döner",
+   "Köfte",
+   "Çekilmiş",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Kahvaltı",
+  "yasakliKelimeler": [
+   "Sabah",
+   "Yumurta",
+   "Peynir",
+   "Ekmek",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Öğle Yemeği",
+  "yasakliKelimeler": [
+   "Günlük",
+   "Ana",
+   "Yemek",
+   "Çorba",
+   "Et"
+  ]
+ },
+ {
+  "kelime": "Akşam Yemeği",
+  "yasakliKelimeler": [
+   "Gece",
+   "Aile",
+   "Yemek",
+   "Soğuk",
+   "Hafif"
+  ]
+ },
+ {
+  "kelime": "Ara Öğün",
+  "yasakliKelimeler": [
+   "Atıştırma",
+   "Meyve",
+   "Kuruyemiş",
+   "Küçük",
+   "Açlık"
+  ]
+ },
+ {
+  "kelime": "Fast Food",
+  "yasakliKelimeler": [
+   "Hızlı",
+   "Burger",
+   "Pizza",
+   "Amerika",
+   "Hazır"
+  ]
+ },
+ {
+  "kelime": "Hot Dog",
+  "yasakliKelimeler": [
+   "Amerika",
+   "Sosis",
+   "Ekmek",
+   "Hardal",
+   "Sokak"
+  ]
+ },
+ {
+  "kelime": "Fish and Chips",
+  "yasakliKelimeler": [
+   "İngiltere",
+   "Balık",
+   "Patates",
+   "Kızartma",
+   "Gazete"
+  ]
+ },
+ {
+  "kelime": "Poutine",
+  "yasakliKelimeler": [
+   "Kanada",
+   "Patates",
+   "Peynir",
+   "Gravy",
+   "Soğuk"
+  ]
+ },
+ {
+  "kelime": "Dim Sum",
+  "yasakliKelimeler": [
+   "Çin",
+   "Buhar",
+   "Lokma",
+   "Çeşit",
+   "Çay"
+  ]
+ },
+ {
+  "kelime": "Ramen",
+  "yasakliKelimeler": [
+   "Japonya",
+   "Çorba",
+   "Makarna",
+   "Et",
+   "Soğan"
+  ]
+ },
+ {
+  "kelime": "Pho",
+  "yasakliKelimeler": [
+   "Vietnam",
+   "Çorba",
+   "Makarna",
+   "Et",
+   "Nane"
+  ]
+ },
+ {
+  "kelime": "Revani",
+  "yasakliKelimeler": [
+   "İrmik",
+   "Şerbet",
+   "Fıstık",
+   "Türk",
+   "Tatlı"
+  ]
+ },
+ {
+  "kelime": "Halva",
+  "yasakliKelimeler": [
+   "Tahın",
+   "Şeker",
+   "Susam",
+   "Türk",
+   "Tatlı"
+  ]
+ },
+ {
+  "kelime": "Kırmızı Biber",
+  "yasakliKelimeler": [
+   "Acı",
+   "Toz",
+   "Yemek",
+   "Kırmızı",
+   "Baharat"
+  ]
+ },
+ {
+  "kelime": "Karabiber",
+  "yasakliKelimeler": [
+   "Siyah",
+   "Toz",
+   "Acı",
+   "Yemek",
+   "Baharat"
+  ]
+ },
+ {
+  "kelime": "Kimyon",
+  "yasakliKelimeler": [
+   "Toz",
+   "Kokulu",
+   "Yemek",
+   "Türk",
+   "Baharat"
+  ]
+ },
+ {
+  "kelime": "Nane",
+  "yasakliKelimeler": [
+   "Yeşil",
+   "Kokulu",
+   "Çay",
+   "Yemek",
+   "Bitki"
+  ]
+ },
+ {
+  "kelime": "Pişirme",
+  "yasakliKelimeler": [
+   "Sıcak",
+   "Tencere",
+   "Yemek",
+   "Zaman",
+   "Mutfak"
+  ]
+ },
+ {
+  "kelime": "Kızartma",
+  "yasakliKelimeler": [
+   "Yağ",
+   "Sıcak",
+   "Altın",
+   "Tava",
+   "Hızlı"
+  ]
+ },
+ {
+  "kelime": "Haşlama",
+  "yasakliKelimeler": [
+   "Su",
+   "Kaynama",
+   "Sebze",
+   "Yumuşak",
+   "Mutfak"
+  ]
+ },
+ {
+  "kelime": "Fırınlama",
+  "yasakliKelimeler": [
+   "Sıcak",
+   "Kapalı",
+   "Altın",
+   "Fırın",
+   "Yavaş"
+  ]
+ },
+ {
+  "kelime": "Buharlama",
+  "yasakliKelimeler": [
+   "Su",
+   "Kapalı",
+   "Sağlıklı",
+   "Yeşil",
+   "Hafif"
+  ]
+ },
+ {
+  "kelime": "Salata",
+  "yasakliKelimeler": [
+   "Yeşil",
+   "Sebze",
+   "Zeytinyağı",
+   "Hafif",
+   "Yaz"
+  ]
+ },
+ {
+  "kelime": "Mercimek Köftesi",
+  "yasakliKelimeler": [
+   "Kırmızı",
+   "Bulgur",
+   "Salata",
+   "Yeşil",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Yaprak Sarma",
+  "yasakliKelimeler": [
+   "Asma",
+   "Yaprağı",
+   "İç Harç",
+   "Pirinç",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Türk Kahvesi",
+  "yasakliKelimeler": [
+   "Koyu",
+   "Fincan",
+   "Kum",
+   "Fali",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Salep",
+  "yasakliKelimeler": [
+   "Sıcak",
+   "Kış",
+   "Tarçın",
+   "Tatlı",
+   "İçecek"
+  ]
+ },
+ {
+  "kelime": "Boza",
+  "yasakliKelimeler": [
+   "Tahıl",
+   "Fermente",
+   "Tatlı",
+   "Türk",
+   "Kış"
+  ]
+ },
+ {
+  "kelime": "Şalgam Suyu",
+  "yasakliKelimeler": [
+   "Mor",
+   "Acı",
+   "Adana",
+   "İçecek",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Sahlep",
+  "yasakliKelimeler": [
+   "Orkide",
+   "Sıcak",
+   "Tatlı",
+   "Kış",
+   "İçecek"
+  ]
+ },
+ {
+  "kelime": "Tiramisu",
+  "yasakliKelimeler": [
+   "İtalya",
+   "Kahve",
+   "Maskarpone",
+   "Bisküvi",
+   "Tatlı"
+  ]
+ },
+ {
+  "kelime": "Tarte Tatin",
+  "yasakliKelimeler": [
+   "Fransa",
+   "Elma",
+   "Karamel",
+   "Ters",
+   "Tatlı"
+  ]
+ },
+ {
+  "kelime": "Crème Brûlée",
+  "yasakliKelimeler": [
+   "Fransa",
+   "Krema",
+   "Şeker",
+   "Yanık",
+   "Tatlı"
+  ]
+ },
+ {
+  "kelime": "Cheesecake",
+  "yasakliKelimeler": [
+   "Amerika",
+   "Peynir",
+   "Taban",
+   "Tatlı",
+   "Soğuk"
+  ]
+ },
+ {
+  "kelime": "Macaron",
+  "yasakliKelimeler": [
+   "Fransa",
+   "Çift",
+   "Renkli",
+   "Fıstık",
+   "Tatlı"
+  ]
+ },
+ {
+  "kelime": "Ramazan",
+  "yasakliKelimeler": [
+   "Oruç",
+   "İftar",
+   "Sahur",
+   "Pide",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Aile Yemeği",
+  "yasakliKelimeler": [
+   "Birlikte",
+   "Masa",
+   "Sohbet",
+   "Türk",
+   "Gelenek"
+  ]
+ },
+ {
+  "kelime": "Konukseverlik",
+  "yasakliKelimeler": [
+   "Misafir",
+   "İkram",
+   "Türk",
+   "Gelenek",
+   "Çay"
+  ]
+ },
+ {
+  "kelime": "Testi Kebabı",
+  "yasakliKelimeler": [
+   "Kayseri",
+   "Kil",
+   "Testi",
+   "Et",
+   "Fırın"
+  ]
+ },
+ {
+  "kelime": "Etli Ekmek",
+  "yasakliKelimeler": [
+   "Kayseri",
+   "Pide",
+   "Et",
+   "Soğan",
+   "Fırın"
+  ]
+ },
+ {
+  "kelime": "İmam Bayıldı",
+  "yasakliKelimeler": [
+   "Patlıcan",
+   "Soğan",
+   "Sarımısak",
+   "Zeytinyağı",
+   "Fırın"
+  ]
+ },
+ {
+  "kelime": "Zeytinyağlı Sarma",
+  "yasakliKelimeler": [
+   "Yaprak",
+   "Pirinç",
+   "Zeytinyağı",
+   "Nane",
+   "Soğan"
+  ]
+ },
+ {
+  "kelime": "İçli Köfte",
+  "yasakliKelimeler": [
+   "Urfa",
+   "Bulgur",
+   "Et",
+   "Ceviz",
+   "Şeker"
+  ]
+ },
+ {
+  "kelime": "Yoğurtlu Semizotu",
+  "yasakliKelimeler": [
+   "Semizotu",
+   "Yoğurt",
+   "Sarımısak",
+   "Zeytinyağı",
+   "Nane"
+  ]
+ },
+ {
+  "kelime": "Bibimbap",
+  "yasakliKelimeler": [
+   "Güney Kore",
+   "Pirinç",
+   "Sebze",
+   "Et",
+   "Yumurta"
+  ]
+ },
+ {
+  "kelime": "Tom Yum",
+  "yasakliKelimeler": [
+   "Tayland",
+   "Çorba",
+   "Karides",
+   "Limon",
+   "Ot"
+  ]
+ },
+ {
+  "kelime": "Butter Chicken",
+  "yasakliKelimeler": [
+   "Hindistan",
+   "Tavuk",
+   "Tereyağı",
+   "Baharat",
+   "Yoğurt"
+  ]
+ },
+ {
+  "kelime": "Ratatouille",
+  "yasakliKelimeler": [
+   "Fransa",
+   "Sebze",
+   "Fırın",
+   "Provence",
+   "Zeytinyağı"
+  ]
+ },
+ {
+  "kelime": "Miso Çorbası",
+  "yasakliKelimeler": [
+   "Japonya",
+   "Fermente",
+   "Tofu",
+   "Yeşil",
+   "Soğan"
+  ]
+ },
+ {
+  "kelime": "Feijoada",
+  "yasakliKelimeler": [
+   "Brezilya",
+   "Fasulye",
+   "Et",
+   "Turşu",
+   "Pirinç"
+  ]
+ },
+ {
+  "kelime": "Ceviche",
+  "yasakliKelimeler": [
+   "Peru",
+   "Balık",
+   "Limon",
+   "Soğan",
+   "Mısır"
+  ]
+ },
+ {
+  "kelime": "Pierogi",
+  "yasakliKelimeler": [
+   "Polonya",
+   "Hamur",
+   "Doldurma",
+   "Patates",
+   "Peynir"
+  ]
+ },
+ {
+  "kelime": "Spanakopita",
+  "yasakliKelimeler": [
+   "Yunanistan",
+   "Ispanak",
+   "Feta",
+   "Yufka",
+   "Zeytinyağı"
+  ]
+ },
+ {
+  "kelime": "Borscht",
+  "yasakliKelimeler": [
+   "Ukrayna",
+   "Pancar",
+   "Çorba",
+   "Krema",
+   "Et"
+  ]
+ },
+ {
+  "kelime": "Tavuk Göğsü",
+  "yasakliKelimeler": [
+   "Tatlı",
+   "Şerbet",
+   "Hindistan",
+   "Ceviz",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Muhallebi",
+  "yasakliKelimeler": [
+   "Tatlı",
+   "Pirinç",
+   "Süt",
+   "Şeker",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Şöbiyet",
+  "yasakliKelimeler": [
+   "Tatlı",
+   "Gaziantep",
+   "Fıstık",
+   "Şerbet",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Trileçe",
+  "yasakliKelimeler": [
+   "Tatlı",
+   "İzmir",
+   "Yoğurt",
+   "Şerbet",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "İrmik Helvası",
+  "yasakliKelimeler": [
+   "Tatlı",
+   "İrmik",
+   "Şerbet",
+   "Fıstık",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Pahlava",
+  "yasakliKelimeler": [
+   "Tatlı",
+   "Yufka",
+   "Fıstık",
+   "Şerbet",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Ekmek Kadayıfı",
+  "yasakliKelimeler": [
+   "Tatlı",
+   "Ekmek",
+   "Şerbet",
+   "Fıstık",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Fıstıklı Baklava",
+  "yasakliKelimeler": [
+   "Tatlı",
+   "Gaziantep",
+   "Fıstık",
+   "Şerbet",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Demlik",
+  "yasakliKelimeler": [
+   "Çay",
+   "Dem",
+   "Bardak",
+   "İki",
+   "Katlı"
+  ]
+ },
+ {
+  "kelime": "Semaver",
+  "yasakliKelimeler": [
+   "Çay",
+   "Sıcak",
+   "Su",
+   "Demlik",
+   "Eski"
+  ]
+ },
+ {
+  "kelime": "Meyve Nektarı",
+  "yasakliKelimeler": [
+   "Meyve",
+   "Şeker",
+   "Su",
+   "Kutu",
+   "İçecek"
+  ]
+ },
+ {
+  "kelime": "Şıra",
+  "yasakliKelimeler": [
+   "Üzüm",
+   "Şeker",
+   "Fermente",
+   "İlk",
+   "Aşama"
+  ]
+ },
+ {
+  "kelime": "Malt",
+  "yasakliKelimeler": [
+   "Arpa",
+   "Şeker",
+   "İçecek",
+   "Enerji",
+   "Tatlı"
+  ]
+ },
+ {
+  "kelime": "Enginar",
+  "yasakliKelimeler": [
+   "Yeşil",
+   "Diken",
+   "Haşlama",
+   "Zeytinyağı",
+   "Sebze"
+  ]
+ },
+ {
+  "kelime": "Pazı",
+  "yasakliKelimeler": [
+   "Yeşil",
+   "Yaprak",
+   "Haşlama",
+   "Zeytinyağı",
+   "Sebze"
+  ]
+ },
+ {
+  "kelime": "Safran",
+  "yasakliKelimeler": [
+   "Pahalı",
+   "Sarı",
+   "Pilav",
+   "Çiçek",
+   "Baharat"
+  ]
+ },
+ {
+  "kelime": "Zencefil",
+  "yasakliKelimeler": [
+   "Kök",
+   "Sıcak",
+   "Çay",
+   "Baharat",
+   "Şifa"
+  ]
+ },
+ {
+  "kelime": "Tarçın",
+  "yasakliKelimeler": [
+   "Kabuk",
+   "Tatlı",
+   "Çay",
+   "Baharat",
+   "Ağaç"
+  ]
+ },
+ {
+  "kelime": "Kişniş",
+  "yasakliKelimeler": [
+   "Yeşil",
+   "Tohum",
+   "Baharat",
+   "Çorba",
+   "Yemek"
+  ]
+ },
+ {
+  "kelime": "Muskat",
+  "yasakliKelimeler": [
+   "Fıstık",
+   "Tatlı",
+   "Baharat",
+   "Ceviz",
+   "Hindistan"
+  ]
+ },
+ {
+  "kelime": "Çemen",
+  "yasakliKelimeler": [
+   "Tohum",
+   "Acı",
+   "Baharat",
+   "Türk",
+   "Mutfağı"
+  ]
+ },
+ {
+  "kelime": "İsot",
+  "yasakliKelimeler": [
+   "Peynir",
+   "Baharat",
+   "Türk",
+   "Mutfağı",
+   "Kırmızı"
+  ]
+ },
+ {
+  "kelime": "Sumak",
+  "yasakliKelimeler": [
+   "Kırmızı",
+   "Asit",
+   "Baharat",
+   "Türk",
+   "Mutfağı"
+  ]
+ },
+ {
+  "kelime": "Pul Biber",
+  "yasakliKelimeler": [
+   "Kırmızı",
+   "Acı",
+   "Baharat",
+   "Türk",
+   "Mutfağı"
+  ]
+ },
+ {
+  "kelime": "Patates Köftesi",
+  "yasakliKelimeler": [
+   "Patates",
+   "Kıyma",
+   "Soğan",
+   "Baharat",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Kıymalı Pırasa",
+  "yasakliKelimeler": [
+   "Pırasa",
+   "Kıyma",
+   "Pirinç",
+   "Zeytinyağı",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Etli Lahana Sarma",
+  "yasakliKelimeler": [
+   "Lahana",
+   "Kıyma",
+   "Pirinç",
+   "Haşlama",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Tavuklu Pilav",
+  "yasakliKelimeler": [
+   "Pilav",
+   "Tavuk",
+   "Sebze",
+   "Nohut",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Balık Tava",
+  "yasakliKelimeler": [
+   "Balık",
+   "Limon",
+   "Zeytinyağı",
+   "Soğan",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Karnabahar Kızartma",
+  "yasakliKelimeler": [
+   "Karnabahar",
+   "Yağ",
+   "Tuz",
+   "Sıcak",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Ezogelin Çorbası",
+  "yasakliKelimeler": [
+   "Mercimek",
+   "Bulgur",
+   "Nane",
+   "Limon",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Domates Çorbası",
+  "yasakliKelimeler": [
+   "Domates",
+   "Krema",
+   "Tereyağı",
+   "Un",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Tarhana Çorbası",
+  "yasakliKelimeler": [
+   "Tarhana",
+   "Yoğurt",
+   "Nane",
+   "Tuz",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Panna Cotta",
+  "yasakliKelimeler": [
+   "İtalya",
+   "Krema",
+   "Jöle",
+   "Tatlı",
+   "Soğuk"
+  ]
+ },
+ {
+  "kelime": "Profiterol",
+  "yasakliKelimeler": [
+   "Fransa",
+   "Krema",
+   "Çikolata",
+   "Tatlı",
+   "Fırın"
+  ]
+ },
+ {
+  "kelime": "Churros",
+  "yasakliKelimeler": [
+   "İspanya",
+   "Çubuk",
+   "Şeker",
+   "Tatlı",
+   "Kızartma"
+  ]
+ },
+ {
+  "kelime": "Cannoli",
+  "yasakliKelimeler": [
+   "İtalya",
+   "Tüp",
+   "Ricotta",
+   "Çikolata",
+   "Sicilya"
+  ]
+ },
+ {
+  "kelime": "Mille-Feuille",
+  "yasakliKelimeler": [
+   "Fransa",
+   "Katman",
+   "Krema",
+   "Hamur",
+   "Tatlı"
+  ]
+ },
+ {
+  "kelime": "Black Forest",
+  "yasakliKelimeler": [
+   "Almanya",
+   "Çikolata",
+   "Kiraz",
+   "Krema",
+   "Tatlı"
+  ]
+ },
+ {
+  "kelime": "Sachertorte",
+  "yasakliKelimeler": [
+   "Avusturya",
+   "Çikolata",
+   "Marmelat",
+   "Tatlı",
+   "Viyana"
+  ]
+ },
+ {
+  "kelime": "Çay Makinesi",
+  "yasakliKelimeler": [
+   "Çay",
+   "Dem",
+   "Otomatik",
+   "Elektrik",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Sous Vide",
+  "yasakliKelimeler": [
+   "Su",
+   "Kapalı",
+   "Hassas",
+   "Sıcaklık",
+   "Yöntem"
+  ]
+ },
+ {
+  "kelime": "Sous-Vide",
+  "yasakliKelimeler": [
+   "Fransızca",
+   "Su",
+   "Kontrol",
+   "Hassas",
+   "Pişirme"
+  ]
+ },
+ {
+  "kelime": "Sous Vide Pişirme",
+  "yasakliKelimeler": [
+   "Su",
+   "Kapalı",
+   "Hassas",
+   "Sıcaklık",
+   "Profesyonel"
+  ]
+ },
+ {
+  "kelime": "Grill",
+  "yasakliKelimeler": [
+   "Sıcak",
+   "Şarap",
+   "Köfte",
+   "Et",
+   "Yöntem"
+  ]
+ },
+ {
+  "kelime": "Mangal",
+  "yasakliKelimeler": [
+   "Açık",
+   "Hava",
+   "Köfte",
+   "Et",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Mangal Keyfi",
+  "yasakliKelimeler": [
+   "Türk",
+   "Sosyal",
+   "Et",
+   "İkram",
+   "Gelenek"
+  ]
+ },
+ {
+  "kelime": "Barbekü",
+  "yasakliKelimeler": [
+   "Amerikan",
+   "Et",
+   "Sebze",
+   "Sos",
+   "Sosyal"
+  ]
+ },
+ {
+  "kelime": "Vegan",
+  "yasakliKelimeler": [
+   "Bitki",
+   "Bazlı",
+   "Et",
+   "Yok",
+   "Sağlıklı"
+  ]
+ },
+ {
+  "kelime": "Vejetaryen",
+  "yasakliKelimeler": [
+   "Et",
+   "Yok",
+   "Bitki",
+   "Süt",
+   "Peynir"
+  ]
+ },
+ {
+  "kelime": "Glutensiz",
+  "yasakliKelimeler": [
+   "Buğday",
+   "Yok",
+   "Çölyak",
+   "Tahıl",
+   "Diyet"
+  ]
+ },
+ {
+  "kelime": "Organik",
+  "yasakliKelimeler": [
+   "Doğal",
+   "Kimyasal",
+   "Yok",
+   "Sağlıklı",
+   "Üretim"
+  ]
+ },
+ {
+  "kelime": "Slow Food",
+  "yasakliKelimeler": [
+   "Yavaş",
+   "Lezzet",
+   "Geleneksel",
+   "Kaliteli",
+   "Hareket"
+  ]
+ },
+ {
+  "kelime": "Molecular Gastronomi",
+  "yasakliKelimeler": [
+   "Bilim",
+   "Kimya",
+   "Yenilikçi",
+   "Teknik",
+   "Pişirme"
+  ]
+ },
+ {
+  "kelime": "Enchilada",
+  "yasakliKelimeler": [
+   "Meksika",
+   "Mısır",
+   "Et",
+   "Peynir",
+   "Baharat"
+  ]
+ },
+ {
+  "kelime": "Quesadilla",
+  "yasakliKelimeler": [
+   "Meksika",
+   "Mısır",
+   "Peynir",
+   "Et",
+   "Kızartma"
+  ]
+ },
+ {
+  "kelime": "Empanada",
+  "yasakliKelimeler": [
+   "Arjantin",
+   "Hamur",
+   "Et",
+   "Sebze",
+   "Kızartma"
+  ]
+ },
+ {
+  "kelime": "Arepa",
+  "yasakliKelimeler": [
+   "Kolombiya",
+   "Mısır",
+   "Peynir",
+   "Doldurma",
+   "Güney Amerika"
+  ]
+ },
+ {
+  "kelime": "Moqueca",
+  "yasakliKelimeler": [
+   "Brezilya",
+   "Balık",
+   "Hindistan",
+   "Cevizi",
+   "Kırmızı"
+  ]
+ },
+ {
+  "kelime": "Jerk Chicken",
+  "yasakliKelimeler": [
+   "Jamaika",
+   "Tavuk",
+   "Baharat",
+   "Marine",
+   "Kızartma"
+  ]
+ },
+ {
+  "kelime": "Bunny Chow",
+  "yasakliKelimeler": [
+   "Güney Afrika",
+   "Ekmek",
+   "Curry",
+   "Tavuk",
+   "Köken"
+  ]
+ },
+ {
+  "kelime": "Su Böreği",
+  "yasakliKelimeler": [
+   "Yufka",
+   "Su",
+   "Peynir",
+   "Fırın",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Kol Böreği",
+  "yasakliKelimeler": [
+   "Yufka",
+   "Kol",
+   "Peynir",
+   "Fırın",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Sigara Böreği",
+  "yasakliKelimeler": [
+   "Yufka",
+   "Sigara",
+   "Peynir",
+   "Kızartma",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Açma",
+  "yasakliKelimeler": [
+   "Hamur",
+   "Susam",
+   "Fırın",
+   "Yuvarlak",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Naneli Çay",
+  "yasakliKelimeler": [
+   "Nane",
+   "Sıcak",
+   "Türk",
+   "Gelenek",
+   "İkram"
+  ]
+ },
+ {
+  "kelime": "Ihlamur",
+  "yasakliKelimeler": [
+   "Çiçek",
+   "Sıcak",
+   "Şifa",
+   "Türk",
+   "İçecek"
+  ]
+ },
+ {
+  "kelime": "Ada Çayı",
+  "yasakliKelimeler": [
+   "Karadeniz",
+   "Siyah",
+   "Türk",
+   "Kaliteli",
+   "İçecek"
+  ]
+ },
+ {
+  "kelime": "Kış Çayı",
+  "yasakliKelimeler": [
+   "Karışım",
+   "Baharat",
+   "Sıcak",
+   "Türk",
+   "Gelenek"
+  ]
+ },
+ {
+  "kelime": "Kahveli Türk Kahvesi",
+  "yasakliKelimeler": [
+   "Kahve",
+   "Fincan",
+   "Türk",
+   "Gelenek",
+   "Fali"
+  ]
+ },
+ {
+  "kelime": "Türk Çayı",
+  "yasakliKelimeler": [
+   "Demlik",
+   "Bardak",
+   "Türk",
+   "Siyah",
+   "Gelenek"
+  ]
+ },
+ {
+  "kelime": "Ramazan Sofrası",
+  "yasakliKelimeler": [
+   "İftar",
+   "Sahur",
+   "Oruç",
+   "Aile",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Kurban Bayramı Yemeği",
+  "yasakliKelimeler": [
+   "Et",
+   "Pilav",
+   "Kurban",
+   "Aile",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Pazar Yemeği",
+  "yasakliKelimeler": [
+   "Hafta",
+   "Aile",
+   "Çorba",
+   "Pilav",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Misafir İkramı",
+  "yasakliKelimeler": [
+   "Çay",
+   "Lokum",
+   "Türk",
+   "Gelenek",
+   "Konuk"
+  ]
+ },
+ {
+  "kelime": "Eid al-Fitr",
+  "yasakliKelimeler": [
+   "Ramazan",
+   "Şeker",
+   "İftar",
+   "Müslüman",
+   "Bayram"
+  ]
+ },
+ {
+  "kelime": "Thanksgiving",
+  "yasakliKelimeler": [
+   "Amerika",
+   "Hindistan",
+   "Pilav",
+   "Tavuk",
+   "Aile"
+  ]
+ },
+ {
+  "kelime": "Kardamom",
+  "yasakliKelimeler": [
+   "Tohum",
+   "Baharat",
+   "Tatlı",
+   "Çay",
+   "Hindistan"
+  ]
+ },
+ {
+  "kelime": "Küçük Hindistan Cevizi",
+  "yasakliKelimeler": [
+   "Tohum",
+   "Baharat",
+   "Tatlı",
+   "Çay",
+   "Asya"
+  ]
+ },
+ {
+  "kelime": "Kakule",
+  "yasakliKelimeler": [
+   "Tohum",
+   "Baharat",
+   "Acı",
+   "Türk",
+   "Mutfağı"
+  ]
+ },
+ {
+  "kelime": "Mahlep",
+  "yasakliKelimeler": [
+   "Tohum",
+   "Baharat",
+   "Tatlı",
+   "Çekirdek",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Gourmet",
+  "yasakliKelimeler": [
+   "Lüks",
+   "Kaliteli",
+   "Lezzet",
+   "Profesyonel",
+   "Mutfak"
+  ]
+ },
+ {
+  "kelime": "Street Food",
+  "yasakliKelimeler": [
+   "Sokak",
+   "Hızlı",
+   "Ucuz",
+   "Lezzet",
+   "Dünya"
+  ]
+ },
+ {
+  "kelime": "Fine Dining",
+  "yasakliKelimeler": [
+   "Yüksek",
+   "Mutfak",
+   "Servis",
+   "Lüks",
+   "Restoran"
+  ]
+ },
+ {
+  "kelime": "Comfort Food",
+  "yasakliKelimeler": [
+   "Rahat",
+   "Geleneksel",
+   "Aile",
+   "Yemek",
+   "Huzur"
+  ]
+ },
+ {
+  "kelime": "Fusion",
+  "yasakliKelimeler": [
+   "Karışım",
+   "Mutfak",
+   "Yenilikçi",
+   "Kültürel",
+   "Lezzet"
+  ]
+ },
+ {
+  "kelime": "Emülsiyon",
+  "yasakliKelimeler": [
+   "Karışım",
+   "Yağ",
+   "Su",
+   "Sabun",
+   "Teknik"
+  ]
+ },
+ {
+  "kelime": "Redüksiyon",
+  "yasakliKelimeler": [
+   "Kaynatma",
+   "Yoğuşturma",
+   "Sos",
+   "Lezzet",
+   "Teknik"
+  ]
+ },
+ {
+  "kelime": "Konfit",
+  "yasakliKelimeler": [
+   "Yağ",
+   "Pişirme",
+   "Yavaş",
+   "Et",
+   "Teknik"
+  ]
+ }
+]

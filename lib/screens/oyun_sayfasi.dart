@@ -11,10 +11,8 @@ import '../data/kelimeler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../core/plan_manager.dart';
 import '../core/reklam_servisi.dart';
-import '../data/free/free_kelimeler.dart';
-import '../data/premium/premium_kelimeler.dart';
+import '../data/kelime_deposu.dart';
 import '../data/premium/kategoriler/index.dart';
-import '../data/free/kategoriler/cocuklar.dart';
 
 class OyunSayfasi extends StatefulWidget {
   final String takim1Adi;
@@ -126,30 +124,30 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
       if (useFree) {
         final FreeKategori freeCat = await PlanCategories.getSelectedFreeCategory();
         if (freeCat == FreeKategori.cocuklar) {
-          liste = karisikFreeCocuklar();
+          liste = await karisikFreeCocuklar();
           kategoriKey = 'free_cocuklar';
         } else {
-          liste = karisikFreeKelimeler();
+          liste = await karisikFreeKelimeler();
           kategoriKey = 'free_havuz';
         }
       } else {
         final Set<PremiumKategori> selected = await PlanCategories.getSelectedPremiumCategories();
         if (selected.isNotEmpty) {
-          liste = karisikPremiumKategorilerinden(selected);
+          liste = await karisikPremiumKategorilerinden(selected);
           final List<String> adlar = selected.map((k) => k.toString()).toList()..sort();
           kategoriKey = 'premium_${adlar.join('_')}';
         } else {
-          liste = karisikPremiumHavuz(); // Premium havuz için sadece premium kelimeler
+          liste = await karisikPremiumHavuz(); // Premium havuz için sadece premium kelimeler
           kategoriKey = 'premium_havuz';
         }
       }
     } else {
       final FreeKategori freeCat = await PlanCategories.getSelectedFreeCategory();
       if (freeCat == FreeKategori.cocuklar) {
-        liste = karisikFreeCocuklar();
+        liste = await karisikFreeCocuklar();
         kategoriKey = 'free_cocuklar';
       } else {
-        liste = karisikFreeKelimeler();
+        liste = await karisikFreeKelimeler();
         kategoriKey = 'free_havuz';
       }
     }

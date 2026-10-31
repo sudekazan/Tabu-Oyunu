@@ -1,0 +1,1182 @@
+[
+ {
+  "kelime": "Kuantum Bilimi",
+  "yasakliKelimeler": [
+   "Fizik",
+   "Parçacık",
+   "Enerji",
+   "Atom",
+   "Küçük"
+  ]
+ },
+ {
+  "kelime": "Yapay Zekâ",
+  "yasakliKelimeler": [
+   "Bilgisayar",
+   "Akıllı",
+   "Makine",
+   "Algoritma",
+   "Otomasyon"
+  ]
+ },
+ {
+  "kelime": "Gökbilim",
+  "yasakliKelimeler": [
+   "Yıldız",
+   "Gezegen",
+   "Uzay",
+   "Teleskop",
+   "Evren"
+  ]
+ },
+ {
+  "kelime": "Klimatoloji",
+  "yasakliKelimeler": [
+   "İklim",
+   "Hava",
+   "Sıcaklık",
+   "Yağış",
+   "Dünya"
+  ]
+ },
+ {
+  "kelime": "Genetik Mühendisliği",
+  "yasakliKelimeler": [
+   "DNA",
+   "Gen",
+   "Modifikasyon",
+   "Bitki",
+   "Sağlık"
+  ]
+ },
+ {
+  "kelime": "Aydınlanma Çağı",
+  "yasakliKelimeler": [
+   "Akıl",
+   "Bilim",
+   "18",
+   "Voltaire",
+   "Felsefe"
+  ]
+ },
+ {
+  "kelime": "Sömürgecilik",
+  "yasakliKelimeler": [
+   "Koloni",
+   "Avrupa",
+   "Afrika",
+   "Asya",
+   "İmparatorluk"
+  ]
+ },
+ {
+  "kelime": "Kadın Hakları",
+  "yasakliKelimeler": [
+   "Oy",
+   "Eşitlik",
+   "Seçim",
+   "Feminizm",
+   "Hak"
+  ]
+ },
+ {
+  "kelime": "Uygarlık",
+  "yasakliKelimeler": [
+   "Toplum",
+   "Kültür",
+   "Teknoloji",
+   "Şehir",
+   "Gelişme"
+  ]
+ },
+ {
+  "kelime": "İmparatorluk",
+  "yasakliKelimeler": [
+   "Hükümdar",
+   "Toprak",
+   "Geniş",
+   "Yönetim",
+   "Güç"
+  ]
+ },
+ {
+  "kelime": "Fizyoterapi",
+  "yasakliKelimeler": [
+   "Tedavi",
+   "Hareket",
+   "Ağrı",
+   "Rehabilitasyon",
+   "Sağlık"
+  ]
+ },
+ {
+  "kelime": "Beslenme Bilimi",
+  "yasakliKelimeler": [
+   "Yiyecek",
+   "Vitamin",
+   "Sağlık",
+   "Diyet",
+   "Besin"
+  ]
+ },
+ {
+  "kelime": "Kardiyoloji",
+  "yasakliKelimeler": [
+   "Kalp",
+   "Doktor",
+   "Hastalık",
+   "Tedavi",
+   "Kanın"
+  ]
+ },
+ {
+  "kelime": "İmmünoloji",
+  "yasakliKelimeler": [
+   "Bağışıklık",
+   "Antikor",
+   "Virüs",
+   "Savunma",
+   "Sağlık"
+  ]
+ },
+ {
+  "kelime": "Endokrinoloji",
+  "yasakliKelimeler": [
+   "Hormon",
+   "Bez",
+   "Tiroid",
+   "Şeker",
+   "Doktor"
+  ]
+ },
+ {
+  "kelime": "Diyetisyen",
+  "yasakliKelimeler": [
+   "Beslenme",
+   "Sağlık",
+   "Yiyecek",
+   "Kilo",
+   "Uzman"
+  ]
+ },
+ {
+  "kelime": "Maraton",
+  "yasakliKelimeler": [
+   "Koşu",
+   "42",
+   "Kilometre",
+   "Uzun",
+   "Dayanıklılık"
+  ]
+ },
+ {
+  "kelime": "Triatlon",
+  "yasakliKelimeler": [
+   "Yüzme",
+   "Bisiklet",
+   "Koşu",
+   "Üç",
+   "Spor"
+  ]
+ },
+ {
+  "kelime": "İmpressionizm",
+  "yasakliKelimeler": [
+   "Sanat",
+   "Renk",
+   "Işık",
+   "Hızlı",
+   "Fırça"
+  ]
+ },
+ {
+  "kelime": "Kübizm",
+  "yasakliKelimeler": [
+   "Sanat",
+   "Şekil",
+   "Açı",
+   "Picasso",
+   "Modern"
+  ]
+ },
+ {
+  "kelime": "Opera",
+  "yasakliKelimeler": [
+   "Müzik",
+   "Sahne",
+   "Şarkı",
+   "Gösteri",
+   "İtalyan"
+  ]
+ },
+ {
+  "kelime": "Senfoni",
+  "yasakliKelimeler": [
+   "Müzik",
+   "Orkestra",
+   "Nota",
+   "Uzun",
+   "Besteci"
+  ]
+ },
+ {
+  "kelime": "Mozaik",
+  "yasakliKelimeler": [
+   "Taş",
+   "Renk",
+   "Duvar",
+   "Sanat",
+   "Parça"
+  ]
+ },
+ {
+  "kelime": "Grafiti",
+  "yasakliKelimeler": [
+   "Duvar",
+   "Renk",
+   "Şehir",
+   "Sanat",
+   "İllegal"
+  ]
+ },
+ {
+  "kelime": "Animasyon",
+  "yasakliKelimeler": [
+   "Çizgi",
+   "Film",
+   "Hareket",
+   "Bilgisayar",
+   "Sanat"
+  ]
+ },
+ {
+  "kelime": "Tektonik",
+  "yasakliKelimeler": [
+   "Levha",
+   "Deprem",
+   "Dağ",
+   "Yer",
+   "Hareket"
+  ]
+ },
+ {
+  "kelime": "Buzul",
+  "yasakliKelimeler": [
+   "Buz",
+   "Soğuk",
+   "Dağ",
+   "Eritmek",
+   "İklim"
+  ]
+ },
+ {
+  "kelime": "Fatih",
+  "yasakliKelimeler": [
+   "İstabul",
+   "Osmanlı",
+   "Fetih",
+   "Sultan",
+   "Mehmet"
+  ]
+ },
+ {
+  "kelime": "Marmara",
+  "yasakliKelimeler": [
+   "Deniz",
+   "İstanbul",
+   "Bursa",
+   "Kocaeli",
+   "Adalar"
+  ]
+ },
+ {
+  "kelime": "Kapadokya",
+  "yasakliKelimeler": [
+   "Peri",
+   "Bacaları",
+   "Nevşehir",
+   "Taş",
+   "Balon"
+  ]
+ },
+ {
+  "kelime": "Pamukkale",
+  "yasakliKelimeler": [
+   "Beyaz",
+   "Traverten",
+   "Su",
+   "Denizli",
+   "Doğa"
+  ]
+ },
+ {
+  "kelime": "Enflasyon",
+  "yasakliKelimeler": [
+   "Fiyat",
+   "Artış",
+   "Para",
+   "Alım",
+   "Güç"
+  ]
+ },
+ {
+  "kelime": "Deflasyon",
+  "yasakliKelimeler": [
+   "Fiyat",
+   "Düşüş",
+   "Para",
+   "Alım",
+   "Güç"
+  ]
+ },
+ {
+  "kelime": "Borsa",
+  "yasakliKelimeler": [
+   "Hisse",
+   "Satış",
+   "Alış",
+   "Para",
+   "Yatırım"
+  ]
+ },
+ {
+  "kelime": "Vergi",
+  "yasakliKelimeler": [
+   "Devlet",
+   "Para",
+   "Gelir",
+   "Ödeme",
+   "Yasal"
+  ]
+ },
+ {
+  "kelime": "İhracat",
+  "yasakliKelimeler": [
+   "Dış",
+   "Satış",
+   "Ürün",
+   "Yabancı",
+   "Ticaret"
+  ]
+ },
+ {
+  "kelime": "İthalat",
+  "yasakliKelimeler": [
+   "Dış",
+   "Alış",
+   "Ürün",
+   "Yabancı",
+   "Ticaret"
+  ]
+ },
+ {
+  "kelime": "Pedagoji",
+  "yasakliKelimeler": [
+   "Eğitim",
+   "Öğretim",
+   "Çocuk",
+   "Yöntem",
+   "Bilim"
+  ]
+ },
+ {
+  "kelime": "Matematik",
+  "yasakliKelimeler": [
+   "Sayı",
+   "Hesap",
+   "Geometri",
+   "Cebir",
+   "İlim"
+  ]
+ },
+ {
+  "kelime": "Fizik",
+  "yasakliKelimeler": [
+   "Bilim",
+   "Enerji",
+   "Hareket",
+   "Kuvvet",
+   "Deney"
+  ]
+ },
+ {
+  "kelime": "Kimya",
+  "yasakliKelimeler": [
+   "Bilim",
+   "Maddenin",
+   "Reaksiyon",
+   "Element",
+   "Deney"
+  ]
+ },
+ {
+  "kelime": "Biyoloji",
+  "yasakliKelimeler": [
+   "Bilim",
+   "Yaşam",
+   "Hücre",
+   "Bitki",
+   "Hayvan"
+  ]
+ },
+ {
+  "kelime": "Coğrafya",
+  "yasakliKelimeler": [
+   "Dünya",
+   "Harita",
+   "Kıta",
+   "Ülke",
+   "Doğa"
+  ]
+ },
+ {
+  "kelime": "Felsefe",
+  "yasakliKelimeler": [
+   "Düşünce",
+   "Sorular",
+   "Varlık",
+   "Ahlak",
+   "Bilgelik"
+  ]
+ },
+ {
+  "kelime": "Mobil Uygulama",
+  "yasakliKelimeler": [
+   "Telefon",
+   "Yazılım",
+   "Dokunmatik",
+   "İndirme",
+   "Uygulama"
+  ]
+ },
+ {
+  "kelime": "Siber Güvenlik",
+  "yasakliKelimeler": [
+   "Bilgisayar",
+   "Güvenlik",
+   "Virüs",
+   "Şifre",
+   "Koruma"
+  ]
+ },
+ {
+  "kelime": "Dijital Dönüşüm",
+  "yasakliKelimeler": [
+   "Teknoloji",
+   "Değişim",
+   "Şirket",
+   "İnovasyon",
+   "Dijital"
+  ]
+ },
+ {
+  "kelime": "Cerrah",
+  "yasakliKelimeler": [
+   "Doktor",
+   "Ameliyat",
+   "Kesme",
+   "İyileştirme",
+   "Hastane"
+  ]
+ },
+ {
+  "kelime": "Radyoloji",
+  "yasakliKelimeler": [
+   "X-Ray",
+   "Görüntü",
+   "Doktor",
+   "Film",
+   "Teşhis"
+  ]
+ },
+ {
+  "kelime": "Anestezi",
+  "yasakliKelimeler": [
+   "Uyuşturma",
+   "Ağrı",
+   "Doktor",
+   "Ameliyat",
+   "Uyku"
+  ]
+ },
+ {
+  "kelime": "Fizyoloji",
+  "yasakliKelimeler": [
+   "Vücut",
+   "İşlev",
+   "Organ",
+   "Bilim",
+   "Sağlık"
+  ]
+ },
+ {
+  "kelime": "Patoloji",
+  "yasakliKelimeler": [
+   "Hastalık",
+   "Doktor",
+   "Teşhis",
+   "Laboratuvar",
+   "Mikroskop"
+  ]
+ },
+ {
+  "kelime": "Farmakoloji",
+  "yasakliKelimeler": [
+   "İlaç",
+   "Bilim",
+   "Etki",
+   "Doktor",
+   "Tedavi"
+  ]
+ },
+ {
+  "kelime": "Fosil Yakıt",
+  "yasakliKelimeler": [
+   "Petrol",
+   "Kömür",
+   "Gaz",
+   "Enerji",
+   "Kirletici"
+  ]
+ },
+ {
+  "kelime": "Yenilenebilir Enerji",
+  "yasakliKelimeler": [
+   "Güneş",
+   "Rüzgar",
+   "Su",
+   "Temiz",
+   "Sonsuz"
+  ]
+ },
+ {
+  "kelime": "Geri Dönüşüm",
+  "yasakliKelimeler": [
+   "Çöp",
+   "Kağıt",
+   "Plastik",
+   "Cam",
+   "Temiz"
+  ]
+ },
+ {
+  "kelime": "Biyolojik Çeşitlilik",
+  "yasakliKelimeler": [
+   "Hayvan",
+   "Bitki",
+   "Tür",
+   "Çevre",
+   "Doğa"
+  ]
+ },
+ {
+  "kelime": "Ozon Tabakası",
+  "yasakliKelimeler": [
+   "Atmosfer",
+   "Korunma",
+   "Güneş",
+   "Delik",
+   "Gaz"
+  ]
+ },
+ {
+  "kelime": "Sürdürülebilir",
+  "yasakliKelimeler": [
+   "Uzun",
+   "Vadeli",
+   "Çevre",
+   "Doğa",
+   "Koruma"
+  ]
+ },
+ {
+  "kelime": "Gotik",
+  "yasakliKelimeler": [
+   "Sanat",
+   "Orta Çağ",
+   "Katedral",
+   "Yüksek",
+   "Uç"
+  ]
+ },
+ {
+  "kelime": "Postmodern",
+  "yasakliKelimeler": [
+   "Sanat",
+   "Modern",
+   "Sonrası",
+   "Çeşitli",
+   "Çağdaş"
+  ]
+ },
+ {
+  "kelime": "Minimalizm",
+  "yasakliKelimeler": [
+   "Sanat",
+   "Basit",
+   "Az",
+   "Beyaz",
+   "Modern"
+  ]
+ },
+ {
+  "kelime": "Ekspresyonizm",
+  "yasakliKelimeler": [
+   "Sanat",
+   "Duygu",
+   "Renk",
+   "İfade",
+   "Almanya"
+  ]
+ },
+ {
+  "kelime": "Sembolizm",
+  "yasakliKelimeler": [
+   "Sanat",
+   "Sembol",
+   "Gizem",
+   "Rüya",
+   "19"
+  ]
+ },
+ {
+  "kelime": "Pop Art",
+  "yasakliKelimeler": [
+   "Sanat",
+   "Popüler",
+   "Renkli",
+   "Modern",
+   "Amerika"
+  ]
+ },
+ {
+  "kelime": "Street Art",
+  "yasakliKelimeler": [
+   "Duvar",
+   "Şehir",
+   "Sanat",
+   "Grafiti",
+   "Modern"
+  ]
+ },
+ {
+  "kelime": "Mitoloji",
+  "yasakliKelimeler": [
+   "Tanrı",
+   "Kahraman",
+   "Masal",
+   "Eski",
+   "Hikaye"
+  ]
+ },
+ {
+  "kelime": "Olimpos",
+  "yasakliKelimeler": [
+   "Tanrı",
+   "Yunan",
+   "Dağ",
+   "Zeus",
+   "Mitoloji"
+  ]
+ },
+ {
+  "kelime": "Valhalla",
+  "yasakliKelimeler": [
+   "Tanrı",
+   "İskandinav",
+   "Cennet",
+   "Viking",
+   "Savaş"
+  ]
+ },
+ {
+  "kelime": "Nirvana",
+  "yasakliKelimeler": [
+   "Budizm",
+   "Cennet",
+   "Aydınlanma",
+   "Sonsuz",
+   "Huzur"
+  ]
+ },
+ {
+  "kelime": "Zikir",
+  "yasakliKelimeler": [
+   "Din",
+   "Dua",
+   "Tekrar",
+   "Allah",
+   "Hatırlama"
+  ]
+ },
+ {
+  "kelime": "Dil Bilimi",
+  "yasakliKelimeler": [
+   "Dil",
+   "Bilim",
+   "Konuşma",
+   "Yazı",
+   "Araştırma"
+  ]
+ },
+ {
+  "kelime": "Edebiyat",
+  "yasakliKelimeler": [
+   "Yazı",
+   "Kitap",
+   "Şiir",
+   "Roman",
+   "Sanat"
+  ]
+ },
+ {
+  "kelime": "Gazetecilik",
+  "yasakliKelimeler": [
+   "Haber",
+   "Gazete",
+   "Röportaj",
+   "Yayın",
+   "Medya"
+  ]
+ },
+ {
+  "kelime": "Radyo",
+  "yasakliKelimeler": [
+   "Ses",
+   "Dalga",
+   "Yayın",
+   "Dinleme",
+   "Müzik"
+  ]
+ },
+ {
+  "kelime": "Sinema",
+  "yasakliKelimeler": [
+   "Film",
+   "Salon",
+   "İzleme",
+   "Yayın",
+   "Sanat"
+  ]
+ },
+ {
+  "kelime": "Tiyatro",
+  "yasakliKelimeler": [
+   "Sahne",
+   "Oyuncu",
+   "İzleyici",
+   "Gösteri",
+   "Sanat"
+  ]
+ },
+ {
+  "kelime": "Merkez Bankası",
+  "yasakliKelimeler": [
+   "Para",
+   "Faiz",
+   "Devlet",
+   "Kontrol",
+   "Ekonomi"
+  ]
+ },
+ {
+  "kelime": "Hisse Senedi",
+  "yasakliKelimeler": [
+   "Şirket",
+   "Borsa",
+   "Yatırım",
+   "Para",
+   "Sahip"
+  ]
+ },
+ {
+  "kelime": "Tahvil",
+  "yasakliKelimeler": [
+   "Borç",
+   "Faiz",
+   "Devlet",
+   "Yatırım",
+   "Para"
+  ]
+ },
+ {
+  "kelime": "Emeklilik",
+  "yasakliKelimeler": [
+   "Yaş",
+   "Para",
+   "Çalışma",
+   "Fon",
+   "Gelecek"
+  ]
+ },
+ {
+  "kelime": "Tasarruf",
+  "yasakliKelimeler": [
+   "Para",
+   "Biriktirme",
+   "Gelecek",
+   "Yatırım",
+   "Az"
+  ]
+ },
+ {
+  "kelime": "Anayasa",
+  "yasakliKelimeler": [
+   "Yasa",
+   "Devlet",
+   "Hak",
+   "Özgürlük",
+   "Temel"
+  ]
+ },
+ {
+  "kelime": "Sivil Toplum",
+  "yasakliKelimeler": [
+   "Dernek",
+   "Vakıf",
+   "Gönüllü",
+   "Demokrasi",
+   "Katılım"
+  ]
+ },
+ {
+  "kelime": "Lobicilik",
+  "yasakliKelimeler": [
+   "Etki",
+   "Siyaset",
+   "Grup",
+   "İçin",
+   "Çalışma"
+  ]
+ },
+ {
+  "kelime": "Kripto Para",
+  "yasakliKelimeler": [
+   "Bitcoin",
+   "Dijital",
+   "Para",
+   "Madencilik",
+   "Blokzincir"
+  ]
+ },
+ {
+  "kelime": "Pandemi",
+  "yasakliKelimeler": [
+   "Dünya",
+   "Hastalık",
+   "Virüs",
+   "Karantina",
+   "Sağlık"
+  ]
+ },
+ {
+  "kelime": "İklim Krizi",
+  "yasakliKelimeler": [
+   "Dünya",
+   "Isınma",
+   "Çevre",
+   "Değişim",
+   "Tehlike"
+  ]
+ },
+ {
+  "kelime": "Üniversite",
+  "yasakliKelimeler": [
+   "Yüksek",
+   "Öğretim",
+   "Öğrenci",
+   "Fakülte",
+   "Diploma"
+  ]
+ },
+ {
+  "kelime": "Lisans",
+  "yasakliKelimeler": [
+   "Derece",
+   "Üniversite",
+   "4",
+   "Yıl",
+   "Diploma"
+  ]
+ },
+ {
+  "kelime": "Yüksek Lisans",
+  "yasakliKelimeler": [
+   "Derece",
+   "Üniversite",
+   "2",
+   "Yıl",
+   "Tez"
+  ]
+ },
+ {
+  "kelime": "Doktora",
+  "yasakliKelimeler": [
+   "Derece",
+   "Üniversite",
+   "4+",
+   "Yıl",
+   "Tez"
+  ]
+ },
+ {
+  "kelime": "Kariyer",
+  "yasakliKelimeler": [
+   "İş",
+   "Meslek",
+   "Gelişme",
+   "Başarı",
+   "Zaman"
+  ]
+ },
+ {
+  "kelime": "CV",
+  "yasakliKelimeler": [
+   "Özgeçmiş",
+   "İş",
+   "Başvuru",
+   "Deneyim",
+   "Eğitim"
+  ]
+ },
+ {
+  "kelime": "Akıllı Ev",
+  "yasakliKelimeler": [
+   "Teknoloji",
+   "Otomasyon",
+   "Sensör",
+   "Uzaktan",
+   "Kontrol"
+  ]
+ },
+ {
+  "kelime": "Elektrikli Araç",
+  "yasakliKelimeler": [
+   "Pil",
+   "Çevre",
+   "Temiz",
+   "Enerji",
+   "Şarj"
+  ]
+ },
+ {
+  "kelime": "Otonom",
+  "yasakliKelimeler": [
+   "Kendiliğinden",
+   "Sürücü",
+   "Teknoloji",
+   "Robot",
+   "Akıllı"
+  ]
+ },
+ {
+  "kelime": "YouTube",
+  "yasakliKelimeler": [
+   "Video",
+   "İzleme",
+   "Kanal",
+   "Yükleme",
+   "İçerik"
+  ]
+ },
+ {
+  "kelime": "Podcast",
+  "yasakliKelimeler": [
+   "Ses",
+   "Dinleme",
+   "Konuşma",
+   "İçerik",
+   "Mikrofon"
+  ]
+ },
+ {
+  "kelime": "Gaming",
+  "yasakliKelimeler": [
+   "Oyun",
+   "Bilgisayar",
+   "Konsol",
+   "Eğlence",
+   "Sanal"
+  ]
+ },
+ {
+  "kelime": "Streaming",
+  "yasakliKelimeler": [
+   "Canlı",
+   "Yayın",
+   "İnternet",
+   "İzleme",
+   "Platform"
+  ]
+ },
+ {
+  "kelime": "Meditasyon",
+  "yasakliKelimeler": [
+   "Zihin",
+   "Dinginlik",
+   "Nefes",
+   "Odaklanma",
+   "Stres"
+  ]
+ },
+ {
+  "kelime": "Pilates",
+  "yasakliKelimeler": [
+   "Vücut",
+   "Esneklik",
+   "Kontrol",
+   "Egzersiz",
+   "Zemin"
+  ]
+ },
+ {
+  "kelime": "CrossFit",
+  "yasakliKelimeler": [
+   "Egzersiz",
+   "Yoğun",
+   "Grup",
+   "Fonksiyonel",
+   "Spor"
+  ]
+ },
+ {
+  "kelime": "HIIT",
+  "yasakliKelimeler": [
+   "Egzersiz",
+   "Yüksek",
+   "Yoğunluk",
+   "Kısa",
+   "Zaman"
+  ]
+ },
+ {
+  "kelime": "Kardiyo",
+  "yasakliKelimeler": [
+   "Kalp",
+   "Nabız",
+   "Koşu",
+   "Bisiklet",
+   "Sağlık"
+  ]
+ },
+ {
+  "kelime": "Ormansızlaşma",
+  "yasakliKelimeler": [
+   "Ağaç",
+   "Kesim",
+   "Çevre",
+   "Doğa",
+   "Zarar"
+  ]
+ },
+ {
+  "kelime": "Su Döngüsü",
+  "yasakliKelimeler": [
+   "Yağmur",
+   "Buharlaşma",
+   "Bulut",
+   "Nehir",
+   "Doğa"
+  ]
+ },
+ {
+  "kelime": "Gıda Zinciri",
+  "yasakliKelimeler": [
+   "Hayvan",
+   "Bitki",
+   "Avcı",
+   "Kurbağa",
+   "Doğa"
+  ]
+ },
+ {
+  "kelime": "Habitat",
+  "yasakliKelimeler": [
+   "Yaşam",
+   "Alan",
+   "Hayvan",
+   "Bitki",
+   "Doğa"
+  ]
+ },
+ {
+  "kelime": "Work From Home",
+  "yasakliKelimeler": [
+   "Ev",
+   "Çalışma",
+   "Ofis",
+   "Uzaktan",
+   "Pandemi"
+  ]
+ },
+ {
+  "kelime": "Digital Nomad",
+  "yasakliKelimeler": [
+   "Çalışma",
+   "Seyahat",
+   "İnternet",
+   "Serbest",
+   "Dünya"
+  ]
+ },
+ {
+  "kelime": "Influencer",
+  "yasakliKelimeler": [
+   "Sosyal",
+   "Medya",
+   "Takipçi",
+   "İçerik",
+   "Pazarlama"
+  ]
+ },
+ {
+  "kelime": "Startup",
+  "yasakliKelimeler": [
+   "Şirket",
+   "Yeni",
+   "Teknoloji",
+   "Girişim",
+   "Yatırım"
+  ]
+ },
+ {
+  "kelime": "Freelancer",
+  "yasakliKelimeler": [
+   "Serbest",
+   "Çalışma",
+   "Proje",
+   "Müşteri",
+   "Esnek"
+  ]
+ },
+ {
+  "kelime": "Gig Economy",
+  "yasakliKelimeler": [
+   "İş",
+   "Geçici",
+   "Platform",
+   "Esnek",
+   "Gelir"
+  ]
+ },
+ {
+  "kelime": "Remote Work",
+  "yasakliKelimeler": [
+   "Uzaktan",
+   "Çalışma",
+   "Ofis",
+   "İnternet",
+   "Esnek"
+  ]
+ },
+ {
+  "kelime": "Co-Working",
+  "yasakliKelimeler": [
+   "Ortak",
+   "Çalışma",
+   "Ofis",
+   "Paylaşılan",
+   "Alan"
+  ]
+ }
+]

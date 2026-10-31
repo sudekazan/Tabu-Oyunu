@@ -1,35 +1,10 @@
-export 'markalar.dart';
-export 'cocuklar.dart';
-export 'bilim_teknoloji.dart';
-export 'tarih_kultur.dart';
-export 'spor.dart';
-export 'film_diziler.dart';
-export 'yemek_mutfak.dart';
-export 'ulkeler_kultur.dart';
 import 'package:flutter/material.dart';
-import '../../kelimeler.dart';
-import 'markalar.dart';
-import 'cocuklar.dart';
-import 'bilim_teknoloji.dart';
-import 'tarih_kultur.dart';
-import 'spor.dart';
-import 'film_diziler.dart';
-import 'yemek_mutfak.dart';
-import 'ulkeler_kultur.dart';
 
-// Premium tarafındaki kategori listelerini tek bir yerde birleştirir
-final List<KelimeKarti> premiumKategorilerToplami = [
-  ...premiumMarkalar,
-  ...premiumCocuklar,
-  ...premiumBilimTeknoloji,
-  ...premiumTarihKultur,
-  ...premiumSpor,
-  ...premiumFilmDiziler,
-  ...premiumYemekMutfak,
-  ...premiumUlkelerKultur,
-];
+// Premium kategori verisi artık assets/data/*.json dosyalarında (bkz.
+// lib/data/kelime_deposu.dart). Bu dosyada sadece kategori enum'ı ve
+// UI için isim/ikon eşlemeleri kalıyor — bunlar kod, veri değil.
 
-// Premium kategori tanımları (ileride yeni dosyalar eklendikçe genişletilir)
+/// Premium kategori tanımları (ileride yeni kategoriler eklendikçe genişletilir)
 enum PremiumKategori {
   markalar,
   cocuklar,
@@ -62,26 +37,3 @@ const Map<PremiumKategori, IconData> premiumKategoriIconlari = {
   PremiumKategori.yemek_mutfak: Icons.restaurant,
   PremiumKategori.ulkeler_kultur: Icons.public,
 };
-
-List<KelimeKarti> premiumKategoriListesi(PremiumKategori kategori) {
-  switch (kategori) {
-    case PremiumKategori.markalar:
-      return premiumMarkalar;
-    case PremiumKategori.cocuklar:
-      return premiumCocuklar;
-    case PremiumKategori.bilim_teknoloji:
-      return premiumBilimTeknoloji;
-    case PremiumKategori.tarih_kultur:
-      return premiumTarihKultur;
-    case PremiumKategori.spor:
-      return premiumSpor;
-    case PremiumKategori.film_diziler:
-      return premiumFilmDiziler;
-    case PremiumKategori.yemek_mutfak:
-      return premiumYemekMutfak;
-    case PremiumKategori.ulkeler_kultur:
-      return premiumUlkelerKultur;
-  }
-}
-
-

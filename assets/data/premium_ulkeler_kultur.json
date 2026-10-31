@@ -1,0 +1,1712 @@
+[
+ {
+  "kelime": "İngiltere",
+  "yasakliKelimeler": [
+   "Londra",
+   "Kraliyet",
+   "Çay",
+   "Futbol",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Yunanistan",
+  "yasakliKelimeler": [
+   "Atina",
+   "Akropolis",
+   "Deniz",
+   "Mitoloji",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Çin",
+  "yasakliKelimeler": [
+   "Pekin",
+   "Duvar",
+   "Çay",
+   "Teknoloji",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Güney Kore",
+  "yasakliKelimeler": [
+   "Seul",
+   "K-pop",
+   "Samsung",
+   "K-beauty",
+   "Teknoloji"
+  ]
+ },
+ {
+  "kelime": "Tayland",
+  "yasakliKelimeler": [
+   "Bangkok",
+   "Tapınak",
+   "Yemek",
+   "Turistik",
+   "Gülümseyen"
+  ]
+ },
+ {
+  "kelime": "Vietnam",
+  "yasakliKelimeler": [
+   "Hanoi",
+   "Pho",
+   "Komünizm",
+   "Tarih",
+   "Deniz"
+  ]
+ },
+ {
+  "kelime": "Endonezya",
+  "yasakliKelimeler": [
+   "Cakarta",
+   "Ada",
+   "Volkan",
+   "Turistik",
+   "Çeşitli"
+  ]
+ },
+ {
+  "kelime": "Amerika Birleşik Devletleri",
+  "yasakliKelimeler": [
+   "Washington",
+   "Hollywood",
+   "Özgürlük",
+   "Güçlü",
+   "Çeşitli"
+  ]
+ },
+ {
+  "kelime": "Kanada",
+  "yasakliKelimeler": [
+   "Ottawa",
+   "Kış",
+   "Hokey",
+   "Açık",
+   "İki Dilli"
+  ]
+ },
+ {
+  "kelime": "Arjantin",
+  "yasakliKelimeler": [
+   "Buenos Aires",
+   "Tango",
+   "Futbol",
+   "Gaucho",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Meksika",
+  "yasakliKelimeler": [
+   "Mexico City",
+   "Maya",
+   "Taco",
+   "Kaktüs",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Güney Afrika",
+  "yasakliKelimeler": [
+   "Pretoria",
+   "Mandela",
+   "Safari",
+   "Renkli",
+   "Çeşitli"
+  ]
+ },
+ {
+  "kelime": "Kenya",
+  "yasakliKelimeler": [
+   "Nairobi",
+   "Safari",
+   "Maraton",
+   "Çay",
+   "Vahşi"
+  ]
+ },
+ {
+  "kelime": "Fas",
+  "yasakliKelimeler": [
+   "Rabat",
+   "Çöl",
+   "Baharat",
+   "Tarih",
+   "Medeniyet"
+  ]
+ },
+ {
+  "kelime": "Nijerya",
+  "yasakliKelimeler": [
+   "Abuja",
+   "Petrol",
+   "Nüfus",
+   "Çeşitli",
+   "Afrika"
+  ]
+ },
+ {
+  "kelime": "Suudi Arabistan",
+  "yasakliKelimeler": [
+   "Riyad",
+   "Petrol",
+   "Mekke",
+   "Kabe",
+   "İslam"
+  ]
+ },
+ {
+  "kelime": "İran",
+  "yasakliKelimeler": [
+   "Tahran",
+   "Şah",
+   "Petrol",
+   "Tarih",
+   "Medeniyet"
+  ]
+ },
+ {
+  "kelime": "İsrail",
+  "yasakliKelimeler": [
+   "Tel Aviv",
+   "Tarih",
+   "Teknoloji",
+   "Çöl",
+   "Din"
+  ]
+ },
+ {
+  "kelime": "Ürdün",
+  "yasakliKelimeler": [
+   "Amman",
+   "Petra",
+   "Tarih",
+   "Çöl",
+   "Misafirperver"
+  ]
+ },
+ {
+  "kelime": "Avustralya",
+  "yasakliKelimeler": [
+   "Sidney",
+   "Kanguru",
+   "Çöl",
+   "Opera",
+   "Spor"
+  ]
+ },
+ {
+  "kelime": "Yeni Zelanda",
+  "yasakliKelimeler": [
+   "Wellington",
+   "Yüzüklerin Efendisi",
+   "Dağ",
+   "Yelken",
+   "Koyun"
+  ]
+ },
+ {
+  "kelime": "Paris",
+  "yasakliKelimeler": [
+   "Fransa",
+   "Eyfel",
+   "Şehir",
+   "Romantik",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Berlin",
+  "yasakliKelimeler": [
+   "Almanya",
+   "Duvar",
+   "Tarih",
+   "Şehir",
+   "Bölünmüş"
+  ]
+ },
+ {
+  "kelime": "Madrid",
+  "yasakliKelimeler": [
+   "İspanya",
+   "Futbol",
+   "Şehir",
+   "Sıcak",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Londra",
+  "yasakliKelimeler": [
+   "İngiltere",
+   "Big Ben",
+   "Kraliyet",
+   "Şehir",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Moskova",
+  "yasakliKelimeler": [
+   "Rusya",
+   "Kremlin",
+   "Kış",
+   "Şehir",
+   "Büyük"
+  ]
+ },
+ {
+  "kelime": "Tokyo",
+  "yasakliKelimeler": [
+   "Japonya",
+   "Teknoloji",
+   "Şehir",
+   "Yoğun",
+   "Modern"
+  ]
+ },
+ {
+  "kelime": "Flamenko",
+  "yasakliKelimeler": [
+   "İspanya",
+   "Dans",
+   "Müzik",
+   "Tutku",
+   "Kültür"
+  ]
+ },
+ {
+  "kelime": "Carnaval",
+  "yasakliKelimeler": [
+   "Brezilya",
+   "Rio",
+   "Renkli",
+   "Festival",
+   "Dans"
+  ]
+ },
+ {
+  "kelime": "Oktoberfest",
+  "yasakliKelimeler": [
+   "Almanya",
+   "Münih",
+   "Bira",
+   "Festival",
+   "Ekim"
+  ]
+ },
+ {
+  "kelime": "Hristiyanlık",
+  "yasakliKelimeler": [
+   "İsa",
+   "İncil",
+   "Çarmıh",
+   "Kilise",
+   "Dünya"
+  ]
+ },
+ {
+  "kelime": "İslam",
+  "yasakliKelimeler": [
+   "Kur'an",
+   "Peygamber",
+   "Mekke",
+   "Dünya",
+   "İnanç"
+  ]
+ },
+ {
+  "kelime": "Budizm",
+  "yasakliKelimeler": [
+   "Buddha",
+   "Aydınlanma",
+   "Meditasyon",
+   "Asya",
+   "Barış"
+  ]
+ },
+ {
+  "kelime": "Hinduizm",
+  "yasakliKelimeler": [
+   "Hindistan",
+   "Karma",
+   "Reenkarnasyon",
+   "Tanrı",
+   "Kutsal"
+  ]
+ },
+ {
+  "kelime": "Yahudilik",
+  "yasakliKelimeler": [
+   "Musevi",
+   "Torah",
+   "Kudüs",
+   "Tarih",
+   "İnanç"
+  ]
+ },
+ {
+  "kelime": "Roma İmparatorluğu",
+  "yasakliKelimeler": [
+   "Sezar",
+   "Gladyatör",
+   "Kolezyum",
+   "Büyük",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Hollywood",
+  "yasakliKelimeler": [
+   "Amerika",
+   "Film",
+   "Yıldız",
+   "Kırmızı",
+   "Halısı"
+  ]
+ },
+ {
+  "kelime": "Broadway",
+  "yasakliKelimeler": [
+   "New York",
+   "Tiyatro",
+   "Müzikal",
+   "Sahne",
+   "Şov"
+  ]
+ },
+ {
+  "kelime": "Carnival",
+  "yasakliKelimeler": [
+   "Venedik",
+   "Maske",
+   "Festival",
+   "Tarih",
+   "Gelenek"
+  ]
+ },
+ {
+  "kelime": "Diwali",
+  "yasakliKelimeler": [
+   "Hindistan",
+   "Işık",
+   "Festival",
+   "Yeni Yıl",
+   "Lamba"
+  ]
+ },
+ {
+  "kelime": "Hanuka",
+  "yasakliKelimeler": [
+   "Yahudi",
+   "Işık",
+   "Festival",
+   "8 Gün",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Holi",
+  "yasakliKelimeler": [
+   "Hindistan",
+   "Renk",
+   "Festival",
+   "Bahar",
+   "Su"
+  ]
+ },
+ {
+  "kelime": "Songkran",
+  "yasakliKelimeler": [
+   "Tayland",
+   "Su",
+   "Yeni Yıl",
+   "Festival",
+   "Gelenek"
+  ]
+ },
+ {
+  "kelime": "İspanyolca",
+  "yasakliKelimeler": [
+   "İspanya",
+   "Latin Amerika",
+   "Romantik",
+   "Dünya",
+   "Konuşulan"
+  ]
+ },
+ {
+  "kelime": "Fransızca",
+  "yasakliKelimeler": [
+   "Fransa",
+   "Romantik",
+   "Dünya",
+   "Konuşulan",
+   "Lüks"
+  ]
+ },
+ {
+  "kelime": "Arapça",
+  "yasakliKelimeler": [
+   "Ortadoğu",
+   "İslam",
+   "Kur'an",
+   "Dünya",
+   "Konuşulan"
+  ]
+ },
+ {
+  "kelime": "Çince",
+  "yasakliKelimeler": [
+   "Çin",
+   "Mandarin",
+   "Dünya",
+   "Konuşulan",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Hintçe",
+  "yasakliKelimeler": [
+   "Hindistan",
+   "Dünya",
+   "Konuşulan",
+   "Bollywood",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Amazon Ormanı",
+  "yasakliKelimeler": [
+   "Brezilya",
+   "Yağmur",
+   "Çeşitlilik",
+   "Dünya",
+   "Vahşi"
+  ]
+ },
+ {
+  "kelime": "Nil Nehri",
+  "yasakliKelimeler": [
+   "Mısır",
+   "Uzun",
+   "Dünya",
+   "Tarih",
+   "Nehir"
+  ]
+ },
+ {
+  "kelime": "Sahara Çölü",
+  "yasakliKelimeler": [
+   "Afrika",
+   "Büyük",
+   "Çöl",
+   "Dünya",
+   "Kum"
+  ]
+ },
+ {
+  "kelime": "Himalaya Dağları",
+  "yasakliKelimeler": [
+   "Asya",
+   "Yüksek",
+   "Dünya",
+   "Karlı",
+   "Dağ"
+  ]
+ },
+ {
+  "kelime": "Büyük Okyanus Bariyeri",
+  "yasakliKelimeler": [
+   "Avustralya",
+   "Mercan",
+   "Dünya",
+   "Deniz",
+   "Rif"
+  ]
+ },
+ {
+  "kelime": "Oxford",
+  "yasakliKelimeler": [
+   "İngiltere",
+   "Üniversite",
+   "Tarih",
+   "Eski",
+   "Akademik"
+  ]
+ },
+ {
+  "kelime": "Cambridge",
+  "yasakliKelimeler": [
+   "İngiltere",
+   "Üniversite",
+   "Tarih",
+   "Rekabet",
+   "Akademik"
+  ]
+ },
+ {
+  "kelime": "Harvard",
+  "yasakliKelimeler": [
+   "Amerika",
+   "Üniversite",
+   "İvory League",
+   "Tarih",
+   "Prestij"
+  ]
+ },
+ {
+  "kelime": "Sorbonne",
+  "yasakliKelimeler": [
+   "Fransa",
+   "Üniversite",
+   "Paris",
+   "Tarih",
+   "Akademik"
+  ]
+ },
+ {
+  "kelime": "Tokyo Üniversitesi",
+  "yasakliKelimeler": [
+   "Japonya",
+   "Üniversite",
+   "Tokyo",
+   "Prestij",
+   "Akademik"
+  ]
+ },
+ {
+  "kelime": "Eiffel Kulesi",
+  "yasakliKelimeler": [
+   "Paris",
+   "Fransa",
+   "Demir",
+   "Ünlü",
+   "Turistik"
+  ]
+ },
+ {
+  "kelime": "Tac Mahal",
+  "yasakliKelimeler": [
+   "Hindistan",
+   "Aşk",
+   "Mermer",
+   "Tarih",
+   "Ünlü"
+  ]
+ },
+ {
+  "kelime": "Kolezyum",
+  "yasakliKelimeler": [
+   "Roma",
+   "İtalya",
+   "Tarih",
+   "Arena",
+   "Ünlü"
+  ]
+ },
+ {
+  "kelime": "Akropolis",
+  "yasakliKelimeler": [
+   "Atina",
+   "Yunanistan",
+   "Tarih",
+   "Parthenon",
+   "Ünlü"
+  ]
+ },
+ {
+  "kelime": "İsveç",
+  "yasakliKelimeler": [
+   "Stokholm",
+   "IKEA",
+   "Viking",
+   "İskandinav",
+   "Soğuk"
+  ]
+ },
+ {
+  "kelime": "Norveç",
+  "yasakliKelimeler": [
+   "Oslo",
+   "Fjord",
+   "Viking",
+   "Petrol",
+   "Kış"
+  ]
+ },
+ {
+  "kelime": "Danimarka",
+  "yasakliKelimeler": [
+   "Kopenhag",
+   "Lego",
+   "Bisiklet",
+   "İskandinav",
+   "Mutlu"
+  ]
+ },
+ {
+  "kelime": "Finlandiya",
+  "yasakliKelimeler": [
+   "Helsinki",
+   "Sauna",
+   "Orman",
+   "İskandinav",
+   "Kış"
+  ]
+ },
+ {
+  "kelime": "Hollanda",
+  "yasakliKelimeler": [
+   "Amsterdam",
+   "Bisiklet",
+   "Tulip",
+   "Su",
+   "Yel Değirmenleri"
+  ]
+ },
+ {
+  "kelime": "Avrupa",
+  "yasakliKelimeler": [
+   "Kıta",
+   "Tarih",
+   "Kültür",
+   "Çeşitli",
+   "Dünya"
+  ]
+ },
+ {
+  "kelime": "Asya",
+  "yasakliKelimeler": [
+   "Kıta",
+   "Büyük",
+   "Çeşitli",
+   "Nüfus",
+   "Dünya"
+  ]
+ },
+ {
+  "kelime": "Afrika",
+  "yasakliKelimeler": [
+   "Kıta",
+   "Sıcak",
+   "Çöl",
+   "Vahşi",
+   "Dünya"
+  ]
+ },
+ {
+  "kelime": "Amerika",
+  "yasakliKelimeler": [
+   "Kıta",
+   "Büyük",
+   "Çeşitli",
+   "Okyanus",
+   "Dünya"
+  ]
+ },
+ {
+  "kelime": "Birleşmiş Milletler",
+  "yasakliKelimeler": [
+   "BM",
+   "Dünya",
+   "Barış",
+   "New York",
+   "Diplomasi"
+  ]
+ },
+ {
+  "kelime": "Avrupa Birliği",
+  "yasakliKelimeler": [
+   "AB",
+   "Avrupa",
+   "Euro",
+   "Birlik",
+   "Ekonomi"
+  ]
+ },
+ {
+  "kelime": "NATO",
+  "yasakliKelimeler": [
+   "Askeri",
+   "İttifak",
+   "Savunma",
+   "Avrupa",
+   "Amerika"
+  ]
+ },
+ {
+  "kelime": "G7",
+  "yasakliKelimeler": [
+   "Ülkeler",
+   "Zengin",
+   "Dünya",
+   "Ekonomi",
+   "Gelişmiş"
+  ]
+ },
+ {
+  "kelime": "BRICS",
+  "yasakliKelimeler": [
+   "Gelişen",
+   "Ekonomi",
+   "Dünya",
+   "Güç",
+   "Ülkeler"
+  ]
+ },
+ {
+  "kelime": "OECD",
+  "yasakliKelimeler": [
+   "Ekonomi",
+   "Gelişmiş",
+   "Ülkeler",
+   "İstatistik",
+   "Politika"
+  ]
+ },
+ {
+  "kelime": "Misafirperverlik",
+  "yasakliKelimeler": [
+   "Türk",
+   "Kültür",
+   "İkram",
+   "Gelenek",
+   "Değer"
+  ]
+ },
+ {
+  "kelime": "Çay Kültürü",
+  "yasakliKelimeler": [
+   "Türk",
+   "İkram",
+   "Sohbet",
+   "Gelenek",
+   "Toplumsal"
+  ]
+ },
+ {
+  "kelime": "Aile Bağları",
+  "yasakliKelimeler": [
+   "Türk",
+   "Gelenek",
+   "Değer",
+   "Toplum",
+   "Önemli"
+  ]
+ },
+ {
+  "kelime": "Dubai",
+  "yasakliKelimeler": [
+   "BAE",
+   "Modern",
+   "Gökyüzü",
+   "Lüks",
+   "Çöl"
+  ]
+ },
+ {
+  "kelime": "Singapur",
+  "yasakliKelimeler": [
+   "Asya",
+   "Modern",
+   "Temiz",
+   "Ada",
+   "Ticaret"
+  ]
+ },
+ {
+  "kelime": "Hong Kong",
+  "yasakliKelimeler": [
+   "Çin",
+   "Ada",
+   "Ticaret",
+   "Modern",
+   "Viktoriya"
+  ]
+ },
+ {
+  "kelime": "Şanghay",
+  "yasakliKelimeler": [
+   "Çin",
+   "Modern",
+   "Ekonomi",
+   "Nüfus",
+   "Gelecek"
+  ]
+ },
+ {
+  "kelime": "Angela Merkel",
+  "yasakliKelimeler": [
+   "Almanya",
+   "Şansölye",
+   "Kadın",
+   "Güçlü",
+   "Avrupa"
+  ]
+ },
+ {
+  "kelime": "Justin Trudeau",
+  "yasakliKelimeler": [
+   "Kanada",
+   "Başbakan",
+   "Genç",
+   "Liberal",
+   "Fotojenik"
+  ]
+ },
+ {
+  "kelime": "Jacinda Ardern",
+  "yasakliKelimeler": [
+   "Yeni Zelanda",
+   "Başbakan",
+   "Kadın",
+   "Genç",
+   "Lider"
+  ]
+ },
+ {
+  "kelime": "Portekiz",
+  "yasakliKelimeler": [
+   "Lizbon",
+   "Fado",
+   "Okyanus",
+   "Keşif",
+   "Avrupa"
+  ]
+ },
+ {
+  "kelime": "İsviçre",
+  "yasakliKelimeler": [
+   "Alp",
+   "Çikolata",
+   "Saat",
+   "Tarafsız",
+   "Peynir"
+  ]
+ },
+ {
+  "kelime": "Avusturya",
+  "yasakliKelimeler": [
+   "Viyana",
+   "Alp",
+   "Müzik",
+   "Mozart",
+   "Avrupa"
+  ]
+ },
+ {
+  "kelime": "Belçika",
+  "yasakliKelimeler": [
+   "Brüksel",
+   "Çikolata",
+   "Waffle",
+   "Bira",
+   "Avrupa"
+  ]
+ },
+ {
+  "kelime": "Polonya",
+  "yasakliKelimeler": [
+   "Varşova",
+   "Avrupa",
+   "Pierogi",
+   "Tarih",
+   "Slav"
+  ]
+ },
+ {
+  "kelime": "Pakistan",
+  "yasakliKelimeler": [
+   "İslamabad",
+   "Güney Asya",
+   "Nükleer",
+   "Urduca",
+   "Himalaya"
+  ]
+ },
+ {
+  "kelime": "Bangladeş",
+  "yasakliKelimeler": [
+   "Dakka",
+   "Nehir",
+   "Güney Asya",
+   "Pamuk",
+   "Yoğun Nüfus"
+  ]
+ },
+ {
+  "kelime": "Filipinler",
+  "yasakliKelimeler": [
+   "Manila",
+   "Ada",
+   "Pasifik",
+   "Tropikal",
+   "Jeepney"
+  ]
+ },
+ {
+  "kelime": "Malezya",
+  "yasakliKelimeler": [
+   "Kuala Lumpur",
+   "Petronas Kuleleri",
+   "Tropikal",
+   "Asya",
+   "Muson"
+  ]
+ },
+ {
+  "kelime": "Şili",
+  "yasakliKelimeler": [
+   "Santiago",
+   "And Dağları",
+   "Uzun",
+   "Güney Amerika",
+   "Ekmek"
+  ]
+ },
+ {
+  "kelime": "Peru",
+  "yasakliKelimeler": [
+   "Lima",
+   "And Dağları",
+   "Lama",
+   "Güney Amerika",
+   "Patates"
+  ]
+ },
+ {
+  "kelime": "Kolombiya",
+  "yasakliKelimeler": [
+   "Bogota",
+   "Kahve",
+   "Güney Amerika",
+   "Amazon",
+   "Arepa"
+  ]
+ },
+ {
+  "kelime": "Küba",
+  "yasakliKelimeler": [
+   "Havana",
+   "Puro",
+   "Karayip",
+   "Sosyalizm",
+   "Salsa"
+  ]
+ },
+ {
+  "kelime": "İzlanda",
+  "yasakliKelimeler": [
+   "Reykjavik",
+   "Volkan",
+   "Buzul",
+   "Kuzey",
+   "Aurora"
+  ]
+ },
+ {
+  "kelime": "İrlanda",
+  "yasakliKelimeler": [
+   "Dublin",
+   "Yeşil",
+   "Ada",
+   "Guinness",
+   "Kelt"
+  ]
+ },
+ {
+  "kelime": "İskoçya",
+  "yasakliKelimeler": [
+   "Edinburgh",
+   "Etek",
+   "Gayda",
+   "Highland",
+   "Göl"
+  ]
+ },
+ {
+  "kelime": "Tunus",
+  "yasakliKelimeler": [
+   "Tunus Şehri",
+   "Kartaca",
+   "Kuzey Afrika",
+   "Akdeniz",
+   "Arapça"
+  ]
+ },
+ {
+  "kelime": "Cezayir",
+  "yasakliKelimeler": [
+   "Cezayir Şehri",
+   "Sahra",
+   "Kuzey Afrika",
+   "Fransızca",
+   "Petrol"
+  ]
+ },
+ {
+  "kelime": "Etiyopya",
+  "yasakliKelimeler": [
+   "Addis Ababa",
+   "Afrika Boynuzu",
+   "Kahve",
+   "Antik",
+   "Yüksek Rakım"
+  ]
+ },
+ {
+  "kelime": "Umman",
+  "yasakliKelimeler": [
+   "Muskat",
+   "Körfez",
+   "Çöl",
+   "Petrol",
+   "Arap"
+  ]
+ },
+ {
+  "kelime": "Katar",
+  "yasakliKelimeler": [
+   "Doha",
+   "Körfez",
+   "Doğalgaz",
+   "Dünya Kupası",
+   "Çöl"
+  ]
+ },
+ {
+  "kelime": "Kuveyt",
+  "yasakliKelimeler": [
+   "Körfez",
+   "Petrol",
+   "Çöl",
+   "Arap",
+   "Emirlik"
+  ]
+ },
+ {
+  "kelime": "Lübnan",
+  "yasakliKelimeler": [
+   "Beyrut",
+   "Akdeniz",
+   "Sedir",
+   "Çeşitlilik",
+   "Orta Doğu"
+  ]
+ },
+ {
+  "kelime": "Suriye",
+  "yasakliKelimeler": [
+   "Şam",
+   "Orta Doğu",
+   "Antik",
+   "Savaş",
+   "Komşu"
+  ]
+ },
+ {
+  "kelime": "Irak",
+  "yasakliKelimeler": [
+   "Bağdat",
+   "Mezopotamya",
+   "Petrol",
+   "Orta Doğu",
+   "Dicle"
+  ]
+ },
+ {
+  "kelime": "Afganistan",
+  "yasakliKelimeler": [
+   "Kabil",
+   "Dağlık",
+   "Orta Asya",
+   "Tarih",
+   "Savaş"
+  ]
+ },
+ {
+  "kelime": "Nepal",
+  "yasakliKelimeler": [
+   "Katmandu",
+   "Everest",
+   "Himalaya",
+   "Budizm",
+   "Dağcılık"
+  ]
+ },
+ {
+  "kelime": "Sri Lanka",
+  "yasakliKelimeler": [
+   "Kolombo",
+   "Ada",
+   "Çay",
+   "Hint Okyanusu",
+   "Fil"
+  ]
+ },
+ {
+  "kelime": "Myanmar",
+  "yasakliKelimeler": [
+   "Yangon",
+   "Pagoda",
+   "Güneydoğu Asya",
+   "Budist",
+   "Nehir"
+  ]
+ },
+ {
+  "kelime": "Kamboçya",
+  "yasakliKelimeler": [
+   "Phnom Penh",
+   "Angkor Wat",
+   "Güneydoğu Asya",
+   "Tapınak",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Laos",
+  "yasakliKelimeler": [
+   "Vientiane",
+   "Nehir",
+   "Güneydoğu Asya",
+   "Dağlık",
+   "Budist"
+  ]
+ },
+ {
+  "kelime": "Özbekistan",
+  "yasakliKelimeler": [
+   "Taşkent",
+   "Orta Asya",
+   "İpek Yolu",
+   "Semerkant",
+   "Türk"
+  ]
+ },
+ {
+  "kelime": "Azerbaycan",
+  "yasakliKelimeler": [
+   "Bakü",
+   "Kafkasya",
+   "Petrol",
+   "Türk",
+   "Hazar"
+  ]
+ },
+ {
+  "kelime": "Gürcistan",
+  "yasakliKelimeler": [
+   "Tiflis",
+   "Kafkasya",
+   "Şarap",
+   "Dağlık",
+   "Eski"
+  ]
+ },
+ {
+  "kelime": "Ermenistan",
+  "yasakliKelimeler": [
+   "Erivan",
+   "Kafkasya",
+   "Dağlık",
+   "Eski",
+   "Hristiyan"
+  ]
+ },
+ {
+  "kelime": "Ukrayna",
+  "yasakliKelimeler": [
+   "Kiev",
+   "Buğday",
+   "Avrupa",
+   "Savaş",
+   "Slav"
+  ]
+ },
+ {
+  "kelime": "Macaristan",
+  "yasakliKelimeler": [
+   "Budapeşte",
+   "Avrupa",
+   "Termal",
+   "Goulash",
+   "Tuna"
+  ]
+ },
+ {
+  "kelime": "Romanya",
+  "yasakliKelimeler": [
+   "Bükreş",
+   "Transilvanya",
+   "Avrupa",
+   "Kale",
+   "Slav Değil"
+  ]
+ },
+ {
+  "kelime": "Bulgaristan",
+  "yasakliKelimeler": [
+   "Sofya",
+   "Balkan",
+   "Gül Yağı",
+   "Avrupa",
+   "Yoğurt"
+  ]
+ },
+ {
+  "kelime": "Hırvatistan",
+  "yasakliKelimeler": [
+   "Zagreb",
+   "Adriyatik",
+   "Ada",
+   "Balkan",
+   "Turizm"
+  ]
+ },
+ {
+  "kelime": "Slovenya",
+  "yasakliKelimeler": [
+   "Ljubljana",
+   "Alp",
+   "Mağara",
+   "Göl",
+   "Küçük"
+  ]
+ },
+ {
+  "kelime": "Letonya",
+  "yasakliKelimeler": [
+   "Riga",
+   "Baltık",
+   "Orman",
+   "Avrupa",
+   "Kuzey"
+  ]
+ },
+ {
+  "kelime": "Litvanya",
+  "yasakliKelimeler": [
+   "Vilnius",
+   "Baltık",
+   "Avrupa",
+   "Kuzey",
+   "Orman"
+  ]
+ },
+ {
+  "kelime": "Estonya",
+  "yasakliKelimeler": [
+   "Tallinn",
+   "Baltık",
+   "Dijital",
+   "Kuzey",
+   "Orman"
+  ]
+ },
+ {
+  "kelime": "Malta",
+  "yasakliKelimeler": [
+   "Valetta",
+   "Ada",
+   "Akdeniz",
+   "Küçük",
+   "Şövalye"
+  ]
+ },
+ {
+  "kelime": "Kıbrıs",
+  "yasakliKelimeler": [
+   "Lefkoşa",
+   "Ada",
+   "Akdeniz",
+   "Bölünmüş",
+   "Portakal"
+  ]
+ },
+ {
+  "kelime": "Lüksemburg",
+  "yasakliKelimeler": [
+   "Küçük",
+   "Avrupa",
+   "Banka",
+   "Zengin",
+   "Üç Dil"
+  ]
+ },
+ {
+  "kelime": "Burj Khalifa",
+  "yasakliKelimeler": [
+   "Dubai",
+   "Gökdelen",
+   "Dünyanın En Yükseği",
+   "BAE",
+   "Çelik"
+  ]
+ },
+ {
+  "kelime": "Sidney Opera Binası",
+  "yasakliKelimeler": [
+   "Avustralya",
+   "Beyaz",
+   "Yelken",
+   "Liman",
+   "Mimari"
+  ]
+ },
+ {
+  "kelime": "Petra",
+  "yasakliKelimeler": [
+   "Ürdün",
+   "Kayaya Oyma",
+   "Antik",
+   "Çöl",
+   "Nebatiler"
+  ]
+ },
+ {
+  "kelime": "Machu Picchu",
+  "yasakliKelimeler": [
+   "Peru",
+   "And Dağları",
+   "İnka",
+   "Taş",
+   "Yüksek"
+  ]
+ },
+ {
+  "kelime": "Niagara Şelalesi",
+  "yasakliKelimeler": [
+   "Kanada",
+   "ABD",
+   "Şelale",
+   "Su",
+   "Sınır"
+  ]
+ },
+ {
+  "kelime": "Chichen Itza",
+  "yasakliKelimeler": [
+   "Meksika",
+   "Maya",
+   "Piramit",
+   "Antik",
+   "Tapınak"
+  ]
+ },
+ {
+  "kelime": "Stonehenge",
+  "yasakliKelimeler": [
+   "İngiltere",
+   "Taş",
+   "Antik",
+   "Daire",
+   "Gizem"
+  ]
+ },
+ {
+  "kelime": "Kremlin",
+  "yasakliKelimeler": [
+   "Moskova",
+   "Kale",
+   "Rusya",
+   "Kızıl Meydan",
+   "Hükümet"
+  ]
+ },
+ {
+  "kelime": "Sagrada Familia",
+  "yasakliKelimeler": [
+   "Barcelona",
+   "Gaudi",
+   "Kilise",
+   "İnşaat",
+   "Mimari"
+  ]
+ },
+ {
+  "kelime": "Alhambra",
+  "yasakliKelimeler": [
+   "İspanya",
+   "Saray",
+   "Arap",
+   "Granada",
+   "Mimari"
+  ]
+ },
+ {
+  "kelime": "Almanca",
+  "yasakliKelimeler": [
+   "Dil",
+   "Almanya",
+   "Avusturya",
+   "Gramer",
+   "Avrupa"
+  ]
+ },
+ {
+  "kelime": "İtalyanca",
+  "yasakliKelimeler": [
+   "Dil",
+   "İtalya",
+   "Opera",
+   "Latin",
+   "Avrupa"
+  ]
+ },
+ {
+  "kelime": "Portekizce",
+  "yasakliKelimeler": [
+   "Dil",
+   "Portekiz",
+   "Brezilya",
+   "Latin",
+   "Avrupa"
+  ]
+ },
+ {
+  "kelime": "Rusça",
+  "yasakliKelimeler": [
+   "Dil",
+   "Rusya",
+   "Kiril",
+   "Slav",
+   "Avrasya"
+  ]
+ },
+ {
+  "kelime": "Japonca",
+  "yasakliKelimeler": [
+   "Dil",
+   "Japonya",
+   "Kanji",
+   "Asya",
+   "Hece"
+  ]
+ },
+ {
+  "kelime": "Korece",
+  "yasakliKelimeler": [
+   "Dil",
+   "Kore",
+   "Hangul",
+   "Asya",
+   "Alfabe"
+  ]
+ },
+ {
+  "kelime": "Şintoizm",
+  "yasakliKelimeler": [
+   "Japonya",
+   "Tapınak",
+   "Doğa",
+   "İnanç",
+   "Ruh"
+  ]
+ },
+ {
+  "kelime": "Taoizm",
+  "yasakliKelimeler": [
+   "Çin",
+   "Felsefe",
+   "Denge",
+   "Yin Yang",
+   "İnanç"
+  ]
+ },
+ {
+  "kelime": "Sihizm",
+  "yasakliKelimeler": [
+   "Hindistan",
+   "Sarık",
+   "İnanç",
+   "Punjab",
+   "Din"
+  ]
+ },
+ {
+  "kelime": "Konfüçyüsçülük",
+  "yasakliKelimeler": [
+   "Çin",
+   "Ahlak",
+   "Felsefe",
+   "Öğretmen",
+   "Düzen"
+  ]
+ },
+ {
+  "kelime": "Noel",
+  "yasakliKelimeler": [
+   "Hristiyan",
+   "Aralık",
+   "Hediye",
+   "Ağaç",
+   "Noel Baba"
+  ]
+ },
+ {
+  "kelime": "Paskalya",
+  "yasakliKelimeler": [
+   "Hristiyan",
+   "Yumurta",
+   "Tavşan",
+   "Bahar",
+   "Kutlama"
+  ]
+ },
+ {
+  "kelime": "Şükran Günü",
+  "yasakliKelimeler": [
+   "Amerika",
+   "Hindi",
+   "Kasım",
+   "Aile",
+   "Şükür"
+  ]
+ },
+ {
+  "kelime": "Çin Yeni Yılı",
+  "yasakliKelimeler": [
+   "Çin",
+   "Fener",
+   "Ejderha",
+   "Takvim",
+   "Kutlama"
+  ]
+ },
+ {
+  "kelime": "Cadılar Bayramı",
+  "yasakliKelimeler": [
+   "Amerika",
+   "Kabak",
+   "Kostüm",
+   "Ekim",
+   "Şeker"
+  ]
+ },
+ {
+  "kelime": "Dünya Sağlık Örgütü",
+  "yasakliKelimeler": [
+   "Uluslararası",
+   "Sağlık",
+   "Birleşmiş Milletler",
+   "Pandemi",
+   "Kuruluş"
+  ]
+ },
+ {
+  "kelime": "Kızılhaç",
+  "yasakliKelimeler": [
+   "Yardım",
+   "Afet",
+   "Uluslararası",
+   "Gönüllü",
+   "Sağlık"
+  ]
+ },
+ {
+  "kelime": "Kızılay",
+  "yasakliKelimeler": [
+   "Türkiye",
+   "Yardım",
+   "Afet",
+   "Gönüllü",
+   "Kan"
+  ]
+ },
+ {
+  "kelime": "İpek Yolu",
+  "yasakliKelimeler": [
+   "Ticaret",
+   "Çin",
+   "Kervan",
+   "Tarih",
+   "Asya"
+  ]
+ },
+ {
+  "kelime": "Kervan",
+  "yasakliKelimeler": [
+   "Deve",
+   "Çöl",
+   "Tacir",
+   "Yol",
+   "Konaklama"
+  ]
+ },
+ {
+  "kelime": "Firavun",
+  "yasakliKelimeler": [
+   "Mısır",
+   "Piramit",
+   "Kral",
+   "Antik",
+   "Nil"
+  ]
+ },
+ {
+  "kelime": "Sultan",
+  "yasakliKelimeler": [
+   "Osmanlı",
+   "Hükümdar",
+   "Saray",
+   "Taht",
+   "Fermanla"
+  ]
+ },
+ {
+  "kelime": "Vikinglik",
+  "yasakliKelimeler": [
+   "İskandinav",
+   "Gemi",
+   "Savaşçı",
+   "Kuzey",
+   "Fetih"
+  ]
+ },
+ {
+  "kelime": "Gladyatör",
+  "yasakliKelimeler": [
+   "Roma",
+   "Arena",
+   "Dövüş",
+   "Köle",
+   "Kolezyum"
+  ]
+ },
+ {
+  "kelime": "Reggae",
+  "yasakliKelimeler": [
+   "Jamaika",
+   "Müzik",
+   "Bob Marley",
+   "Ritim",
+   "Rahat"
+  ]
+ },
+ {
+  "kelime": "Safari",
+  "yasakliKelimeler": [
+   "Afrika",
+   "Hayvan",
+   "Gezi",
+   "Savan",
+   "Doğa"
+  ]
+ },
+ {
+  "kelime": "Fil Yolu",
+  "yasakliKelimeler": [
+   "Afrika",
+   "Göç",
+   "Hayvan",
+   "Savan",
+   "Sürü"
+  ]
+ }
+]

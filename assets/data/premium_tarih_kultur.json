@@ -1,0 +1,1702 @@
+[
+ {
+  "kelime": "Osmanlı İmparatorluğu",
+  "yasakliKelimeler": [
+   "Padişah",
+   "İstanbul",
+   "Fatih",
+   "İmparatorluk",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Fatih Sultan Mehmet",
+  "yasakliKelimeler": [
+   "İstanbul",
+   "Fetih",
+   "Padişah",
+   "Top",
+   "Bizans"
+  ]
+ },
+ {
+  "kelime": "Çanakkale Savaşı",
+  "yasakliKelimeler": [
+   "Mustafa Kemal",
+   "Anzak",
+   "Çanakkale",
+   "Kahramanlık",
+   "Deniz"
+  ]
+ },
+ {
+  "kelime": "29 Ekim",
+  "yasakliKelimeler": [
+   "Cumhuriyet",
+   "Atatürk",
+   "İlan",
+   "Türkiye",
+   "Bayram"
+  ]
+ },
+ {
+  "kelime": "Türk Dil Kurumu",
+  "yasakliKelimeler": [
+   "Atatürk",
+   "Dil",
+   "Reform",
+   "Türkçe",
+   "Harf"
+  ]
+ },
+ {
+  "kelime": "İnkılaplar",
+  "yasakliKelimeler": [
+   "Atatürk",
+   "Reform",
+   "Değişim",
+   "Modern",
+   "Türkiye"
+  ]
+ },
+ {
+  "kelime": "Milli Eğitim",
+  "yasakliKelimeler": [
+   "Atatürk",
+   "Öğretim",
+   "Okul",
+   "Çocuk",
+   "Gelecek"
+  ]
+ },
+ {
+  "kelime": "Napolyon Bonaparte",
+  "yasakliKelimeler": [
+   "Fransa",
+   "İmparator",
+   "Savaş",
+   "Avrupa",
+   "Korsika"
+  ]
+ },
+ {
+  "kelime": "Julius Caesar",
+  "yasakliKelimeler": [
+   "Roma",
+   "İmparator",
+   "Sezar",
+   "Galya",
+   "Antik"
+  ]
+ },
+ {
+  "kelime": "Kleopatra",
+  "yasakliKelimeler": [
+   "Mısır",
+   "Kraliçe",
+   "Antik",
+   "Roma",
+   "Sezar"
+  ]
+ },
+ {
+  "kelime": "Mahatma Gandhi",
+  "yasakliKelimeler": [
+   "Hindistan",
+   "Bağımsızlık",
+   "Barış",
+   "İngiltere",
+   "Direniş"
+  ]
+ },
+ {
+  "kelime": "Martin Luther King",
+  "yasakliKelimeler": [
+   "Amerika",
+   "Sivil",
+   "Haklar",
+   "Rüya",
+   "Irkçılık"
+  ]
+ },
+ {
+  "kelime": "Nelson Mandela",
+  "yasakliKelimeler": [
+   "Güney Afrika",
+   "Apartheid",
+   "Özgürlük",
+   "Hapis",
+   "Nobel"
+  ]
+ },
+ {
+  "kelime": "Churchill",
+  "yasakliKelimeler": [
+   "İngiltere",
+   "Başbakan",
+   "II. Dünya Savaşı",
+   "Hitler",
+   "Konuşma"
+  ]
+ },
+ {
+  "kelime": "Roosevelt",
+  "yasakliKelimeler": [
+   "Amerika",
+   "Başkan",
+   "New Deal",
+   "Depresyon",
+   "Franklin"
+  ]
+ },
+ {
+  "kelime": "I. Dünya Savaşı",
+  "yasakliKelimeler": [
+   "1914",
+   "1918",
+   "Çanakkale",
+   "Trench",
+   "Müttefik"
+  ]
+ },
+ {
+  "kelime": "II. Dünya Savaşı",
+  "yasakliKelimeler": [
+   "1939",
+   "1945",
+   "Hitler",
+   "Nazi",
+   "Atom"
+  ]
+ },
+ {
+  "kelime": "Fransız İhtilali",
+  "yasakliKelimeler": [
+   "1789",
+   "Devrim",
+   "Krallık",
+   "Guillotine",
+   "Haklar"
+  ]
+ },
+ {
+  "kelime": "Amerikan Bağımsızlık",
+  "yasakliKelimeler": [
+   "1776",
+   "İngiltere",
+   "Koloni",
+   "Declaration",
+   "Washington"
+  ]
+ },
+ {
+  "kelime": "Ay'a İlk Ayak Basma",
+  "yasakliKelimeler": [
+   "Apollo",
+   "Armstrong",
+   "1969",
+   "NASA",
+   "Ay"
+  ]
+ },
+ {
+  "kelime": "Berlin Duvarı",
+  "yasakliKelimeler": [
+   "Almanya",
+   "Soğuk Savaş",
+   "Düşüş",
+   "1989",
+   "Bölünme"
+  ]
+ },
+ {
+  "kelime": "Gül Devrimi",
+  "yasakliKelimeler": [
+   "Gürcistan",
+   "2003",
+   "Barışçıl",
+   "İhtilal",
+   "Saakaşvili"
+  ]
+ },
+ {
+  "kelime": "Antik Yunan",
+  "yasakliKelimeler": [
+   "Demokrasi",
+   "Filozof",
+   "Olimpiyat",
+   "Tanrı",
+   "Akropolis"
+  ]
+ },
+ {
+  "kelime": "Antik Roma",
+  "yasakliKelimeler": [
+   "İmparatorluk",
+   "Gladyatör",
+   "Kolosseum",
+   "Sezar",
+   "Lupercalia"
+  ]
+ },
+ {
+  "kelime": "Antik Mısır",
+  "yasakliKelimeler": [
+   "Firavun",
+   "Nil",
+   "Piramit",
+   "Mumya",
+   "Hieroglif"
+  ]
+ },
+ {
+  "kelime": "Aztekler",
+  "yasakliKelimeler": [
+   "Meksika",
+   "Maya",
+   "İnkalar",
+   "Tanrı",
+   "Fetih"
+  ]
+ },
+ {
+  "kelime": "Maya Uygarlığı",
+  "yasakliKelimeler": [
+   "Orta Amerika",
+   "Takvim",
+   "Piramit",
+   "Hieroglif",
+   "Aztek"
+  ]
+ },
+ {
+  "kelime": "İnkalar",
+  "yasakliKelimeler": [
+   "Peru",
+   "And",
+   "Dağları",
+   "İmparatorluk",
+   "Machu Picchu"
+  ]
+ },
+ {
+  "kelime": "Fenikeliler",
+  "yasakliKelimeler": [
+   "Denizci",
+   "Alfabe",
+   "Lübnan",
+   "Ticaret",
+   "Kartaca"
+  ]
+ },
+ {
+  "kelime": "Pers İmparatorluğu",
+  "yasakliKelimeler": [
+   "Darius",
+   "İran",
+   "Zerdüşt",
+   "Büyük",
+   "Kral"
+  ]
+ },
+ {
+  "kelime": "Hz. Muhammed",
+  "yasakliKelimeler": [
+   "Peygamber",
+   "Kur'an",
+   "Mekke",
+   "Medine",
+   "İslam"
+  ]
+ },
+ {
+  "kelime": "Hz. Ali",
+  "yasakliKelimeler": [
+   "Halife",
+   "Dört",
+   "Khalife",
+   "Peygamber",
+   "Torunu"
+  ]
+ },
+ {
+  "kelime": "Hz. Ömer",
+  "yasakliKelimeler": [
+   "Halife",
+   "İkinci",
+   "Fetih",
+   "Adalet",
+   "Müslüman"
+  ]
+ },
+ {
+  "kelime": "Hicret",
+  "yasakliKelimeler": [
+   "Mekke",
+   "Medine",
+   "Peygamber",
+   "Göç",
+   "Miladi"
+  ]
+ },
+ {
+  "kelime": "Fetih",
+  "yasakliKelimeler": [
+   "İstanbul",
+   "Fatih",
+   "Bizans",
+   "Mehmet",
+   "1453"
+  ]
+ },
+ {
+  "kelime": "Haçlı Seferleri",
+  "yasakliKelimeler": [
+   "Kudüs",
+   "Hristiyan",
+   "Müslüman",
+   "Kutsal",
+   "Toprak"
+  ]
+ },
+ {
+  "kelime": "Soğuk Savaş",
+  "yasakliKelimeler": [
+   "ABD",
+   "SSCB",
+   "Komünizm",
+   "Kapitalizm",
+   "Nükleer"
+  ]
+ },
+ {
+  "kelime": "Auschwitz",
+  "yasakliKelimeler": [
+   "Nazi",
+   "Kamp",
+   "Yahudi",
+   "Savaş",
+   "Holokost"
+  ]
+ },
+ {
+  "kelime": "Hiroşima",
+  "yasakliKelimeler": [
+   "Atom",
+   "Bomba",
+   "Japonya",
+   "Nagasaki",
+   "ABD"
+  ]
+ },
+ {
+  "kelime": "Marshall Planı",
+  "yasakliKelimeler": [
+   "ABD",
+   "Avrupa",
+   "Yardım",
+   "Ekonomi",
+   "Savaş"
+  ]
+ },
+ {
+  "kelime": "Apartheid",
+  "yasakliKelimeler": [
+   "Güney Afrika",
+   "Irkçılık",
+   "Mandela",
+   "Sistem",
+   "Beyaz"
+  ]
+ },
+ {
+  "kelime": "Küba Füze Krizi",
+  "yasakliKelimeler": [
+   "Kennedy",
+   "Kruşçev",
+   "Nükleer",
+   "1962",
+   "Kriz"
+  ]
+ },
+ {
+  "kelime": "Endüstri Devrimi",
+  "yasakliKelimeler": [
+   "Makine",
+   "Fabrika",
+   "Buhar",
+   "İngiltere",
+   "Teknoloji"
+  ]
+ },
+ {
+  "kelime": "Bilimsel Devrim",
+  "yasakliKelimeler": [
+   "Galileo",
+   "Newton",
+   "Keşif",
+   "Bilim",
+   "Yöntem"
+  ]
+ },
+ {
+  "kelime": "Galileo Galilei",
+  "yasakliKelimeler": [
+   "Teleskop",
+   "Dünya",
+   "Güneş",
+   "Fizik",
+   "İtalya"
+  ]
+ },
+ {
+  "kelime": "Isaac Newton",
+  "yasakliKelimeler": [
+   "Yerçekimi",
+   "Elma",
+   "Yasalar",
+   "Fizik",
+   "İngiltere"
+  ]
+ },
+ {
+  "kelime": "Albert Einstein",
+  "yasakliKelimeler": [
+   "Görecelik",
+   "E=mc²",
+   "Atom",
+   "Fizik",
+   "Nobel"
+  ]
+ },
+ {
+  "kelime": "Marie Curie",
+  "yasakliKelimeler": [
+   "Radyum",
+   "Polonyum",
+   "Radyasyon",
+   "Kadın",
+   "Nobel"
+  ]
+ },
+ {
+  "kelime": "Charles Darwin",
+  "yasakliKelimeler": [
+   "Evrim",
+   "Türlerin",
+   "Kökeni",
+   "Beagle",
+   "İngiltere"
+  ]
+ },
+ {
+  "kelime": "Nikola Tesla",
+  "yasakliKelimeler": [
+   "Elektrik",
+   "Akım",
+   "Bobin",
+   "Serbest",
+   "Enerji"
+  ]
+ },
+ {
+  "kelime": "Thomas Edison",
+  "yasakliKelimeler": [
+   "Ampul",
+   "İcat",
+   "Elektrik",
+   "Fonograf",
+   "ABD"
+  ]
+ },
+ {
+  "kelime": "Alexander Graham Bell",
+  "yasakliKelimeler": [
+   "Telefon",
+   "İcat",
+   "İşitme",
+   "Engelli",
+   "İskoçya"
+  ]
+ },
+ {
+  "kelime": "Leonardo da Vinci",
+  "yasakliKelimeler": [
+   "Mona Lisa",
+   "Uçan",
+   "Makine",
+   "Rönesans",
+   "İtalya"
+  ]
+ },
+ {
+  "kelime": "Pablo Picasso",
+  "yasakliKelimeler": [
+   "Kübizm",
+   "İspanya",
+   "Sanatçı",
+   "Guernica",
+   "Resim"
+  ]
+ },
+ {
+  "kelime": "William Shakespeare",
+  "yasakliKelimeler": [
+   "İngiltere",
+   "Tiyatro",
+   "Romeo",
+   "Juliet",
+   "Soneler"
+  ]
+ },
+ {
+  "kelime": "Homeros",
+  "yasakliKelimeler": [
+   "İlyada",
+   "Odysseia",
+   "Antik",
+   "Yunan",
+   "Şair"
+  ]
+ },
+ {
+  "kelime": "Dante Alighieri",
+  "yasakliKelimeler": [
+   "İlahi",
+   "Komedi",
+   "Cennet",
+   "Cehennem",
+   "İtalya"
+  ]
+ },
+ {
+  "kelime": "Victor Hugo",
+  "yasakliKelimeler": [
+   "Sefiller",
+   "Notre Dame",
+   "Fransa",
+   "Yazar",
+   "Devrim"
+  ]
+ },
+ {
+  "kelime": "Fyodor Dostoyevski",
+  "yasakliKelimeler": [
+   "Suç",
+   "Ceza",
+   "Rusya",
+   "Yazar",
+   "Psikoloji"
+  ]
+ },
+ {
+  "kelime": "Amerika'nın Keşfi",
+  "yasakliKelimeler": [
+   "Kolomb",
+   "1492",
+   "Yeni",
+   "Dünya",
+   "Gemiler"
+  ]
+ },
+ {
+  "kelime": "Dünya'nın Yuvarlaklığı",
+  "yasakliKelimeler": [
+   "Galileo",
+   "Güneş",
+   "Merkez",
+   "Gök",
+   "Cisim"
+  ]
+ },
+ {
+  "kelime": "Penisilin",
+  "yasakliKelimeler": [
+   "Antibiyotik",
+   "Fleming",
+   "Mantar",
+   "Bakteri",
+   "İlaç"
+  ]
+ },
+ {
+  "kelime": "DNA Yapısı",
+  "yasakliKelimeler": [
+   "Watson",
+   "Crick",
+   "Çift",
+   "Sarmal",
+   "Genetik"
+  ]
+ },
+ {
+  "kelime": "Truva Savaşı",
+  "yasakliKelimeler": [
+   "Homeros",
+   "İlyada",
+   "Aşil",
+   "Hektor",
+   "At"
+  ]
+ },
+ {
+  "kelime": "Vietnam Savaşı",
+  "yasakliKelimeler": [
+   "ABD",
+   "Komünizm",
+   "Güney",
+   "Kuzey",
+   "Protesto"
+  ]
+ },
+ {
+  "kelime": "Kore Savaşı",
+  "yasakliKelimeler": [
+   "1950",
+   "Güney",
+   "Kuzey",
+   "ABD",
+   "Çin"
+  ]
+ },
+ {
+  "kelime": "Yom Kippur Savaşı",
+  "yasakliKelimeler": [
+   "İsrail",
+   "Arap",
+   "1973",
+   "Suriye",
+   "Mısır"
+  ]
+ },
+ {
+  "kelime": "Buddha",
+  "yasakliKelimeler": [
+   "Budizm",
+   "Aydınlanma",
+   "Hindistan",
+   "Siddhartha",
+   "Barış"
+  ]
+ },
+ {
+  "kelime": "İsa Mesih",
+  "yasakliKelimeler": [
+   "Hristiyanlık",
+   "İncil",
+   "Çarmıh",
+   "Diriliş",
+   "Tanrı"
+  ]
+ },
+ {
+  "kelime": "Musa",
+  "yasakliKelimeler": [
+   "Tevrat",
+   "İsrail",
+   "Kızıldeniz",
+   "On Emir",
+   "Peygamber"
+  ]
+ },
+ {
+  "kelime": "Zerdüşt",
+  "yasakliKelimeler": [
+   "Ateş",
+   "İran",
+   "İyilik",
+   "Kötülük",
+   "Düalizm"
+  ]
+ },
+ {
+  "kelime": "Mobil Telefon",
+  "yasakliKelimeler": [
+   "Cep",
+   "İletişim",
+   "Dokunmatik",
+   "Uygulama",
+   "Akıllı"
+  ]
+ },
+ {
+  "kelime": "Sosyal Medya",
+  "yasakliKelimeler": [
+   "Facebook",
+   "Twitter",
+   "İnstagram",
+   "İletişim",
+   "Paylaşım"
+  ]
+ },
+ {
+  "kelime": "Marcus Aurelius",
+  "yasakliKelimeler": [
+   "Roma",
+   "İmparator",
+   "Filozof",
+   "Düşünceler",
+   "Marcus"
+  ]
+ },
+ {
+  "kelime": "Konfüçyüs",
+  "yasakliKelimeler": [
+   "Çin",
+   "Filozof",
+   "Ahlak",
+   "Öğretim",
+   "Konfüçyüsçülük"
+  ]
+ },
+ {
+  "kelime": "Sokrates",
+  "yasakliKelimeler": [
+   "Yunan",
+   "Filozof",
+   "Bilgelik",
+   "Ölüm",
+   "Platon"
+  ]
+ },
+ {
+  "kelime": "Platon",
+  "yasakliKelimeler": [
+   "Yunan",
+   "Filozof",
+   "İdeal",
+   "Devlet",
+   "Akademi"
+  ]
+ },
+ {
+  "kelime": "Aristoteles",
+  "yasakliKelimeler": [
+   "Yunan",
+   "Filozof",
+   "Mantık",
+   "Bilim",
+   "İskender"
+  ]
+ },
+ {
+  "kelime": "Avicenna",
+  "yasakliKelimeler": [
+   "İbn-i Sina",
+   "Doktor",
+   "Filozof",
+   "İslam",
+   "Tıp"
+  ]
+ },
+ {
+  "kelime": "İbn-i Haldun",
+  "yasakliKelimeler": [
+   "Tarih",
+   "Mukaddime",
+   "Uygarlık",
+   "Sosyal",
+   "Bilimler"
+  ]
+ },
+ {
+  "kelime": "Yavuz Sultan Selim",
+  "yasakliKelimeler": [
+   "Halife",
+   "Kılıç",
+   "Ridaniye",
+   "Şah",
+   "İsmail"
+  ]
+ },
+ {
+  "kelime": "Kanuni Sultan Süleyman",
+  "yasakliKelimeler": [
+   "Muhteşem",
+   "Kanun",
+   "İmparatorluk",
+   "Macaristan",
+   "Sefer"
+  ]
+ },
+ {
+  "kelime": "Mimar Sinan",
+  "yasakliKelimeler": [
+   "Mimar",
+   "Camii",
+   "Kubbe",
+   "Osmanlı",
+   "Usta"
+  ]
+ },
+ {
+  "kelime": "Piri Reis",
+  "yasakliKelimeler": [
+   "Harita",
+   "Denizci",
+   "Kitab",
+   "Bahriye",
+   "Reis"
+  ]
+ },
+ {
+  "kelime": "Evliya Çelebi",
+  "yasakliKelimeler": [
+   "Seyahatname",
+   "Gezgin",
+   "Osmanlı",
+   "Tarih",
+   "Yazar"
+  ]
+ },
+ {
+  "kelime": "İsmet İnönü",
+  "yasakliKelimeler": [
+   "İkinci",
+   "Başkan",
+   "Başbakan",
+   "Atatürk",
+   "İnönü"
+  ]
+ },
+ {
+  "kelime": "Celal Bayar",
+  "yasakliKelimeler": [
+   "Üçüncü",
+   "Başkan",
+   "DP",
+   "İktisat",
+   "Bayar"
+  ]
+ },
+ {
+  "kelime": "Halide Edip Adıvar",
+  "yasakliKelimeler": [
+   "Yazar",
+   "Siyasetçi",
+   "Kadın",
+   "Kurtuluş",
+   "Milli"
+  ]
+ },
+ {
+  "kelime": "Halit Ziya Uşaklıgil",
+  "yasakliKelimeler": [
+   "Mai ve Siyah",
+   "Servet-i Fünun",
+   "Yazar",
+   "Edebiyat",
+   "Türkçe"
+  ]
+ },
+ {
+  "kelime": "Karl Marx",
+  "yasakliKelimeler": [
+   "Komünizm",
+   "Kapital",
+   "Engels",
+   "İşçi",
+   "Devrim"
+  ]
+ },
+ {
+  "kelime": "Friedrich Nietzsche",
+  "yasakliKelimeler": [
+   "Filozof",
+   "Tanrı",
+   "Ölü",
+   "Übermensch",
+   "Almanya"
+  ]
+ },
+ {
+  "kelime": "Voltaire",
+  "yasakliKelimeler": [
+   "Aydınlanma",
+   "Fransa",
+   "Yazar",
+   "Felsefe",
+   "Eleştiri"
+  ]
+ },
+ {
+  "kelime": "Jean-Jacques Rousseau",
+  "yasakliKelimeler": [
+   "Toplum Sözleşmesi",
+   "Filozof",
+   "Fransa",
+   "Doğa",
+   "İnsanı"
+  ]
+ },
+ {
+  "kelime": "Abraham Lincoln",
+  "yasakliKelimeler": [
+   "Başkan",
+   "Kölelik",
+   "İç Savaş",
+   "Suikast",
+   "ABD"
+  ]
+ },
+ {
+  "kelime": "George Washington",
+  "yasakliKelimeler": [
+   "Kurucu",
+   "Başkan",
+   "Bağımsızlık",
+   "Ordu",
+   "ABD"
+  ]
+ },
+ {
+  "kelime": "Christopher Columbus",
+  "yasakliKelimeler": [
+   "Keşif",
+   "Amerika",
+   "İspanya",
+   "Denizci",
+   "Yeni"
+  ]
+ },
+ {
+  "kelime": "Martin Luther",
+  "yasakliKelimeler": [
+   "Reform",
+   "Kilise",
+   "Protestan",
+   "Almanya",
+   "Tezler"
+  ]
+ },
+ {
+  "kelime": "Çin Seddi",
+  "yasakliKelimeler": [
+   "Çin",
+   "Duvar",
+   "İmparatorluk",
+   "Savunma",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Maharaja",
+  "yasakliKelimeler": [
+   "Hindistan",
+   "Kral",
+   "Tac Mahal",
+   "Gandhi",
+   "Bağımsızlık"
+  ]
+ },
+ {
+  "kelime": "Samuray",
+  "yasakliKelimeler": [
+   "Japonya",
+   "Savaşçı",
+   "Bushido",
+   "Kılıç",
+   "Shogun"
+  ]
+ },
+ {
+  "kelime": "Kahire",
+  "yasakliKelimeler": [
+   "Mısır",
+   "Nil",
+   "Piramit",
+   "İslam",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Zimbabve",
+  "yasakliKelimeler": [
+   "Taş Kent",
+   "Afrika",
+   "Ruins",
+   "İmparatorluk",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Demokrasi",
+  "yasakliKelimeler": [
+   "Halk",
+   "Yönetim",
+   "Seçim",
+   "Yunan",
+   "Hak"
+  ]
+ },
+ {
+  "kelime": "Feodalite",
+  "yasakliKelimeler": [
+   "Derebey",
+   "Toprak",
+   "Orta Çağ",
+   "Avrupa",
+   "Sistem"
+  ]
+ },
+ {
+  "kelime": "Barok",
+  "yasakliKelimeler": [
+   "Sanat",
+   "Müzik",
+   "Avrupa",
+   "17. yüzyıl",
+   "Süsleme"
+  ]
+ },
+ {
+  "kelime": "Romantizm",
+  "yasakliKelimeler": [
+   "Sanat",
+   "Duygu",
+   "Doğa",
+   "19. yüzyıl",
+   "Hareket"
+  ]
+ },
+ {
+  "kelime": "Arap Baharı",
+  "yasakliKelimeler": [
+   "2011",
+   "Tunus",
+   "İhtilal",
+   "Ortadoğu",
+   "Değişim"
+  ]
+ },
+ {
+  "kelime": "Brexit",
+  "yasakliKelimeler": [
+   "İngiltere",
+   "AB",
+   "Referandum",
+   "Johnson",
+   "Avrupa"
+  ]
+ },
+ {
+  "kelime": "Paris İklim Anlaşması",
+  "yasakliKelimeler": [
+   "İklim",
+   "Sıcaklık",
+   "Dünya",
+   "CO2",
+   "Anlaşma"
+  ]
+ },
+ {
+  "kelime": "Röntgen",
+  "yasakliKelimeler": [
+   "X-ışını",
+   "Kemik",
+   "Radyasyon",
+   "Tıbbi",
+   "Keşif"
+  ]
+ },
+ {
+  "kelime": "Antibiyotik",
+  "yasakliKelimeler": [
+   "Penisilin",
+   "Fleming",
+   "Bakteri",
+   "İlaç",
+   "Tedavi"
+  ]
+ },
+ {
+  "kelime": "Tank",
+  "yasakliKelimeler": [
+   "I. Dünya Savaşı",
+   "Zırhlı",
+   "Top",
+   "Hareketli",
+   "Savaş"
+  ]
+ },
+ {
+  "kelime": "Radar",
+  "yasakliKelimeler": [
+   "Savaş",
+   "Hava",
+   "Savunma",
+   "II. Dünya Savaşı",
+   "Teknoloji"
+  ]
+ },
+ {
+  "kelime": "Atom Bombası",
+  "yasakliKelimeler": [
+   "Nükleer",
+   "Hiroşima",
+   "Enerji",
+   "Fisyon",
+   "Yıkım"
+  ]
+ },
+ {
+  "kelime": "Olimpiyat",
+  "yasakliKelimeler": [
+   "Spor",
+   "Oyunlar",
+   "Antik Yunan",
+   "Modern",
+   "Barış"
+  ]
+ },
+ {
+  "kelime": "Nobel Ödülü",
+  "yasakliKelimeler": [
+   "Alfred Nobel",
+   "Barış",
+   "Bilim",
+   "Edebiyat",
+   "İcat"
+  ]
+ },
+ {
+  "kelime": "UNESCO",
+  "yasakliKelimeler": [
+   "Dünya",
+   "Miras",
+   "Eğitim",
+   "Bilim",
+   "Kültür"
+  ]
+ },
+ {
+  "kelime": "FIFA",
+  "yasakliKelimeler": [
+   "Futbol",
+   "Dünya Kupası",
+   "Organizasyon",
+   "Uluslararası",
+   "Spor"
+  ]
+ },
+ {
+  "kelime": "Sümerler",
+  "yasakliKelimeler": [
+   "Mezopotamya",
+   "Yazı",
+   "Antik",
+   "Tekerlek",
+   "Uygarlık"
+  ]
+ },
+ {
+  "kelime": "Babil",
+  "yasakliKelimeler": [
+   "Mezopotamya",
+   "Asma Bahçeler",
+   "Antik",
+   "Kral",
+   "Kule"
+  ]
+ },
+ {
+  "kelime": "Asurlular",
+  "yasakliKelimeler": [
+   "Mezopotamya",
+   "Savaşçı",
+   "Antik",
+   "İmparatorluk",
+   "Kral"
+  ]
+ },
+ {
+  "kelime": "Urartular",
+  "yasakliKelimeler": [
+   "Anadolu",
+   "Antik",
+   "Kale",
+   "Doğu",
+   "Uygarlık"
+  ]
+ },
+ {
+  "kelime": "Likyalılar",
+  "yasakliKelimeler": [
+   "Anadolu",
+   "Antik",
+   "Mezar",
+   "Kaya",
+   "Uygarlık"
+  ]
+ },
+ {
+  "kelime": "Bizans İmparatorluğu",
+  "yasakliKelimeler": [
+   "İstanbul",
+   "Ortodoks",
+   "Antik",
+   "İmparator",
+   "Surlar"
+  ]
+ },
+ {
+  "kelime": "İstanbul'un Fethi",
+  "yasakliKelimeler": [
+   "1453",
+   "Fatih",
+   "Surlar",
+   "Osmanlı",
+   "Bizans"
+  ]
+ },
+ {
+  "kelime": "Lale Devri",
+  "yasakliKelimeler": [
+   "Osmanlı",
+   "Çiçek",
+   "Dönem",
+   "Sanat",
+   "Lüks"
+  ]
+ },
+ {
+  "kelime": "Tanzimat",
+  "yasakliKelimeler": [
+   "Osmanlı",
+   "Reform",
+   "Ferman",
+   "Yenileşme",
+   "Dönem"
+  ]
+ },
+ {
+  "kelime": "Meşrutiyet",
+  "yasakliKelimeler": [
+   "Osmanlı",
+   "Anayasa",
+   "Meclis",
+   "Dönem",
+   "Yenileşme"
+  ]
+ },
+ {
+  "kelime": "Lozan Antlaşması",
+  "yasakliKelimeler": [
+   "1923",
+   "Bağımsızlık",
+   "Atatürk",
+   "Sınır",
+   "Diplomasi"
+  ]
+ },
+ {
+  "kelime": "Cumhuriyetin İlanı",
+  "yasakliKelimeler": [
+   "1923",
+   "Atatürk",
+   "Meclis",
+   "Rejim",
+   "Türkiye"
+  ]
+ },
+ {
+  "kelime": "Harf İnkılabı",
+  "yasakliKelimeler": [
+   "Atatürk",
+   "Alfabe",
+   "Latin",
+   "1928",
+   "Eğitim"
+  ]
+ },
+ {
+  "kelime": "Mustafa Kemal Atatürk",
+  "yasakliKelimeler": [
+   "Kurucu",
+   "Cumhuriyet",
+   "Önder",
+   "Asker",
+   "Reformcu"
+  ]
+ },
+ {
+  "kelime": "Reform Hareketi",
+  "yasakliKelimeler": [
+   "Kilise",
+   "Luther",
+   "Avrupa",
+   "Din",
+   "Değişim"
+  ]
+ },
+ {
+  "kelime": "Soğuk Savaş Dönemi",
+  "yasakliKelimeler": [
+   "ABD",
+   "SSCB",
+   "Gerginlik",
+   "Nükleer",
+   "Blok"
+  ]
+ },
+ {
+  "kelime": "Demir Perde",
+  "yasakliKelimeler": [
+   "Avrupa",
+   "Soğuk Savaş",
+   "Doğu Blok",
+   "Sınır",
+   "Gerginlik"
+  ]
+ },
+ {
+  "kelime": "Apollo 11",
+  "yasakliKelimeler": [
+   "Ay",
+   "NASA",
+   "Uzay",
+   "1969",
+   "Armstrong"
+  ]
+ },
+ {
+  "kelime": "Ay'a İniş",
+  "yasakliKelimeler": [
+   "Astronot",
+   "NASA",
+   "1969",
+   "Uzay",
+   "Armstrong"
+  ]
+ },
+ {
+  "kelime": "Titanik",
+  "yasakliKelimeler": [
+   "Gemi",
+   "Buzdağı",
+   "1912",
+   "Batık",
+   "Okyanus"
+  ]
+ },
+ {
+  "kelime": "Büyük Buhran",
+  "yasakliKelimeler": [
+   "1929",
+   "Ekonomi",
+   "Kriz",
+   "ABD",
+   "İşsizlik"
+  ]
+ },
+ {
+  "kelime": "Marco Polo",
+  "yasakliKelimeler": [
+   "Gezgin",
+   "İpek Yolu",
+   "Çin",
+   "Venedik",
+   "Kaşif"
+  ]
+ },
+ {
+  "kelime": "Vasco da Gama",
+  "yasakliKelimeler": [
+   "Portekiz",
+   "Kaşif",
+   "Deniz Yolu",
+   "Hindistan",
+   "Gemi"
+  ]
+ },
+ {
+  "kelime": "Macellan",
+  "yasakliKelimeler": [
+   "Kaşif",
+   "Dünya Turu",
+   "Gemi",
+   "Portekiz",
+   "Okyanus"
+  ]
+ },
+ {
+  "kelime": "Büyük İskender",
+  "yasakliKelimeler": [
+   "Makedonya",
+   "Fetih",
+   "Antik",
+   "İmparator",
+   "General"
+  ]
+ },
+ {
+  "kelime": "Spartaküs",
+  "yasakliKelimeler": [
+   "Köle",
+   "İsyan",
+   "Roma",
+   "Gladyatör",
+   "Özgürlük"
+  ]
+ },
+ {
+  "kelime": "Hannibal",
+  "yasakliKelimeler": [
+   "Kartaca",
+   "Fil",
+   "Savaş",
+   "General",
+   "Roma"
+  ]
+ },
+ {
+  "kelime": "Cengiz Han",
+  "yasakliKelimeler": [
+   "Moğol",
+   "Fetih",
+   "İmparator",
+   "Bozkır",
+   "Ordu"
+  ]
+ },
+ {
+  "kelime": "Timur",
+  "yasakliKelimeler": [
+   "Fetih",
+   "İmparator",
+   "Orta Asya",
+   "Savaşçı",
+   "Han"
+  ]
+ },
+ {
+  "kelime": "Selahaddin Eyyubi",
+  "yasakliKelimeler": [
+   "Haçlı",
+   "Kudüs",
+   "Müslüman",
+   "Komutan",
+   "Tarih"
+  ]
+ },
+ {
+  "kelime": "Büyük Britanya İmparatorluğu",
+  "yasakliKelimeler": [
+   "Sömürge",
+   "Deniz Gücü",
+   "Kraliyet",
+   "Dünya",
+   "Egemenlik"
+  ]
+ },
+ {
+  "kelime": "Köle Ticareti",
+  "yasakliKelimeler": [
+   "Atlantik",
+   "Tarih",
+   "İnsanlık",
+   "Zorla",
+   "Acı"
+  ]
+ },
+ {
+  "kelime": "Guernica Tablosu",
+  "yasakliKelimeler": [
+   "Picasso",
+   "Savaş",
+   "Sanat",
+   "İspanya",
+   "Protesto"
+  ]
+ },
+ {
+  "kelime": "Mona Lisa",
+  "yasakliKelimeler": [
+   "Da Vinci",
+   "Tablo",
+   "Louvre",
+   "Gülümseme",
+   "Sanat"
+  ]
+ },
+ {
+  "kelime": "Louvre Müzesi",
+  "yasakliKelimeler": [
+   "Paris",
+   "Sanat",
+   "Müze",
+   "Piramit",
+   "Koleksiyon"
+  ]
+ },
+ {
+  "kelime": "Rosetta Taşı",
+  "yasakliKelimeler": [
+   "Mısır",
+   "Hiyeroglif",
+   "Keşif",
+   "Yazı",
+   "Antik"
+  ]
+ },
+ {
+  "kelime": "Tutankamon",
+  "yasakliKelimeler": [
+   "Mısır",
+   "Firavun",
+   "Mezar",
+   "Hazine",
+   "Antik"
+  ]
+ },
+ {
+  "kelime": "Kleopatra İğnesi",
+  "yasakliKelimeler": [
+   "Mısır",
+   "Obelisk",
+   "Antik",
+   "Taş",
+   "Anıt"
+  ]
+ },
+ {
+  "kelime": "Büyük İskenderiye Kütüphanesi",
+  "yasakliKelimeler": [
+   "Antik",
+   "Kitap",
+   "Mısır",
+   "Bilgi",
+   "Yangın"
+  ]
+ },
+ {
+  "kelime": "Çin Seddi İnşaatı",
+  "yasakliKelimeler": [
+   "Duvar",
+   "Koruma",
+   "İmparator",
+   "Taş",
+   "Uzun"
+  ]
+ },
+ {
+  "kelime": "Terracotta Ordusu",
+  "yasakliKelimeler": [
+   "Çin",
+   "Heykel",
+   "Mezar",
+   "İmparator",
+   "Kil"
+  ]
+ },
+ {
+  "kelime": "Angkor Wat",
+  "yasakliKelimeler": [
+   "Kamboçya",
+   "Tapınak",
+   "Taş",
+   "Antik",
+   "Hindu"
+  ]
+ },
+ {
+  "kelime": "Taç Giyme Töreni",
+  "yasakliKelimeler": [
+   "Kral",
+   "Kraliçe",
+   "Saray",
+   "Tören",
+   "Taht"
+  ]
+ },
+ {
+  "kelime": "Magna Carta",
+  "yasakliKelimeler": [
+   "İngiltere",
+   "Hukuk",
+   "Kral",
+   "Belge",
+   "1215"
+  ]
+ },
+ {
+  "kelime": "Bastille Baskını",
+  "yasakliKelimeler": [
+   "Fransa",
+   "İhtilal",
+   "Hapishane",
+   "1789",
+   "Halk"
+  ]
+ },
+ {
+  "kelime": "Guillotin",
+  "yasakliKelimeler": [
+   "Fransa",
+   "İhtilal",
+   "İdam",
+   "Alet",
+   "Devrim"
+  ]
+ },
+ {
+  "kelime": "Waterloo Savaşı",
+  "yasakliKelimeler": [
+   "Napolyon",
+   "Yenilgi",
+   "Belçika",
+   "Savaş",
+   "1815"
+  ]
+ },
+ {
+  "kelime": "Pearl Harbor",
+  "yasakliKelimeler": [
+   "Japonya",
+   "ABD",
+   "Baskın",
+   "Donanma",
+   "1941"
+  ]
+ },
+ {
+  "kelime": "D-Day",
+  "yasakliKelimeler": [
+   "Normandiya",
+   "Çıkarma",
+   "Müttefik",
+   "1944",
+   "Savaş"
+  ]
+ },
+ {
+  "kelime": "Nürnberg Mahkemeleri",
+  "yasakliKelimeler": [
+   "Nazi",
+   "Yargı",
+   "Savaş Suçu",
+   "1945",
+   "Adalet"
+  ]
+ },
+ {
+  "kelime": "Ellis Island",
+  "yasakliKelimeler": [
+   "Göçmen",
+   "New York",
+   "ABD",
+   "Kayıt",
+   "Ada"
+  ]
+ },
+ {
+  "kelime": "Özgürlük Anıtı",
+  "yasakliKelimeler": [
+   "New York",
+   "Heykel",
+   "Meşale",
+   "Fransa Hediyesi",
+   "Sembol"
+  ]
+ }
+]
