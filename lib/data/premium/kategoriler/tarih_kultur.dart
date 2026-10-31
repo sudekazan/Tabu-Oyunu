@@ -4,10 +4,8 @@ import '../../kelimeler.dart';
 // Tarih figürleri, olaylar, medeniyetler
 const List<KelimeKarti> premiumTarihKultur = [
   // TÜRK TARİHİ
-  KelimeKarti(kelime: 'Atatürk', yasakliKelimeler: ['Mustafa Kemal', 'Kurtuluş', 'Savaş', 'Lider', 'Reform']),
   KelimeKarti(kelime: 'Osmanlı İmparatorluğu', yasakliKelimeler: ['Padişah', 'İstanbul', 'Fatih', 'İmparatorluk', 'Tarih']),
   KelimeKarti(kelime: 'Fatih Sultan Mehmet', yasakliKelimeler: ['İstanbul', 'Fetih', 'Padişah', 'Top', 'Bizans']),
-  KelimeKarti(kelime: 'Kurtuluş Savaşı', yasakliKelimeler: ['Milli', 'Mücadele', 'Atatürk', 'İstiklal', 'İşgal']),
   KelimeKarti(kelime: 'Çanakkale Savaşı', yasakliKelimeler: ['Mustafa Kemal', 'Anzak', 'Çanakkale', 'Kahramanlık', 'Deniz']),
   KelimeKarti(kelime: '29 Ekim', yasakliKelimeler: ['Cumhuriyet', 'Atatürk', 'İlan', 'Türkiye', 'Bayram']),
   KelimeKarti(kelime: 'Türk Dil Kurumu', yasakliKelimeler: ['Atatürk', 'Dil', 'Reform', 'Türkçe', 'Harf']),
@@ -17,7 +15,6 @@ const List<KelimeKarti> premiumTarihKultur = [
   // DÜNYA TARİHİ - LİDERLER
   KelimeKarti(kelime: 'Napolyon Bonaparte', yasakliKelimeler: ['Fransa', 'İmparator', 'Savaş', 'Avrupa', 'Korsika']),
   KelimeKarti(kelime: 'Julius Caesar', yasakliKelimeler: ['Roma', 'İmparator', 'Sezar', 'Galya', 'Antik']),
-  KelimeKarti(kelime: 'İskender', yasakliKelimeler: ['Büyük', 'Makedonya', 'Fetih', 'İmparatorluk', 'Aristoteles']),
   KelimeKarti(kelime: 'Kleopatra', yasakliKelimeler: ['Mısır', 'Kraliçe', 'Antik', 'Roma', 'Sezar']),
   KelimeKarti(kelime: 'Mahatma Gandhi', yasakliKelimeler: ['Hindistan', 'Bağımsızlık', 'Barış', 'İngiltere', 'Direniş']),
   KelimeKarti(kelime: 'Martin Luther King', yasakliKelimeler: ['Amerika', 'Sivil', 'Haklar', 'Rüya', 'Irkçılık']),
@@ -29,7 +26,6 @@ const List<KelimeKarti> premiumTarihKultur = [
   KelimeKarti(kelime: 'I. Dünya Savaşı', yasakliKelimeler: ['1914', '1918', 'Çanakkale', 'Trench', 'Müttefik']),
   KelimeKarti(kelime: 'II. Dünya Savaşı', yasakliKelimeler: ['1939', '1945', 'Hitler', 'Nazi', 'Atom']),
   KelimeKarti(kelime: 'Fransız İhtilali', yasakliKelimeler: ['1789', 'Devrim', 'Krallık', 'Guillotine', 'Haklar']),
-  KelimeKarti(kelime: 'Sanayi Devrimi', yasakliKelimeler: ['İngiltere', 'Makine', 'Fabrika', 'Buhar', 'Teknoloji']),
   KelimeKarti(kelime: 'Amerikan Bağımsızlık', yasakliKelimeler: ['1776', 'İngiltere', 'Koloni', 'Declaration', 'Washington']),
   KelimeKarti(kelime: 'Ay\'a İlk Ayak Basma', yasakliKelimeler: ['Apollo', 'Armstrong', '1969', 'NASA', 'Ay']),
   KelimeKarti(kelime: 'Berlin Duvarı', yasakliKelimeler: ['Almanya', 'Soğuk Savaş', 'Düşüş', '1989', 'Bölünme']),
@@ -42,7 +38,6 @@ const List<KelimeKarti> premiumTarihKultur = [
   KelimeKarti(kelime: 'Aztekler', yasakliKelimeler: ['Meksika', 'Maya', 'İnkalar', 'Tanrı', 'Fetih']),
   KelimeKarti(kelime: 'Maya Uygarlığı', yasakliKelimeler: ['Orta Amerika', 'Takvim', 'Piramit', 'Hieroglif', 'Aztek']),
   KelimeKarti(kelime: 'İnkalar', yasakliKelimeler: ['Peru', 'And', 'Dağları', 'İmparatorluk', 'Machu Picchu']),
-  KelimeKarti(kelime: 'Hititler', yasakliKelimeler: ['Anadolu', 'Demir', 'Kral', 'Çivi', 'Yazısı']),
   KelimeKarti(kelime: 'Fenikeliler', yasakliKelimeler: ['Denizci', 'Alfabe', 'Lübnan', 'Ticaret', 'Kartaca']),
   KelimeKarti(kelime: 'Pers İmparatorluğu', yasakliKelimeler: ['Darius', 'İran', 'Zerdüşt', 'Büyük', 'Kral']),
 
@@ -63,8 +58,6 @@ const List<KelimeKarti> premiumTarihKultur = [
   KelimeKarti(kelime: 'Küba Füze Krizi', yasakliKelimeler: ['Kennedy', 'Kruşçev', 'Nükleer', '1962', 'Kriz']),
 
   // KÜLTÜREL DEVRİMLER
-  KelimeKarti(kelime: 'Rönesans', yasakliKelimeler: ['İtalya', 'Sanat', 'Leonardo', 'İnsancılık', 'Yeniden']),
-  KelimeKarti(kelime: 'Aydınlanma', yasakliKelimeler: ['Akıl', 'Bilim', 'Voltaire', 'Rousseau', 'Çağı']),
   KelimeKarti(kelime: 'Endüstri Devrimi', yasakliKelimeler: ['Makine', 'Fabrika', 'Buhar', 'İngiltere', 'Teknoloji']),
   KelimeKarti(kelime: 'Bilimsel Devrim', yasakliKelimeler: ['Galileo', 'Newton', 'Keşif', 'Bilim', 'Yöntem']),
 
@@ -106,8 +99,6 @@ const List<KelimeKarti> premiumTarihKultur = [
   KelimeKarti(kelime: 'Zerdüşt', yasakliKelimeler: ['Ateş', 'İran', 'İyilik', 'Kötülük', 'Düalizm']),
 
   // MODERN DÖNEM
-  KelimeKarti(kelime: 'İnternet', yasakliKelimeler: ['Bilgi', 'İletişim', 'Dünya', 'Web', 'Ağ']),
-  KelimeKarti(kelime: 'Bilgisayar', yasakliKelimeler: ['Elektronik', 'Program', 'Veri', 'İşlemci', 'Ekran']),
   KelimeKarti(kelime: 'Mobil Telefon', yasakliKelimeler: ['Cep', 'İletişim', 'Dokunmatik', 'Uygulama', 'Akıllı']),
   KelimeKarti(kelime: 'Sosyal Medya', yasakliKelimeler: ['Facebook', 'Twitter', 'İnstagram', 'İletişim', 'Paylaşım']),
 
@@ -157,7 +148,6 @@ const List<KelimeKarti> premiumTarihKultur = [
   // KÜLTÜREL KAVRAMLAR
   KelimeKarti(kelime: 'Demokrasi', yasakliKelimeler: ['Halk', 'Yönetim', 'Seçim', 'Yunan', 'Hak']),
   KelimeKarti(kelime: 'Feodalite', yasakliKelimeler: ['Derebey', 'Toprak', 'Orta Çağ', 'Avrupa', 'Sistem']),
-  KelimeKarti(kelime: 'Rönesans', yasakliKelimeler: ['Yeniden Doğuş', 'Sanat', 'İtalya', 'Bilim', 'İnsancılık']),
   KelimeKarti(kelime: 'Barok', yasakliKelimeler: ['Sanat', 'Müzik', 'Avrupa', '17. yüzyıl', 'Süsleme']),
   KelimeKarti(kelime: 'Romantizm', yasakliKelimeler: ['Sanat', 'Duygu', 'Doğa', '19. yüzyıl', 'Hareket']),
 
@@ -167,14 +157,11 @@ const List<KelimeKarti> premiumTarihKultur = [
   KelimeKarti(kelime: 'Paris İklim Anlaşması', yasakliKelimeler: ['İklim', 'Sıcaklık', 'Dünya', 'CO2', 'Anlaşma']),
 
   // BİLİMSEL KEŞİFLER TARİHİ
-  KelimeKarti(kelime: 'Mikroskop', yasakliKelimeler: ['Keşif', 'Hücre', 'Leeuwenhoek', 'Mikrop', 'Bilim']),
-  KelimeKarti(kelime: 'Teleskop', yasakliKelimeler: ['Galileo', 'Gök', 'Cisim', 'Uzay', 'Keşif']),
   KelimeKarti(kelime: 'Röntgen', yasakliKelimeler: ['X-ışını', 'Kemik', 'Radyasyon', 'Tıbbi', 'Keşif']),
   KelimeKarti(kelime: 'Antibiyotik', yasakliKelimeler: ['Penisilin', 'Fleming', 'Bakteri', 'İlaç', 'Tedavi']),
 
   // SAVAŞ TEKNOLOJİLERİ
   KelimeKarti(kelime: 'Tank', yasakliKelimeler: ['I. Dünya Savaşı', 'Zırhlı', 'Top', 'Hareketli', 'Savaş']),
-  KelimeKarti(kelime: 'Uçak', yasakliKelimeler: ['Wright', 'Kardeşler', 'Hava', '1903', 'Keşif']),
   KelimeKarti(kelime: 'Radar', yasakliKelimeler: ['Savaş', 'Hava', 'Savunma', 'II. Dünya Savaşı', 'Teknoloji']),
   KelimeKarti(kelime: 'Atom Bombası', yasakliKelimeler: ['Nükleer', 'Hiroşima', 'Enerji', 'Fisyon', 'Yıkım']),
 

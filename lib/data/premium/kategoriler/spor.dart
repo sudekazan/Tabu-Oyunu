@@ -125,14 +125,12 @@ const List<KelimeKarti> premiumSpor = [
   KelimeKarti(kelime: 'Mehmet Topal', yasakliKelimeler: ['Fenerbahçe', 'Orta Saha', 'Milli Takım', 'Defansif', 'Gol']),
   KelimeKarti(kelime: 'Sabri Sarıoğlu', yasakliKelimeler: ['Galatasaray', 'Orta Saha', 'Milli Takım', 'Defansif', 'Tecrübe']),
   KelimeKarti(kelime: 'Gökdeniz Karadeniz', yasakliKelimeler: ['Trabzonspor', 'Kanat', 'Milli Takım', 'Teknik', 'Gol']),
-  KelimeKarti(kelime: 'Tuncay Şanlı', yasakliKelimeler: ['Stuttgart', 'Orta Saha', 'Milli Takım', 'Teknik', 'Gol']),
   KelimeKarti(kelime: 'Umut Bulut', yasakliKelimeler: ['Galatasaray', 'Golcü', 'Milli Takım', 'Baş', 'Gol']),
   KelimeKarti(kelime: 'Semih Şentürk', yasakliKelimeler: ['Fenerbahçe', 'Golcü', 'Milli Takım', 'Baş', 'Gol']),
   KelimeKarti(kelime: 'Mertcan Şahin', yasakliKelimeler: ['Beşiktaş', 'Orta Saha', 'Milli Takım', 'Teknik', 'Gol']),
   KelimeKarti(kelime: 'Serkan Kırıntılı', yasakliKelimeler: ['Galatasaray', 'Defans', 'Milli Takım', 'Tecrübe', 'Gol']),
   KelimeKarti(kelime: 'Tolga Ciğerci', yasakliKelimeler: ['Galatasaray', 'Orta Saha', 'Milli Takım', 'Teknik', 'Gol']),
   KelimeKarti(kelime: 'Selçuk Şahin', yasakliKelimeler: ['Galatasaray', 'Orta Saha', 'Milli Takım', 'Kaptan', 'Tecrübe']),
-  KelimeKarti(kelime: 'Sabri Sarıoğlu', yasakliKelimeler: ['Galatasaray', 'Orta Saha', 'Milli Takım', 'Defansif', 'Tecrübe']),
   KelimeKarti(kelime: 'Emre Çolak', yasakliKelimeler: ['Galatasaray', 'Golcü', 'Milli Takım', 'Baş', 'Gol']),
   KelimeKarti(kelime: 'Ümit Karan', yasakliKelimeler: ['Galatasaray', 'Defans', 'Milli Takım', 'Tecrübe', 'Kaptan']),
   KelimeKarti(kelime: 'Arif Erdem', yasakliKelimeler: ['Galatasaray', 'Golcü', 'Milli Takım', 'Baş', 'Gol']),
@@ -151,7 +149,6 @@ const List<KelimeKarti> premiumSpor = [
   KelimeKarti(kelime: 'Rüştü Reçber', yasakliKelimeler: ['Fenerbahçe', 'Kaleci', 'Milli Takım', 'Efsane', 'Kurtarıcı']),
   KelimeKarti(kelime: 'Volkan Demirel', yasakliKelimeler: ['Fenerbahçe', 'Kaleci', 'Milli Takım', 'Efsane', 'Kurtarıcı']),
   KelimeKarti(kelime: 'Diego Lugano', yasakliKelimeler: ['Fenerbahçe', 'Uruguay', 'Defans', 'Efsane', 'Kaptan']),
-  KelimeKarti(kelime: 'Nihat Kahveci', yasakliKelimeler: ['Beşiktaş', 'Orta Saha', 'Milli Takım', 'Teknik', 'Gol']),
   KelimeKarti(kelime: 'İbrahim Toraman', yasakliKelimeler: ['Beşiktaş', 'Defans', 'Milli Takım', 'Kaptan', 'Tecrübe']),
   KelimeKarti(kelime: 'Gökhan Zan', yasakliKelimeler: ['Beşiktaş', 'Kaleci', 'Milli Takım', 'Efsane', 'Kurtarıcı']),
   KelimeKarti(kelime: 'Ricardo Quaresma', yasakliKelimeler: ['Beşiktaş', 'Portekiz', 'Kanat', 'Efsane', 'Teknik']),
@@ -169,8 +166,6 @@ const List<KelimeKarti> premiumSpor = [
   KelimeKarti(kelime: 'Fatih Tekke', yasakliKelimeler: ['Trabzonspor', 'Golcü', 'Milli Takım', 'Efsane', 'Baş']),
   KelimeKarti(kelime: 'Hami Mandıralı', yasakliKelimeler: ['Trabzonspor', 'Orta Saha', 'Milli Takım', 'Efsane', 'Teknik']),
   KelimeKarti(kelime: 'Laffel', yasakliKelimeler: ['Trabzonspor', 'Brezilya', 'Orta Saha', 'Efsane', 'Teknik']),
-  KelimeKarti(kelime: 'Umut Bulut', yasakliKelimeler: ['Trabzonspor', 'Golcü', 'Milli Takım', 'Efsane', 'Baş']),
-  KelimeKarti(kelime: 'Gökdeniz Karadeniz', yasakliKelimeler: ['Trabzonspor', 'Kanat', 'Milli Takım', 'Efsane', 'Teknik']),
   KelimeKarti(kelime: 'Yattara', yasakliKelimeler: ['Trabzonspor', 'Fildişi Sahili', 'Golcü', 'Efsane', 'Baş']),
   KelimeKarti(kelime: 'Alanzinho', yasakliKelimeler: ['Trabzonspor', 'Brezilya', 'Orta Saha', 'Efsane', 'Teknik']),
   KelimeKarti(kelime: 'Gustavo Colman', yasakliKelimeler: ['Trabzonspor', 'Arjantin', 'Orta Saha', 'Efsane', 'Teknik']),
@@ -182,7 +177,6 @@ const List<KelimeKarti> premiumSpor = [
   KelimeKarti(kelime: 'Tolga Zengin', yasakliKelimeler: ['Trabzonspor', 'Kaleci', 'Milli Takım', 'Efsane', 'Kurtarıcı']),
   KelimeKarti(kelime: 'Mert Hakan Yandaş', yasakliKelimeler: ['Fenerbahçe', 'Orta Saha', 'Milli Takım', 'Teknik', 'Gol']),
   KelimeKarti(kelime: 'Emre Mor', yasakliKelimeler: ['Fenerbahçe', 'Kanat', 'Milli Takım', 'Hız', 'Genç']),
-  KelimeKarti(kelime: 'Tanguy Ndombele', yasakliKelimeler: ['Tottenham', 'Orta Saha', 'Milli Takım', 'Teknik', 'Fransa']),
   KelimeKarti(kelime: 'Barış Alper Yılmaz', yasakliKelimeler: ['Galatasaray', 'Defans', 'Milli Takım', 'Genç', 'Potansiyel']),
   KelimeKarti(kelime: 'Cenk Tosun', yasakliKelimeler: ['Beşiktaş', 'Golcü', 'Milli Takım', 'Baş', 'Gol']),
   KelimeKarti(kelime: 'Oguzhan Özyakup', yasakliKelimeler: ['Beşiktaş', 'Orta Saha', 'Milli Takım', 'Teknik', 'Gol']),
@@ -231,17 +225,8 @@ const List<KelimeKarti> premiumSpor = [
   KelimeKarti(kelime: 'Rıza Kayaalp', yasakliKelimeler: ['Güreş', 'Türkiye', 'Olimpiyat', 'Altın', 'Milli Takım']),
   KelimeKarti(kelime: 'Taha Akgül', yasakliKelimeler: ['Güreş', 'Türkiye', 'Olimpiyat', 'Altın', 'Grekoromen']),
   KelimeKarti(kelime: 'Sultan Bilgin', yasakliKelimeler: ['Atletizm', 'Türkiye', 'Olimpiyat', 'Gümüş', 'Maraton']),
-  KelimeKarti(kelime: 'Mertcan Şahin', yasakliKelimeler: ['Boks', 'Türkiye', 'Olimpiyat', 'Şampiyon', 'Milli Takım']),
 
   // SPOR TÜRLERİ
-  KelimeKarti(kelime: 'Futbol', yasakliKelimeler: ['Top', 'Takım', 'Gol', 'Sahne', 'Maç']),
-  KelimeKarti(kelime: 'Basketbol', yasakliKelimeler: ['Top', 'Pota', 'Saha', 'El', 'NBA']),
-  KelimeKarti(kelime: 'Voleybol', yasakliKelimeler: ['Top', 'File', 'Saha', 'El', 'Servis']),
-  KelimeKarti(kelime: 'Tenis', yasakliKelimeler: ['Raketi', 'Top', 'File', 'Servis', 'Grand Slam']),
-  KelimeKarti(kelime: 'Yüzme', yasakliKelimeler: ['Havuz', 'Su', 'Kulac', 'Yaz', 'Olimpiyat']),
-  KelimeKarti(kelime: 'Atletizm', yasakliKelimeler: ['Koşu', 'Sıçrama', 'Atma', 'Olimpiyat', 'Stadyum']),
-  KelimeKarti(kelime: 'Boks', yasakliKelimeler: ['Ring', 'Yumruk', 'Eldiven', 'Round', 'Şampiyon']),
-  KelimeKarti(kelime: 'Güreş', yasakliKelimeler: ['Yağ', 'Halı', 'Müsabaka', 'Milli Takım', 'Olimpiyat']),
 
   // SPOR TERİMLERİ
   KelimeKarti(kelime: 'Hattrick', yasakliKelimeler: ['Üç', 'Gol', 'Futbol', 'Ardışık', 'Şov']),
@@ -259,9 +244,6 @@ const List<KelimeKarti> premiumSpor = [
   KelimeKarti(kelime: 'Paris Saint-Germain', yasakliKelimeler: ['Fransa', 'Paris', 'Mavi', 'Beyaz', 'Şampiyonluk']),
 
   // TÜRK TAKIMLARI
-  KelimeKarti(kelime: 'Galatasaray', yasakliKelimeler: ['Sarı', 'Kırmızı', 'Türk Telekom', 'Şampiyonluk', 'İstanbul']),
-  KelimeKarti(kelime: 'Fenerbahçe', yasakliKelimeler: ['Sarı', 'Lacivert', 'Şükrü Saraçoğlu', 'Şampiyonluk', 'İstanbul']),
-  KelimeKarti(kelime: 'Beşiktaş', yasakliKelimeler: ['Siyah', 'Beyaz', 'İnönü', 'Kartal', 'İstanbul']),
   KelimeKarti(kelime: 'Trabzonspor', yasakliKelimeler: ['Bordo', 'Mavi', 'Şenol Güneş', 'Şampiyonluk', 'Trabzon']),
 
   // DÜNYA KUPASI
@@ -271,7 +253,6 @@ const List<KelimeKarti> premiumSpor = [
   KelimeKarti(kelime: 'UEFA', yasakliKelimeler: ['Avrupa', 'Futbol', 'Federasyon', 'Şampiyonlar Ligi', 'Euro']),
 
   // OYUNLAR VE E-SPOR
-  KelimeKarti(kelime: 'FIFA', yasakliKelimeler: ['Oyun', 'Futbol', 'EA Sports', 'Simülasyon', 'eSports']),
   KelimeKarti(kelime: 'NBA 2K', yasakliKelimeler: ['Oyun', 'Basketbol', 'Simülasyon', 'EA', 'Spor']),
   KelimeKarti(kelime: 'F1 2023', yasakliKelimeler: ['Oyun', 'Formula 1', 'Yarış', 'EA', 'Simülasyon']),
   KelimeKarti(kelime: 'Madden NFL', yasakliKelimeler: ['Oyun', 'Amerikan Futbol', 'EA', 'Simülasyon', 'NFL']),

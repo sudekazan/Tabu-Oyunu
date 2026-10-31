@@ -246,7 +246,7 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                             child: ListTile(
                               contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                               leading: Icon(freeKategoriIconlari[FreeKategori.freeHavuz]!, color: const Color(0xFF6A1B9A)),
-                              title: Text('Free Havuz (349 kelime)', style: GoogleFonts.poppins(fontSize: labelFs)),
+                              title: Text('Free Havuz (300+ kelime)', style: GoogleFonts.poppins(fontSize: labelFs)),
                             ),
                           ),
                           ),
@@ -294,7 +294,7 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                               leading: _plan == PlanType.free
                                   ? const Icon(Icons.lock, color: Colors.grey)
                                   : const Icon(Icons.all_inclusive, color: Color(0xFF6A1B9A)),
-                              title: Text('Premium Havuz (4000+)', style: GoogleFonts.poppins(fontSize: labelFs)),
+                              title: Text('Premium Havuz (3200+)', style: GoogleFonts.poppins(fontSize: labelFs)),
                               trailing: null,
                               onTap: _plan == PlanType.free
                                   ? _navigateToPremiumPage
@@ -325,7 +325,7 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                               leading: _plan == PlanType.free
                                   ? const Icon(Icons.lock, color: Colors.grey)
                                   : Icon(premiumKategoriIconlari[PremiumKategori.cocuklar]!, color: const Color(0xFF6A1B9A)),
-                              title: Text('Çocuklar (Premium 550+)', style: GoogleFonts.poppins(fontSize: labelFs)),
+                              title: Text('Çocuklar (Premium 300+)', style: GoogleFonts.poppins(fontSize: labelFs)),
                               onTap: _plan == PlanType.free
                                   ? _navigateToPremiumPage
                                   : () async {

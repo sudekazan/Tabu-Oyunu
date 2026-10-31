@@ -79,7 +79,6 @@ final List<KelimeKarti> freeKelimeler = [
   const KelimeKarti(kelime: 'Gezme', yasakliKelimeler: ['Seyahat', 'Görme', 'Yeni', 'Yer', 'Keşfetme']),
   
   // Sosyal Medya ve İletişim (Kolaylaştırılmış)
-  const KelimeKarti(kelime: 'İnternet', yasakliKelimeler: ['Bilgisayar', 'Ağ', 'Bilgi', 'Web', 'Bağlantı']),
   const KelimeKarti(kelime: 'Mesaj', yasakliKelimeler: ['İletişim', 'Gönderme', 'Alma', 'Yazma', 'Konuşma']),
   const KelimeKarti(kelime: 'Arkadaş', yasakliKelimeler: ['Dost', 'Tanış', 'Grup', 'Birlikte', 'Sohbet']),
   const KelimeKarti(kelime: 'Paylaşım', yasakliKelimeler: ['Gönderme', 'Görme', 'Bilgi', 'İnternet', 'Fotoğraf']),
@@ -96,7 +95,6 @@ final List<KelimeKarti> freeKelimeler = [
   const KelimeKarti(kelime: 'Oyun', yasakliKelimeler: ['Eğlence', 'Çocuk', 'Zevk', 'Oynamak', 'Süre']),
   const KelimeKarti(kelime: 'Eğlence', yasakliKelimeler: ['Zevk', 'Oyun', 'Gülme', 'Mutluluk', 'Dinlenme']),
   const KelimeKarti(kelime: 'Film', yasakliKelimeler: ['İzleme', 'Salon', 'Hikaye', 'Oyuncu', 'Kamera']),
-  const KelimeKarti(kelime: 'Müzik', yasakliKelimeler: ['Dinleme', 'Nota', 'Şarkı', 'Enstrüman', 'Ses']),
   const KelimeKarti(kelime: 'Spor', yasakliKelimeler: ['Oyun', 'Vücut', 'Egzersiz', 'Takım', 'Maç']),
   
   // Psikoloji ve Kişilik (Kolaylaştırılmış)
@@ -109,22 +107,17 @@ final List<KelimeKarti> freeKelimeler = [
   // Sağlık ve Yaşam Tarzı (Kolaylaştırılmış)
   const KelimeKarti(kelime: 'Sağlık', yasakliKelimeler: ['Doktor', 'İlaç', 'Hasta', 'Vücut', 'İyileşme']),
   const KelimeKarti(kelime: 'Dinlenme', yasakliKelimeler: ['Uyku', 'Rahatlama', 'Yorgun', 'Oturma', 'Zevk']),
-  const KelimeKarti(kelime: 'Spor', yasakliKelimeler: ['Egzersiz', 'Vücut', 'Sağlık', 'Koşu', 'Bisiklet']),
   const KelimeKarti(kelime: 'Uyku', yasakliKelimeler: ['Yatak', 'Gece', 'Dinlenme', 'Rüya', 'Yorgun']),
   const KelimeKarti(kelime: 'Gıda', yasakliKelimeler: ['Yemek', 'Beslenme', 'Vitamin', 'Sağlık', 'Besin']),
   
   // Sanat ve Tasarım (Kolaylaştırılmış)
-  const KelimeKarti(kelime: 'Resim', yasakliKelimeler: ['Çizme', 'Renk', 'Kağıt', 'Fırça', 'Sanat']),
   const KelimeKarti(kelime: 'Çizim', yasakliKelimeler: ['Kalem', 'Kağıt', 'Resim', 'Çizme', 'Sanat']),
   const KelimeKarti(kelime: 'Renk', yasakliKelimeler: ['Boyama', 'Çok', 'Güzel', 'Çeşitli', 'Sanat']),
   const KelimeKarti(kelime: 'Şekil', yasakliKelimeler: ['Geometrik', 'Yuvarlak', 'Kare', 'Üçgen', 'Çizim']),
   const KelimeKarti(kelime: 'Sanat', yasakliKelimeler: ['Resim', 'Çizim', 'Müzik', 'Dans', 'Yaratıcılık']),
   
   // Günlük Hayat ve Kolay Kelimeler (Kolaylaştırılmış)
-  const KelimeKarti(kelime: 'Fotoğraf', yasakliKelimeler: ['Çekme', 'Kamera', 'Resim', 'Görme', 'Hatıra']),
-  const KelimeKarti(kelime: 'İnternet', yasakliKelimeler: ['Bilgisayar', 'Bilgi', 'Ağ', 'Web', 'Bağlantı']),
   const KelimeKarti(kelime: 'Yüz', yasakliKelimeler: ['İfade', 'Gülümseme', 'Bakış', 'Göz', 'Burun']),
-  const KelimeKarti(kelime: 'Telefon', yasakliKelimeler: ['Arama', 'Konuşma', 'Dokunmatik', 'Mesaj', 'Uygulama']),
   const KelimeKarti(kelime: 'Kulaklık', yasakliKelimeler: ['Dinleme', 'Müzik', 'Ses', 'Kulak', 'Kablo']),
   
   // Yemek ve İçecek (Kolay)
@@ -159,7 +152,6 @@ final List<KelimeKarti> freeKelimeler = [
   const KelimeKarti(kelime: 'Taksi', yasakliKelimeler: ['Sarı', 'Araç', 'Şoför', 'Para', 'Gitmek']),
   const KelimeKarti(kelime: 'Otobüs', yasakliKelimeler: ['Toplu', 'Taşıma', 'Durak', 'Bilet', 'Büyük']),
   const KelimeKarti(kelime: 'Metro', yasakliKelimeler: ['Yeraltı', 'Tren', 'İstasyon', 'Hızlı', 'Şehir']),
-  const KelimeKarti(kelime: 'Bisiklet', yasakliKelimeler: ['Pedal', 'Tekerlek', 'Sürmek', 'Zincir', 'Spor']),
   const KelimeKarti(kelime: 'Scooter', yasakliKelimeler: ['Elektrikli', 'Ayakta', 'Sürmek', 'Hızlı', 'Martı']),
   
   // Hava Durumu ve Doğa
@@ -179,16 +171,12 @@ final List<KelimeKarti> freeKelimeler = [
   // Spor (Kolay)
   const KelimeKarti(kelime: 'Futbol', yasakliKelimeler: ['Top', 'Kale', 'Gol', 'Ayak', 'Oyun']),
   const KelimeKarti(kelime: 'Basketbol', yasakliKelimeler: ['Potada', 'Sayı', 'Zıplama', 'El', 'Turuncu']),
-  const KelimeKarti(kelime: 'Yüzme', yasakliKelimeler: ['Su', 'Havuz', 'Deniz', 'Nefes', 'Kol']),
-  const KelimeKarti(kelime: 'Koşu', yasakliKelimeler: ['Hızlı', 'Yürüme', 'Nefes', 'Ayak', 'Ter']),
   const KelimeKarti(kelime: 'Tenis', yasakliKelimeler: ['Raket', 'Top', 'Kort', 'Sarı', 'Vuruş']),
   
   // Müzik Aletleri (Kolay)
-  const KelimeKarti(kelime: 'Gitar', yasakliKelimeler: ['Tel', 'Çalma', 'Müzik', 'Ses', 'Parmak']),
   const KelimeKarti(kelime: 'Piyano', yasakliKelimeler: ['Tuş', 'Siyah', 'Beyaz', 'Basma', 'Klasik']),
   const KelimeKarti(kelime: 'Davul', yasakliKelimeler: ['Vurma', 'Ritim', 'Çubuk', 'Gürültü', 'Yuvarlak']),
   const KelimeKarti(kelime: 'Flüt', yasakliKelimeler: ['Üfleme', 'Delik', 'İnce', 'Uzun', 'Nefes']),
-  const KelimeKarti(kelime: 'Mikrofon', yasakliKelimeler: ['Ses', 'Yükseltme', 'Konuşma', 'Şarkı', 'Tutma']),
   
   // Çok Kolay Kelimeler - Herkesin Bildiği
   const KelimeKarti(kelime: 'Anne', yasakliKelimeler: ['Baba', 'Çocuk', 'Aile', 'Kadın', 'Sevgi']),
@@ -223,11 +211,9 @@ final List<KelimeKarti> freeKelimeler = [
   const KelimeKarti(kelime: 'Ayak', yasakliKelimeler: ['Yürüme', 'Parmak', 'İki', 'Bacak', 'Ayakkabı']),
   
   // Yiyecekler (Çok Basit)
-  const KelimeKarti(kelime: 'Ekmek', yasakliKelimeler: ['Un', 'Fırın', 'Dilim', 'Beyaz', 'Yeme']),
   const KelimeKarti(kelime: 'Su', yasakliKelimeler: ['İçme', 'Şeffaf', 'Hayat', 'Deniz', 'Bardak']),
   const KelimeKarti(kelime: 'Süt', yasakliKelimeler: ['Beyaz', 'İnek', 'İçme', 'Kalsiyum', 'Bardak']),
   const KelimeKarti(kelime: 'Yumurta', yasakliKelimeler: ['Tavuk', 'Sarısı', 'Beyazı', 'Pişirme', 'Omlet']),
-  const KelimeKarti(kelime: 'Peynir', yasakliKelimeler: ['Süt', 'Beyaz', 'Tuz', 'Ekmek', 'Fare']),
   const KelimeKarti(kelime: 'Elma', yasakliKelimeler: ['Meyve', 'Kırmızı', 'Yeşil', 'Ağaç', 'Sağlık']),
   const KelimeKarti(kelime: 'Muz', yasakliKelimeler: ['Sarı', 'Meyve', 'Uzun', 'Kabuk', 'Maymun']),
   
@@ -253,14 +239,11 @@ final List<KelimeKarti> freeKelimeler = [
   const KelimeKarti(kelime: 'Güneş', yasakliKelimeler: ['Sıcak', 'Sarı', 'Işık', 'Gündüz', 'Gökyüzü']),
   const KelimeKarti(kelime: 'Ay', yasakliKelimeler: ['Gece', 'Beyaz', 'Gökyüzü', 'Yıldız', 'Hilal']),
   const KelimeKarti(kelime: 'Yıldız', yasakliKelimeler: ['Gece', 'Parlak', 'Gökyüzü', 'Küçük', 'Işık']),
-  const KelimeKarti(kelime: 'Deniz', yasakliKelimeler: ['Su', 'Mavi', 'Balık', 'Dalga', 'Tuzlu']),
-  const KelimeKarti(kelime: 'Dağ', yasakliKelimeler: ['Yüksek', 'Tırmanma', 'Tepe', 'Kar', 'Büyük']),
   
   // Oyuncaklar ve Oyunlar
   const KelimeKarti(kelime: 'Top', yasakliKelimeler: ['Yuvarlak', 'Atma', 'Futbol', 'Oynama', 'Zıplama']),
   const KelimeKarti(kelime: 'Bebek', yasakliKelimeler: ['Oyuncak', 'Kız', 'Oynama', 'Küçük', 'Sevimli']),
   const KelimeKarti(kelime: 'Araba', yasakliKelimeler: ['Tekerlek', 'Sürmek', 'Yol', 'Hızlı', 'Motor']),
-  const KelimeKarti(kelime: 'Bisiklet', yasakliKelimeler: ['İki', 'Tekerlek', 'Pedal', 'Sürmek', 'Zincir']),
   const KelimeKarti(kelime: 'Topaç', yasakliKelimeler: ['Döner', 'Oyuncak', 'Çevirme', 'Renkli', 'Denge']),
   
   // Kıyafetler
@@ -283,10 +266,6 @@ final List<KelimeKarti> freeKelimeler = [
   const KelimeKarti(kelime: 'Çatı', yasakliKelimeler: ['Üst', 'Kiremit', 'Yağmur', 'Yüksek', 'Ev']),
 
   // Eğitim ve Öğrenme
-  const KelimeKarti(kelime: 'Okul', yasakliKelimeler: ['Öğrenci', 'Öğretmen', 'Ders', 'Sınıf', 'Eğitim']),
-  const KelimeKarti(kelime: 'Kitap', yasakliKelimeler: ['Okuma', 'Sayfa', 'Hikaye', 'Bilgi', 'Kütüphane']),
-  const KelimeKarti(kelime: 'Kalem', yasakliKelimeler: ['Yazma', 'Kağıt', 'Mürekkep', 'Çizme', 'Uç']),
-  const KelimeKarti(kelime: 'Defter', yasakliKelimeler: ['Yazma', 'Sayfa', 'Çizgi', 'Not', 'Okul']),
   const KelimeKarti(kelime: 'Tahta', yasakliKelimeler: ['Yazma', 'Sınıf', 'Silgi', 'Öğretmen', 'Duvar']),
   const KelimeKarti(kelime: 'Sınav', yasakliKelimeler: ['Soru', 'Cevap', 'Not', 'Stres', 'Başarı']),
   const KelimeKarti(kelime: 'Ödev', yasakliKelimeler: ['Ev', 'Yapma', 'Öğretmen', 'Zaman', 'Bitirme']),
@@ -294,7 +273,6 @@ final List<KelimeKarti> freeKelimeler = [
 
   // Aile ve İlişkiler
   const KelimeKarti(kelime: 'Aile', yasakliKelimeler: ['Anne', 'Baba', 'Çocuk', 'Kardeş', 'Birlik']),
-  const KelimeKarti(kelime: 'Arkadaş', yasakliKelimeler: ['Dost', 'Oyun', 'Gülme', 'Birlikte', 'Konuşma']),
   const KelimeKarti(kelime: 'Komşu', yasakliKelimeler: ['Yan', 'Kapı', 'Selam', 'Yardım', 'Yakın']),
   const KelimeKarti(kelime: 'Akraba', yasakliKelimeler: ['Kuzen', 'Teyze', 'Amca', 'Aile', 'Yakın']),
   const KelimeKarti(kelime: 'Tanışma', yasakliKelimeler: ['İlk', 'Merhaba', 'El', 'Sıkma', 'Konuşma']),
@@ -306,7 +284,6 @@ final List<KelimeKarti> freeKelimeler = [
   const KelimeKarti(kelime: 'Ofis', yasakliKelimeler: ['Çalışma', 'Masa', 'Bilgisayar', 'Şirket', 'Toplantı']),
   const KelimeKarti(kelime: 'Patron', yasakliKelimeler: ['Şef', 'Lider', 'Çalışan', 'Emir', 'Şirket']),
   const KelimeKarti(kelime: 'Maaş', yasakliKelimeler: ['Para', 'Ay', 'Çalışma', 'Kazanç', 'Ödeme']),
-  const KelimeKarti(kelime: 'Tatil', yasakliKelimeler: ['İzin', 'Dinlenme', 'Yaz', 'Deniz', 'Rahatlama']),
   const KelimeKarti(kelime: 'Toplantı', yasakliKelimeler: ['Birlikte', 'Konuşma', 'Karar', 'Ofis', 'Grup']),
   const KelimeKarti(kelime: 'Proje', yasakliKelimeler: ['Plan', 'Yapma', 'Bitirme', 'Takım', 'Zaman']),
   const KelimeKarti(kelime: 'Rapor', yasakliKelimeler: ['Yazma', 'Sonuç', 'Bilgi', 'Sunum', 'İş']),
@@ -326,27 +303,20 @@ final List<KelimeKarti> freeKelimeler = [
   const KelimeKarti(kelime: 'Diş', yasakliKelimeler: ['Ağız', 'Çürük', 'Fırçalama', 'Doktor', 'Beyaz']),
   const KelimeKarti(kelime: 'Saç', yasakliKelimeler: ['Kafa', 'Tarama', 'Kesme', 'Uzun', 'Kısa']),
   const KelimeKarti(kelime: 'Tırnak', yasakliKelimeler: ['El', 'Ayak', 'Kesme', 'Uzun', 'Parmak']),
-  const KelimeKarti(kelime: 'Yüz', yasakliKelimeler: ['Bakma', 'Gülümseme', 'Göz', 'Burun', 'Ağız']),
   const KelimeKarti(kelime: 'Sıcak', yasakliKelimeler: ['Ateş', 'Yaz', 'Güneş', 'İçme', 'Soğuk']),
   const KelimeKarti(kelime: 'Soğuk', yasakliKelimeler: ['Kış', 'Buz', 'Titreme', 'Sıcak', 'Üşüme']),
   const KelimeKarti(kelime: 'Ağrı', yasakliKelimeler: ['Acı', 'Baş', 'Diş', 'Karın', 'İlaç']),
   const KelimeKarti(kelime: 'Yorgun', yasakliKelimeler: ['Tükenmiş', 'Uyku', 'Dinlenme', 'Enerji', 'Az']),
 
   // Doğa ve Hava
-  const KelimeKarti(kelime: 'Rüzgar', yasakliKelimeler: ['Esme', 'Hava', 'Yaprak', 'Soğuk', 'Kuvvetli']),
   const KelimeKarti(kelime: 'Yağmur', yasakliKelimeler: ['Su', 'Gökyüzü', 'Şemsiye', 'Islak', 'Bulut']),
   const KelimeKarti(kelime: 'Kar', yasakliKelimeler: ['Beyaz', 'Soğuk', 'Kış', 'Yer', 'Düşme']),
-  const KelimeKarti(kelime: 'Bulut', yasakliKelimeler: ['Gökyüzü', 'Beyaz', 'Yağmur', 'Gölge', 'Yüzen']),
   const KelimeKarti(kelime: 'Fırtına', yasakliKelimeler: ['Rüzgar', 'Yağmur', 'Şimşek', 'Kuvvetli', 'Tehlike']),
-  const KelimeKarti(kelime: 'Gökkuşağı', yasakliKelimeler: ['Renk', 'Yağmur', 'Güneş', 'Gökyüzü', 'Yedi']),
-  const KelimeKarti(kelime: 'Kuş', yasakliKelimeler: ['Uçma', 'Kanat', 'Tüy', 'Gagala', 'Gökyüzü']),
-  const KelimeKarti(kelime: 'Köpek', yasakliKelimeler: ['Havlama', 'Kuyruk', 'Evcil', 'Sadık', 'Hayvan']),
 
   // Zaman ve Günlük Hayat
   const KelimeKarti(kelime: 'Sabah', yasakliKelimeler: ['Gün', 'Doğum', 'Kahvaltı', 'Uyandırma', 'Erken']),
   const KelimeKarti(kelime: 'Akşam', yasakliKelimeler: ['Gece', 'Yemek', 'Yorgun', 'Gün', 'Bitiş']),
   const KelimeKarti(kelime: 'Hafta', yasakliKelimeler: ['Gün', '7', 'Pazartesi', 'Cumartesi', 'Pazar']),
-  const KelimeKarti(kelime: 'Ay', yasakliKelimeler: ['Zaman', '30', 'Takvim', 'Ayın', 'Dolu']),
   const KelimeKarti(kelime: 'Yıl', yasakliKelimeler: ['365', 'Doğum', 'Yeni', 'Eski', 'Geçmiş']),
   const KelimeKarti(kelime: 'Saat', yasakliKelimeler: ['Zaman', 'Gösterge', 'Geç', 'Gel', 'Akrep']),
   const KelimeKarti(kelime: 'Geç', yasakliKelimeler: ['Zaman', 'Sonra', 'Önce', 'Bekleme', 'Geçmiş']),
@@ -369,7 +339,6 @@ final List<KelimeKarti> freeKelimeler = [
   const KelimeKarti(kelime: 'Uzun', yasakliKelimeler: ['Kısa', 'Boy', 'Mesafe', 'Zaman', 'Bekleme']),
   const KelimeKarti(kelime: 'Kısa', yasakliKelimeler: ['Uzun', 'Küçük', 'Az', 'Hızlı', 'Zaman']),
   const KelimeKarti(kelime: 'Büyük', yasakliKelimeler: ['Küçük', 'Geniş', 'Yüksek', 'Ağır', 'Çok']),
-  const KelimeKarti(kelime: 'Küçük', yasakliKelimeler: ['Büyük', 'Mini', 'Az', 'İnce', 'Dar']),
   const KelimeKarti(kelime: 'Ağır', yasakliKelimeler: ['Hafif', 'Kaldırma', 'Ağırlık', 'Zor', 'Çekme']),
 
   // Duygular ve Hissler (Ek)
@@ -379,12 +348,9 @@ final List<KelimeKarti> freeKelimeler = [
   const KelimeKarti(kelime: 'Sevinç', yasakliKelimeler: ['Mutlu', 'Gülme', 'Coşku', 'Neşe', 'Heyecan']),
   const KelimeKarti(kelime: 'Öfke', yasakliKelimeler: ['Kızgın', 'Sinirli', 'Bağırma', 'Darılma', 'Hiddet']),
   const KelimeKarti(kelime: 'Şaşkın', yasakliKelimeler: ['Hayret', 'Şaşırma', 'Anlamama', 'Şok', 'Ağız']),
-  const KelimeKarti(kelime: 'Gurur', yasakliKelimeler: ['Övünme', 'Başarı', 'Göğüs', 'Germe', 'Kibir']),
   const KelimeKarti(kelime: 'Utanç', yasakliKelimeler: ['Yüz', 'Kızarma', 'Kötü', 'Hata', 'Mahcup']),
 
   // Yiyecek ve İçecek (Ek)
-  const KelimeKarti(kelime: 'Sıcak', yasakliKelimeler: ['Çay', 'Kahve', 'Yemek', 'Fırın', 'Isı']),
-  const KelimeKarti(kelime: 'Soğuk', yasakliKelimeler: ['Buz', 'Buzdolabı', 'İçecek', 'Hava', 'Kış']),
   const KelimeKarti(kelime: 'Tatlı', yasakliKelimeler: ['Şeker', 'Çikolata', 'Pasta', 'Lezzet', 'İyileşme']),
   const KelimeKarti(kelime: 'Acı', yasakliKelimeler: ['Baharat', 'Sivri', 'Sıcak', 'Lezzet', 'Zevk']),
   const KelimeKarti(kelime: 'Tuzlu', yasakliKelimeler: ['Tuz', 'Deniz', 'Lezzet', 'Çiğ', 'Salamura']),
@@ -394,7 +360,6 @@ final List<KelimeKarti> freeKelimeler = [
 
   // Ev Eşyaları (Ek)
   const KelimeKarti(kelime: 'Fırın', yasakliKelimeler: ['Sıcak', 'Pişirme', 'Ekmek', 'Mutfak', 'Elektrik']),
-  const KelimeKarti(kelime: 'Buzdolabı', yasakliKelimeler: ['Soğuk', 'Yiyecek', 'Saklama', 'Raf', 'Elektrik']),
   const KelimeKarti(kelime: 'Çamaşır', yasakliKelimeler: ['Yıkama', 'Makinesi', 'Giysi', 'Temiz', 'Su']),
   const KelimeKarti(kelime: 'Ütü', yasakliKelimeler: ['Sıcak', 'Giysi', 'Düzeltme', 'Kat', 'Açma']),
   const KelimeKarti(kelime: 'Süpürge', yasakliKelimeler: ['Temizlik', 'Zemin', 'Toz', 'Fırça', 'Elektrik']),
@@ -418,7 +383,6 @@ final List<KelimeKarti> freeKelimeler = [
   const KelimeKarti(kelime: 'Hak', yasakliKelimeler: ['Özgürlük', 'İnsanın', 'Temel', 'Koruma', 'Kanun']),
   const KelimeKarti(kelime: 'Görev', yasakliKelimeler: ['Sorumluluk', 'Yapma', 'İşi', 'Zorunlu', 'İş']),
   const KelimeKarti(kelime: 'Yardım', yasakliKelimeler: ['Destek', 'İmkan', 'Verme', 'Alma', 'İhtiyaç']),
-  const KelimeKarti(kelime: 'Paylaşım', yasakliKelimeler: ['Verme', 'Alma', 'Birlikte', 'Adil', 'Eşit']),
   const KelimeKarti(kelime: 'Güven', yasakliKelimeler: ['İnanç', 'Emin', 'Güvenlik', 'Sakin', 'Rahat']),
   const KelimeKarti(kelime: 'Saygı', yasakliKelimeler: ['Hormet', 'Değer', 'Verme', 'Büyük', 'İnsanın']),
 
@@ -433,19 +397,14 @@ final List<KelimeKarti> freeKelimeler = [
   const KelimeKarti(kelime: 'Şarj', yasakliKelimeler: ['Pil', 'Batarya', 'Dolma', 'Elektrik', 'Kablo']),
 
   // Eğlence ve Boş Zaman
-  const KelimeKarti(kelime: 'Sinema', yasakliKelimeler: ['Film', 'İzleme', 'Koltuk', 'Karanlık', 'Popcorn']),
   const KelimeKarti(kelime: 'Tiyatro', yasakliKelimeler: ['Sahne', 'Oyuncu', 'İzleyici', 'Gösteri', 'Perde']),
   const KelimeKarti(kelime: 'Konser', yasakliKelimeler: ['Müzik', 'Sahne', 'Dinleyici', 'Şarkıcı', 'Mikrofon']),
   const KelimeKarti(kelime: 'Festival', yasakliKelimeler: ['Eğlence', 'Kalabalık', 'Müzik', 'Yaz', 'Açıkhava']),
   const KelimeKarti(kelime: 'Müze', yasakliKelimeler: ['Tarih', 'Sanat', 'Eser', 'Bakma', 'Bilgi']),
   const KelimeKarti(kelime: 'Park', yasakliKelimeler: ['Yeşil', 'Oturma', 'Yürüyüş', 'Çocuk', 'Dinlenme']),
-  const KelimeKarti(kelime: 'Kahve', yasakliKelimeler: ['İçme', 'Sohbet', 'Arkadaş', 'Oturma', 'Keyif']),
-  const KelimeKarti(kelime: 'Kitap', yasakliKelimeler: ['Okuma', 'Hikaye', 'Bilgi', 'Rahat', 'Zevk']),
 
   // Ulaşım ve Yol
-  const KelimeKarti(kelime: 'Otobüs', yasakliKelimeler: ['Toplu', 'Taşıma', 'Durak', 'Bilet', 'Şoför']),
   const KelimeKarti(kelime: 'Tren', yasakliKelimeler: ['Ray', 'Vagon', 'İstasyon', 'Hızlı', 'Yolcu']),
-  const KelimeKarti(kelime: 'Uçak', yasakliKelimeler: ['Gökyüzü', 'Pilot', 'Yolcu', 'Havaalanı', 'Kanat']),
   const KelimeKarti(kelime: 'Gemi', yasakliKelimeler: ['Deniz', 'Yolcu', 'Kaptan', 'Liman', 'Dalga']),
   const KelimeKarti(kelime: 'Yol', yasakliKelimeler: ['Araba', 'Yürüme', 'Asfalt', 'Çizgi', 'Trafik']),
   const KelimeKarti(kelime: 'Köprü', yasakliKelimeler: ['Nehir', 'Geçiş', 'Yüksek', 'Destek', 'Yol']),
@@ -453,14 +412,10 @@ final List<KelimeKarti> freeKelimeler = [
   const KelimeKarti(kelime: 'Benzin', yasakliKelimeler: ['Araba', 'İstasyon', 'Yakıt', 'Depo', 'Doldurma']),
 
   // Son Eklemeler - Günlük Hayat
-  const KelimeKarti(kelime: 'Uyku', yasakliKelimeler: ['Yatak', 'Gece', 'Rüya', 'Dinlenme', 'Yorgun']),
   const KelimeKarti(kelime: 'Yemek', yasakliKelimeler: ['Acıkma', 'Yiyecek', 'Pişirme', 'Lezzet', 'Beslenme']),
   const KelimeKarti(kelime: 'İçecek', yasakliKelimeler: ['Su', 'Sıvı', 'İçme', 'Susama', 'Bardak']),
   const KelimeKarti(kelime: 'Konuşma', yasakliKelimeler: ['Söyleme', 'Dinleme', 'Sohbet', 'Ağız', 'Ses']),
-  const KelimeKarti(kelime: 'Dinlenme', yasakliKelimeler: ['Rahatlama', 'Oturma', 'Uyku', 'Yorgun', 'Zevk']),
   const KelimeKarti(kelime: 'Çalışma', yasakliKelimeler: ['İş', 'Zor', 'Efor', 'Başarı', 'Yorgun']),
-  const KelimeKarti(kelime: 'Oyun', yasakliKelimeler: ['Eğlence', 'Çocuk', 'Zevk', 'Oynamak', 'Süre']),
-  const KelimeKarti(kelime: 'Eğlence', yasakliKelimeler: ['Zevk', 'Oyun', 'Gülme', 'Mutluluk', 'Rahatlama']),
 ];
 
 List<KelimeKarti> karisikFreeKelimeler() {

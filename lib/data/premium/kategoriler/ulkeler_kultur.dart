@@ -3,19 +3,11 @@ import '../../kelimeler.dart';
 // Ülkeler & Kültür Kategorisi - Geniş bilgi için ülkeler ve kültürler
 const List<KelimeKarti> premiumUlkelerKultur = [
   // AVRUPA ÜLKELERİ
-  KelimeKarti(kelime: 'Fransa', yasakliKelimeler: ['Paris', 'Eyfel', 'Şarap', 'Lüks', 'Romantik']),
-  KelimeKarti(kelime: 'Almanya', yasakliKelimeler: ['Berlin', 'Bira', 'Arabalar', 'Tarih', 'Dünya Kupası']),
-  KelimeKarti(kelime: 'İtalya', yasakliKelimeler: ['Roma', 'Pizza', 'Venedik', 'Sanat', 'Tarih']),
-  KelimeKarti(kelime: 'İspanya', yasakliKelimeler: ['Madrid', 'Futbol', 'Flamenko', 'Paella', 'Güneş']),
   KelimeKarti(kelime: 'İngiltere', yasakliKelimeler: ['Londra', 'Kraliyet', 'Çay', 'Futbol', 'Tarih']),
-  KelimeKarti(kelime: 'Rusya', yasakliKelimeler: ['Moskova', 'Kremlin', 'Kış', 'Büyük', 'Tarih']),
-  KelimeKarti(kelime: 'Türkiye', yasakliKelimeler: ['İstanbul', 'Çay', 'Tarih', 'Deniz', 'Köprü']),
   KelimeKarti(kelime: 'Yunanistan', yasakliKelimeler: ['Atina', 'Akropolis', 'Deniz', 'Mitoloji', 'Tarih']),
 
   // ASYA ÜLKELERİ
-  KelimeKarti(kelime: 'Japonya', yasakliKelimeler: ['Tokyo', 'Teknoloji', 'Samuray', 'Kiraz Çiçeği', 'Kültürel']),
   KelimeKarti(kelime: 'Çin', yasakliKelimeler: ['Pekin', 'Duvar', 'Çay', 'Teknoloji', 'Tarih']),
-  KelimeKarti(kelime: 'Hindistan', yasakliKelimeler: ['Yeni Delhi', 'Baharat', 'Yoga', 'Tacı Mahal', 'Renk']),
   KelimeKarti(kelime: 'Güney Kore', yasakliKelimeler: ['Seul', 'K-pop', 'Samsung', 'K-beauty', 'Teknoloji']),
   KelimeKarti(kelime: 'Tayland', yasakliKelimeler: ['Bangkok', 'Tapınak', 'Yemek', 'Turistik', 'Gülümseyen']),
   KelimeKarti(kelime: 'Vietnam', yasakliKelimeler: ['Hanoi', 'Pho', 'Komünizm', 'Tarih', 'Deniz']),
@@ -24,12 +16,10 @@ const List<KelimeKarti> premiumUlkelerKultur = [
   // AMERİKA ÜLKELERİ
   KelimeKarti(kelime: 'Amerika Birleşik Devletleri', yasakliKelimeler: ['Washington', 'Hollywood', 'Özgürlük', 'Güçlü', 'Çeşitli']),
   KelimeKarti(kelime: 'Kanada', yasakliKelimeler: ['Ottawa', 'Kış', 'Hokey', 'Açık', 'İki Dilli']),
-  KelimeKarti(kelime: 'Brezilya', yasakliKelimeler: ['Brasilia', 'Futbol', 'Carnaval', 'Amazon', 'Renkli']),
   KelimeKarti(kelime: 'Arjantin', yasakliKelimeler: ['Buenos Aires', 'Tango', 'Futbol', 'Gaucho', 'Tarih']),
   KelimeKarti(kelime: 'Meksika', yasakliKelimeler: ['Mexico City', 'Maya', 'Taco', 'Kaktüs', 'Tarih']),
 
   // AFRİKA ÜLKELERİ
-  KelimeKarti(kelime: 'Mısır', yasakliKelimeler: ['Kahire', 'Piramit', 'Nil', 'Farao', 'Tarih']),
   KelimeKarti(kelime: 'Güney Afrika', yasakliKelimeler: ['Pretoria', 'Mandela', 'Safari', 'Renkli', 'Çeşitli']),
   KelimeKarti(kelime: 'Kenya', yasakliKelimeler: ['Nairobi', 'Safari', 'Maraton', 'Çay', 'Vahşi']),
   KelimeKarti(kelime: 'Fas', yasakliKelimeler: ['Rabat', 'Çöl', 'Baharat', 'Tarih', 'Medeniyet']),
@@ -48,17 +38,13 @@ const List<KelimeKarti> premiumUlkelerKultur = [
   // BAŞKENTLER
   KelimeKarti(kelime: 'Paris', yasakliKelimeler: ['Fransa', 'Eyfel', 'Şehir', 'Romantik', 'Tarih']),
   KelimeKarti(kelime: 'Berlin', yasakliKelimeler: ['Almanya', 'Duvar', 'Tarih', 'Şehir', 'Bölünmüş']),
-  KelimeKarti(kelime: 'Roma', yasakliKelimeler: ['İtalya', 'Kolezyum', 'Papa', 'Tarih', 'Şehir']),
   KelimeKarti(kelime: 'Madrid', yasakliKelimeler: ['İspanya', 'Futbol', 'Şehir', 'Sıcak', 'Tarih']),
   KelimeKarti(kelime: 'Londra', yasakliKelimeler: ['İngiltere', 'Big Ben', 'Kraliyet', 'Şehir', 'Tarih']),
   KelimeKarti(kelime: 'Moskova', yasakliKelimeler: ['Rusya', 'Kremlin', 'Kış', 'Şehir', 'Büyük']),
-  KelimeKarti(kelime: 'İstanbul', yasakliKelimeler: ['Türkiye', 'Köprü', 'Tarih', 'Şehir', 'İki Kıta']),
   KelimeKarti(kelime: 'Tokyo', yasakliKelimeler: ['Japonya', 'Teknoloji', 'Şehir', 'Yoğun', 'Modern']),
 
   // KÜLTÜREL ÖZELLİKLER
-  KelimeKarti(kelime: 'Samuray', yasakliKelimeler: ['Japonya', 'Savaşçı', 'Kılıç', 'Bushido', 'Tarih']),
   KelimeKarti(kelime: 'Flamenko', yasakliKelimeler: ['İspanya', 'Dans', 'Müzik', 'Tutku', 'Kültür']),
-  KelimeKarti(kelime: 'Tango', yasakliKelimeler: ['Arjantin', 'Dans', 'Romantik', 'Müzik', 'Şehir']),
   KelimeKarti(kelime: 'Carnaval', yasakliKelimeler: ['Brezilya', 'Rio', 'Renkli', 'Festival', 'Dans']),
   KelimeKarti(kelime: 'Oktoberfest', yasakliKelimeler: ['Almanya', 'Münih', 'Bira', 'Festival', 'Ekim']),
 
@@ -70,21 +56,15 @@ const List<KelimeKarti> premiumUlkelerKultur = [
   KelimeKarti(kelime: 'Yahudilik', yasakliKelimeler: ['Musevi', 'Torah', 'Kudüs', 'Tarih', 'İnanç']),
 
   // TARİHİ MEDENİYETLER
-  KelimeKarti(kelime: 'Antik Yunan', yasakliKelimeler: ['Demokrasi', 'Filozof', 'Olimpiyat', 'Tanrı', 'Tarih']),
   KelimeKarti(kelime: 'Roma İmparatorluğu', yasakliKelimeler: ['Sezar', 'Gladyatör', 'Kolezyum', 'Büyük', 'Tarih']),
-  KelimeKarti(kelime: 'Osmanlı İmparatorluğu', yasakliKelimeler: ['İstanbul', 'Padişah', 'Tarih', 'Büyük', 'İmparatorluk']),
-  KelimeKarti(kelime: 'Maya Uygarlığı', yasakliKelimeler: ['Orta Amerika', 'Piramit', 'Takvim', 'Tarih', 'Kaybolmuş']),
-  KelimeKarti(kelime: 'Aztekler', yasakliKelimeler: ['Meksika', 'Tenochtitlan', 'Tanrı', 'Tarih', 'Savaşçı']),
 
   // MODERN KÜLTÜR
   KelimeKarti(kelime: 'Hollywood', yasakliKelimeler: ['Amerika', 'Film', 'Yıldız', 'Kırmızı', 'Halısı']),
   KelimeKarti(kelime: 'Broadway', yasakliKelimeler: ['New York', 'Tiyatro', 'Müzikal', 'Sahne', 'Şov']),
   KelimeKarti(kelime: 'Carnival', yasakliKelimeler: ['Venedik', 'Maske', 'Festival', 'Tarih', 'Gelenek']),
-  KelimeKarti(kelime: 'Oktoberfest', yasakliKelimeler: ['Münih', 'Bira', 'Festival', 'Almanya', 'Ekim']),
 
   // GELENEKLER VE FESTİVALLER
-  KelimeKarti(kelime: 'Diwali', yasakliKelimeler: ['Hindistan', 'Işık', 'Festival', 'Yeni Yıl', 'Hindistan']),
-  KelimeKarti(kelime: 'Ramazan', yasakliKelimeler: ['İslam', 'Oruç', 'İftar', 'Müslüman', 'Ay']),
+  KelimeKarti(kelime: 'Diwali', yasakliKelimeler: ['Hindistan', 'Işık', 'Festival', 'Yeni Yıl', 'Lamba']),
   KelimeKarti(kelime: 'Hanuka', yasakliKelimeler: ['Yahudi', 'Işık', 'Festival', '8 Gün', 'Tarih']),
   KelimeKarti(kelime: 'Holi', yasakliKelimeler: ['Hindistan', 'Renk', 'Festival', 'Bahar', 'Su']),
   KelimeKarti(kelime: 'Songkran', yasakliKelimeler: ['Tayland', 'Su', 'Yeni Yıl', 'Festival', 'Gelenek']),
@@ -113,7 +93,6 @@ const List<KelimeKarti> premiumUlkelerKultur = [
   // KÜLTÜREL İKONLAR
   KelimeKarti(kelime: 'Eiffel Kulesi', yasakliKelimeler: ['Paris', 'Fransa', 'Demir', 'Ünlü', 'Turistik']),
   KelimeKarti(kelime: 'Tac Mahal', yasakliKelimeler: ['Hindistan', 'Aşk', 'Mermer', 'Tarih', 'Ünlü']),
-  KelimeKarti(kelime: 'Çin Seddi', yasakliKelimeler: ['Çin', 'Tarih', 'Uzun', 'Savunma', 'Ünlü']),
   KelimeKarti(kelime: 'Kolezyum', yasakliKelimeler: ['Roma', 'İtalya', 'Tarih', 'Arena', 'Ünlü']),
   KelimeKarti(kelime: 'Akropolis', yasakliKelimeler: ['Atina', 'Yunanistan', 'Tarih', 'Parthenon', 'Ünlü']),
 
@@ -129,7 +108,6 @@ const List<KelimeKarti> premiumUlkelerKultur = [
   KelimeKarti(kelime: 'Asya', yasakliKelimeler: ['Kıta', 'Büyük', 'Çeşitli', 'Nüfus', 'Dünya']),
   KelimeKarti(kelime: 'Afrika', yasakliKelimeler: ['Kıta', 'Sıcak', 'Çöl', 'Vahşi', 'Dünya']),
   KelimeKarti(kelime: 'Amerika', yasakliKelimeler: ['Kıta', 'Büyük', 'Çeşitli', 'Okyanus', 'Dünya']),
-  KelimeKarti(kelime: 'Avustralya', yasakliKelimeler: ['Kıta', 'Ada', 'Hayvan', 'Çöl', 'Dünya']),
 
   // ULUSLARARASI ÖRGÜTLER
   KelimeKarti(kelime: 'Birleşmiş Milletler', yasakliKelimeler: ['BM', 'Dünya', 'Barış', 'New York', 'Diplomasi']),
@@ -142,7 +120,6 @@ const List<KelimeKarti> premiumUlkelerKultur = [
   KelimeKarti(kelime: 'OECD', yasakliKelimeler: ['Ekonomi', 'Gelişmiş', 'Ülkeler', 'İstatistik', 'Politika']),
 
   // KÜLTÜREL DEĞERLER
-  KelimeKarti(kelime: 'UNESCO', yasakliKelimeler: ['Dünya', 'Miras', 'Kültür', 'Eğitim', 'Koruma']),
   KelimeKarti(kelime: 'Misafirperverlik', yasakliKelimeler: ['Türk', 'Kültür', 'İkram', 'Gelenek', 'Değer']),
   KelimeKarti(kelime: 'Çay Kültürü', yasakliKelimeler: ['Türk', 'İkram', 'Sohbet', 'Gelenek', 'Toplumsal']),
   KelimeKarti(kelime: 'Aile Bağları', yasakliKelimeler: ['Türk', 'Gelenek', 'Değer', 'Toplum', 'Önemli']),
@@ -154,9 +131,6 @@ const List<KelimeKarti> premiumUlkelerKultur = [
   KelimeKarti(kelime: 'Şanghay', yasakliKelimeler: ['Çin', 'Modern', 'Ekonomi', 'Nüfus', 'Gelecek']),
 
   // TARİHİ ŞEKİLLER
-  KelimeKarti(kelime: 'Mahatma Gandhi', yasakliKelimeler: ['Hindistan', 'Bağımsızlık', 'Barış', 'İngiltere', 'Direniş']),
-  KelimeKarti(kelime: 'Martin Luther King', yasakliKelimeler: ['Amerika', 'Sivil Haklar', 'Rüya', 'Irkçılık', 'Konuşma']),
-  KelimeKarti(kelime: 'Nelson Mandela', yasakliKelimeler: ['Güney Afrika', 'Apartheid', 'Özgürlük', 'Hapis', 'Nobel']),
 
   // MODERN LİDERLER
   KelimeKarti(kelime: 'Angela Merkel', yasakliKelimeler: ['Almanya', 'Şansölye', 'Kadın', 'Güçlü', 'Avrupa']),

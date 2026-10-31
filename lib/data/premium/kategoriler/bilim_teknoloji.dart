@@ -8,47 +8,28 @@ const List<KelimeKarti> premiumBilimTeknoloji = [
   KelimeKarti(kelime: 'Einstein', yasakliKelimeler: ['Görecelik', 'Teori', 'Atom', 'Enerji', 'Fizikçi']),
   KelimeKarti(kelime: 'Elektrik Akımı', yasakliKelimeler: ['Voltaj', 'Amper', 'Direnç', 'Devre', 'Enerji']),
   KelimeKarti(kelime: 'Manyetizma', yasakliKelimeler: ['Mıknatıs', 'Kutuplar', 'Demir', 'Çekim', 'Alan']),
-  KelimeKarti(kelime: 'Optik', yasakliKelimeler: ['Işık', 'Lens', 'Yansıma', 'Kırma', 'Görme']),
   KelimeKarti(kelime: 'Ses Dalgaları', yasakliKelimeler: ['Titreşim', 'Hız', 'Kulak', 'Frekans', 'Yayılma']),
-  KelimeKarti(kelime: 'Kuvvet', yasakliKelimeler: ['Enerji', 'Hareket', 'Newton', 'Vektör', 'Çekim']),
-  KelimeKarti(kelime: 'Enerji', yasakliKelimeler: ['Güneş', 'Elektrik', 'Hareket', 'Isı', 'Çevrim']),
-  KelimeKarti(kelime: 'Atom', yasakliKelimeler: ['Çekirdek', 'Elektron', 'Proton', 'Nötron', 'Element']),
   KelimeKarti(kelime: 'Radyasyon', yasakliKelimeler: ['Işın', 'X', 'Kanser', 'Nükleer', 'Tehlike']),
-  KelimeKarti(kelime: 'Kuantum', yasakliKelimeler: ['Fizik', 'Parçacık', 'Enerji', 'Dalg', 'Einstein']),
   KelimeKarti(kelime: 'Termodinamik', yasakliKelimeler: ['Isı', 'Enerji', 'Sıcaklık', 'Çevrim', 'Yasaları']),
   KelimeKarti(kelime: 'Yerçekimi', yasakliKelimeler: ['Newton', 'Dünya', 'Ay', 'Çekim', 'Kütle']),
-  KelimeKarti(kelime: 'Hız', yasakliKelimeler: ['Zaman', 'Mesafe', 'Hareket', 'Ortalama', 'Ani']),
-  KelimeKarti(kelime: 'İvme', yasakliKelimeler: ['Hız', 'Zaman', 'Kuvvet', 'Değişim', 'Vektör']),
 
   // KİMYA KAVRAMLARI
   KelimeKarti(kelime: 'Periyodik Cetvel', yasakliKelimeler: ['Element', 'Mendeleyev', 'Grup', 'Periyot', 'Atom']),
-  KelimeKarti(kelime: 'Asit', yasakliKelimeler: ['Baz', 'pH', 'Sıcak', 'Reaksiyon', 'Yemek']),
-  KelimeKarti(kelime: 'Baz', yasakliKelimeler: ['Asit', 'pH', 'Sabun', 'Çözelti', 'Alkalin']),
   KelimeKarti(kelime: 'Organik Kimya', yasakliKelimeler: ['Karbon', 'Bileşik', 'Yaşam', 'Zincir', 'Fonksiyonel']),
   KelimeKarti(kelime: 'Polimer', yasakliKelimeler: ['Plastik', 'Zincir', 'Tekrar', 'Molekül', 'Sentetik']),
-  KelimeKarti(kelime: 'Katalizör', yasakliKelimeler: ['Hız', 'Reaksiyon', 'Değişmez', 'Enzim', 'Metal']),
-  KelimeKarti(kelime: 'Çözelti', yasakliKelimeler: ['Sıvı', 'Çözünen', 'Çözücü', 'Konsantrasyon', 'Molarite']),
   KelimeKarti(kelime: 'Tuz', yasakliKelimeler: ['Kristal', 'Deniz', 'Yemek', 'Asit', 'Baz']),
   KelimeKarti(kelime: 'Gaz', yasakliKelimeler: ['Hava', 'Basınç', 'Hacim', 'Sıcaklık', 'Molekül']),
   KelimeKarti(kelime: 'Kristal', yasakliKelimeler: ['Tuz', 'Şeker', 'Yapı', 'Düzenli', 'Katı']),
   KelimeKarti(kelime: 'İyon', yasakliKelimeler: ['Yük', 'Elektron', 'Atom', 'Çözelti', 'Elektrolit']),
   KelimeKarti(kelime: 'Valans', yasakliKelimeler: ['Bağ', 'Elektron', 'Atom', 'Sayı', 'Kimyasal']),
   KelimeKarti(kelime: 'İzotop', yasakliKelimeler: ['Atom', 'Nötron', 'Ağırlık', 'Karbon', 'Radyoaktif']),
-  KelimeKarti(kelime: 'Bileşik', yasakliKelimeler: ['Element', 'Molekül', 'Formül', 'Bağ', 'Reaksiyon']),
-  KelimeKarti(kelime: 'Element', yasakliKelimeler: ['Atom', 'Periyodik', 'Temel', 'Maddeler', 'Sembol']),
 
   // BİYOLOJİ KAVRAMLARI
-  KelimeKarti(kelime: 'Hücre', yasakliKelimeler: ['Yaşam', 'Çekirdek', 'Sitoplazma', 'Organik', 'Biyoloji']),
-  KelimeKarti(kelime: 'DNA', yasakliKelimeler: ['Gen', 'Çift', 'Sarmal', 'Kalıtım', 'Biyoloji']),
-  KelimeKarti(kelime: 'RNA', yasakliKelimeler: ['DNA', 'Mesaj', 'Protein', 'Tek', 'Sarmal']),
   KelimeKarti(kelime: 'Mitokondri', yasakliKelimeler: ['Enerji', 'Hücre', 'ATP', 'Solunum', 'Güç']),
   KelimeKarti(kelime: 'Kloroplast', yasakliKelimeler: ['Yeşil', 'Bitki', 'Fotosentez', 'Işık', 'Enerji']),
-  KelimeKarti(kelime: 'Enzim', yasakliKelimeler: ['Protein', 'Katalizör', 'Hız', 'Reaksiyon', 'Biyokimyasal']),
   KelimeKarti(kelime: 'Viral', yasakliKelimeler: ['Virüs', 'Hastalik', 'Bulaşıcı', 'Mikrop', 'DNA']),
   KelimeKarti(kelime: 'Bakteri', yasakliKelimeler: ['Mikrop', 'Tek', 'Hücre', 'Antibiyotik', 'Enfeksiyon']),
-  KelimeKarti(kelime: 'Virüs', yasakliKelimeler: ['Hastalik', 'Bulaşıcı', 'Mikrop', 'DNA', 'RNA']),
   KelimeKarti(kelime: 'İmmunite', yasakliKelimeler: ['Savunma', 'Antikor', 'Hastalik', 'Aşı', 'Hücre']),
-  KelimeKarti(kelime: 'Antikor', yasakliKelimeler: ['Savunma', 'Virüs', 'Hastalik', 'Protein', 'Aşı']),
   KelimeKarti(kelime: 'Fotosentez', yasakliKelimeler: ['Bitki', 'Işık', 'Enerji', 'Klorofil', 'Oksijen']),
   KelimeKarti(kelime: 'Solunum', yasakliKelimeler: ['Oksijen', 'Karbon', 'Diyoksit', 'Enerji', 'ATP']),
   KelimeKarti(kelime: 'Sindirim', yasakliKelimeler: ['Yemek', 'Mide', 'Enzim', 'Nutrient', 'Sistem']),
@@ -58,7 +39,6 @@ const List<KelimeKarti> premiumBilimTeknoloji = [
   KelimeKarti(kelime: 'Pisagor', yasakliKelimeler: ['Teorem', 'Üçgen', 'Hipotenüs', 'Karenin', 'Karekök']),
   KelimeKarti(kelime: 'Integral', yasakliKelimeler: ['Alan', 'Türev', 'Hesaplama', 'Limit', 'Matematik']),
   KelimeKarti(kelime: 'Türev', yasakliKelimeler: ['Değişim', 'Hız', 'Fonksiyon', 'Limit', 'Matematik']),
-  KelimeKarti(kelime: 'Vektör', yasakliKelimeler: ['Yön', 'Büyüklük', 'İki', 'Boyut', 'Ok']),
   KelimeKarti(kelime: 'Matris', yasakliKelimeler: ['Satır', 'Sütun', 'Dizi', 'Çarpma', 'Lineer']),
   KelimeKarti(kelime: 'Olasılık', yasakliKelimeler: ['Şans', 'İhtimal', 'İstatistik', 'Olay', 'Yüzde']),
   KelimeKarti(kelime: 'İstatistik', yasakliKelimeler: ['Ortalama', 'Standart', 'Sapma', 'Veri', 'Grafik']),
@@ -72,12 +52,10 @@ const List<KelimeKarti> premiumBilimTeknoloji = [
   KelimeKarti(kelime: 'Fibonacci', yasakliKelimeler: ['Seri', 'Altın', 'Oran', 'Sayi', 'Dizi']),
 
   // MODERN TEKNOLOJİ
-  KelimeKarti(kelime: 'Yapay Zeka', yasakliKelimeler: ['Makine', 'Öğrenme', 'Robot', 'Algoritma', 'Veri']),
   KelimeKarti(kelime: 'Makine Öğrenmesi', yasakliKelimeler: ['Veri', 'Algoritma', 'Tahmin', 'Model', 'AI']),
   KelimeKarti(kelime: 'Büyük Veri', yasakliKelimeler: ['Analytics', 'Veri', 'Bilgi', 'Analiz', 'Saklama']),
   KelimeKarti(kelime: 'Blockchain', yasakliKelimeler: ['Kripto', 'Zincir', 'Blok', 'Bitcoin', 'Güvenlik']),
   KelimeKarti(kelime: 'Bulut Bilişim', yasakliKelimeler: ['Sunucu', 'İnternet', 'Veri', 'Saklama', 'Erişim']),
-  KelimeKarti(kelime: 'İnternet', yasakliKelimeler: ['Ağ', 'Web', 'İletişim', 'Dünya', 'Bilgi']),
   KelimeKarti(kelime: 'Robotik', yasakliKelimeler: ['Robot', 'Makine', 'Otomasyon', 'Sensör', 'Kol']),
   KelimeKarti(kelime: 'Nanoteknoloji', yasakliKelimeler: ['Nano', 'Küçük', 'Teknoloji', 'Atom', 'Malzeme']),
   KelimeKarti(kelime: 'Biyoteknoloji', yasakliKelimeler: ['Biyoloji', 'Genetik', 'Mühendislik', 'DNA', 'Hücre']),
@@ -118,7 +96,6 @@ const List<KelimeKarti> premiumBilimTeknoloji = [
   // TEKNOLOJİ GELİŞMELERİ
   KelimeKarti(kelime: '5G', yasakliKelimeler: ['İnternet', 'Hızlı', 'Mobil', 'Veri', 'Teknoloji']),
   KelimeKarti(kelime: 'CRISPR', yasakliKelimeler: ['Gen', 'Düzenleme', 'DNA', 'Biyoteknoloji', 'Makas']),
-  KelimeKarti(kelime: 'Drone', yasakliKelimeler: ['İnsansız', 'Uçak', 'Kamera', 'Teknoloji', 'Hava']),
   KelimeKarti(kelime: 'VR', yasakliKelimeler: ['Sanal', 'Gerçeklik', 'Gözlük', '3D', 'Deneyim']),
   KelimeKarti(kelime: 'AR', yasakliKelimeler: ['Artırılmış', 'Gerçeklik', 'Uygulama', 'Ekran', 'Teknoloji']),
 
@@ -151,8 +128,6 @@ const List<KelimeKarti> premiumBilimTeknoloji = [
   KelimeKarti(kelime: 'Kütle Çekim Dalgaları', yasakliKelimeler: ['Einstein', 'Uzay', 'Zaman', 'Dalgalar', 'Dedektör']),
   KelimeKarti(kelime: 'Süperiletkenlik', yasakliKelimeler: ['Sıcaklık', 'Elektrik', 'Direnç', 'Manyetik', 'Soğuk']),
   KelimeKarti(kelime: 'Plazma', yasakliKelimeler: ['Dördüncü', 'Hal', 'Sıcak', 'Yıldız', 'Fizik']),
-  KelimeKarti(kelime: 'Foton', yasakliKelimeler: ['Işık', 'Parçacık', 'Dalga', 'Enerji', 'Kuantum']),
-  KelimeKarti(kelime: 'Nötrino', yasakliKelimeler: ['Parçacık', 'Kütle', 'Hız', 'Güneş', 'Dedektör']),
   KelimeKarti(kelime: 'Kozmik Mikrodalga Arka Plan', yasakliKelimeler: ['Büyük', 'Patlama', 'Evren', 'Işınım', 'COBE']),
 
   // KİMYA YENİ KAVRAMLAR
@@ -179,7 +154,6 @@ const List<KelimeKarti> premiumBilimTeknoloji = [
   KelimeKarti(kelime: 'Okyanus Asitlenmesi', yasakliKelimeler: ['CO2', 'Deniz', 'Kireçlenme', 'Balık', 'Mercan']),
 
   // ASTRONOMİ YENİ KAVRAMLAR
-  KelimeKarti(kelime: 'Kara Delik', yasakliKelimeler: ['Yıldız', 'Kütle', 'Çekim', 'Horizon', 'Olay']),
   KelimeKarti(kelime: 'Nötron Yıldızı', yasakliKelimeler: ['Yıldız', 'Çökmüş', 'Manyetik', 'Radyasyon', 'Pulsar']),
   KelimeKarti(kelime: 'Kırmızı Devi', yasakliKelimeler: ['Yıldız', 'Evolüsyon', 'Güneş', 'Genişleme', 'Soğuma']),
   KelimeKarti(kelime: 'Süpernova', yasakliKelimeler: ['Yıldız', 'Patlama', 'Ölüm', 'Element', 'Enerji']),
@@ -195,7 +169,6 @@ const List<KelimeKarti> premiumBilimTeknoloji = [
   KelimeKarti(kelime: 'Soft Robotik', yasakliKelimeler: ['Esnek', 'Malzeme', 'Doğal', 'Hareket', 'Güvenlik']),
 
   // BİLGİSAYAR BİLİMİ
-  KelimeKarti(kelime: 'Algoritma', yasakliKelimeler: ['Adım', 'Çözüm', 'Veri', 'İşlem', 'Program']),
   KelimeKarti(kelime: 'Veri Yapısı', yasakliKelimeler: ['Dizi', 'Liste', 'Ağaç', 'Graf', 'Veri']),
   KelimeKarti(kelime: 'Nesne Yönelimli', yasakliKelimeler: ['OOP', 'Sınıf', 'Nesne', 'Kalıtım', 'Programlama']),
   KelimeKarti(kelime: 'Veritabanı', yasakliKelimeler: ['Veri', 'Saklama', 'Tablo', 'SQL', 'Yönetim']),

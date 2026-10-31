@@ -30,19 +30,14 @@ const List<KelimeKarti> premiumFilmDiziler = [
   KelimeKarti(kelime: 'The Flash', yasakliKelimeler: ['Barry Allen', 'Speed', 'Lightning', 'Time', 'Hero']),
 
   // TÜRK DİZİLERİ
-  KelimeKarti(kelime: 'Diriliş Ertuğrul', yasakliKelimeler: ['Osmanlı', 'Ertuğrul', 'Bey', 'Halime', 'Kayı']),
-  KelimeKarti(kelime: 'Muhteşem Yüzyıl', yasakliKelimeler: ['Kanuni', 'Hurrem', 'Saray', 'Osmanlı', 'Harem']),
-  KelimeKarti(kelime: 'Çukur', yasakliKelimeler: ['Koçovalılar', 'İstanbul', 'Aile', 'Vatan', 'Savaş']),
   KelimeKarti(kelime: 'Sacred Games', yasakliKelimeler: ['Hindistan', 'Gangster', 'Polis', 'Sartaj', 'Gautam']),
   KelimeKarti(kelime: 'Lupin', yasakliKelimeler: ['Fransa', 'Hırsız', 'Arsène', 'Plan', 'Zeki']),
 
   // KLASİK TÜRK DİZİLERİ
   KelimeKarti(kelime: 'Aşk-ı Memnu', yasakliKelimeler: ['Behlül', 'Bihter', 'Adnan', 'Firdevs', 'Peyker']),
   KelimeKarti(kelime: 'Arka Sokaklar', yasakliKelimeler: ['Ekin', 'Defne', 'Volkan', 'Mahmut', 'Yasemin']),
-  KelimeKarti(kelime: 'Kurtlar Vadisi', yasakliKelimeler: ['Polat', 'Memati', 'Aslan', 'Abdullah', 'Çakır']),
   KelimeKarti(kelime: 'Fatmagül\'ün Suçu Ne?', yasakliKelimeler: ['Kerim', 'Mustafa', 'Fatmagül', 'Rahmi', 'Mukaddes']),
   KelimeKarti(kelime: 'Hanımın Çiftliği', yasakliKelimeler: ['Hanım', 'Şevket', 'Meryem', 'Tarık', 'Çiftlik']),
-  KelimeKarti(kelime: 'Kara Sevda', yasakliKelimeler: ['Kemal', 'Nihan', 'Tufan', 'Asu', 'Zeynep']),
   KelimeKarti(kelime: 'Öyle Bir Geçer Zaman ki', yasakliKelimeler: ['Nihat', 'Borç', 'Aşk', 'İntikam', 'Aile']),
   KelimeKarti(kelime: 'İki Hayat', yasakliKelimeler: ['Elif', 'İzzet', 'Leyla', 'Arman', 'İkiz']),
   KelimeKarti(kelime: 'Çalıkuşu', yasakliKelimeler: ['Feride', 'Kamran', 'Halide Edib', 'Roman', 'Aşk']),
@@ -66,7 +61,7 @@ const List<KelimeKarti> premiumFilmDiziler = [
   KelimeKarti(kelime: 'Erkenci Kuş', yasakliKelimeler: ['Can', 'Sanem', 'Star TV', 'Reklam', 'Aşk']),
   KelimeKarti(kelime: 'Sefirin Kızı', yasakliKelimeler: ['Melek', 'Sancar', 'Star TV', 'Diplomat', 'Romantik']),
   KelimeKarti(kelime: 'Hayat Şarkısı', yasakliKelimeler: ['Derin', 'Mehmet', 'Kanal D', 'Romantik', 'Müzik']),
-  KelimeKarti(kelime: 'Gülperi', yasakliKelimeler: ['Mete', 'Gülperi', 'Show TV', 'Romantik', 'Gençlik']),
+  KelimeKarti(kelime: 'Gülperi', yasakliKelimeler: ['Mete', 'Karakter', 'Show TV', 'Romantik', 'Gençlik']),
   KelimeKarti(kelime: 'Kızılcık Şerbeti', yasakliKelimeler: ['Şerife', 'Aziz', 'Show TV', 'Romantik', 'Tarihi']),
   KelimeKarti(kelime: 'Çarpışma', yasakliKelimeler: ['Yaşar', 'Kader', 'Kanal D', 'Romantik', 'Aksiyon']),
 
@@ -118,7 +113,6 @@ const List<KelimeKarti> premiumFilmDiziler = [
   KelimeKarti(kelime: 'Ertuğrul Bey', yasakliKelimeler: ['Engin Altan', 'Diriliş Ertuğrul', 'Osmanlı', 'Kayı', 'Karakter']),
   KelimeKarti(kelime: 'Halime Hatun', yasakliKelimeler: ['Esra Bilgiç', 'Diriliş Ertuğrul', 'Ertuğrul', 'Osmanlı', 'Karakter']),
   KelimeKarti(kelime: 'Hurrem Sultan', yasakliKelimeler: ['Meryem Uzerli', 'Muhteşem Yüzyıl', 'Kanuni', 'Saray', 'Karakter']),
-  KelimeKarti(kelime: 'Kanuni Sultan Süleyman', yasakliKelimeler: ['Halit Ergenç', 'Muhteşem Yüzyıl', 'Hurrem', 'Osmanlı', 'Karakter']),
   KelimeKarti(kelime: 'Serkan Bolat', yasakliKelimeler: ['Kerem Bürsin', 'Sen Çal Kapımı', 'Eda', 'Ofis', 'Karakter']),
   KelimeKarti(kelime: 'Eda Yıldız', yasakliKelimeler: ['Hande Erçel', 'Sen Çal Kapımı', 'Serkan', 'Mimar', 'Karakter']),
   KelimeKarti(kelime: 'Ferit Şimsaroğlu', yasakliKelimeler: ['Serkan Çayoğlu', 'Yalı Çapkını', 'Defne', 'Romantik', 'Karakter']),
@@ -146,7 +140,6 @@ const List<KelimeKarti> premiumFilmDiziler = [
   KelimeKarti(kelime: 'Rahmi Ketenci', yasakliKelimeler: ['Kaan Taşaner', 'Fatmagül', 'Mustafa', 'Mukaddes', 'Karakter']),
   KelimeKarti(kelime: 'Hanım Ağa', yasakliKelimeler: ['Banu Alkan', 'Hanımın Çiftliği', 'Şevket', 'Meryem', 'Karakter']),
   KelimeKarti(kelime: 'Şevket Ağa', yasakliKelimeler: ['Halil Ergün', 'Hanımın Çiftliği', 'Hanım', 'Tarık', 'Karakter']),
-  KelimeKarti(kelime: 'Meryem', yasakliKelimeler: ['Meral Çetinkaya', 'Hanımın Çiftliği', 'Hanım', 'Şevket', 'Karakter']),
   KelimeKarti(kelime: 'Kemal Soydere', yasakliKelimeler: ['Burak Özçivit', 'Kara Sevda', 'Nihan', 'Tufan', 'Karakter']),
   KelimeKarti(kelime: 'Nihan Sevda', yasakliKelimeler: ['Neslihan Atagül', 'Kara Sevda', 'Kemal', 'Asu', 'Karakter']),
   KelimeKarti(kelime: 'Tufan Soydere', yasakliKelimeler: ['Kürşat Alnıaçık', 'Kara Sevda', 'Kemal', 'Nihan', 'Karakter']),
@@ -166,7 +159,6 @@ const List<KelimeKarti> premiumFilmDiziler = [
 
   // KLASİK TÜRK OYUNCULAR
   KelimeKarti(kelime: 'Kıvanç Tatlıtuğ', yasakliKelimeler: ['Aşk-ı Memnu', 'Behlül', 'Actor', 'Romantik', 'Model']),
-  KelimeKarti(kelime: 'Beren Saat', yasakliKelimeler: ['Aşk-ı Memnu', 'Bihter', 'Actress', 'Romantik', 'Model']),
   KelimeKarti(kelime: 'Selçuk Yöntem', yasakliKelimeler: ['Aşk-ı Memnu', 'Adnan', 'Actor', 'Karakter', 'Tiyatro']),
   KelimeKarti(kelime: 'Nebahat Çehre', yasakliKelimeler: ['Aşk-ı Memnu', 'Firdevs', 'Actress', 'Karakter', 'Tiyatro']),
   KelimeKarti(kelime: 'Nur Fettahoğlu', yasakliKelimeler: ['Aşk-ı Memnu', 'Peyker', 'Actress', 'Romantik', 'Gençlik']),
@@ -176,7 +168,7 @@ const List<KelimeKarti> premiumFilmDiziler = [
   KelimeKarti(kelime: 'Erkan Petekkaya', yasakliKelimeler: ['Kurtlar Vadisi', 'Aslan', 'Actor', 'Polat', 'Memati']),
   KelimeKarti(kelime: 'Burak Hakkı', yasakliKelimeler: ['Fatmagül', 'Kerim', 'Actor', 'Romantik', 'Gençlik']),
   KelimeKarti(kelime: 'Engin Öztürk', yasakliKelimeler: ['Fatmagül', 'Mustafa', 'Actor', 'Romantik', 'Gençlik']),
-  KelimeKarti(kelime: 'Beren Gökyıldız', yasakliKelimeler: ['Fatmagül', 'Fatmagül', 'Actress', 'Romantik', 'Gençlik']),
+  KelimeKarti(kelime: 'Beren Gökyıldız', yasakliKelimeler: ['Fatmagül', 'Ünlü', 'Actress', 'Romantik', 'Gençlik']),
   KelimeKarti(kelime: 'Banu Alkan', yasakliKelimeler: ['Hanımın Çiftliği', 'Hanım', 'Actress', 'Komedi', 'Romantik']),
   KelimeKarti(kelime: 'Burak Özçivit', yasakliKelimeler: ['Kara Sevda', 'Kemal', 'Actor', 'Romantik', 'Gençlik']),
   KelimeKarti(kelime: 'Neslihan Atagül', yasakliKelimeler: ['Kara Sevda', 'Nihan', 'Actress', 'Romantik', 'Gençlik']),
@@ -210,11 +202,6 @@ const List<KelimeKarti> premiumFilmDiziler = [
   KelimeKarti(kelime: 'Scarlett Johansson', yasakliKelimeler: ['Black Widow', 'Lost in Translation', 'Lucy', 'Actress', 'Marvel']),
 
   // TÜRK OYUNCULAR
-  KelimeKarti(kelime: 'Haluk Bilginer', yasakliKelimeler: ['Vurun Kahpeye', 'Winter Sleep', 'Deli Dumrul', 'Actor', 'Theater']),
-  KelimeKarti(kelime: 'Cem Yılmaz', yasakliKelimeler: ['Arog', 'GORA', 'Comedy', 'Director', 'Actor']),
-  KelimeKarti(kelime: 'Şahan Gökbakar', yasakliKelimeler: ['Kurtlar Vadisi', 'Polat', 'Memati', 'Actor', 'Series']),
-  KelimeKarti(kelime: 'Engin Altan Düzyatan', yasakliKelimeler: ['Diriliş Ertuğrul', 'Ertuğrul Bey', 'Osman Bey', 'Actor', 'Series']),
-  KelimeKarti(kelime: 'Hande Erçel', yasakliKelimeler: ['Sen Çal Kapımı', 'Hayat', 'Love on the Mask', 'Actress', 'Model']),
 
   // DİZLERE ÖZEL
   KelimeKarti(kelime: 'Breaking Bad', yasakliKelimeler: ['Walter White', 'Heisenberg', 'Crystal', 'AMC', 'Crime']),
@@ -226,17 +213,11 @@ const List<KelimeKarti> premiumFilmDiziler = [
   KelimeKarti(kelime: 'Sherlock', yasakliKelimeler: ['Benedict Cumberbatch', 'Detective', 'Watson', 'Baker Street', 'Moriarty']),
 
   // TÜRK DİZİLERİ DEVAM
-  KelimeKarti(kelime: 'Yalı Çapkını', yasakliKelimeler: ['Ferit', 'Defne', 'Show TV', 'Romantik', 'Komedi']),
-  KelimeKarti(kelime: 'Love on the Mask', yasakliKelimeler: ['Yiğit', 'Nazlı', 'Show TV', 'Romantik', 'Doktor']),
-  KelimeKarti(kelime: 'Aşk Mantık İntikam', yasakliKelimeler: ['Ezgi', 'Yaşar', 'Kanal D', 'Romantik', 'Aile']),
-  KelimeKarti(kelime: 'Kuzey Yıldızı İlk Aşk', yasakliKelimeler: ['Zeynep', 'Kuzey', 'Show TV', 'Gençlik', 'Romantik']),
-  KelimeKarti(kelime: 'Sıcak Kafa', yasakliKelimeler: ['Orkun', 'Ömer', 'Comedy', 'Arkadaş', 'İstanbul']),
 
   // NETFLIX FİLMLERİ
   KelimeKarti(kelime: 'Bird Box', yasakliKelimeler: ['Sandra Bullock', 'Göz', 'Apocalypse', 'Creatures', 'Netflix']),
   KelimeKarti(kelime: 'Extraction', yasakliKelimeler: ['Chris Hemsworth', 'Mercenary', 'Kidnapping', 'Action', 'Netflix']),
   KelimeKarti(kelime: 'The Irishman', yasakliKelimeler: ['Robert De Niro', 'Al Pacino', 'Joe Pesci', 'Mafia', 'Netflix']),
-  KelimeKarti(kelime: 'Roma', yasakliKelimeler: ['Alfonso Cuarón', 'Mexico City', 'Black and White', 'Maid', 'Netflix']),
 
   // ANIMASYON FİLMLERİ
   KelimeKarti(kelime: 'Frozen', yasakliKelimeler: ['Elsa', 'Anna', 'Disney', 'Let It Go', 'Snow']),
