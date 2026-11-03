@@ -23,7 +23,7 @@ flutter gen-l10n   # ARB dosyası değişince
 - Kelime eklerken: tekrar yok, kelimenin kendisi yasaklı kelimeler arasında geçmez, uygunsuz ya da aşırı teknik kelime yok.
 - Yeni metni `app_tr.arb` dosyasına ekle, koda yazma.
 - Oyun kuralı değişirse `test/game_engine_test.dart` testlerini güncelle.
-- Commit biçimi: emir kipinde düz Türkçe cümle ("Oyun mantığını GameEngine'e ayır").
+- Commit mesajları Türkçe, kısa ve anlaşılır olsun. Başına `fix:`, `feat:`, `düzeltme:` gibi ön ek konmaz. Emir kipinde yaz, örnek: `Oyun mantığını GameEngine'e ayır`
 
 # Son kararlar
 - 2026-10-31: Kelime verisi Dart dosyalarından `assets/data/*.json` dosyalarına taşındı.
