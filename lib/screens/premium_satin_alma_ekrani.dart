@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../core/app_theme.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 import '../core/premium_satin_alma_servisi.dart';
 import '../core/plan_manager.dart';
@@ -194,13 +193,7 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
         child: Column(
           children: [
             AppBar(
-              title: Text('Premium\'a Geç', 
-                style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.w700, 
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
+              title: Text('Premium\'a Geç', style: AppTheme.heading(fontSize: 20)),
               backgroundColor: Colors.transparent,
               elevation: 0,
               iconTheme: const IconThemeData(color: Colors.white),
@@ -218,21 +211,11 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
                           Center(
                             child: Column(
                               children: [
-                                Text(
-                                  'TABU PREMIUM',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 32,
-                                    fontWeight: FontWeight.w800,
-                                    color: Colors.white,
-                                  ),
-                                ),
+                                Text('TABU PREMIUM', style: AppTheme.heading(fontSize: 32, fontWeight: FontWeight.w700)),
                                 const SizedBox(height: 8),
                                 Text(
                                   'Sınırsız oyun deneyimi',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 16,
-                                    color: Colors.white.withValues(alpha: 0.9),
-                                  ),
+                                  style: AppTheme.body(fontSize: 16, color: Colors.white.withValues(alpha: 0.9)),
                                 ),
                               ],
                             ),
@@ -266,8 +249,7 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
                               onPressed: _isLoading ? null : _restorePurchases,
                               child: Text(
                                 'Satın Almaları Geri Yükle',
-                                style: GoogleFonts.poppins(
-                                  color: Colors.white,
+                                style: AppTheme.body(color: Colors.white, fontWeight: FontWeight.w700).copyWith(
                                   decoration: TextDecoration.underline,
                                 ),
                               ),
@@ -280,10 +262,7 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
                           Text(
                             'Satın alma işlemi Google Play Store veya App Store üzerinden gerçekleştirilir. '
                             'Tek seferlik ödeme ile ömür boyu premium erişim kazanın.',
-                            style: GoogleFonts.poppins(
-                              fontSize: 12,
-                              color: Colors.white.withValues(alpha: 0.6),
-                            ),
+                            style: AppTheme.body(fontSize: 12, color: Colors.white.withValues(alpha: 0.7)),
                             textAlign: TextAlign.center,
                           ),
                         ],
@@ -303,13 +282,17 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
         children: [
           Container(
             padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.2),
-              borderRadius: BorderRadius.circular(12),
+            decoration: AppTheme.clayDecoration(
+              background: Colors.white,
+              borderColor: Colors.white,
+              shadowColor: Colors.white.withValues(alpha: 0.4),
+              radius: 12,
+              borderWidth: 2,
+              shadowOffset: 2,
             ),
             child: Icon(
               icon,
-              color: Colors.white,
+              color: AppColors.primary,
               size: 24,
             ),
           ),
@@ -318,20 +301,10 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  title,
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
-                ),
+                Text(title, style: AppTheme.heading(fontSize: 16)),
                 Text(
                   description,
-                  style: GoogleFonts.poppins(
-                    fontSize: 14,
-                    color: Colors.white.withValues(alpha: 0.7),
-                  ),
+                  style: AppTheme.body(fontSize: 14, color: Colors.white.withValues(alpha: 0.8)),
                 ),
               ],
             ),
@@ -352,104 +325,72 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
     final String productTitle = hasRealProduct ? product.title : title;
     return Container(
       padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: isRecommended ? Colors.white : Colors.white.withValues(alpha: 0.3),
-          width: isRecommended ? 2 : 1,
-        ),
-        borderRadius: BorderRadius.circular(16),
-        color: isRecommended ? Colors.white.withValues(alpha: 0.15) : Colors.white.withValues(alpha: 0.1),
+      decoration: AppTheme.clayDecoration(
+        background: Colors.white,
+        borderColor: isRecommended ? AppColors.secondaryDark : AppColors.primaryDark,
+        shadowColor: isRecommended ? AppColors.secondaryDark : AppColors.primaryDark,
+        radius: 20,
+        borderWidth: isRecommended ? 3.5 : 2.5,
+        shadowOffset: isRecommended ? 6 : 4,
       ),
       child: Column(
         children: [
           if (isRecommended)
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              decoration: BoxDecoration(
-                color: AppColors.primary,
-                borderRadius: BorderRadius.circular(20),
+              decoration: AppTheme.clayDecoration(
+                background: AppColors.secondary,
+                borderColor: AppColors.secondaryDark,
+                shadowColor: AppColors.secondaryDark,
+                radius: 20,
+                borderWidth: 2,
+                shadowOffset: 2,
               ),
-              child: Text(
-                'ÖNERİLEN',
-                style: GoogleFonts.poppins(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                ),
-              ),
+              child: Text('ÖNERİLEN', style: AppTheme.heading(fontSize: 12)),
             ),
-          
-          if (isRecommended) const SizedBox(height: 12),
-          
-          Text(
-            productTitle,
-            style: GoogleFonts.poppins(
-              fontSize: 18,
-              fontWeight: FontWeight.w700,
-              color: Colors.white,
-            ),
-          ),
-          
-          const SizedBox(height: 8),
-          
-          Text(
-            subtitle,
-            style: GoogleFonts.poppins(
-              fontSize: 14,
-              color: Colors.white.withValues(alpha: 0.7),
-            ),
-          ),
-          
-          const SizedBox(height: 16),
-          
-          Text(
-            price,
-            style: GoogleFonts.poppins(
-              fontSize: 24,
-              fontWeight: FontWeight.w800,
-              color: Colors.white,
-            ),
-          ),
 
-          Text(
-            'Tek seferlik ödeme',
-            style: GoogleFonts.poppins(
-              fontSize: 12,
-              color: Colors.white.withValues(alpha: 0.7),
-            ),
-          ),
+          if (isRecommended) const SizedBox(height: 12),
+
+          Text(productTitle, style: AppTheme.heading(fontSize: 18, color: AppColors.primary)),
+
+          const SizedBox(height: 8),
+
+          Text(subtitle, style: AppTheme.body(fontSize: 14, color: Colors.grey[600]!)),
+
+          const SizedBox(height: 16),
+
+          Text(price, style: AppTheme.heading(fontSize: 26, color: AppColors.primary)),
+
+          Text('Tek seferlik ödeme', style: AppTheme.body(fontSize: 12, color: Colors.grey[600]!)),
 
           const SizedBox(height: 20),
 
           SizedBox(
             width: double.infinity,
-            child: ElevatedButton(
-              onPressed: _isPurchasing ? null : () => hasRealProduct ? _purchasePremium(product) : _showTestModeWarning(),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: AppColors.primary,
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+            height: 52,
+            child: Material(
+              color: Colors.transparent,
+              child: Ink(
+                decoration: AppTheme.clayDecoration(
+                  background: AppColors.secondary,
+                  borderColor: AppColors.secondaryDark,
+                  shadowColor: AppColors.secondaryDark,
+                  radius: 14,
                 ),
-                elevation: 8,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(14),
+                  onTap: _isPurchasing ? null : () => hasRealProduct ? _purchasePremium(product) : _showTestModeWarning(),
+                  child: Center(
+                    child: _isPurchasing
+                        ? const SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: CircularProgressIndicator(strokeWidth: 2, valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
+                          )
+                        : Text('Satın Al', style: AppTheme.heading(fontSize: 16)),
+                  ),
+                ),
               ),
-              child: _isPurchasing
-                  ? const SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 2,
-                        valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
-                      ),
-                    )
-                  : Text(
-                      'Satın Al',
-                      style: GoogleFonts.poppins(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
             ),
           ),
         ],
