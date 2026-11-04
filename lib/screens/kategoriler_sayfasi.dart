@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../core/app_theme.dart';
 import '../core/app_routes.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../core/plan_manager.dart';
 import '../data/premium/kategoriler/index.dart';
@@ -158,11 +157,7 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                     SizedBox(width: isSmall ? 10 : 16),
                     Text(
                       'Kategoriler',
-                      style: GoogleFonts.poppins(
-                        fontSize: titleFs,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
+                      style: AppTheme.heading(fontSize: titleFs, fontWeight: FontWeight.w600),
                     ),
                   ],
                 ),
@@ -172,23 +167,13 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
               Expanded(
                 child: Container(
                   margin: padAll,
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color(0xFFFFFFFF),
-                        Color(0xFFFFF3EC),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(isSmall ? 18 : 24),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.1),
-                        blurRadius: isSmall ? 14 : 20,
-                        offset: Offset(0, isSmall ? 6 : 10),
-                      ),
-                    ],
+                  decoration: AppTheme.clayDecoration(
+                    background: Colors.white,
+                    borderColor: AppColors.primary,
+                    shadowColor: AppColors.primaryDark,
+                    radius: isSmall ? 20 : 26,
+                    borderWidth: 3,
+                    shadowOffset: 7,
                   ),
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: isSmall ? 12 : 16, vertical: 8),
@@ -199,7 +184,12 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                           // Plan seçim kısmı kaldırıldı - doğrudan kategoriler gösteriliyor
                           
                           // Özel: Free 300 kelime bilgi kutusu
-                          GestureDetector(
+                          _kategoriKarti(
+                            secili: _seciliFreeKategori == FreeKategori.freeHavuz,
+                            isSmall: isSmall,
+                            labelFs: labelFs,
+                            leading: Icon(freeKategoriIconlari[FreeKategori.freeHavuz]!, color: AppColors.primary),
+                            title: 'Free Havuz (300+ kelime)',
                             onTap: () async {
                               setState(() {
                                 _seciliFreeKategori = FreeKategori.freeHavuz;
@@ -213,23 +203,15 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                               await PlanCategories.setUseFreeSelection(true);
                               await PlanCategories.setSelectedPremiumCategories(_seciliPremiumKategoriler);
                             },
-                            child: Container(
-                            margin: const EdgeInsets.only(bottom: 6),
-                            decoration: BoxDecoration(
-                              color: _seciliFreeKategori == FreeKategori.freeHavuz ? AppColors.primary.withValues(alpha: 0.06) : Colors.white,
-                              borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                              border: Border.all(color: _seciliFreeKategori == FreeKategori.freeHavuz ? AppColors.primary : AppColors.primary.withValues(alpha: 0.12), width: 1.5),
-                            ),
-                            child: ListTile(
-                              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                              leading: Icon(freeKategoriIconlari[FreeKategori.freeHavuz]!, color: AppColors.primary),
-                              title: Text('Free Havuz (300+ kelime)', style: GoogleFonts.poppins(fontSize: labelFs)),
-                            ),
-                          ),
                           ),
 
                           // Çocuklar kategorileri (Free/Premium)
-                          GestureDetector(
+                          _kategoriKarti(
+                            secili: _seciliFreeKategori == FreeKategori.cocuklar,
+                            isSmall: isSmall,
+                            labelFs: labelFs,
+                            leading: Icon(freeKategoriIconlari[FreeKategori.cocuklar]!, color: AppColors.primary),
+                            title: 'Çocuklar (Free 200+)',
                             onTap: () async {
                               setState(() {
                                 _seciliFreeKategori = FreeKategori.cocuklar;
@@ -243,108 +225,74 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
                               await PlanCategories.setUseFreeSelection(true);
                               await PlanCategories.setSelectedPremiumCategories(_seciliPremiumKategoriler);
                             },
-                            child: Container(
-                            margin: const EdgeInsets.only(bottom: 6),
-                            decoration: BoxDecoration(
-                              color: _seciliFreeKategori == FreeKategori.cocuklar ? AppColors.primary.withValues(alpha: 0.06) : Colors.white,
-                              borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                              border: Border.all(color: _seciliFreeKategori == FreeKategori.cocuklar ? AppColors.primary : AppColors.primary.withValues(alpha: 0.12), width: 1.5),
-                            ),
-                            child: ListTile(
-                              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                              leading: Icon(freeKategoriIconlari[FreeKategori.cocuklar]!, color: AppColors.primary),
-                              title: Text('Çocuklar (Free 200+)', style: GoogleFonts.poppins(fontSize: labelFs)),
-                            ),
-                          ),
                           ),
 
                           // Özel: Premium tüm kelimeler (karışık) — Free kartlardan sonra gelsin
-                          Container(
-                            margin: const EdgeInsets.only(bottom: 6),
-                            decoration: BoxDecoration(
-                              color: _premiumTum ? AppColors.primary.withValues(alpha: 0.06) : Colors.white,
-                              borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                              border: Border.all(color: _premiumTum ? AppColors.primary : AppColors.primary.withValues(alpha: 0.12), width: 1.5),
-                            ),
-                            child: ListTile(
-                              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                              leading: _plan == PlanType.free
-                                  ? const Icon(Icons.lock, color: Colors.grey)
-                                  : const Icon(Icons.all_inclusive, color: AppColors.primary),
-                              title: Text('Premium Havuz (3400+)', style: GoogleFonts.poppins(fontSize: labelFs)),
-                              trailing: null,
-                              onTap: _plan == PlanType.free
-                                  ? _navigateToPremiumPage
-                                  : () async {
-                                      setState(() {
-                                        _seciliFreeKategori = null;
-                                        _premiumTum = !_premiumTum;
-                                        if (_premiumTum) {
-                                          _seciliPremiumKategoriler.clear();
-                                        }
-                                      });
-                                      await PlanCategories.setSelectedPremiumCategories(_seciliPremiumKategoriler);
-                                      await PlanCategories.setUseFreeSelection(false);
-                                    },
-                            ),
+                          _kategoriKarti(
+                            secili: _premiumTum,
+                            isSmall: isSmall,
+                            labelFs: labelFs,
+                            leading: _plan == PlanType.free
+                                ? const Icon(Icons.lock, color: Colors.grey)
+                                : const Icon(Icons.all_inclusive, color: AppColors.primary),
+                            title: 'Premium Havuz (3400+)',
+                            onTap: _plan == PlanType.free
+                                ? _navigateToPremiumPage
+                                : () async {
+                                    setState(() {
+                                      _seciliFreeKategori = null;
+                                      _premiumTum = !_premiumTum;
+                                      if (_premiumTum) {
+                                        _seciliPremiumKategoriler.clear();
+                                      }
+                                    });
+                                    await PlanCategories.setSelectedPremiumCategories(_seciliPremiumKategoriler);
+                                    await PlanCategories.setUseFreeSelection(false);
+                                  },
                           ),
 
                           // Çocuklar (Premium 300+) - Premium havuzun altına taşındı
-                          Container(
-                            margin: const EdgeInsets.only(bottom: 6),
-                            decoration: BoxDecoration(
-                              color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? AppColors.primary.withValues(alpha: 0.06) : Colors.white,
-                              borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                              border: Border.all(color: (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) ? AppColors.primary : AppColors.primary.withValues(alpha: 0.12), width: 1.5),
-                            ),
-                            child: ListTile(
-                              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                              leading: _plan == PlanType.free
-                                  ? const Icon(Icons.lock, color: Colors.grey)
-                                  : Icon(premiumKategoriIconlari[PremiumKategori.cocuklar]!, color: AppColors.primary),
-                              title: Text('Çocuklar (Premium 300+)', style: GoogleFonts.poppins(fontSize: labelFs)),
-                              onTap: _plan == PlanType.free
-                                  ? _navigateToPremiumPage
-                                  : () async {
-                                      setState(() {
-                                        // Premium kullanıcılar için free seçimlerini temizleme zorunluluğunu kaldır
-                                        if (_plan != PlanType.premium) {
-                                          _seciliFreeKategori = null;
-                                        }
-                                        _premiumTum = false;
-                                        if (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) {
-                                          _seciliPremiumKategoriler.remove(PremiumKategori.cocuklar);
-                                        } else {
-                                          _seciliPremiumKategoriler.add(PremiumKategori.cocuklar);
-                                        }
-                                      });
-                                      await PlanCategories.setSelectedPremiumCategories(_seciliPremiumKategoriler);
-                                      await PlanCategories.setUseFreeSelection(false);
-                                    },
-                              trailing: null,
-                            ),
+                          _kategoriKarti(
+                            secili: _seciliPremiumKategoriler.contains(PremiumKategori.cocuklar),
+                            isSmall: isSmall,
+                            labelFs: labelFs,
+                            leading: _plan == PlanType.free
+                                ? const Icon(Icons.lock, color: Colors.grey)
+                                : Icon(premiumKategoriIconlari[PremiumKategori.cocuklar]!, color: AppColors.primary),
+                            title: 'Çocuklar (Premium 300+)',
+                            onTap: _plan == PlanType.free
+                                ? _navigateToPremiumPage
+                                : () async {
+                                    setState(() {
+                                      // Premium kullanıcılar için free seçimlerini temizleme zorunluluğunu kaldır
+                                      if (_plan != PlanType.premium) {
+                                        _seciliFreeKategori = null;
+                                      }
+                                      _premiumTum = false;
+                                      if (_seciliPremiumKategoriler.contains(PremiumKategori.cocuklar)) {
+                                        _seciliPremiumKategoriler.remove(PremiumKategori.cocuklar);
+                                      } else {
+                                        _seciliPremiumKategoriler.add(PremiumKategori.cocuklar);
+                                      }
+                                    });
+                                    await PlanCategories.setSelectedPremiumCategories(_seciliPremiumKategoriler);
+                                    await PlanCategories.setUseFreeSelection(false);
+                                  },
                           ),
 
                           // Kategoriler (tek listede sırayla) – Çocuklar zaten yukarıda gösterildiği için hariç tut
                           ...PremiumKategori.values.where((k) => k != PremiumKategori.cocuklar).map((k) {
                             final bool kilitli = _plan == PlanType.free; // Premium kategoriler kilitli
                             final bool secili = _seciliPremiumKategoriler.contains(k);
-                            return Container(
-                              margin: const EdgeInsets.only(bottom: 6),
-                              decoration: BoxDecoration(
-                                color: secili ? AppColors.primary.withValues(alpha: 0.06) : Colors.white,
-                                borderRadius: BorderRadius.circular(isSmall ? 14 : 16),
-                                border: Border.all(color: secili ? AppColors.primary : AppColors.primary.withValues(alpha: 0.12), width: 1.5),
-                              ),
-                              child: ListTile(
-                              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                                leading: kilitli
-                                    ? const Icon(Icons.lock, color: Colors.grey)
-                                    : Icon(premiumKategoriIconlari[k]!, color: AppColors.primary),
-                                title: Text(premiumKategoriAdlari[k]!, style: GoogleFonts.poppins(fontSize: labelFs)),
-                                trailing: null,
-                                onTap: kilitli ? _navigateToPremiumPage : () => _togglePremiumKategori(k),
-                              ),
+                            return _kategoriKarti(
+                              secili: secili,
+                              isSmall: isSmall,
+                              labelFs: labelFs,
+                              leading: kilitli
+                                  ? const Icon(Icons.lock, color: Colors.grey)
+                                  : Icon(premiumKategoriIconlari[k]!, color: AppColors.primary),
+                              title: premiumKategoriAdlari[k]!,
+                              onTap: kilitli ? _navigateToPremiumPage : () => _togglePremiumKategori(k),
                             );
                           }),
 
@@ -372,26 +320,78 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
             // soluklaştırıp tıklanabilir bırakıyoruz ki açıklayıcı bir uyarı
             // verebilelim.
             opacity: _devamAktif ? 1 : 0.5,
-            child: ElevatedButton(
-              onPressed: () {
-                if (!_devamAktif) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Devam etmek için önce bir kategori seçmelisin.'),
-                      backgroundColor: Colors.orange,
-                      duration: Duration(seconds: 2),
-                    ),
-                  );
-                  return;
-                }
-                Navigator.pushNamed(context, AppRoutes.ayarlar);
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primary,
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(isSmall ? 12 : 14)),
+            child: Material(
+              color: Colors.transparent,
+              child: Ink(
+                decoration: AppTheme.clayDecoration(
+                  background: AppColors.primary,
+                  borderColor: AppColors.primaryDark,
+                  shadowColor: AppColors.primaryDark,
+                  radius: isSmall ? 16 : 18,
+                ),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(isSmall ? 16 : 18),
+                  onTap: () {
+                    if (!_devamAktif) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Devam etmek için önce bir kategori seçmelisin.'),
+                          backgroundColor: Colors.orange,
+                          duration: Duration(seconds: 2),
+                        ),
+                      );
+                      return;
+                    }
+                    Navigator.pushNamed(context, AppRoutes.ayarlar);
+                  },
+                  child: Center(
+                    child: Text('DEVAM', style: AppTheme.heading(fontSize: 16)),
+                  ),
+                ),
               ),
-              child: Text('DEVAM', style: GoogleFonts.poppins(fontWeight: FontWeight.w700)),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  // Tekrarlanan kategori kartı tasarımı: kil (clay) stilinde seçili/kilitli
+  // durum, kalın kenarlık ve düz ofset gölge ile gösterilir.
+  Widget _kategoriKarti({
+    required bool secili,
+    required bool isSmall,
+    required double labelFs,
+    required Widget leading,
+    required String title,
+    required VoidCallback? onTap,
+  }) {
+    final double radius = isSmall ? 16 : 18;
+    return Container(
+      margin: const EdgeInsets.only(bottom: 8),
+      decoration: AppTheme.clayDecoration(
+        background: secili ? AppColors.primarySoft : Colors.white,
+        borderColor: secili ? AppColors.primary : const Color(0xFFEDE1F7),
+        shadowColor: secili ? AppColors.primary : const Color(0xFFF4EEFB),
+        radius: radius,
+        borderWidth: secili ? 2.5 : 2,
+        shadowOffset: 3,
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(radius),
+          onTap: onTap,
+          child: ListTile(
+            contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+            leading: leading,
+            title: Text(
+              title,
+              style: AppTheme.body(
+                fontSize: labelFs,
+                fontWeight: FontWeight.w700,
+                color: secili ? AppColors.primary : Colors.black87,
+              ),
             ),
           ),
         ),
