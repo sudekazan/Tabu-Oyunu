@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../core/app_theme.dart';
 import '../core/app_routes.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../core/reklam_servisi.dart';
 import '../core/plan_manager.dart';
@@ -141,37 +140,29 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                         const SizedBox(height: 16),
                         Text(
                           l10n.appTitle.toUpperCase(),
-                          style: GoogleFonts.poppins(
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                          style: AppTheme.heading(fontSize: 34, fontWeight: FontWeight.w700, letterSpacing: 0.5),
                         ),
                         const SizedBox(height: 24),
-                        
+
                         // Mevcut Plan Göstergesi
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                          decoration: BoxDecoration(
-                            color: _currentPlan == PlanType.premium 
-                                ? Colors.purple.withValues(alpha: 0.2) 
-                                : Colors.blue.withValues(alpha: 0.2),
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                              color: _currentPlan == PlanType.premium 
-                                  ? Colors.purple 
-                                  : Colors.blue,
-                              width: 1.5,
-                            ),
+                          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+                          decoration: AppTheme.clayDecoration(
+                            background: Colors.white,
+                            borderColor: _currentPlan == PlanType.premium ? AppColors.secondary : AppColors.primary,
+                            shadowColor: _currentPlan == PlanType.premium ? AppColors.secondaryDark : AppColors.primarySoft,
+                            radius: 999,
+                            borderWidth: 2.5,
+                            shadowOffset: 4,
                           ),
                           child: Text(
                             _currentPlan == PlanType.premium
                                 ? l10n.planPremiumActive
                                 : l10n.planFree,
-                            style: GoogleFonts.poppins(
-                              color: Colors.white,
+                            style: AppTheme.heading(
+                              fontSize: 14,
                               fontWeight: FontWeight.w600,
-                              fontSize: 16,
+                              color: _currentPlan == PlanType.premium ? AppColors.secondaryDark : AppColors.primary,
                             ),
                           ),
                         ),
@@ -179,132 +170,86 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                         const SizedBox(height: 32),
 
                         // Oyuna Başla Butonu
-                        SizedBox(
-                          width: double.infinity,
-                          height: 56,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, AppRoutes.kategoriler);
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.white,
-                              foregroundColor: AppColors.primary,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              elevation: 8,
-                            ),
-                            child: Text(
-                              l10n.startGame,
-                              style: GoogleFonts.poppins(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
+                        _clayButton(
+                          text: l10n.startGame,
+                          background: Colors.white,
+                          borderColor: AppColors.primary,
+                          shadowColor: AppColors.primaryDark,
+                          textColor: AppColors.primary,
+                          icon: Icons.play_arrow_rounded,
+                          onPressed: () {
+                            Navigator.pushNamed(context, AppRoutes.kategoriler);
+                          },
                         ),
 
-                        const SizedBox(height: 16),
+                        const SizedBox(height: 18),
 
                         // Premium'a Geç Butonu (sadece free kullanıcılar için)
                         if (_currentPlan == PlanType.free)
                           Padding(
                             padding: const EdgeInsets.only(bottom: 24),
-                            child: SizedBox(
-                              width: double.infinity,
-                              height: 56,
-                              child: ElevatedButton(
-                                onPressed: () async {
-                                  final bool? result = await Navigator.pushNamed<bool>(
-                                    context,
-                                    AppRoutes.premium,
-                                  );
-                                  
-                                  // Premium satın alındıysa plan durumunu güncelle
-                                  if (result == true) {
-                                    _loadPlanStatus();
-                                  }
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.purple,
-                                  foregroundColor: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16),
-                                  ),
-                                  elevation: 4,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Icon(Icons.workspace_premium, size: 24),
-                                    const SizedBox(width: 8),
-                                    Text(
-                                      l10n.goPremium,
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            child: _clayButton(
+                              text: l10n.goPremium,
+                              background: AppColors.secondary,
+                              borderColor: AppColors.secondaryDark,
+                              shadowColor: AppColors.secondaryDark,
+                              textColor: Colors.white,
+                              icon: Icons.workspace_premium,
+                              onPressed: () async {
+                                final bool? result = await Navigator.pushNamed<bool>(
+                                  context,
+                                  AppRoutes.premium,
+                                );
+
+                                // Premium satın alındıysa plan durumunu güncelle
+                                if (result == true) {
+                                  _loadPlanStatus();
+                                }
+                              },
                             ),
                           ),
-                        
+
                         // Test Modu Seçenekleri
                         Container(
                           width: double.infinity,
                           padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
+                          decoration: AppTheme.clayDecoration(
+                            background: Colors.white,
+                            borderColor: AppColors.primarySoft,
+                            shadowColor: AppColors.primarySoft,
+                            radius: 20,
+                            borderWidth: 2.5,
+                            shadowOffset: 4,
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 l10n.testMode,
-                                style: GoogleFonts.poppins(
-                                  fontSize: 16,
+                                style: AppTheme.heading(
+                                  fontSize: 15,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: AppColors.primary,
                                 ),
                               ),
                               const SizedBox(height: 12),
                               Row(
                                 children: [
                                   Expanded(
-                                    child: ChoiceChip(
-                                      label: Text(l10n.planFreeOption),
+                                    child: _clayChip(
+                                      text: l10n.planFreeOption,
                                       selected: _currentPlan == PlanType.free,
-                                      onSelected: (s) async {
-                                        if (!s) return;
-                                        await _changePlan(PlanType.free);
-                                      },
-                                      backgroundColor: Colors.white.withValues(alpha: 0.1),
-                                      selectedColor: Colors.blue.withValues(alpha: 0.3),
-                                      labelStyle: GoogleFonts.poppins(
-                                        color: _currentPlan == PlanType.free ? Colors.blue : Colors.white,
-                                        fontWeight: _currentPlan == PlanType.free ? FontWeight.w600 : FontWeight.normal,
-                                      ),
+                                      color: AppColors.primary,
+                                      onTap: () => _changePlan(PlanType.free),
                                     ),
                                   ),
                                   const SizedBox(width: 12),
                                   Expanded(
-                                    child: ChoiceChip(
-                                      label: Text(l10n.planPremiumOption),
+                                    child: _clayChip(
+                                      text: l10n.planPremiumOption,
                                       selected: _currentPlan == PlanType.premium,
-                                      onSelected: (s) async {
-                                        if (!s) return;
-                                        await _changePlan(PlanType.premium);
-                                      },
-                                      backgroundColor: Colors.white.withValues(alpha: 0.1),
-                                      selectedColor: Colors.purple.withValues(alpha: 0.3),
-                                      labelStyle: GoogleFonts.poppins(
-                                        color: _currentPlan == PlanType.premium ? Colors.purple : Colors.white,
-                                        fontWeight: _currentPlan == PlanType.premium ? FontWeight.w600 : FontWeight.normal,
-                                      ),
+                                      color: AppColors.secondary,
+                                      onTap: () => _changePlan(PlanType.premium),
                                     ),
                                   ),
                                 ],
@@ -318,6 +263,82 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
                 ),
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  // Kil (clay) stilinde ana aksiyon butonu: kalın kenarlık + düz ofset gölge.
+  Widget _clayButton({
+    required String text,
+    required Color background,
+    required Color borderColor,
+    required Color shadowColor,
+    required Color textColor,
+    required IconData icon,
+    required VoidCallback? onPressed,
+  }) {
+    return SizedBox(
+      width: double.infinity,
+      height: 56,
+      child: Material(
+        color: Colors.transparent,
+        child: Ink(
+          decoration: AppTheme.clayDecoration(
+            background: background,
+            borderColor: borderColor,
+            shadowColor: shadowColor,
+            radius: 18,
+          ),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(18),
+            onTap: onPressed,
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(icon, color: textColor, size: 22),
+                  const SizedBox(width: 8),
+                  Text(text, style: AppTheme.heading(fontSize: 16, color: textColor)),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  // Kil stilinde küçük seçim çipi (Free/Premium test modu).
+  Widget _clayChip({
+    required String text,
+    required bool selected,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(14),
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          decoration: AppTheme.clayDecoration(
+            background: selected ? color : Colors.white,
+            borderColor: color,
+            shadowColor: selected ? color.withValues(alpha: 0.5) : AppColors.primarySoft,
+            radius: 14,
+            borderWidth: 2,
+            shadowOffset: 3,
+          ),
+          alignment: Alignment.center,
+          child: Text(
+            text,
+            style: AppTheme.heading(
+              fontSize: 13,
+              color: selected ? Colors.white : color,
+            ),
           ),
         ),
       ),
