@@ -450,17 +450,21 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                   ),
                   const SizedBox(width: 12),
                   Expanded(
-                    child: Material(
-                      color: Colors.transparent,
-                      child: Ink(
-                        decoration: AppTheme.clayDecoration(
-                          background: Colors.white,
-                          borderColor: AppColors.primaryDark,
-                          shadowColor: AppColors.primaryDark,
-                          radius: 12,
-                          borderWidth: 2.5,
-                          shadowOffset: 3,
-                        ),
+                    child: Container(
+                      // Ink yerine Container + Material/InkWell: Ink en yakın
+                      // üst Material'a çizdiği için dialog gibi kendi
+                      // Material katmanı olan yerlerde yanlış konumda
+                      // çizilebiliyordu.
+                      decoration: AppTheme.clayDecoration(
+                        background: Colors.white,
+                        borderColor: AppColors.primaryDark,
+                        shadowColor: AppColors.primaryDark,
+                        radius: 12,
+                        borderWidth: 2.5,
+                        shadowOffset: 3,
+                      ),
+                      child: Material(
+                        color: Colors.transparent,
                         child: InkWell(
                           borderRadius: BorderRadius.circular(12),
                           onTap: () => Navigator.pop(context, true),
@@ -584,15 +588,17 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                 SizedBox(
                   width: double.infinity,
                   height: 52,
-                  child: Material(
-                    color: Colors.transparent,
-                    child: Ink(
-                      decoration: AppTheme.clayDecoration(
-                        background: AppColors.primary,
-                        borderColor: AppColors.primaryDark,
-                        shadowColor: AppColors.primaryDark,
-                        radius: 16,
-                      ),
+                  child: Container(
+                    // Ink yerine Container + Material/InkWell (ghost render
+                    // sorunu için bkz. yukarıdaki açıklama).
+                    decoration: AppTheme.clayDecoration(
+                      background: AppColors.primary,
+                      borderColor: AppColors.primaryDark,
+                      shadowColor: AppColors.primaryDark,
+                      radius: 16,
+                    ),
+                    child: Material(
+                      color: Colors.transparent,
                       child: InkWell(
                         borderRadius: BorderRadius.circular(16),
                         onTap: () {
@@ -722,17 +728,19 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                     ),
                     const SizedBox(width: 12),
                     Expanded(
-                      child: Material(
-                        color: Colors.transparent,
-                        child: Ink(
-                          decoration: AppTheme.clayDecoration(
-                            background: Colors.white,
-                            borderColor: AppColors.primaryDark,
-                            shadowColor: AppColors.primaryDark,
-                            radius: 12,
-                            borderWidth: 2.5,
-                            shadowOffset: 3,
-                          ),
+                      child: Container(
+                        // Ink yerine Container + Material/InkWell (ghost
+                        // render sorunu için bkz. yukarıdaki açıklama).
+                        decoration: AppTheme.clayDecoration(
+                          background: Colors.white,
+                          borderColor: AppColors.primaryDark,
+                          shadowColor: AppColors.primaryDark,
+                          radius: 12,
+                          borderWidth: 2.5,
+                          shadowOffset: 3,
+                        ),
+                        child: Material(
+                          color: Colors.transparent,
                           child: InkWell(
                             borderRadius: BorderRadius.circular(12),
                             onTap: () => Navigator.pop(context, true),

@@ -368,15 +368,17 @@ class _PremiumSatinAlmaEkraniState extends State<PremiumSatinAlmaEkrani> {
           SizedBox(
             width: double.infinity,
             height: 52,
-            child: Material(
-              color: Colors.transparent,
-              child: Ink(
-                decoration: AppTheme.clayDecoration(
-                  background: AppColors.secondary,
-                  borderColor: AppColors.secondaryDark,
-                  shadowColor: AppColors.secondaryDark,
-                  radius: 14,
-                ),
+            child: Container(
+              // Ink yerine Container + Material/InkWell (ghost render
+              // sorunu için bkz. yukarıdaki açıklama).
+              decoration: AppTheme.clayDecoration(
+                background: AppColors.secondary,
+                borderColor: AppColors.secondaryDark,
+                shadowColor: AppColors.secondaryDark,
+                radius: 14,
+              ),
+              child: Material(
+                color: Colors.transparent,
                 child: InkWell(
                   borderRadius: BorderRadius.circular(14),
                   onTap: _isPurchasing ? null : () => hasRealProduct ? _purchasePremium(product) : _showTestModeWarning(),

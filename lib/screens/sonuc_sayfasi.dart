@@ -425,15 +425,17 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
   }) {
     return SizedBox(
       height: height,
-      child: Material(
-        color: Colors.transparent,
-        child: Ink(
-          decoration: AppTheme.clayDecoration(
-            background: background,
-            borderColor: borderColor,
-            shadowColor: borderColor,
-            radius: 16,
-          ),
+      child: Container(
+        // Ink yerine Container + Material/InkWell (ghost render sorunu
+        // için bkz. yukarıdaki açıklama).
+        decoration: AppTheme.clayDecoration(
+          background: background,
+          borderColor: borderColor,
+          shadowColor: borderColor,
+          radius: 16,
+        ),
+        child: Material(
+          color: Colors.transparent,
           child: InkWell(
             borderRadius: BorderRadius.circular(16),
             onTap: onPressed,

@@ -320,15 +320,18 @@ class _KategorilerSayfasiState extends State<KategorilerSayfasi> {
             // soluklaştırıp tıklanabilir bırakıyoruz ki açıklayıcı bir uyarı
             // verebilelim.
             opacity: _devamAktif ? 1 : 0.5,
-            child: Material(
-              color: Colors.transparent,
-              child: Ink(
-                decoration: AppTheme.clayDecoration(
-                  background: AppColors.primary,
-                  borderColor: AppColors.primaryDark,
-                  shadowColor: AppColors.primaryDark,
-                  radius: isSmall ? 16 : 18,
-                ),
+            child: Container(
+              // Ink yerine Container + Material/InkWell (bkz. ayarlar_screens.dart
+              // ile aynı düzeltme): Ink, bottomNavigationBar gibi kendi
+              // Material'ını sağlayan yerlerde yanlış konumda çiziliyordu.
+              decoration: AppTheme.clayDecoration(
+                background: AppColors.primary,
+                borderColor: AppColors.primaryDark,
+                shadowColor: AppColors.primaryDark,
+                radius: isSmall ? 16 : 18,
+              ),
+              child: Material(
+                color: Colors.transparent,
                 child: InkWell(
                   borderRadius: BorderRadius.circular(isSmall ? 16 : 18),
                   onTap: () {

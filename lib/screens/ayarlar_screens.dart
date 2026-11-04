@@ -285,16 +285,20 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
         ]),
         child: SizedBox(
           height: _isSmall ? 56 : 64,
-          child: Material(
-            color: Colors.transparent,
-            child: Ink(
-              decoration: AppTheme.clayDecoration(
-                background: AppColors.primary,
-                borderColor: AppColors.primaryDark,
-                shadowColor: AppColors.primaryDark,
-                radius: _isSmall ? 14 : 16,
-                shadowOffset: 5,
-              ),
+          child: Container(
+            // Ink yerine Container + Material/InkWell: Ink, dekorasyonunu en
+            // yakın üst Material'ın katmanına çiziyor ve bottomNavigationBar
+            // gibi kendi Material'ını sağlayan yerlerde yanlış konumda
+            // (ekranın üstünde hayalet olarak) çizilmesine yol açıyordu.
+            decoration: AppTheme.clayDecoration(
+              background: AppColors.primary,
+              borderColor: AppColors.primaryDark,
+              shadowColor: AppColors.primaryDark,
+              radius: _isSmall ? 14 : 16,
+              shadowOffset: 5,
+            ),
+            child: Material(
+              color: Colors.transparent,
               child: InkWell(
                 borderRadius: BorderRadius.circular(_isSmall ? 14 : 16),
                 onTap: () {

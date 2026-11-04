@@ -282,15 +282,20 @@ class _GirisEkraniSayfasiState extends State<GirisEkraniSayfasi> {
     return SizedBox(
       width: double.infinity,
       height: 56,
-      child: Material(
-        color: Colors.transparent,
-        child: Ink(
-          decoration: AppTheme.clayDecoration(
-            background: background,
-            borderColor: borderColor,
-            shadowColor: shadowColor,
-            radius: 18,
-          ),
+      child: Container(
+        // Ink yerine düz Container + Material/InkWell kullanıyoruz: Ink,
+        // dekorasyonunu en yakın ÜST Material'ın katmanına çiziyor; Scaffold
+        // gibi kendi Material'ını sağlayan ataların altında bu, kil kenarlığın
+        // yanlış konumda (örn. ekranın üstünde hayalet olarak) çizilmesine
+        // yol açıyordu.
+        decoration: AppTheme.clayDecoration(
+          background: background,
+          borderColor: borderColor,
+          shadowColor: shadowColor,
+          radius: 18,
+        ),
+        child: Material(
+          color: Colors.transparent,
           child: InkWell(
             borderRadius: BorderRadius.circular(18),
             onTap: onPressed,
