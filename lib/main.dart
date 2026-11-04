@@ -35,7 +35,7 @@ class TabuUygulamasi extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.purple,
-        fontFamily: GoogleFonts.poppins().fontFamily,
+        fontFamily: GoogleFonts.nunito().fontFamily,
         useMaterial3: true,
       ),
       // Şu an sadece Türkçe destekleniyor, ama metinler artık sabit string
