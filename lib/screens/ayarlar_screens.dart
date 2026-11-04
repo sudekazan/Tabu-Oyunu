@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../core/app_theme.dart';
 import '../core/app_routes.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'oyun_sayfasi.dart';
 import '../core/plan_manager.dart';
 import '../core/reklam_servisi.dart';
@@ -194,11 +193,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
                     SizedBox(width: _isSmall ? 10 : 16),
                     Text(
                       _adim == 1 ? 'Takım İsimleri' : 'Oyun Ayarları',
-                      style: GoogleFonts.poppins(
-                        fontSize: _titleFs,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
+                      style: AppTheme.heading(fontSize: _titleFs),
                     ),
                   ],
                 ),
@@ -207,23 +202,13 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
               Expanded(
                 child: Container(
                   margin: _padOuter,
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color(0xFFFFFFFF),
-                        Color(0xFFFFF3EC), // çok hafif sıcak ton
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(_isSmall ? 18 : 24),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.1),
-                        blurRadius: _isSmall ? 14 : 20,
-                        offset: Offset(0, _isSmall ? 6 : 10),
-                      ),
-                    ],
+                  decoration: AppTheme.clayDecoration(
+                    background: Colors.white,
+                    borderColor: AppColors.primary,
+                    shadowColor: AppColors.primaryDark,
+                    radius: _isSmall ? 18 : 24,
+                    borderWidth: 3,
+                    shadowOffset: _isSmall ? 6 : 8,
                   ),
                   child: Stack(
                     children: [
@@ -299,40 +284,47 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
           BoxShadow(color: Colors.black12, blurRadius: 20, offset: Offset(0, -5)),
         ]),
         child: SizedBox(
-          height: _isSmall ? 52 : 60,
-          child: ElevatedButton(
-            onPressed: () {
-              if (_adim == 1) {
-                if (_formKey.currentState!.validate()) {
-                  setState(() => _adim = 2);
-                }
-                return;
-              }
-              // Tam sayfa reklam göster ve sonra oyunu başlat
-              _showTamSayfaReklamVeOyunuBaslat();
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primary,
-              foregroundColor: Colors.white,
-              elevation: 14,
-              shadowColor: AppColors.primary.withValues(alpha: 0.5),
-              minimumSize: Size.fromHeight(_isSmall ? 56 : 64), // buton yüksekliği biraz arttı
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(_isSmall ? 12 : 14)),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(_adim == 1 ? Icons.navigate_next : Icons.play_circle_filled, size: _isSmall ? 26 : 30), // ikon büyüt
-                SizedBox(width: _isSmall ? 8 : 12),
-                Text(
-                  _adim == 1 ? 'DEVAM' : 'OYUNU BAŞLAT',
-                  style: GoogleFonts.poppins(
-                    fontSize: _buttonFs,
-                    fontWeight: FontWeight.bold, // yazı bold
-                    letterSpacing: 1,
+          height: _isSmall ? 56 : 64,
+          child: Material(
+            color: Colors.transparent,
+            child: Ink(
+              decoration: AppTheme.clayDecoration(
+                background: AppColors.primary,
+                borderColor: AppColors.primaryDark,
+                shadowColor: AppColors.primaryDark,
+                radius: _isSmall ? 14 : 16,
+                shadowOffset: 5,
+              ),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(_isSmall ? 14 : 16),
+                onTap: () {
+                  if (_adim == 1) {
+                    if (_formKey.currentState!.validate()) {
+                      setState(() => _adim = 2);
+                    }
+                    return;
+                  }
+                  // Tam sayfa reklam göster ve sonra oyunu başlat
+                  _showTamSayfaReklamVeOyunuBaslat();
+                },
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        _adim == 1 ? Icons.navigate_next : Icons.play_circle_filled,
+                        color: Colors.white,
+                        size: _isSmall ? 26 : 30,
+                      ),
+                      SizedBox(width: _isSmall ? 8 : 12),
+                      Text(
+                        _adim == 1 ? 'DEVAM' : 'OYUNU BAŞLAT',
+                        style: AppTheme.heading(fontSize: _buttonFs, letterSpacing: 1),
+                      ),
+                    ],
                   ),
                 ),
-              ],
+              ),
             ),
           ),
         ),
@@ -367,14 +359,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
       children: [
         Icon(icon, color: AppColors.primary, size: _isSmall ? 22 : 26),
         SizedBox(width: _isSmall ? 8 : 12),
-        Text(
-          title,
-          style: GoogleFonts.poppins(
-            fontSize: _sectionTitleFs, // 20px ve üstü
-            fontWeight: FontWeight.bold, // bold
-            color: AppColors.primary,
-          ),
-        ),
+        Text(title, style: AppTheme.heading(fontSize: _sectionTitleFs, color: AppColors.primary)),
       ],
     );
   }
@@ -386,18 +371,13 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
     required Color color,
   }) {
     return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(_isSmall ? 14 : 16),
-        border: Border.all(color: color.withValues(alpha: 0.25)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: _isSmall ? 10 : 14,
-            spreadRadius: 1,
-            offset: Offset(0, _isSmall ? 4 : 6),
-          ),
-        ],
+      decoration: AppTheme.clayDecoration(
+        background: Colors.white,
+        borderColor: color,
+        shadowColor: color,
+        radius: _isSmall ? 14 : 16,
+        borderWidth: 2.5,
+        shadowOffset: 3,
       ),
       child: TextFormField(
         controller: controller,
@@ -409,7 +389,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
           }
           return null;
         },
-        style: GoogleFonts.poppins(fontSize: _isSmall ? 15 : 16, fontWeight: FontWeight.w600), // Ana takım adı 16px semi-bold
+        style: AppTheme.body(fontSize: _isSmall ? 15 : 16, fontWeight: FontWeight.w700), // Ana takım adı 16px semi-bold
         decoration: InputDecoration(
           labelText: label,
           prefixIcon: Icon(icon, color: color, size: _isSmall ? 20 : 24),
@@ -422,11 +402,7 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
           floatingLabelAlignment: FloatingLabelAlignment.center,
           border: InputBorder.none,
           contentPadding: EdgeInsets.symmetric(vertical: _isSmall ? 8 : 10), // daha da azalt
-          labelStyle: GoogleFonts.poppins(
-            fontSize: 14, // 14px
-            fontWeight: FontWeight.w500, // medium
-            color: color.withValues(alpha: 0.9), // daha belirgin ton
-          ),
+          labelStyle: AppTheme.body(fontSize: 14, color: color.withValues(alpha: 0.9)),
         ),
       ),
     );
@@ -447,18 +423,13 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
     return Container(
       margin: _padOuter,
       padding: _padAll,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(_isSmall ? 14 : 16),
-        border: Border.all(color: color.withValues(alpha: 0.18)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: _isSmall ? 10 : 14,
-            spreadRadius: 1,
-            offset: Offset(0, _isSmall ? 4 : 6),
-          ),
-        ],
+      decoration: AppTheme.clayDecoration(
+        background: Colors.white,
+        borderColor: color.withValues(alpha: 0.5),
+        shadowColor: color.withValues(alpha: 0.5),
+        radius: _isSmall ? 14 : 16,
+        borderWidth: 2,
+        shadowOffset: 3,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -468,21 +439,11 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
             children: [
               Row(
                 children: [
-                  Text(
-                    title,
-                    style: GoogleFonts.poppins(
-                      fontSize: _labelFs,
-                      fontWeight: FontWeight.w600,
-                      color: color,
-                    ),
-                  ),
+                  Text(title, style: AppTheme.heading(fontSize: _labelFs, color: color)),
                   SizedBox(width: _isSmall ? 6 : 8),
                   Text(
                     '($subtitle)',
-                    style: GoogleFonts.poppins(
-                      fontSize: _isSmall ? 12 : 14,
-                      color: Colors.grey[600],
-                    ),
+                    style: AppTheme.body(fontSize: _isSmall ? 12 : 14, color: Colors.grey[600]!),
                   ),
                 ],
               ),
@@ -494,9 +455,9 @@ class _AyarlarEkraniState extends State<AyarlarEkrani> {
                   children: [
                     Text(
                       'Sınırsız',
-                      style: GoogleFonts.poppins(
+                      style: AppTheme.body(
                         fontSize: _isSmall ? 12 : 14,
-                        color: _plan == PlanType.premium ? Colors.grey[700] : Colors.grey[400]
+                        color: _plan == PlanType.premium ? Colors.grey[700]! : Colors.grey[400]!,
                       )
                     ),
                     if (_plan == PlanType.premium)
