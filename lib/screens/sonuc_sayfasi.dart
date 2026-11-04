@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../core/app_theme.dart';
 import '../core/app_routes.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'package:confetti/confetti.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -138,14 +137,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                           constraints: const BoxConstraints(),
                         ),
                         const SizedBox(width: 12),
-                        Text(
-                          'Oyun Sonucu',
-                          style: GoogleFonts.poppins(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
+                        Text('Oyun Sonucu', style: AppTheme.heading(fontSize: 20)),
                       ],
                     ),
                   ),
@@ -158,10 +150,13 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                           child: Container(
                             margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                             padding: EdgeInsets.all(isCompact ? 8 : 12),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.2),
-                              borderRadius: BorderRadius.circular(24),
-                              border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
+                            decoration: AppTheme.clayDecoration(
+                              background: Colors.white,
+                              borderColor: beraberlik ? AppColors.primaryDark : const Color(0xFFCA8A04),
+                              shadowColor: beraberlik ? AppColors.primaryDark : const Color(0xFFCA8A04),
+                              radius: 24,
+                              borderWidth: 3,
+                              shadowOffset: 5,
                             ),
                             child: Center(
                               child: FittedBox(
@@ -173,16 +168,15 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                     Icon(
                                       beraberlik ? Icons.handshake : Icons.emoji_events,
                                       size: isCompact ? 48 : 56,
-                                      color: Colors.yellow[400],
+                                      color: beraberlik ? AppColors.primary : const Color(0xFFCA8A04),
                                     ),
                                     SizedBox(height: isCompact ? 4 : 6),
                                     Text(
                                       beraberlik ? 'BERABERLİK!' : 'TEBRİKLER!',
                                       textAlign: TextAlign.center,
-                                      style: GoogleFonts.poppins(
+                                      style: AppTheme.heading(
                                         fontSize: isCompact ? 18 : 22,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
+                                        color: AppColors.primary,
                                         letterSpacing: 1.1,
                                       ),
                                     ),
@@ -190,11 +184,9 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                     Text(
                                       beraberlik ? 'Harika bir oyun oldu!' : '$kazananTakim kazandı!',
                                       textAlign: TextAlign.center,
-                                      style: GoogleFonts.poppins(
+                                      style: AppTheme.body(
                                         fontSize: isCompact ? 12 : 14,
-                                        color: Colors.white.withValues(alpha: 0.9),
-                                        height: 1.2,
-                                        fontWeight: FontWeight.w500,
+                                        color: Colors.grey[700]!,
                                       ),
                                     ),
                                   ],
@@ -209,16 +201,13 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                           flex: 2,
                           child: Container(
                             margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(24),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withValues(alpha: 0.1),
-                                  blurRadius: 20,
-                                  offset: const Offset(0, 10),
-                                ),
-                              ],
+                            decoration: AppTheme.clayDecoration(
+                              background: Colors.white,
+                              borderColor: AppColors.primaryDark,
+                              shadowColor: AppColors.primaryDark,
+                              radius: 24,
+                              borderWidth: 3,
+                              shadowOffset: 6,
                             ),
                             child: Column(
                               children: [
@@ -238,11 +227,7 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                       SizedBox(width: isCompact ? 6 : 8),
                                       Text(
                                         'Final Skorları',
-                                        style: GoogleFonts.poppins(
-                                          fontSize: isCompact ? 18 : 19,
-                                          fontWeight: FontWeight.bold,
-                                          color: AppColors.primary,
-                                        ),
+                                        style: AppTheme.heading(fontSize: isCompact ? 18 : 19, color: AppColors.primary),
                                       ),
                                     ],
                                   ),
@@ -271,10 +256,13 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                         SizedBox(height: isCompact ? 6 : 8),
                                         Container(
                                           padding: EdgeInsets.symmetric(horizontal: isCompact ? 10 : 12, vertical: isCompact ? 8 : 10),
-                                           decoration: BoxDecoration(
-                                             color: Colors.grey[100],
-                                             borderRadius: BorderRadius.circular(16),
-                                             border: Border.all(color: Colors.grey[300]!),
+                                           decoration: AppTheme.clayDecoration(
+                                             background: AppColors.primarySoft,
+                                             borderColor: AppColors.primary,
+                                             shadowColor: AppColors.primary,
+                                             radius: 16,
+                                             borderWidth: 2,
+                                             shadowOffset: 2,
                                            ),
                                            child: Row(
                                              mainAxisAlignment: MainAxisAlignment.center,
@@ -283,10 +271,9 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                                               SizedBox(width: isCompact ? 6 : 8),
                                                Text(
                                                  'Toplam Puan: ${widget.takim1Skor + widget.takim2Skor}',
-                                                 style: GoogleFonts.poppins(
+                                                 style: AppTheme.heading(
                                                   fontSize: isCompact ? 13 : 14,
-                                                   fontWeight: FontWeight.w600,
-                                                   color: Colors.grey[700],
+                                                   color: AppColors.primary,
                                                  ),
                                                ),
                                              ],
@@ -311,69 +298,39 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
                       children: [
                         // Yeniden Oyna
                         Expanded(
-                          child: ElevatedButton(
+                          child: _clayFooterButton(
+                            text: 'YENİDEN OYNA',
+                            icon: Icons.replay,
+                            background: Colors.white,
+                            borderColor: AppColors.primaryDark,
+                            textColor: AppColors.primary,
+                            height: isCompact ? 48 : 56,
                             onPressed: () {
                               Navigator.of(context).pushAndRemoveUntil(
                                 AppRoutes.slide(const AyarlarEkrani(), begin: AppRoutes.fromBottom),
                                 (route) => false,
                               );
                             },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.white,
-                              foregroundColor: AppColors.primary,
-                              elevation: 8,
-                              shadowColor: Colors.black26,
-                              padding: EdgeInsets.symmetric(vertical: isCompact ? 12 : 16),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Icon(Icons.replay, size: 24),
-                                const SizedBox(width: 8),
-                                Text(
-                                  'YENİDEN OYNA',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: isCompact ? 15 : 16,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ],
-                            ),
                           ),
                         ),
-                        
+
                         const SizedBox(width: 16),
-                        
+
                         // Çıkış
                         Expanded(
-                          child: ElevatedButton(
+                          child: _clayFooterButton(
+                            text: 'ÇIKIŞ',
+                            icon: Icons.exit_to_app,
+                            background: Colors.red[400]!,
+                            borderColor: Colors.red[700]!,
+                            textColor: Colors.white,
+                            height: isCompact ? 48 : 56,
                             onPressed: () {
                               Navigator.of(context).pushAndRemoveUntil(
                                 AppRoutes.slide(const GirisEkraniSayfasi(), begin: AppRoutes.fromBottom),
                                 (route) => false,
                               );
                             },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.red[400],
-                              foregroundColor: Colors.white,
-                              elevation: 8,
-                              shadowColor: Colors.red[400]!.withValues(alpha: 0.4),
-                              padding: EdgeInsets.symmetric(vertical: isCompact ? 12 : 16),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Icon(Icons.exit_to_app, size: 24),
-                                const SizedBox(width: 8),
-                                Text(
-                                  'ÇIKIŞ',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: isCompact ? 15 : 16,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ],
-                            ),
                           ),
                         ),
                       ],
@@ -391,21 +348,20 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
   Widget _buildSkorKarti(String takimAdi, int skor, bool kazandi, Color renk, {bool compact = false}) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: compact ? 14 : 16, vertical: compact ? 12 : 14),
-      decoration: BoxDecoration(
-        color: kazandi ? renk.withValues(alpha: 0.1) : Colors.grey[50],
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: kazandi ? renk : Colors.grey[300]!,
-          width: kazandi ? 2 : 1,
-        ),
-        boxShadow: kazandi ? [
-          BoxShadow(
-            color: renk.withValues(alpha: 0.2),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
-          ),
-        ] : null,
-      ),
+      decoration: kazandi
+          ? AppTheme.clayDecoration(
+              background: Colors.white,
+              borderColor: renk,
+              shadowColor: renk,
+              radius: 16,
+              borderWidth: 2.5,
+              shadowOffset: 3,
+            )
+          : BoxDecoration(
+              color: Colors.grey[50],
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: Colors.grey[300]!, width: 2),
+            ),
       child: Row(
         children: [
           Container(
@@ -420,32 +376,31 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
               size: compact ? 20 : 22,
             ),
           ),
-          
+
           SizedBox(width: compact ? 12 : 16),
-          
+
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   takimAdi,
-                  style: GoogleFonts.poppins(
+                  style: AppTheme.heading(
                     fontSize: compact ? 16 : 17,
-                    fontWeight: FontWeight.w600,
-                    color: kazandi ? renk : Colors.grey[700],
+                    color: kazandi ? renk : Colors.grey[700]!,
                   ),
                 ),
                 Text(
                   '$skor puan',
-                  style: GoogleFonts.poppins(
+                  style: AppTheme.body(
                     fontSize: compact ? 12 : 13,
-                    color: kazandi ? renk.withValues(alpha: 0.8) : Colors.grey[600],
+                    color: kazandi ? renk.withValues(alpha: 0.8) : Colors.grey[600]!,
                   ),
                 ),
               ],
             ),
           ),
-          
+
           if (kazandi)
             Icon(
               Icons.celebration,
@@ -453,6 +408,47 @@ class _SonucSayfasiState extends State<SonucSayfasi> {
               size: compact ? 24 : 28,
             ),
         ],
+      ),
+    );
+  }
+
+  // Alt butonlar için kil (clay) stilinde yardımcı: kalın kenarlık + düz
+  // ofset gölge.
+  Widget _clayFooterButton({
+    required String text,
+    required IconData icon,
+    required Color background,
+    required Color borderColor,
+    required Color textColor,
+    required double height,
+    required VoidCallback onPressed,
+  }) {
+    return SizedBox(
+      height: height,
+      child: Material(
+        color: Colors.transparent,
+        child: Ink(
+          decoration: AppTheme.clayDecoration(
+            background: background,
+            borderColor: borderColor,
+            shadowColor: borderColor,
+            radius: 16,
+          ),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(16),
+            onTap: onPressed,
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(icon, color: textColor, size: 22),
+                  const SizedBox(width: 8),
+                  Text(text, style: AppTheme.heading(fontSize: 15, color: textColor)),
+                ],
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
