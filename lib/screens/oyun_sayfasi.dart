@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../core/app_theme.dart';
 import '../core/app_routes.dart';
 import '../core/game_engine.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'sonuc_sayfasi.dart';
 import 'dart:async';
@@ -402,13 +401,13 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
         backgroundColor: Colors.transparent,
         child: Container(
           padding: const EdgeInsets.all(24),
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [AppColors.primary, AppColors.secondary],
-            ),
-            borderRadius: BorderRadius.circular(24),
+          decoration: AppTheme.clayDecoration(
+            background: AppColors.primary,
+            borderColor: AppColors.primaryDark,
+            shadowColor: AppColors.primaryDark,
+            radius: 24,
+            borderWidth: 4,
+            shadowOffset: 8,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -424,13 +423,13 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
               const SizedBox(height: 16),
               Text(
                 'Pas hakkın bitti',
-                style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                style: AppTheme.heading(fontSize: 20),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 12),
               Text(
                 'Bu tur sonunda kısa bir reklam izleyerek 1 ekstra pas hakkı kazanabilirsin.',
-                style: GoogleFonts.poppins(fontSize: 15, color: Colors.white.withValues(alpha: 0.9)),
+                style: AppTheme.body(fontSize: 15, color: Colors.white.withValues(alpha: 0.9)),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 24),
@@ -443,23 +442,36 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                         padding: const EdgeInsets.symmetric(vertical: 12),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
-                          side: const BorderSide(color: Colors.white, width: 1.5),
+                          side: const BorderSide(color: Colors.white, width: 2),
                         ),
                       ),
-                      child: Text('Vazgeç', style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.w600)),
+                      child: Text('Vazgeç', style: AppTheme.heading(fontSize: 15)),
                     ),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
-                    child: ElevatedButton(
-                      onPressed: () => Navigator.pop(context, true),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        foregroundColor: AppColors.primary,
-                        padding: const EdgeInsets.symmetric(vertical: 12),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    child: Material(
+                      color: Colors.transparent,
+                      child: Ink(
+                        decoration: AppTheme.clayDecoration(
+                          background: Colors.white,
+                          borderColor: AppColors.primaryDark,
+                          shadowColor: AppColors.primaryDark,
+                          radius: 12,
+                          borderWidth: 2.5,
+                          shadowOffset: 3,
+                        ),
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(12),
+                          onTap: () => Navigator.pop(context, true),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            child: Center(
+                              child: Text('Reklamı İzle', style: AppTheme.heading(fontSize: 14, color: AppColors.primary)),
+                            ),
+                          ),
+                        ),
                       ),
-                      child: Text('Reklamı İzle', style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
                     ),
                   ),
                 ],
@@ -526,9 +538,9 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                     ),
                   ),
                 ),
-                Text('Tur Bitti', style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.primary)),
+                Text('Tur Bitti', style: AppTheme.heading(fontSize: 20, color: AppColors.primary)),
                 const SizedBox(height: 3),
-                Text('$oynayanTakim turu tamamladı. Mevcut skorlar:', style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[700])),
+                Text('$oynayanTakim turu tamamladı. Mevcut skorlar:', style: AppTheme.body(fontSize: 14, color: Colors.grey[700]!)),
                 const SizedBox(height: 4),
                 Row(
                   children: [
@@ -539,41 +551,66 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                 ),
                 const SizedBox(height: 6),
                 if (_turDogruKelimeler.isNotEmpty) ...[
-                  Text('Doğru Bilinenler', style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.green[700])),
+                  Text('Doğru Bilinenler', style: AppTheme.heading(fontSize: 16, color: Colors.green[700]!)),
                   const SizedBox(height: 6),
                   Wrap(
                     spacing: 8,
                     runSpacing: 8,
-                    children: _turDogruKelimeler.map((k) => Chip(label: Text(k, style: GoogleFonts.poppins()), backgroundColor: Colors.green.shade50)).toList(),
+                    children: _turDogruKelimeler.map((k) => Chip(
+                      label: Text(k, style: AppTheme.body(color: Colors.green.shade800)),
+                      backgroundColor: Colors.green.shade50,
+                      side: BorderSide(color: Colors.green.shade300, width: 2),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    )).toList(),
                   ),
                   const SizedBox(height: 6),
                 ],
                 if (_turPasKelimeler.isNotEmpty) ...[
-                  Text('Pas Geçilenler', style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.orange[800])),
+                  Text('Pas Geçilenler', style: AppTheme.heading(fontSize: 16, color: Colors.orange[800]!)),
                   const SizedBox(height: 6),
                   Wrap(
                     spacing: 8,
                     runSpacing: 8,
-                    children: _turPasKelimeler.map((k) => Chip(label: Text(k, style: GoogleFonts.poppins()), backgroundColor: Colors.orange.shade50)).toList(),
+                    children: _turPasKelimeler.map((k) => Chip(
+                      label: Text(k, style: AppTheme.body(color: Colors.orange.shade800)),
+                      backgroundColor: Colors.orange.shade50,
+                      side: BorderSide(color: Colors.orange.shade300, width: 2),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    )).toList(),
                   ),
                   const SizedBox(height: 6),
                 ],
                 const SizedBox(height: 2),
                 SizedBox(
                   width: double.infinity,
-                  child: ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                      _sirayiDigerTakimaBaslat();
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primary,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                  height: 52,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: Ink(
+                      decoration: AppTheme.clayDecoration(
+                        background: AppColors.primary,
+                        borderColor: AppColors.primaryDark,
+                        shadowColor: AppColors.primaryDark,
+                        radius: 16,
+                      ),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(16),
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          _sirayiDigerTakimaBaslat();
+                        },
+                        child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(Icons.swap_horiz, color: Colors.white),
+                              const SizedBox(width: 8),
+                              Text('Diğer Takım Başlasın', style: AppTheme.heading(fontSize: 15)),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
-                    icon: const Icon(Icons.swap_horiz),
-                    label: Text('Diğer Takım Başlasın', style: GoogleFonts.poppins(fontWeight: FontWeight.w600)),
                   ),
                 ),
               ],
@@ -625,23 +662,13 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
           backgroundColor: Colors.transparent,
           child: Container(
             padding: const EdgeInsets.all(24),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  AppColors.primary,
-                  AppColors.secondary,
-                ],
-              ),
-              borderRadius: BorderRadius.circular(24),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.3),
-                  blurRadius: 20,
-                  offset: const Offset(0, 10),
-                ),
-              ],
+            decoration: AppTheme.clayDecoration(
+              background: AppColors.primary,
+              borderColor: AppColors.primaryDark,
+              shadowColor: AppColors.primaryDark,
+              radius: 24,
+              borderWidth: 4,
+              shadowOffset: 8,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -664,11 +691,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                 // Başlık
                 Text(
                   'Oyundan çıkılsın mı?',
-                  style: GoogleFonts.poppins(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  style: AppTheme.heading(fontSize: 20),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 12),
@@ -676,10 +699,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                 // İçerik
                 Text(
                   'Oyun devam ediyor. Çıkarsanız mevcut tur sonlanacak.',
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    color: Colors.white.withValues(alpha: 0.9),
-                  ),
+                  style: AppTheme.body(fontSize: 15, color: Colors.white.withValues(alpha: 0.9)),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 24),
@@ -697,34 +717,31 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                             side: const BorderSide(color: Colors.white, width: 1.5),
                           ),
                         ),
-                        child: Text(
-                          'Vazgeç',
-                          style: GoogleFonts.poppins(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
+                        child: Text('Vazgeç', style: AppTheme.heading(fontSize: 15)),
                       ),
                     ),
                     const SizedBox(width: 12),
                     Expanded(
-                      child: ElevatedButton(
-                        onPressed: () => Navigator.pop(context, true),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          foregroundColor: AppColors.primary,
-                          padding: const EdgeInsets.symmetric(vertical: 12),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: Ink(
+                          decoration: AppTheme.clayDecoration(
+                            background: Colors.white,
+                            borderColor: AppColors.primaryDark,
+                            shadowColor: AppColors.primaryDark,
+                            radius: 12,
+                            borderWidth: 2.5,
+                            shadowOffset: 3,
                           ),
-                          elevation: 4,
-                        ),
-                        child: Text(
-                          'Çık',
-                          style: GoogleFonts.poppins(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(12),
+                            onTap: () => Navigator.pop(context, true),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 12),
+                              child: Center(
+                                child: Text('Çık', style: AppTheme.heading(fontSize: 15, color: AppColors.primary)),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -834,20 +851,22 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                           horizontal: _isSmallScreen ? 12 : _isMediumScreen ? 16 : 20, 
                           vertical: _isSmallScreen ? 6 : _isMediumScreen ? 8 : 10
                         ),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(_isSmallScreen ? 16 : 20),
-                          border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
+                        decoration: AppTheme.clayDecoration(
+                          background: Colors.white,
+                          borderColor: AppColors.primaryDark,
+                          shadowColor: AppColors.primaryDark,
+                          radius: _isSmallScreen ? 16 : 20,
+                          borderWidth: 2.5,
+                          shadowOffset: 4,
                         ),
                         child: Row(
                           children: [
                             Expanded(
                               child: Text(
                                 'Sıra: $aktifTakimAdi',
-                                style: GoogleFonts.poppins(
+                                style: AppTheme.heading(
                                   fontSize: _isSmallScreen ? 14 : _isMediumScreen ? 16 : 17,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white,
+                                  color: AppColors.primary,
                                 ),
                               ),
                             ),
@@ -882,16 +901,13 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                             _isSmallScreen ? 8 : _isMediumScreen ? 12 : 16, // yatay padding azaltıldı (sağ)
                             _isSmallScreen ? 4 : _isMediumScreen ? 6 : 8, // alttan biraz kısalt
                           ),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(_isSmallScreen ? 20 : _isMediumScreen ? 24 : 28),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withValues(alpha: 0.15),
-                                blurRadius: _isSmallScreen ? 20 : _isMediumScreen ? 24 : 28,
-                                offset: Offset(0, _isSmallScreen ? 8 : _isMediumScreen ? 10 : 12),
-                              ),
-                            ],
+                          decoration: AppTheme.clayDecoration(
+                            background: Colors.white,
+                            borderColor: AppColors.primaryDark,
+                            shadowColor: AppColors.primaryDark,
+                            radius: _isSmallScreen ? 20 : _isMediumScreen ? 24 : 28,
+                            borderWidth: 4,
+                            shadowOffset: _isSmallScreen ? 8 : _isMediumScreen ? 9 : 10,
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -917,9 +933,8 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                                             textAlign: TextAlign.center,
                                             maxLines: 2,
                                             overflow: TextOverflow.ellipsis,
-                                            style: GoogleFonts.poppins(
+                                            style: AppTheme.heading(
                                               fontSize: _getKelimeFontSize(_kartlar[_mevcutKelimeIndex].kelime),
-                                              fontWeight: FontWeight.bold,
                                               color: AppColors.primary,
                                             ),
                                           ),
@@ -946,26 +961,19 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                                               horizontal: _isSmallScreen ? 12 : _isMediumScreen ? 14 : 16,
                                               vertical: _isSmallScreen ? 5 : _isMediumScreen ? 6 : 8, // büyük font için padding artırıldı
                                             ),
-                                            decoration: BoxDecoration(
-                                              gradient: LinearGradient(
-                                                colors: [Colors.red.shade400, Colors.red.shade700],
-                                              ),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.red.shade700.withValues(alpha: 0.2),
-                                                  blurRadius: 6,
-                                                  offset: const Offset(0, 3),
-                                                ),
-                                              ],
-                                              borderRadius: BorderRadius.circular(10),
+                                            decoration: AppTheme.clayDecoration(
+                                              background: Colors.red.shade400,
+                                              borderColor: Colors.red.shade700,
+                                              shadowColor: Colors.red.shade700,
+                                              radius: 12,
+                                              borderWidth: 2.5,
+                                              shadowOffset: 3,
                                             ),
                                             alignment: Alignment.center,
-                                                                                          child: Text(
-                                                kelime,
-                                                style: GoogleFonts.poppins(
-                                                  fontSize: _isSmallScreen ? 24 : _isMediumScreen ? 26 : 28,
-                                                  fontWeight: FontWeight.w600,
-                                                color: Colors.white,
+                                            child: Text(
+                                              kelime,
+                                              style: AppTheme.heading(
+                                                fontSize: _isSmallScreen ? 24 : _isMediumScreen ? 26 : 28,
                                               ),
                                               textAlign: TextAlign.center,
                                             ),
@@ -993,10 +1001,11 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                 child: Row(
                   children: [
                     Expanded(
-                      child: _buildGradientActionButton(
+                      child: _buildClayActionButton(
                         text: 'TABU',
                         icon: Icons.block,
-                        colors: [AppColors.primary, const Color(0xFF8E24AA)],
+                        background: const Color(0xFF8E24AA),
+                        borderColor: AppColors.primary,
                         onPressed: _oyunAktif ? _tabu : null,
                       ),
                     ),
@@ -1004,14 +1013,19 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                     Expanded(
                       child: Column(
                         children: [
-                          _buildGradientActionButton(
+                          _buildClayActionButton(
                             text: (_kalanPasHakki > 0 && !_reklamIzlenmeyiBekliyor) ? 'PAS' : 'PAS +1',
                             icon: _kalanPasHakki > 0 ? Icons.skip_next : Icons.play_circle,
-                            colors: (_kalanPasHakki > 0 && !_reklamIzlenmeyiBekliyor)
-                              ? [const Color(0xFFFFA726), const Color(0xFFF57C00)]
-                              : _reklamIzlenmeyiBekliyor 
-                                ? [Colors.grey.withValues(alpha: 0.5), Colors.grey.withValues(alpha: 0.3)]
-                                : [const Color(0xFF4CAF50), const Color(0xFF2E7D32)],
+                            background: (_kalanPasHakki > 0 && !_reklamIzlenmeyiBekliyor)
+                              ? const Color(0xFFFFA726)
+                              : _reklamIzlenmeyiBekliyor
+                                ? Colors.grey.shade300
+                                : const Color(0xFF4CAF50),
+                            borderColor: (_kalanPasHakki > 0 && !_reklamIzlenmeyiBekliyor)
+                              ? const Color(0xFFF57C00)
+                              : _reklamIzlenmeyiBekliyor
+                                ? Colors.grey.shade500
+                                : const Color(0xFF2E7D32),
                             onPressed: (_oyunAktif && !_reklamIzlenmeyiBekliyor) ? _pas : null,
                           ),
                         ],
@@ -1019,10 +1033,11 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
                     ),
                     SizedBox(width: _isSmallScreen ? 8 : _isMediumScreen ? 12 : 16),
                     Expanded(
-                      child: _buildGradientActionButton(
+                      child: _buildClayActionButton(
                         text: 'DOĞRU',
                         icon: Icons.check_circle,
-                        colors: [const Color(0xFF34D399), const Color(0xFF059669)],
+                        background: const Color(0xFF34D399),
+                        borderColor: const Color(0xFF059669),
                         onPressed: _oyunAktif ? _dogruCevap : null,
                       ),
                     ),
@@ -1038,14 +1053,15 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
         onPressed: _oyunuBaslat,
         backgroundColor: Colors.white,
         foregroundColor: AppColors.primary,
-        icon: Icon(Icons.play_arrow, 
+        shape: StadiumBorder(side: BorderSide(color: AppColors.primaryDark, width: 2.5)),
+        icon: Icon(Icons.play_arrow,
           size: _isSmallScreen ? 20 : _isMediumScreen ? 22 : 24
         ),
         label: Text(
           'OYUNU BAŞLAT',
-          style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w600,
+          style: AppTheme.heading(
             fontSize: _isSmallScreen ? 13 : _isMediumScreen ? 14 : 15,
+            color: AppColors.primary,
           ),
         ),
       ),
@@ -1053,42 +1069,51 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
   }
 
   Widget _buildSkorKarti(String takimAdi, int skor, int toplamSkor, bool aktif) {
+    final double radius = _isSmallScreen ? 18 : _isMediumScreen ? 20 : 22;
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: _isSmallScreen ? 10 : _isMediumScreen ? 12 : 14,
         vertical: _isSmallScreen ? 5 : _isMediumScreen ? 6 : 8
       ),
-      decoration: BoxDecoration(
-        color: aktif ? Colors.white.withValues(alpha: 0.3) : Colors.white.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(_isSmallScreen ? 18 : _isMediumScreen ? 20 : 22),
-        border: aktif ? Border.all(color: Colors.white, width: _isSmallScreen ? 1.5 : 2) : null,
-      ),
+      decoration: aktif
+          ? AppTheme.clayDecoration(
+              background: Colors.white,
+              borderColor: AppColors.primaryDark,
+              shadowColor: AppColors.primaryDark,
+              radius: radius,
+              borderWidth: 2,
+              shadowOffset: 3,
+            )
+          : BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(radius),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.3), width: 2),
+            ),
       child: Column(
         children: [
           Text(
             takimAdi,
-            style: GoogleFonts.poppins(
+            style: AppTheme.body(
               fontSize: _isSmallScreen ? 10 : _isMediumScreen ? 11 : 12,
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
+              fontWeight: FontWeight.w700,
+              color: aktif ? AppColors.primary : Colors.white,
             ),
           ),
           // Üstte büyük rakam toplam puan olsun
           Text(
             '$toplamSkor',
-            style: GoogleFonts.poppins(
+            style: AppTheme.heading(
               fontSize: _isSmallScreen ? 18 : _isMediumScreen ? 20 : 22,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: aktif ? AppColors.primary : Colors.white,
             ),
           ),
           // Altta tur puanını küçük göster
           Text(
             'Tur: $skor',
-            style: GoogleFonts.poppins(
+            style: AppTheme.body(
               fontSize: _isSmallScreen ? 8 : _isMediumScreen ? 9 : 10,
-              fontWeight: FontWeight.w500,
-              color: Colors.white.withValues(alpha: 0.8),
+              fontWeight: FontWeight.w600,
+              color: aktif ? AppColors.primary.withValues(alpha: 0.7) : Colors.white.withValues(alpha: 0.8),
             ),
           ),
         ],
@@ -1099,13 +1124,15 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
   Widget _buildSureKarti() {
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: _isSmallScreen ? 16 : _isMediumScreen ? 18 : 20,
+        horizontal: _isSmallScreen ? 14 : _isMediumScreen ? 16 : 18,
         vertical: _isSmallScreen ? 10 : _isMediumScreen ? 11 : 12
       ),
-      decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.2),
-        borderRadius: BorderRadius.circular(_isSmallScreen ? 18 : _isMediumScreen ? 20 : 22),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
+      decoration: AppTheme.clayDecoration(
+        background: AppColors.secondary,
+        borderColor: AppColors.secondaryDark,
+        shadowColor: AppColors.secondaryDark,
+        radius: _isSmallScreen ? 18 : _isMediumScreen ? 20 : 22,
+        shadowOffset: 4,
       ),
       child: Column(
         children: [
@@ -1117,11 +1144,7 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
           SizedBox(height: _isSmallScreen ? 3 : 4),
           Text(
             '$_kalanSure',
-            style: GoogleFonts.poppins(
-              fontSize: _isSmallScreen ? 20 : _isMediumScreen ? 22 : 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
+            style: AppTheme.heading(fontSize: _isSmallScreen ? 20 : _isMediumScreen ? 22 : 24),
           ),
         ],
       ),
@@ -1131,28 +1154,31 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
   Widget _buildInfoPill({required IconData icon, required String text}) {
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: _isSmallScreen ? 6 : _isMediumScreen ? 7 : 8,
-        vertical: _isSmallScreen ? 3 : _isMediumScreen ? 3.5 : 4
+        horizontal: _isSmallScreen ? 7 : _isMediumScreen ? 8 : 9,
+        vertical: _isSmallScreen ? 4 : _isMediumScreen ? 4.5 : 5
       ),
-      decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.18),
-        borderRadius: BorderRadius.circular(_isSmallScreen ? 12 : _isMediumScreen ? 13 : 14),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.25)),
+      decoration: AppTheme.clayDecoration(
+        background: Colors.white,
+        borderColor: AppColors.primarySoft,
+        shadowColor: AppColors.primarySoft,
+        radius: _isSmallScreen ? 12 : _isMediumScreen ? 13 : 14,
+        borderWidth: 2,
+        shadowOffset: 2,
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, 
-            color: Colors.white, 
+          Icon(icon,
+            color: AppColors.primary,
             size: _isSmallScreen ? 12 : _isMediumScreen ? 13 : 14
           ),
           SizedBox(width: _isSmallScreen ? 4 : _isMediumScreen ? 4.5 : 5),
           Text(
             text,
-            style: GoogleFonts.poppins(
-              color: Colors.white, 
-              fontSize: _isSmallScreen ? 10 : _isMediumScreen ? 10.5 : 11, 
-              fontWeight: FontWeight.w600
+            style: AppTheme.body(
+              color: AppColors.primary,
+              fontSize: _isSmallScreen ? 10 : _isMediumScreen ? 10.5 : 11,
+              fontWeight: FontWeight.w700
             ),
           ),
         ],
@@ -1160,47 +1186,45 @@ class _OyunSayfasiState extends State<OyunSayfasi> with TickerProviderStateMixin
     );
   }
 
-  Widget _buildGradientActionButton({
+  // Kil (clay) stilinde ana aksiyon butonu: düz dolgu rengi + kalın koyu
+  // kenarlık + düz ofset gölge (önceden gradient + bulanık gölgeydi).
+  Widget _buildClayActionButton({
     required String text,
     required IconData icon,
-    required List<Color> colors,
+    required Color background,
+    required Color borderColor,
     required VoidCallback? onPressed,
   }) {
+    final double radius = _isSmallScreen ? 14 : _isMediumScreen ? 15 : 16;
     return Opacity(
       opacity: onPressed == null ? 0.6 : 1,
       child: Container(
         height: _isSmallScreen ? 56 : _isMediumScreen ? 60 : 64,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: colors),
-          borderRadius: BorderRadius.circular(_isSmallScreen ? 14 : _isMediumScreen ? 15 : 16),
-          boxShadow: [
-            BoxShadow(
-              color: colors.last.withValues(alpha: 0.35),
-              blurRadius: _isSmallScreen ? 14 : _isMediumScreen ? 15 : 16,
-              offset: Offset(0, _isSmallScreen ? 6 : _isMediumScreen ? 7 : 8),
-            ),
-          ],
+        decoration: AppTheme.clayDecoration(
+          background: background,
+          borderColor: borderColor,
+          shadowColor: borderColor,
+          radius: radius,
+          shadowOffset: _isSmallScreen ? 4 : 5,
         ),
         child: Material(
           color: Colors.transparent,
-                  child: InkWell(
-          borderRadius: BorderRadius.circular(_isSmallScreen ? 14 : _isMediumScreen ? 15 : 16),
-          onTap: onPressed,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(radius),
+            onTap: onPressed,
             child: Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(icon, 
-                    color: Colors.white, 
+                  Icon(icon,
+                    color: Colors.white,
                     size: _isSmallScreen ? 20 : _isMediumScreen ? 22 : 24
                   ),
                   SizedBox(width: _isSmallScreen ? 6 : _isMediumScreen ? 7 : 8),
                   Text(
                     text,
-                    style: GoogleFonts.poppins(
-                      color: Colors.white,
+                    style: AppTheme.heading(
                       fontSize: _isSmallScreen ? 14 : _isMediumScreen ? 15 : 16,
-                      fontWeight: FontWeight.w700,
                       letterSpacing: 0.5,
                     ),
                   ),
