@@ -28,3 +28,5 @@ flutter gen-l10n   # ARB dosyası değişince
 # Son kararlar
 - 2026-10-31: Kelime verisi Dart dosyalarından `assets/data/*.json` dosyalarına taşındı.
 - 2026-10-31: Oyun mantığı GameEngine'e ayrıldı; lokalizasyon altyapısı (gen-l10n) kuruldu.
+- 2026-11-05: Arayüz kil (clay) tasarım diline geçirildi (kalın kenarlık, düz ofset gölge, Fredoka/Nunito fontları), mevcut mor/turuncu marka renkleri korundu.
+- 2026-11-05: iOS minimum sürümü 15.0'a yükseltildi (Flutter'ın sahne tabanlı iOS altyapısı bunu gerektiriyor).
